@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using static Kyrsach2018.Program;
+
 
 namespace Kyrsach2018
 {

@@ -9,78 +9,7 @@ namespace Kyrsach2018
 {
     public class Program
     {
-        //abstract class AbstractNumber
-        //{
-
-        //}
-
-        //class
-
-
-       public abstract class AbstractNumber<T>
-        {
-            private double num;
-
-            public double Num
-            {
-                get
-                {
-                    return num;
-                }
-
-                set
-                {
-                    num = value;
-                }
-            }
-
-            public abstract T Add(T t);
-            public abstract T Minus(T t);
-            public abstract T Multiply(T t);
-            public abstract T Division(T t);
-
-            public override string ToString()
-            {
-                return num.ToString();
-            }
-        }
-
-        class Rnumber : AbstractNumber<Rnumber>
-        {
-            public Rnumber(double num)
-            {
-                this.Num = num;
-            }
-
-            public override Rnumber Add(Rnumber number)
-            {
-                return new Rnumber(Num + number.Num);
-            }
-
-            public override Rnumber Minus(Rnumber realnumber)
-            {
-                return new Rnumber(Num - realnumber.Num);
-            }
-
-            public override Rnumber Multiply(Rnumber number)
-            {
-                return new Rnumber(Num * number.Num);
-            }
-
-            public override Rnumber Division(Rnumber number)
-            {
-                if (number.Num == 0)
-                {
-                    Console.WriteLine("division by 0");
-                    return null;
-                }
-                else
-                    return new Rnumber(Num / number.Num);
-            }
-        }
-
-       
-
+        
         static void Main(string[] args)
         {
             string iN = "3324 - 3414i";
