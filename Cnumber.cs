@@ -10,7 +10,7 @@ namespace Kyrsach2018
     {
         private double rPart, imPart;
 
-       
+
         public Cnumber(double rpart, double impart)
         {
             this.rPart = rpart;
@@ -43,27 +43,39 @@ namespace Kyrsach2018
             }
         }
 
+        private string getSign()
+        {
+          return  Math.Sign(imPart) == 1 ? "+" : "-";
+        }
+
         public override Cnumber Add(Cnumber Complex)
         {
             return new Cnumber(rPart + Complex.Rpart, imPart + Complex.Impart);
         }
 
-        public override Cnumber Division(Cnumber t)
+        public override Cnumber Minus(Cnumber Complex)
         {
-            throw new NotImplementedException();
+            return new Cnumber(rPart - Complex.Rpart, imPart - Complex.Impart);
         }
 
-        public override Cnumber Minus(Cnumber t)
+        
+       // (a +bi)(d + ni) = a*d + a*ni + b*ni - b*n
+        public override Cnumber Multiply(Cnumber Complex)
         {
-            throw new NotImplementedException();
+            return new Cnumber(rPart * Complex.Rpart - imPart * Complex.Impart, rPart * Complex.Impart + imPart * Complex.Rpart);
         }
 
-        public override Cnumber Multiply(Cnumber t)
+      //  (a+bi)/(c+di) = (ac + bd)/(c^2 + d^2) + i(bc - ad)/(c^2 + d^2)
+        public override Cnumber Division(Cnumber Complex)
         {
-            throw new NotImplementedException();
+            return new Cnumber((rPart * Complex.Rpart + imPart * Complex.Impart) / (Complex.Rpart * Complex.Rpart + Complex.Impart * Complex.Impart), (imPart * Complex.Rpart -rPart * Complex.Impart) / (Complex.Rpart * Complex.Rpart + Complex.Impart * Complex.Impart)  )  ;
         }
 
-       
+        public override string ToString()
+        {
+            return rPart +  getSign() + Math.Abs(imPart) + "i";
+        }
 
+        
     }
 }
