@@ -36,6 +36,7 @@ namespace Kyrsach2k18
             public abstract T Add(T t);
             public abstract T Minus(T t);
             public abstract T Multiply(T t);
+            public abstract T Division(T t);
 
             public override string ToString()
             {
@@ -65,21 +66,33 @@ namespace Kyrsach2k18
                 return new Rnumber(Num * number.Num);
             }
 
+            public override Rnumber Division(Rnumber number)
+            {
+                if (number.Num == 0)
+                {
+                    Console.WriteLine("division by 0");
+                    return null;
+                }
+                else
+                    return new Rnumber(Num / number.Num);
+            }
         }
 
         static void Main(string[] args)
         {
 
-            Rnumber r1 = new Rnumber(16);
-            Rnumber r2 = new Rnumber(19);
+            Rnumber r1 = new Rnumber(320);
+            Rnumber r2 = new Rnumber(0);
             Rnumber r3 = r1.Add(r2);
             Rnumber r4 = r1.Minus(r2);
             Rnumber r5 = r1.Multiply(r2);
+            Rnumber r6 = r1.Division(r2);
 
 
             Console.WriteLine(r3);
             Console.WriteLine(r4);
             Console.WriteLine(r5);
+            Console.WriteLine(r6);
 
 
 
