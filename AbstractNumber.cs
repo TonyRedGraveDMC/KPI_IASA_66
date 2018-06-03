@@ -28,6 +28,10 @@ namespace Kyrsach2018
         public abstract T Multiply(T t);
         public abstract T Division(T t);
 
+        public string getSign(double Num)
+        {
+            return Math.Sign(Num) == 1 ? "+" : "-";
+        }
         public override string ToString()
         {
             return num.ToString();

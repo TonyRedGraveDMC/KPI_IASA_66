@@ -16,10 +16,10 @@ namespace Kyrsach2018
             imPart = 1;
         }
 
-        public Cnumber(double rpart, double impart)
+        public Cnumber(double rPart, double imPart)
         {
-            this.rPart = rpart;
-            this.imPart = impart;
+            this.rPart = rPart;
+            this.imPart = imPart;
         }
 
         public double Impart
@@ -48,9 +48,9 @@ namespace Kyrsach2018
             }
         }
 
-        private string getSign()
+        new public string getSign(double Num)
         {
-          return  Math.Sign(imPart) == 1 ? "+" : "-";
+          return  Math.Sign(Num) == 1 ? "+" : "-";
         }
 
         public override Cnumber Add(Cnumber Complex)
@@ -83,7 +83,7 @@ namespace Kyrsach2018
 
         public override string ToString()
         {
-            return rPart +  getSign() + Math.Abs(imPart) + "i";
+            return rPart +  getSign(imPart) + Math.Abs(imPart) + "i";
         }
 
         

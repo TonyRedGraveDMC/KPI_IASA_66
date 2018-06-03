@@ -10,6 +10,19 @@ namespace Kyrsach2018
     {
         private double rPart, iPart, jPart, kPart;
 
+        public Hnumber()
+        {
+            rPart = 1; iPart = 1; jPart = 1; kPart = 1;
+        }
+
+        public Hnumber(double rPart, double iPart, double jPart, double kPart)
+        {
+            this.rPart = rPart;
+            this.iPart = iPart;
+            this.jPart = jPart;
+            this.kPart = kPart;
+        }
+
         public double Ipart
         {
             get
@@ -64,6 +77,18 @@ namespace Kyrsach2018
 
         public override Hnumber Add(Hnumber Quater)
         {
+            return new Hnumber(rPart + Quater.Rpart, iPart + Quater.Ipart, jPart + Quater.Jpart, kPart + Quater.Jpart);
+        }
+
+        public override Hnumber Minus(Hnumber Quater)
+        {
+            return new Hnumber(rPart - Quater.Rpart, iPart - Quater.Ipart, jPart - Quater.Jpart, kPart - Quater.Jpart);
+        }
+
+       
+
+        public override Hnumber Multiply(Hnumber t)
+        {
             throw new NotImplementedException();
         }
 
@@ -72,14 +97,15 @@ namespace Kyrsach2018
             throw new NotImplementedException();
         }
 
-        public override Hnumber Minus(Hnumber t)
+        new public string getSign(double Num)
         {
-            throw new NotImplementedException();
+            return Math.Sign(Num) == 1 ? "+" : "-";
         }
 
-        public override Hnumber Multiply(Hnumber t)
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return rPart + getSign(iPart) + Math.Abs(iPart) + "i" + getSign(jPart) + Math.Abs(jPart) + "j" + getSign(kPart) + Math.Abs(kPart) + "k";
         }
+
     }
 }
