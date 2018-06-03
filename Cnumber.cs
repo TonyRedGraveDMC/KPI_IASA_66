@@ -83,7 +83,7 @@ namespace Kyrsach2018
 
         public override string ToString()
         {
-            return rPart +  getSign(imPart) + Math.Abs(imPart) + "i";
+            return rPart + " " + getSign(imPart) + " " + Math.Abs(imPart) + "i";
         }
 
         

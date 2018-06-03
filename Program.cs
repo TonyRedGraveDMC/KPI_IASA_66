@@ -26,12 +26,25 @@ namespace Kyrsach2018
             //Console.WriteLine(rPart + sign + imPart + "i");
 
 
-            Hnumber c1 = new Hnumber(2,-3, 3, 5);
-            Hnumber c2 = new Hnumber(0, 1, 2, 3);
+            Hnumber c1 = new Hnumber(1,-2, 3, -4);
+            Hnumber c2 = new Hnumber(1, 0, 0, 0);
             Hnumber c3 = c1.Add(c2);
             Console.WriteLine(c3);
             Hnumber c4 = c1.Minus(c2);
             Console.WriteLine(c4);
+
+            Hnumber c6 = c1.Multiply(c2);
+            Console.WriteLine(c6);
+
+            Hnumber c5 = c1.Division(c2);
+            Console.WriteLine(c5);
+
+
+
+
+
+
+
 
             //Cnumber c1 = new Cnumber(2,-3);
             //Cnumber c2 = new Cnumber(0,1);
