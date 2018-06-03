@@ -10,6 +10,11 @@ namespace Kyrsach2018
     {
         private double rPart, imPart;
 
+        public Cnumber()
+        {
+            rPart = 1;
+            imPart = 1;
+        }
 
         public Cnumber(double rpart, double impart)
         {
@@ -68,6 +73,11 @@ namespace Kyrsach2018
       //  (a+bi)/(c+di) = (ac + bd)/(c^2 + d^2) + i(bc - ad)/(c^2 + d^2)
         public override Cnumber Division(Cnumber Complex)
         {
+            if ((Complex.Impart + Complex.Rpart) == 0)
+            {
+                Console.WriteLine("division by 0");
+                return null;
+            }
             return new Cnumber((rPart * Complex.Rpart + imPart * Complex.Impart) / (Complex.Rpart * Complex.Rpart + Complex.Impart * Complex.Impart), (imPart * Complex.Rpart -rPart * Complex.Impart) / (Complex.Rpart * Complex.Rpart + Complex.Impart * Complex.Impart)  )  ;
         }
 

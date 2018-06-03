@@ -9,6 +9,10 @@ namespace Kyrsach2018
 {
     class Rnumber : AbstractNumber<Rnumber>
     {
+        public Rnumber()
+        {
+            this.Num = 1;
+        }
         public Rnumber(double num)
         {
             this.Num = num;
