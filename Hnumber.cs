@@ -115,14 +115,23 @@ namespace Kyrsach2018
 
         public override Hnumber Division(Hnumber Quater)
         {
-          //  this.Reverse(Quater);
-           Console.WriteLine("Norm = " + Norm(Quater));
-            return new Hnumber
+            //  this.Reverse(Quater);
+            Console.WriteLine("Norm = " + Norm(Quater));
+            if ((Quater.Rpart + Quater.Ipart + Quater.Jpart + Quater.Kpart) == 0)
+            {
+                Console.WriteLine("division by 0");
+                return null;
+            }
+            else
+            {
+               
+                return new Hnumber
                  (rPart * Quater.Rpart / Norm(Quater) + iPart * Quater.Ipart / Norm(Quater) + jPart * Quater.Jpart / Norm(Quater) + kPart * Quater.Kpart / Norm(Quater),
                  -rPart * Quater.Ipart / Norm(Quater) + Quater.Rpart / Norm(Quater) * iPart - jPart * Quater.Kpart / Norm(Quater) + Quater.Jpart / Norm(Quater) * kPart,
                  -rPart * Quater.Jpart / Norm(Quater) + Quater.Rpart / Norm(Quater) * jPart + iPart * Quater.Kpart / Norm(Quater) - Quater.Ipart / Norm(Quater) * kPart,
                  -rPart * Quater.Kpart / Norm(Quater) + Quater.Rpart / Norm(Quater) * kPart - iPart * Quater.Jpart / Norm(Quater) + Quater.Ipart / Norm(Quater) * jPart);
-
+            }
+            
         }
 
         new public string getSign(double Num)
