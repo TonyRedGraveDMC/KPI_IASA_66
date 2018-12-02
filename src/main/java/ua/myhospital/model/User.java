@@ -2,28 +2,57 @@ package ua.myhospital.model;
 
 public class User {
 
-    private String name;
+    private int id;
 
-    private int age;
+    private String login;
 
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
+    private String password;
+
+    private ROLE role;
+
+    public User() {
     }
 
-    public String getName() {
-        return name;
+    public User(int id, String login, String password, ROLE role) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.role = role;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getId() {
+        return id;
     }
 
-    public int getAge() {
-        return age;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public ROLE getRole() {
+        return role;
+    }
+
+    public void setRole(ROLE role) {
+        this.role = role;
+    }
+
+    public enum ROLE {
+        USER, ADMIN, UNKNOWN
     }
 }
