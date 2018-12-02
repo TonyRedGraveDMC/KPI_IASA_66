@@ -37,7 +37,7 @@
 
   <p>A <strong>Realm</strong> element represents a "database" of usernames,
   passwords, and <em>roles</em> (similar to Unix <em>groups</em>) assigned
-  to those users.  Different implementations of Realm allow Catalina to be
+  to those user.  Different implementations of Realm allow Catalina to be
   integrated into environments where such authentication information is already
   being created and maintained, and then utilize that information to implement
   <em>Container Managed Security</em> as described in the Servlet
@@ -141,7 +141,7 @@
         configurations. See <strong>allRolesMode</strong> attribute for
         a rare case when it can be omitted.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
-        <p>When processing users authenticated via the GSS-API, this attribute
+        <p>When processing user authenticated via the GSS-API, this attribute
         controls if any "@..." is removed from the end of the user
         name. If not specified, the default is <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">transportGuaranteeRedirectStatus</code></td><td>
@@ -150,14 +150,14 @@
            guarantee. The provided status code is not validated. If not
            specified, the default value of <code>302</code> is used.</p>
       </td></tr><tr><td><strong><code class="attributeName">userCredCol</code></strong></td><td>
-        <p>Name of the column, in the "users" table, which contains
+        <p>Name of the column, in the "user" table, which contains
         the user's credentials (i.e. password).  If a
         <code>CredentialHandler</code> is specified, this component
         will assume that the passwords have been encoded with the
         specified algorithm.  Otherwise, they will be assumed to be
         in clear text.</p>
       </td></tr><tr><td><strong><code class="attributeName">userNameCol</code></strong></td><td>
-        <p>Name of the column, in the "users" and "user roles" table,
+        <p>Name of the column, in the "user" and "user roles" table,
         that contains the user's username.</p>
       </td></tr><tr><td><code class="attributeName">userRoleTable</code></td><td>
         <p>Name of the "user roles" table, which must contain columns
@@ -167,7 +167,7 @@
         configurations. See <strong>allRolesMode</strong> attribute for
         a rare case when it can be omitted.</p>
       </td></tr><tr><td><strong><code class="attributeName">userTable</code></strong></td><td>
-        <p>Name of the "users" table, which must contain columns named
+        <p>Name of the "user" table, which must contain columns named
         by the <code>userNameCol</code> and <code>userCredCol</code>
         attributes.</p>
       </td></tr><tr><td><code class="attributeName">X509UsernameRetrieverClassName</code></td><td>
@@ -247,18 +247,18 @@
            guarantee. The provided status code is not validated. If not
            specified, the default value of <code>302</code> is used.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
-        <p>When processing users authenticated via the GSS-API, this attribute
+        <p>When processing user authenticated via the GSS-API, this attribute
         controls if any "@..." is removed from the end of the user
         name. If not specified, the default is <code>true</code>.</p>
       </td></tr><tr><td><strong><code class="attributeName">userCredCol</code></strong></td><td>
-        <p>Name of the column, in the "users" table, which contains
+        <p>Name of the column, in the "user" table, which contains
         the user's credentials (i.e. password).  If a
         <code>CredentialHandler</code> is specified, this component
         will assume that the passwords have been encoded with the
         specified algorithm.  Otherwise, they will be assumed to be
         in clear text.</p>
       </td></tr><tr><td><strong><code class="attributeName">userNameCol</code></strong></td><td>
-        <p>Name of the column, in the "users" and "user roles" table,
+        <p>Name of the column, in the "user" and "user roles" table,
         that contains the user's username.</p>
       </td></tr><tr><td><code class="attributeName">userRoleTable</code></td><td>
         <p>Name of the "user roles" table, which must contain columns
@@ -268,7 +268,7 @@
         configurations. See <strong>allRolesMode</strong> attribute for
         a rare case when it can be omitted.</p>
       </td></tr><tr><td><strong><code class="attributeName">userTable</code></strong></td><td>
-        <p>Name of the "users" table, which must contain columns named
+        <p>Name of the "user" table, which must contain columns named
         by the <code>userNameCol</code> and <code>userCredCol</code>
         attributes.</p>
       </td></tr><tr><td><code class="attributeName">X509UsernameRetrieverClassName</code></td><td>
@@ -497,7 +497,7 @@
         constructed using the default constructor. If none class name is given
         the default jre <code>SSLSocketFactory</code> will be used.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
-        <p>When processing users authenticated via the GSS-API, this attribute
+        <p>When processing user authenticated via the GSS-API, this attribute
         controls if any "@..." is removed from the end of the user
         name. If not specified, the default is <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">timeLimit</code></td><td>
@@ -539,7 +539,7 @@
         actual username should be inserted. You can use this property
         instead of <code>userSearch</code>, <code>userSubtree</code>
         and <code>userBase</code> when the distinguished name contains
-        the username and is otherwise the same for all users. Note that
+        the username and is otherwise the same for all user. Note that
         when accessing the directory using delegated credentials, this
         attribute is always ignored and <code>userSearch</code>,
         <code>userSubtree</code> and <code>userBase</code> are always
@@ -662,7 +662,7 @@
     collection of Java objects in memory.  This implementation is intended
     solely to get up and running with container managed security - it is NOT
     intended for production use.  As such, there are no mechanisms for
-    updating the in-memory collection of users when the content of the
+    updating the in-memory collection of user when the content of the
     underlying data file is changed.</p>
 
     <p>The Memory Based Realm implementation supports the following
@@ -687,9 +687,9 @@
         <p>URL, absolute path or relative path (to $CATALINA_BASE) for the XML
         file containing our user information.  See below for details on the
         XML element format required.  If no pathname is specified, the
-        default value is <code>conf/tomcat-users.xml</code>.</p>
+        default value is <code>conf/tomcat-user.xml</code>.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
-        <p>When processing users authenticated via the GSS-API, this attribute
+        <p>When processing user authenticated via the GSS-API, this attribute
         controls if any "@..." is removed from the end of the user
         name. If not specified, the default is <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">transportGuaranteeRedirectStatus</code></td><td>
@@ -709,7 +709,7 @@
     <p>The XML document referenced by the <code>pathname</code> attribute must
     conform to the following requirements:</p>
     <ul>
-    <li>The root (outer) element must be <code>&lt;tomcat-users&gt;</code>.
+    <li>The root (outer) element must be <code>&lt;tomcat-user&gt;</code>.
         </li>
     <li>Each authorized user must be represented by a single XML element
         <code>&lt;user&gt;</code>, nested inside the root element.</li>
@@ -737,7 +737,7 @@
   <div class="subsection"><h4 id="JAAS_Realm_-_org.apache.catalina.realm.JAASRealm">JAAS Realm - org.apache.catalina.realm.JAASRealm</h4><div class="text">
 
     <p><strong>JAASRealm</strong> is an implementation of the Tomcat
-    <code>Realm</code> interface that authenticates users through the Java
+    <code>Realm</code> interface that authenticates user through the Java
     Authentication &amp; Authorization Service (JAAS) framework which is now
     provided as part of the standard J2SE API.</p>
 
@@ -795,7 +795,7 @@
         <p>A comma-separated list of the names of the classes that you have made
         for your role <code>Principals</code>.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
-        <p>When processing users authenticated via the GSS-API, this attribute
+        <p>When processing user authenticated via the GSS-API, this attribute
         controls if any "@..." is removed from the end of the user
         name. If not specified, the default is <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">transportGuaranteeRedirectStatus</code></td><td>
@@ -829,7 +829,7 @@
   <div class="subsection"><h4 id="Combined_Realm_-_org.apache.catalina.realm.CombinedRealm">Combined Realm - org.apache.catalina.realm.CombinedRealm</h4><div class="text">
 
     <p><strong>CombinedRealm</strong> is an implementation of the Tomcat
-    <code>Realm</code> interface that authenticates users through one or more
+    <code>Realm</code> interface that authenticates user through one or more
     sub-Realms.</p>
 
     <p>Using CombinedRealm gives the developer the ability to combine multiple
@@ -887,9 +887,9 @@
 
     <p>This Realm does not require modification to the underlying Realms or the
     associated user storage mechanisms. It achieves this by recording all failed
-    logins, including those for users that do not exist. To prevent a DOS by
-    deliberating making requests with invalid users (and hence causing this
-    cache to grow) the size of the list of users that have failed authentication
+    logins, including those for user that do not exist. To prevent a DOS by
+    deliberating making requests with invalid user (and hence causing this
+    cache to grow) the size of the list of user that have failed authentication
     is limited.</p>
 
     <p>Sub-realms are defined by nesting <code>Realm</code> elements inside the
@@ -921,7 +921,7 @@
        big before it has been in the cache for at least this period of time (in
        seconds) a warning message will be logged. Defaults to 3600 (1 hour).</p>
       </td></tr><tr><td><code class="attributeName">cacheSize</code></td><td>
-       <p>Number of users that have failed authentication to keep in cache. Over
+       <p>Number of user that have failed authentication to keep in cache. Over
        time the cache will grow to this size and may not shrink. Defaults to
        1000.</p>
       </td></tr><tr><td><code class="attributeName">failureCount</code></td><td>
@@ -998,7 +998,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

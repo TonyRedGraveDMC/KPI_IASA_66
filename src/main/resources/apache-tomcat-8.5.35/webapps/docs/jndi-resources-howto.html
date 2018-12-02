@@ -424,7 +424,7 @@ public class MyBean2 {
     <p>UserDatabase resources are typically configured as global resources for
     use by a UserDatabase realm. Tomcat includes a UserDatabaseFactory that
     creates UserDatabase resources backed by an XML file - usually
-    <code>tomcat-users.xml</code></p>
+    <code>tomcat-user.xml</code></p>
 
     <p>The steps required to set up a global UserDatabase resource are described
     below.</p>
@@ -432,19 +432,19 @@ public class MyBean2 {
     <h5>1. Create/edit the XML file</h5>
 
     <p>The XML file is typically located at
-    <code>$CATALINA_BASE/conf/tomcat-users.xml</code> however, you are free to
+    <code>$CATALINA_BASE/conf/tomcat-user.xml</code> however, you are free to
     locate the file anywhere on the file system. It is recommended that the XML
     files are placed in <code>$CATALINA_BASE/conf</code>. A typical XML would
     look like:</p>
 
 <div class="codeBox"><pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;tomcat-users&gt;
+&lt;tomcat-user&gt;
   &lt;role rolename="tomcat"/&gt;
   &lt;role rolename="role1"/&gt;
   &lt;user username="tomcat" password="tomcat" roles="tomcat"/&gt;
   &lt;user username="both" password="tomcat" roles="tomcat,role1"/&gt;
   &lt;user username="role1" password="tomcat" roles="role1"/&gt;
-&lt;/tomcat-users&gt;</code></pre></div>
+&lt;/tomcat-user&gt;</code></pre></div>
 
     <h5>2.  Declare Your Resource</h5>
 
@@ -456,8 +456,8 @@ public class MyBean2 {
           auth="Container"
           type="org.apache.catalina.UserDatabase"
           description="User database that can be updated and saved"
-          factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
-          pathname="conf/tomcat-users.xml"
+          factory="org.apache.catalina.user.MemoryUserDatabaseFactory"
+          pathname="conf/tomcat-user.xml"
           readonly="false" /&gt;</code></pre></div>
 
     <p>The <code>pathname</code> attribute can be a URL, an absolute path or a
@@ -1049,7 +1049,7 @@ writer.println("foo = " + bean.getFoo() + ", bar = " +
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

@@ -12,6 +12,7 @@ public class PatientService extends DatabaseManager implements PatientDAO {
     private Connection connection = getConnection();
 
     @Override
+
     public void add(Patient patient) throws SQLException {
         String sql = "INSERT INTO PATIENT (Name, Address, Phone, InsuranceID, PCP) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
@@ -37,10 +38,10 @@ public class PatientService extends DatabaseManager implements PatientDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        Patient patient = new Patient(100000003, "name1", "address1", "phone1", 1001, 44444);
+        Patient patient = new Patient(100000003, "name1", "address1", "phone1", 1001, 33);
 
         PatientService patientService = new PatientService();
-        patientService.update(patient);
+        patientService.remove(patient);
 //        Patient bySsn = patient.getBySsn(100000001L);
 //        List<Patient> all = new PatientService().getAll();
     }

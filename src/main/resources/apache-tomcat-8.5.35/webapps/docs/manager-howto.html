@@ -111,8 +111,8 @@ Therefore, the Manager application is shipped with the requirement that anyone
 who attempts to use it must authenticate themselves, using a username and
 password that have one of <strong>manager-xxx</strong> roles associated with
 them (the role name depends on what functionality is required).
-Further, there is no username in the default users file
-(<code>$CATALINA_BASE/conf/tomcat-users.xml</code>) that is assigned to those
+Further, there is no username in the default user file
+(<code>$CATALINA_BASE/conf/tomcat-user.xml</code>) that is assigned to those
 roles.  Therefore, access to the Manager application is completely disabled
 by default.</p>
 
@@ -132,7 +132,7 @@ web application. The available roles are:</p>
 
 <p>The HTML interface is protected against CSRF (Cross-Site Request Forgery)
 attacks, but the text and JMX interfaces cannot be protected. It means that
-users who are allowed access to the text and JMX interfaces have to be cautious
+user who are allowed access to the text and JMX interfaces have to be cautious
 when accessing the Manager application with a web browser.
 To maintain the CSRF protection:</p>
 
@@ -146,7 +146,7 @@ To maintain the CSRF protection:</p>
       victim of a CSRF attack.</li>
   <li>It is recommended to never grant
       the <strong>manager-script</strong> or <strong>manager-jmx</strong>
-      roles to users that have the <strong>manager-gui</strong> role.</li>
+      roles to user that have the <strong>manager-gui</strong> role.</li>
 </ul>
 
 <p><strong>Note</strong> that JMX proxy interface is effectively low-level root-like
@@ -169,7 +169,7 @@ Exactly how the usernames/passwords are configured depends on which
     configured in the default <code>$CATALINA_BASE/conf/server.xml</code>.
     Both <em>MemoryUserDatabase</em> and <em>MemoryRealm</em> read an
     XML-format file by default stored at
-    <code>$CATALINA_BASE/conf/tomcat-users.xml</code>, which can be
+    <code>$CATALINA_BASE/conf/tomcat-user.xml</code>, which can be
     edited with any text editor.  This file contains an XML
     <code>&lt;user&gt;</code> for each individual user, which might
     look something like this:
@@ -177,25 +177,25 @@ Exactly how the usernames/passwords are configured depends on which
     which defines the username and password used by this individual to
     log on, and the role names he or she is associated with.  You can
     add the <strong>manager-script</strong> role to the comma-delimited
-    <code>roles</code> attribute for one or more existing users, and/or
-    create new users with that assigned role.</li>
+    <code>roles</code> attribute for one or more existing user, and/or
+    create new user with that assigned role.</li>
 <li><em>DataSourceRealm</em> or <em>JDBCRealm</em>
     &mdash; Your user and role information is stored in
     a database accessed via JDBC.  Add the <strong>manager-script</strong> role
-    to one or more existing users, and/or create one or more new users
+    to one or more existing user, and/or create one or more new user
     with this role assigned, following the standard procedures for your
     environment.</li>
 <li><em>JNDIRealm</em> &mdash; Your user and role information is stored in
     a directory server accessed via LDAP.  Add the
-    <strong>manager-script</strong> role to one or more existing users,
-    and/or create one or more new users with this role assigned, following
+    <strong>manager-script</strong> role to one or more existing user,
+    and/or create one or more new user with this role assigned, following
     the standard procedures for your environment.</li>
 </ul>
 
 <p>The first time you attempt to issue one of the Manager commands
 described in the next section, you will be challenged to log on using
 BASIC authentication.  The username and password you enter do not matter,
-as long as they identify a valid user in the users database who possesses
+as long as they identify a valid user in the user database who possesses
 the role <strong>manager-script</strong>.</p>
 
 <p>In addition to the password restrictions, access to the Manager web
@@ -463,8 +463,8 @@ directory and either the Host is configured with autoDeploy=true or the
 Context path must match the directory name or war file name without the
 ".war" extension.</p>
 
-<p>For security when untrusted users can manage web applications, the
-Host deployXML flag can be set to false.  This prevents untrusted users
+<p>For security when untrusted user can manage web applications, the
+Host deployXML flag can be set to false.  This prevents untrusted user
 from deploying web applications using a configuration XML file and
 also prevents them from deploying application directories or ".war"
 files located outside of their Host appBase.</p>
@@ -700,7 +700,7 @@ parameter.</p>
 Stopping and starting is useful, for example, if the database required by
 your application becomes temporarily unavailable.  It is usually better to
 stop the web application that relies on this database rather than letting
-users continuously encounter database exceptions.</p>
+user continuously encounter database exceptions.</p>
 
 <p>If this command succeeds, you will see a response like this:</p>
 <div class="codeBox"><pre><code>OK - Started application at context path /examples</code></pre></div>
@@ -1449,7 +1449,7 @@ see the output of each task call appended to the file.
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

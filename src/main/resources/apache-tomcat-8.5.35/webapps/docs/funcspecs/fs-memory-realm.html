@@ -40,7 +40,7 @@
 
     <p>The purpose of the <strong>MemoryRealm</strong> implementation is to
     provide a mechanism by which Tomcat can acquire information needed
-    to authenticate web application users, and define their security roles,
+    to authenticate web application user, and define their security roles,
     from a simple text-based configuration file in XML format.  This is
     intended to simplify the initial installation and operation of Tomcat,
     without the complexity of configuring a database or directory server
@@ -134,11 +134,11 @@
   <div class="subsection"><h4 id="Overview_of_Operation">Overview of Operation</h4><div class="text">
 
     <p>The main purpose of <code>MemoryRealm</code> is to allow Catalina to
-    authenticate users, and look up the corresponding security roles, from
+    authenticate user, and look up the corresponding security roles, from
     the information found in an XML-format configuration file.  The format
     of this file is described below.  When a <code>MemoryRealm</code>
     instance is started, it will read the contents of this XML file and create
-    an "in memory database" of all the valid users and their associated
+    an "in memory database" of all the valid user and their associated
     security roles.</p>
 
     <p>Each time that Catalina needs to authenticate a user, it will call
@@ -167,7 +167,7 @@
     <li>Configurable debugging detail level.</li>
     <li>Configurable file pathname (absolute or relative to
         <code>$CATALINA_BASE</code> of the XML file containing our
-        defined users.  [<code>conf/tomcat-users.xml</code>].</li>
+        defined user.  [<code>conf/tomcat-user.xml</code>].</li>
     </ul>
 
     <h3>Lifecycle Functionality</h3>
@@ -242,7 +242,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

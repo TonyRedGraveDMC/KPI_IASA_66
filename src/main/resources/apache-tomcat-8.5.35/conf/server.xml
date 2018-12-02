@@ -36,13 +36,13 @@
   -->
   <GlobalNamingResources>
     <!-- Editable user database that can also be used by
-         UserDatabaseRealm to authenticate users
+         UserDatabaseRealm to authenticate user
     -->
     <Resource name="UserDatabase" auth="Container"
               type="org.apache.catalina.UserDatabase"
               description="User database that can be updated and saved"
-              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
-              pathname="conf/tomcat-users.xml" />
+              factory="org.apache.catalina.user.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-user.xml" />
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share

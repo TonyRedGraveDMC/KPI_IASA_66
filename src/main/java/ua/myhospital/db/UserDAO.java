@@ -1,7 +1,5 @@
 package ua.myhospital.db;
 
-import ua.myhospital.model.User;
-
 import java.util.ArrayList;
 import java.util.List;
 

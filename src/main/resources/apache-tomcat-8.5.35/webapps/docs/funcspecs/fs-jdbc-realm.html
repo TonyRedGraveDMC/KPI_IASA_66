@@ -40,7 +40,7 @@
 
     <p>The purpose of the <strong>JDBCRealm</strong> implementation is to
     provide a mechanism by which Tomcat can acquire information needed
-    to authenticate web application users, and define their security roles,
+    to authenticate web application user, and define their security roles,
     from a relational database accessed via JDBC APIs.  For integration
     with Catalina, the resulting class(es) must implement the
     <code>org.apache.catalina.Realm</code> interface.</p>
@@ -138,7 +138,7 @@
   <div class="subsection"><h4 id="Overview_of_Operation">Overview of Operation</h4><div class="text">
 
     <p>The main purpose of <code>JDBCRealm</code> is to allow Catalina to
-    authenticate users, and look up the corresponding security roles, from
+    authenticate user, and look up the corresponding security roles, from
     the information found in a relational database accessed via JDBC APIs.
     For maximum flexibility, the details of how this is done (for example,
     the names of the required tables and columns) should be configurable.</p>
@@ -171,7 +171,7 @@
         to use for logging in. [Current]</li>
     <li>Configuration parameters describing the connection pool to be
         created to support simultaneous authentications. [Requested]</li>
-    <li>Name of the tables to be searched for users and roles. [Current]</li>
+    <li>Name of the tables to be searched for user and roles. [Current]</li>
     <li>Name of the columns to be used for usernames, passwords, and
         role names.  [Current]</li>
     </ul>
@@ -255,7 +255,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

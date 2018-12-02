@@ -118,7 +118,7 @@
   </filter-mapping>
 
   <!-- Define a Security Constraint on this Application -->
-  <!-- NOTE:  None of these roles are present in the default users file -->
+  <!-- NOTE:  None of these roles are present in the default user file -->
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>HTML Manager interface (for humans)</web-resource-name>

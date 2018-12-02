@@ -2,7 +2,6 @@ package ua.myhospital.servlets;
 
 
 import ua.myhospital.db.UserDAO;
-import ua.myhospital.model.User;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -10,8 +9,8 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 import java.util.concurrent.atomic.AtomicReference;
 
-import static ua.myhospital.model.User.ROLE.ADMIN;
-import static ua.myhospital.model.User.ROLE.USER;
+import static ua.myhospital.db.entity.User.ROLE.ADMIN;
+import static ua.myhospital.db.entity.User.ROLE.USER;
 
 /**
  * ContextListener put user db to servlet context.

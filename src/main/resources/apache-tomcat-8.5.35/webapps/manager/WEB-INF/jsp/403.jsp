@@ -53,7 +53,7 @@
    <p>
     If you have not changed
     any configuration files, please examine the file
-    <tt>conf/tomcat-users.xml</tt> in your installation. That
+    <tt>conf/tomcat-user.xml</tt> in your installation. That
     file must contain the credentials to let you use this webapp.
    </p>
    <p>

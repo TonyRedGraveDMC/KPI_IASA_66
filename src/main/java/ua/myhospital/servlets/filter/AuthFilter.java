@@ -1,7 +1,6 @@
 package ua.myhospital.servlets.filter;
 
 import ua.myhospital.db.UserDAO;
-import ua.myhospital.model.User;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

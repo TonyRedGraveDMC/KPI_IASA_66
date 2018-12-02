@@ -76,7 +76,7 @@ it claims to be.  In certain cases, the server may also request a Certificate
 from your web browser, asking for proof that <em>you</em> are who you claim
 to be.  This is known as "Client Authentication," although in practice this is
 used more for business-to-business (B2B) transactions than with individual
-users.  Most SSL-enabled web servers do not request Client Authentication.</p>
+user.  Most SSL-enabled web servers do not request Client Authentication.</p>
 
 </div><h3 id="SSL_and_Tomcat">SSL/TLS and Tomcat</h3><div class="text">
 
@@ -86,7 +86,7 @@ web server.  Details can be found in the
 <a href="security-howto.html">Security Considerations Document</a>.
 When running Tomcat primarily as a Servlet/JSP container behind
 another web server, such as Apache or Microsoft IIS, it is usually necessary
-to configure the primary web server to handle the SSL connections from users.
+to configure the primary web server to handle the SSL connections from user.
 Typically, this server will negotiate all SSL-related functionality, then
 pass on any requests destined for the Tomcat container only after decrypting
 those requests.  Likewise, Tomcat will return cleartext responses, that will
@@ -205,7 +205,7 @@ You will also need to specify the custom password in the
 
 <p>Next, you will be prompted for general information about this Certificate,
 such as company, contact name, and so on.  This information will be displayed
-to users who attempt to access a secure page in your application, so make
+to user who attempt to access a secure page in your application, so make
 sure that the information provided here matches what they will expect.</p>
 
 <p>Finally, you will be prompted for the <em>key password</em>, which is the
@@ -345,7 +345,7 @@ numbers lower than 1024 on many operating systems.</p>
   <p><em>If you change the port number here, you should also change the
   value specified for the <code>redirectPort</code> attribute on the
   non-SSL connector.  This allows Tomcat to automatically redirect
-  users who attempt to access a page with a security constraint specifying
+  user who attempt to access a page with a security constraint specifying
   that SSL is required, as required by the Servlet Specification.</em></p>
 
 <p>After completing these configuration changes, you must restart Tomcat as
@@ -676,7 +676,7 @@ response.setHeader("Connection", "close");</code></pre></div>
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

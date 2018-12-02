@@ -104,7 +104,7 @@
       To enable access to the HTML interface of the Host Manager application,
       either grant your Tomcat user the appropriate role, or create a new one with
       the correct role. For example, open
-      <code>${CATALINA_BASE}/conf/tomcat-users.xml</code> and enter the following:
+      <code>${CATALINA_BASE}/conf/tomcat-user.xml</code> and enter the following:
     </p>
     <div class="codeBox"><pre><code>&lt;user username="test" password="chang3m3N#w" roles="admin-gui"/&gt;</code></pre></div>
     <p>
@@ -113,7 +113,7 @@
       log in with the created credentials.
     </p>
     <p>
-      Note that in case you retrieve your users using the
+      Note that in case you retrieve your user using the
       <code>DataSourceRealm</code>, <code>JDBCRealm</code>, or
       <code>JNDIRealm</code> mechanism, add the appropriate role in the database
       or the directory server respectively.
@@ -201,7 +201,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

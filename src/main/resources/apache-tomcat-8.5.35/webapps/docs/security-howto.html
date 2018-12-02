@@ -95,7 +95,7 @@
       consider to secure the JMX interface include:</p>
 
       <ul>
-        <li>configuring a strong password for all JMX users;</li>
+        <li>configuring a strong password for all JMX user;</li>
         <li>binding the JMX listener only to an internal network;</li>
         <li>limiting network access to the JMX port to trusted clients; and</li>
         <li>providing an application specific health page for use by external
@@ -117,7 +117,7 @@
       include the version of Tomcat that is being used. The ROOT web application
       should normally be removed from a publicly accessible Tomcat instance, not
       for security reasons, but so that a more appropriate default page is shown
-      to users.</p>
+      to user.</p>
     </div></div>
 
     <div class="subsection"><h4 id="Documentation">Documentation</h4><div class="text">
@@ -142,7 +142,7 @@
       applications and is frequently targeted by attackers due to the widespread
       use of weak passwords and publicly accessible Tomcat instances with the
       Manager application enabled. The Manager application is not accessible by
-      default as no users are configured with the necessary access. If the
+      default as no user are configured with the necessary access. If the
       Manager application is enabled then guidance in the section
       <strong>Securing Management Applications</strong> section should be
       followed.</p>
@@ -152,7 +152,7 @@
       <p>The Host Manager application allows the creation and management of
       virtual hosts - including the enabling of the Manager application for a
       virtual host. The Host Manager application is not accessible by default
-      as no users are configured with the necessary access. If the Host Manager
+      as no user are configured with the necessary access. If the Host Manager
       application is enabled then guidance in the section <strong>Securing
       Management Applications</strong> section should be followed.</p>
     </div></div>
@@ -161,7 +161,7 @@
      <p>When deploying a web application that provides management functions for
      the Tomcat instance, the following guidelines should be followed:</p>
      <ul>
-       <li>Ensure that any users permitted to access the management application
+       <li>Ensure that any user permitted to access the management application
            have strong passwords.</li>
        <li>Do not remove the use of the <a href="config/realm.html#LockOut_Realm_-_org.apache.catalina.realm.LockOutRealm">LockOutRealm</a>
            which prevents brute force attacks against user passwords.</li>
@@ -193,7 +193,7 @@
     availability of other applications.</p>
 
     <p>Tomcat is tested with the security manager enabled; but the majority of
-    Tomcat users do not run with a security manager, so Tomcat is not as well
+    Tomcat user do not run with a security manager, so Tomcat is not as well
     user-tested in this configuration. There have been, and continue to be,
     bugs reported that are triggered by running under a security manager.</p>
 
@@ -395,7 +395,7 @@
 
     <div class="subsection"><h4 id="Realms">Realms</h4><div class="text">
       <p>The MemoryRealm is not intended for production use as any changes to
-      tomcat-users.xml require a restart of Tomcat to take effect.</p>
+      tomcat-user.xml require a restart of Tomcat to take effect.</p>
 
       <p>The JDBCRealm is not recommended for production use as it is single
       threaded for all authentication and authorization options. Use the
@@ -513,7 +513,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-users
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.
