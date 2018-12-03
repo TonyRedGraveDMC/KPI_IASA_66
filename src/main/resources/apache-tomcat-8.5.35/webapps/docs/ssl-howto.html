@@ -76,7 +76,7 @@ it claims to be.  In certain cases, the server may also request a Certificate
 from your web browser, asking for proof that <em>you</em> are who you claim
 to be.  This is known as "Client Authentication," although in practice this is
 used more for business-to-business (B2B) transactions than with individual
-user.  Most SSL-enabled web servers do not request Client Authentication.</p>
+customer.  Most SSL-enabled web servers do not request Client Authentication.</p>
 
 </div><h3 id="SSL_and_Tomcat">SSL/TLS and Tomcat</h3><div class="text">
 
@@ -86,11 +86,11 @@ web server.  Details can be found in the
 <a href="security-howto.html">Security Considerations Document</a>.
 When running Tomcat primarily as a Servlet/JSP container behind
 another web server, such as Apache or Microsoft IIS, it is usually necessary
-to configure the primary web server to handle the SSL connections from user.
+to configure the primary web server to handle the SSL connections from customer.
 Typically, this server will negotiate all SSL-related functionality, then
 pass on any requests destined for the Tomcat container only after decrypting
 those requests.  Likewise, Tomcat will return cleartext responses, that will
-be encrypted before being returned to the user's browser.  In this environment,
+be encrypted before being returned to the customer's browser.  In this environment,
 Tomcat knows that communications between the primary web server and the
 client are taking place over a secure connection (because your application
 needs to be able to ask about this), but it does not participate in the
@@ -118,7 +118,7 @@ including some that offer certificates at no cost.</p>
 
 <p>Java provides a relatively simple command-line tool, called
 <code>keytool</code>, which can easily create a "self-signed" Certificate.
-Self-signed Certificates are simply user generated Certificates which have not
+Self-signed Certificates are simply customer generated Certificates which have not
 been signed by a well-known CA and are, therefore, not really guaranteed to be
 authentic at all. While self-signed certificates can be useful for some testing
 scenarios, they are not suitable for any form of production use.</p>
@@ -183,7 +183,7 @@ self-signed Certificate, execute the following from a terminal command line:</p>
 <p>(The RSA algorithm should be preferred as a secure algorithm, and this
 also ensures general compatibility with other servers and components.)</p>
 
-<p>This command will create a new file, in the home directory of the user
+<p>This command will create a new file, in the home directory of the customer
 under which you run it, named "<code>.keystore</code>".  To specify a
 different location or filename, add the <code>-keystore</code> parameter,
 followed by the complete pathname to your keystore file,
@@ -205,7 +205,7 @@ You will also need to specify the custom password in the
 
 <p>Next, you will be prompted for general information about this Certificate,
 such as company, contact name, and so on.  This information will be displayed
-to user who attempt to access a secure page in your application, so make
+to customer who attempt to access a secure page in your application, so make
 sure that the information provided here matches what they will expect.</p>
 
 <p>Finally, you will be prompted for the <em>key password</em>, which is the
@@ -308,7 +308,7 @@ this:</p>
            protocol="org.apache.coyote.http11.Http11NioProtocol"
            port="8443" maxThreads="200"
            scheme="https" secure="true" SSLEnabled="true"
-           keystoreFile="${user.home}/.keystore" keystorePass="changeit"
+           keystoreFile="${customer.home}/.keystore" keystorePass="changeit"
            clientAuth="false" sslProtocol="TLS"/&gt;</code></pre></div>
 <p>
   Note: If tomcat-native is installed, the configuration will use JSSE with
@@ -345,7 +345,7 @@ numbers lower than 1024 on many operating systems.</p>
   <p><em>If you change the port number here, you should also change the
   value specified for the <code>redirectPort</code> attribute on the
   non-SSL connector.  This allows Tomcat to automatically redirect
-  user who attempt to access a page with a security constraint specifying
+  customer who attempt to access a page with a security constraint specifying
   that SSL is required, as required by the Servlet Specification.</em></p>
 
 <p>After completing these configuration changes, you must restart Tomcat as
@@ -529,7 +529,7 @@ SSL communications, and what to do about them.</p>
 
     <p>A likely explanation is that Tomcat cannot find the keystore file
     where it is looking.  By default, Tomcat expects the keystore file to
-    be named <code>.keystore</code> in the user home directory under which
+    be named <code>.keystore</code> in the customer home directory under which
     Tomcat is running (which may or may not be the same as yours :-).  If
     the keystore file is anywhere else, you will need to add a
     <code>keystoreFile</code> attribute to the <code>&lt;Connector&gt;</code>
@@ -676,7 +676,7 @@ response.setHeader("Connection", "close");</code></pre></div>
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

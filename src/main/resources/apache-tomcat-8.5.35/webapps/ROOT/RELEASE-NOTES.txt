@@ -59,7 +59,7 @@ Note: As Tomcat 8 matures, the above list will be added to. The list is not
 
 Note: A large number of deprecated methods, fields and configuration options
       were removed in the transition from 8.0.x to 8.5.x. If any of those
-      removals triggers significant problems for the user community that the
+      removals triggers significant problems for the customer community that the
       deletion may be reverted in a later point release.
 
 The remaining classes are considered part of the Tomcat internals and may change

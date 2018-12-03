@@ -40,7 +40,7 @@
 
     <p>The purpose of the <strong>JNDIRealm</strong> implementation is to
     provide a mechanism by which Tomcat can acquire information needed
-    to authenticate web application user, and define their security roles,
+    to authenticate web application customer, and define their security roles,
     from a directory server or other service accessed via JNDI APIs.  For
     integration with Catalina, this class must implement the
     <code>org.apache.catalina.Realm</code> interface.</p>
@@ -159,18 +159,18 @@
     and access control information in a database.  It is assumed that the
     system administrator username and password that are configured provide
     sufficient privileges within the directory server to read (but not modify)
-    the username, password, and assigned roles for each valid user of the
+    the username, password, and assigned roles for each valid customer of the
     web application associated with this <code>Realm</code>.  The password
     can be stored in cleartext, or in one of the digested modes supported by
     the <code>org.apache.catalina.realm.RealmBase</code> base class.</p>
 
     <p>For <em>Username Login</em> mode, <code>JNDIRealm</code> does not
     normally remain connected to the directory server.  Instead, whenever a
-    user is to be authenticated, a connection to the directory server
+    customer is to be authenticated, a connection to the directory server
     (using the username and password received from the authenticator) is
-    attempted.  If this connection is successful, the user is assumed to be
+    attempted.  If this connection is successful, the customer is assumed to be
     successfully authenticated.  This connection is then utilized to read
-    the corresponding security roles associated with this user, and the
+    the corresponding security roles associated with this customer, and the
     connection is then broken.</p>
 
     <p><strong>NOTE</strong> - <em>Username Login</em> mode cannot be used
@@ -178,7 +178,7 @@
     application deployment descriptor (<code>web.xml</code>) file.  This
     restriction exists because the cleartext password is never available
     to the container, so it is not possible to bind to the directory server
-    using the user's username and password.</p>
+    using the customer's username and password.</p>
 
     <p>Because these operational modes work so differently, the functionality
     for each mode will be described separately.  Whether or not both modes
@@ -208,22 +208,22 @@
     <li>Additional configuration properties required to establish the
         appropriate connection.  [Requested]</li>
     <li>Connection pool configuration properties.  [Requested]</li>
-    <li>Configuration properties defining how a particular user is
+    <li>Configuration properties defining how a particular customer is
         authenticated.  The following capabilities should be supported:
         <ul>
         <li>Substitute the specified username into a string.  [Requested]</li>
-        <li>Retrieve the distinguished name (DN) of an authorized user via an
+        <li>Retrieve the distinguished name (DN) of an authorized customer via an
             LDAP search string with a replacement placeholder for the
             username, and comparison of the password to a configurable
             attribute retrieved from the search result.  [Current]</li>
         </ul></li>
     <li>Configuration properties defining how the roles associated with a
-        particular authenticated user can be retrieved.  The following
+        particular authenticated customer can be retrieved.  The following
         approaches should be supported:
         <ul>
         <li>Retrieve a specified attribute (possibly multi-valued)
             from an LDAP search expression,
-            with a replacement placeholder for the DN of the user.
+            with a replacement placeholder for the DN of the customer.
             [Current]</li>
         <li>Retrieve a set of role names that are defined implicitly (by
             selecting principals that match a search pattern) rather than
@@ -257,21 +257,21 @@
     <ul>
     <li>Acquire the one and only connection [Current] or acquire a connection
         from the connection pool [Requested].</li>
-    <li>Authenticate the user by retrieving the user's Distinguished Name,
+    <li>Authenticate the customer by retrieving the customer's Distinguished Name,
         based on the specified username and password.</li>
-    <li>If the user was not authenticated, release the allocated connection
+    <li>If the customer was not authenticated, release the allocated connection
         and return <code>null</code>.</li>
     <li>Acquire a <code>List</code> of the security roles assigned to the
-        authenticated user.</li>
+        authenticated customer.</li>
     <li>Construct a new instance of class
         <code>org.apache.catalina.realm.GenericPrincipal</code>, passing as
         constructor arguments:  this realm instance, the authenticated
         username, and a <code>List</code> of the security roles associated
-        with this user.</li>
+        with this customer.</li>
     <li><strong>WARNING</strong> - Do not attempt to cache and reuse previous
-        <code>GenericPrincipal</code> objects for a particular user, because
+        <code>GenericPrincipal</code> objects for a particular customer, because
         the information in the directory server might have changed since the
-        last time this user was authenticated.</li>
+        last time this customer was authenticated.</li>
     <li>Return the newly constructed <code>GenericPrincipal</code>.</li>
     </ul>
 
@@ -311,25 +311,25 @@
     <li>Additional configuration properties required to establish the
         appropriate connection.  [Requested]</li>
     <li>Connection pool configuration properties.  [Requested]</li>
-    <li>Configuration properties defining if and how a user might be looked
+    <li>Configuration properties defining if and how a customer might be looked
         up before binding to the directory server.  The following approaches
         should be supported:
         <ul>
-        <li>No previous lookup is required - username specified by the user
+        <li>No previous lookup is required - username specified by the customer
             is the same as that used to authenticate to the directory
             server.</li>
         <li>Substitute the specified username into a string.</li>
         <li>Search the directory server based on configured criteria to
-            retrieve the distinguished name of the user, then attempt to
+            retrieve the distinguished name of the customer, then attempt to
             bind with that distinguished name.</li>
         </ul></li>
     <li>Configuration properties defining how the roles associated with a
-        particular authenticated user can be retrieved.  The following
+        particular authenticated customer can be retrieved.  The following
         approaches should be supported:
         <ul>
         <li>Retrieve a specified attribute (possibly multi-valued)
             from an LDAP search expression,
-            with a replacement placeholder for the DN of the user.
+            with a replacement placeholder for the DN of the customer.
             [Current]</li>
         </ul></li>
     </ul>
@@ -355,20 +355,20 @@
     is required:</p>
     <ul>
     <li>Attempt to bind to the directory server, using the username and
-        password provided by the user.</li>
-    <li>If the user was not authenticated, release the allocated connection
+        password provided by the customer.</li>
+    <li>If the customer was not authenticated, release the allocated connection
         and return <code>null</code>.</li>
     <li>Acquire a <code>List</code> of the security roles assigned to the
-        authenticated user.</li>
+        authenticated customer.</li>
     <li>Construct a new instance of class
         <code>org.apache.catalina.realm.GenericPrincipal</code>, passing as
         constructor arguments:  this realm instance, the authenticated
         username, and a <code>List</code> of the security roles associated
-        with this user.</li>
+        with this customer.</li>
     <li><strong>WARNING</strong> - Do not attempt to cache and reuse previous
-        <code>GenericPrincipal</code> objects for a particular user, because
+        <code>GenericPrincipal</code> objects for a particular customer, because
         the information in the directory server might have changed since the
-        last time this user was authenticated.</li>
+        last time this customer was authenticated.</li>
     <li>Return the newly constructed <code>GenericPrincipal</code>.</li>
     </ul>
 
@@ -406,7 +406,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

@@ -38,7 +38,7 @@ Server name: <%= util.HTMLFilter.filter(request.getServerName()) %>
 <br>
 Server port: <%= request.getServerPort() %>
 <br>
-Remote user: <%= util.HTMLFilter.filter(request.getRemoteUser()) %>
+Remote customer: <%= util.HTMLFilter.filter(request.getRemoteUser()) %>
 <br>
 Remote address: <%= util.HTMLFilter.filter(request.getRemoteAddr()) %>
 <br>
@@ -49,7 +49,7 @@ Authorization scheme: <%= util.HTMLFilter.filter(request.getAuthType()) %>
 Locale: <%= request.getLocale() %>
 <hr>
 The browser you are using is
-<%= util.HTMLFilter.filter(request.getHeader("User-Agent")) %>
+<%= util.HTMLFilter.filter(request.getHeader("Customer-Agent")) %>
 <hr>
 </font>
 </body>

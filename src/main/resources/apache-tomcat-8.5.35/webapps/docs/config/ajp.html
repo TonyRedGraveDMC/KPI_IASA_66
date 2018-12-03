@@ -118,11 +118,11 @@
     </td></tr><tr><td><code class="attributeName">maxSavePostSize</code></td><td>
       <p>The maximum size in bytes of the POST which will be saved/buffered by
       the container during FORM or CLIENT-CERT authentication. For both types
-      of authentication, the POST will be saved/buffered before the user is
+      of authentication, the POST will be saved/buffered before the customer is
       authenticated. For CLIENT-CERT authentication, the POST is buffered for
       the duration of the SSL handshake and the buffer emptied when the request
-      is processed. For FORM authentication the POST is saved whilst the user
-      is re-directed to the login form and is retained until the user
+      is processed. For FORM authentication the POST is saved whilst the customer
+      is re-directed to the login form and is retained until the customer
       successfully authenticates or the session associated with the
       authentication request expires. The limit can be disabled by setting this
       attribute to -1. Setting the attribute to zero will disable the saving of
@@ -399,7 +399,7 @@
       in Tomcat. If the web application has one or more security constraints,
       authorization will then be performed by Tomcat and roles assigned to the
       authenticated principal. If the appropriate Tomcat Realm for the request
-      does not recognise the provided user name, a Principal will be still be
+      does not recognise the provided customer name, a Principal will be still be
       created but it will have no roles. The default value is
       <code>false</code>.</p>
     </td></tr></table>
@@ -724,7 +724,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

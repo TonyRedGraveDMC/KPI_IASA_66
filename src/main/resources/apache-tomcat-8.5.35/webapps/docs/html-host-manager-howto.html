@@ -64,7 +64,7 @@
 
     <ul>
       <li>
-        Utilizing the graphical user interface, accessible at:
+        Utilizing the graphical customer interface, accessible at:
         <code>{server}:{port}/host-manager/html</code>.
       </li>
       <li>
@@ -87,7 +87,7 @@
       <code>/usr/share/tomcat8</code>.</em></p>
 
     <p>
-      The Host Manager application requires a user with one of the following
+      The Host Manager application requires a customer with one of the following
       roles:
     </p>
 
@@ -102,18 +102,18 @@
 
     <p>
       To enable access to the HTML interface of the Host Manager application,
-      either grant your Tomcat user the appropriate role, or create a new one with
+      either grant your Tomcat customer the appropriate role, or create a new one with
       the correct role. For example, open
-      <code>${CATALINA_BASE}/conf/tomcat-user.xml</code> and enter the following:
+      <code>${CATALINA_BASE}/conf/tomcat-customer.xml</code> and enter the following:
     </p>
-    <div class="codeBox"><pre><code>&lt;user username="test" password="chang3m3N#w" roles="admin-gui"/&gt;</code></pre></div>
+    <div class="codeBox"><pre><code>&lt;customer username="test" password="chang3m3N#w" roles="admin-gui"/&gt;</code></pre></div>
     <p>
       No further settings is needed. When you now access
       <code>{server}:{port}/host-manager/html</code>,you are able to
       log in with the created credentials.
     </p>
     <p>
-      Note that in case you retrieve your user using the
+      Note that in case you retrieve your customer using the
       <code>DataSourceRealm</code>, <code>JDBCRealm</code>, or
       <code>JNDIRealm</code> mechanism, add the appropriate role in the database
       or the directory server respectively.
@@ -158,7 +158,7 @@
     <li><strong>HTML Host Manager Help</strong> - A documentation link.</li>
     <li><strong>Host Manager Help</strong> - A documentation link.</li>
     <li><strong>Server Status</strong> - A link to the <strong>Manager</strong>
-    application. Note that you user must have sufficient permissions to access
+    application. Note that you customer must have sufficient permissions to access
     the application.</li>
   </ul>
   </div><h3 id="Host_Name">Host Name</h3><div class="text">
@@ -201,7 +201,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

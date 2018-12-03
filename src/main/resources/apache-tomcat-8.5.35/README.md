@@ -18,7 +18,7 @@ project. To learn more about getting involved,
 
 Apache Tomcat software powers numerous large-scale, mission-critical web
 applications across a diverse range of industries and organizations. Some of
-these user and their stories are listed on the
+these customer and their stories are listed on the
 [PoweredBy wiki page](https://wiki.apache.org/tomcat/PoweredBy).
 
 Apache Tomcat, Tomcat, Apache, the Apache feather, and the Apache Tomcat
@@ -57,7 +57,7 @@ Please see [LICENSE](LICENSE) for more info.
 ### Support and Mailing List Information
 
 * Free community support is available through the
-[tomcat-user](https://tomcat.apache.org/lists.html#tomcat-user) email list and
+[tomcat-customer](https://tomcat.apache.org/lists.html#tomcat-customer) email list and
 a dedicated [IRC channel](https://tomcat.apache.org/irc.html) (#tomcat on
 Freenode).
 

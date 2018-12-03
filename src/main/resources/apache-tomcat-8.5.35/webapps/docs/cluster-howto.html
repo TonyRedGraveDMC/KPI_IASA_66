@@ -501,10 +501,10 @@ should be completed:</p>
     <p>
         The request coming in to TomcatA is treated exactly the same way as without session replication.
         The action happens when the request is completed, the <code>ReplicationValve</code> will intercept
-        the request before the response is returned to the user.
+        the request before the response is returned to the customer.
         At this point it finds that the session has been modified, and it uses TCP to replicate the
         session to TomcatB. Once the serialized data has been handed off to the operating systems TCP logic,
-        the request returns to the user, back through the valve pipeline.
+        the request returns to the customer, back through the valve pipeline.
         For each request the entire session is replicated, this allows code that modifies attributes
         in the session without calling setAttribute or removeAttribute to be replicated.
         a useDirtyFlag configuration parameter can be used to optimize the number of times
@@ -547,7 +547,7 @@ should be completed:</p>
 
 </li>
 <li><code>TomcatA</code> The session <code>S2</code> expires due to inactivity.
-    <p>The invalidate call is intercepted the same was as when a session is invalidated by the user,
+    <p>The invalidate call is intercepted the same was as when a session is invalidated by the customer,
        and the session is queued with invalidated sessions.
        At this point, the invalidated session will not be replicated across until
        another request comes through the system and checks the invalid queue.
@@ -657,7 +657,7 @@ should be completed:</p>
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

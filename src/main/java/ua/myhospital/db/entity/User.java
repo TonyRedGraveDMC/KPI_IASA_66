@@ -1,43 +1,15 @@
 package ua.myhospital.db.entity;
 
 
-import java.sql.Timestamp;
-
 public class User {
-
-
 
   private long idUser;
   private String email;
-  private String passowrd;
-
-
+  private String password;
   private String role;
   private java.sql.Timestamp lastSeen;
   private java.sql.Timestamp createDate;
 
-
-  public User() {
-  }
-
-  public User(long idUser, String email, String passowrd, String role, Timestamp lastSeen, Timestamp createDate) {
-    this.idUser = idUser;
-    this.email = email;
-    this.passowrd = passowrd;
-    this.role = role;
-    this.lastSeen = lastSeen;
-    this.createDate = createDate;
-  }
-
-
-
-  public User(String email, String passowrd, String role, Timestamp lastSeen, Timestamp createDate) {
-    this.email = email;
-    this.passowrd = passowrd;
-    this.role = role;
-    this.lastSeen = lastSeen;
-    this.createDate = createDate;
-  }
 
   public long getIdUser() {
     return idUser;
@@ -57,12 +29,12 @@ public class User {
   }
 
 
-  public String getPassowrd() {
-    return passowrd;
+  public String getPassword() {
+    return password;
   }
 
-  public void setPassowrd(String passowrd) {
-    this.passowrd = passowrd;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
 
@@ -92,17 +64,4 @@ public class User {
     this.createDate = createDate;
   }
 
-  @Override
-  public String toString() {
-    return "User{" +
-            "idUser=" + idUser +
-            ", email='" + email + '\'' +
-            ", passowrd='" + passowrd + '\'' +
-            ", role='" + role + '\'' +
-            ", lastSeen=" + lastSeen +
-            ", createDate=" + createDate +
-            '}';
-  }
-
 }
-

@@ -80,8 +80,8 @@
             <td>${fn:escapeXml(header["accept"])}&nbsp;</td>
           </tr>
           <tr>
-            <td>\${header["user-agent"]}</td>
-            <td>${fn:escapeXml(header["user-agent"])}&nbsp;</td>
+            <td>\${header["customer-agent"]}</td>
+            <td>${fn:escapeXml(header["customer-agent"])}&nbsp;</td>
           </tr>
         </table>
       </code>

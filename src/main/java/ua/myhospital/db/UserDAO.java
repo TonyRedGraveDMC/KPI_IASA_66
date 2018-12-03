@@ -1,5 +1,7 @@
 package ua.myhospital.db;
 
+import ua.myhospital.model.Customer;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,53 +13,53 @@ import java.util.List;
  */
 public class UserDAO {
 
-    private final List<User> store = new ArrayList<>();
+    private final List<Customer> store = new ArrayList<>();
 
-    public User getById(int id) {
+    public Customer getById(int id) {
 
-        User result = new User();
+        Customer result = new Customer();
         result.setId(-1);
 
-        for (User user : store) {
-            if (user.getId() == id) {
-                result = user;
+        for (Customer customer : store) {
+            if (customer.getId() == id) {
+                result = customer;
             }
         }
 
         return result;
     }
 
-    public User getUserByLoginPassword(final String login, final String password) {
+    public Customer getUserByLoginPassword(final String login, final String password) {
 
-        User result = new User();
+        Customer result = new Customer();
         result.setId(-1);
 
-        for (User user : store) {
-            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
-                result = user;
+        for (Customer customer : store) {
+            if (customer.getEmail().equals(login) && customer.getPassword().equals(password)) {
+                result = customer;
             }
         }
 
         return result;
     }
 
-    public boolean add(final User user) {
+    public boolean add(final Customer customer) {
 
-        for (User u : store) {
-            if (u.getLogin().equals(user.getLogin()) && u.getPassword().equals(user.getPassword())) {
+        for (Customer u : store) {
+            if (u.getEmail().equals(customer.getEmail()) && u.getPassword().equals(customer.getPassword())) {
                 return false;
             }
         }
 
-        return store.add(user);
+        return store.add(customer);
     }
 
-    public User.ROLE getRoleByLoginPassword(final String login, final String password) {
-        User.ROLE result = User.ROLE.UNKNOWN;
+    public Customer.Role getRoleByLoginPassword(final String login, final String password) {
+        Customer.Role result = Customer.Role.UNKNOWN;
 
-        for (User user : store) {
-            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
-                result = user.getRole();
+        for (Customer customer : store) {
+            if (customer.getEmail().equals(login) && customer.getPassword().equals(password)) {
+                result = customer.getRole();
             }
         }
 
@@ -68,8 +70,8 @@ public class UserDAO {
 
         boolean result = false;
 
-        for (User user : store) {
-            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+        for (Customer customer : store) {
+            if (customer.getEmail().equals(login) && customer.getPassword().equals(password)) {
                 result = true;
                 break;
             }

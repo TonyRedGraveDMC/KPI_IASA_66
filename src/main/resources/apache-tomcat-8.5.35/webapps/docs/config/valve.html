@@ -60,7 +60,7 @@
     <p>The <strong>Access Log Valve</strong> creates log files in the
     same format as those created by standard web servers.  These logs
     can later be analyzed by standard log analysis tools to track page
-    hit counts, user session activity, and so on.  This <code>Valve</code>
+    hit counts, customer session activity, and so on.  This <code>Valve</code>
     uses self-contained logic to write its log files, which can be
     automatically rolled over at midnight each day.  (The essential
     requirement for access logging is to handle a large continuous
@@ -254,7 +254,7 @@
     <li><b>%s</b> - HTTP status code of the response</li>
     <li><b>%S</b> - User session ID</li>
     <li><b>%t</b> - Date and time, in Common Log Format</li>
-    <li><b>%u</b> - Remote user that was authenticated (if any), else '-'</li>
+    <li><b>%u</b> - Remote customer that was authenticated (if any), else '-'</li>
     <li><b>%U</b> - Requested URL path</li>
     <li><b>%v</b> - Local server name</li>
     <li><b>%D</b> - Time taken to process the request, in millis</li>
@@ -996,7 +996,7 @@
 
   <div class="subsection"><h4 id="Single_Sign_On_Valve/Introduction">Introduction</h4><div class="text">
 
-    <p>The <em>Single Sign On Valve</em> is utilized when you wish to give user
+    <p>The <em>Single Sign On Valve</em> is utilized when you wish to give customer
     the ability to sign on to any one of the web applications associated with
     your virtual host, and then have their identity recognized by all other
     web applications on the same virtual host.</p>
@@ -1063,10 +1063,10 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">alwaysUseSession</code></td><td>
-        <p>Should a session always be used once a user is authenticated? This
+        <p>Should a session always be used once a customer is authenticated? This
         may offer some performance benefits since the session can then be used
         to cache the authenticated Principal, hence removing the need to
-        authenticate the user via the Realm on every request. This may be of
+        authenticate the customer via the Realm on every request. This may be of
         help for combinations such as BASIC authentication used with the
         JNDIRealm or DataSourceRealms. However there will also be the
         performance cost of creating and GC'ing the session. If not set, the
@@ -1077,7 +1077,7 @@
         will be used.</p>
       </td></tr><tr><td><code class="attributeName">changeSessionIdOnAuthentication</code></td><td>
         <p>Controls if the session ID is changed if a session exists at the
-        point where user are authenticated. This is to prevent session fixation
+        point where customer are authenticated. This is to prevent session fixation
         attacks. If not set, the default value of <code>true</code> will be
         used.</p>
       </td></tr><tr><td><code class="attributeName">charset</code></td><td>
@@ -1086,9 +1086,9 @@
         permitted options are <code>null</code>, the empty string and
         <code>UTF-8</code>. If <code>UTF-8</code> is specified then the
         <code>charset</code> authentication parameter will be sent with that
-        value and the provided user name and optional password will be converted
+        value and the provided customer name and optional password will be converted
         from bytes to characters using UTF-8. Otherwise, no <code>charset</code>
-        authentication parameter will be sent and the provided user name and
+        authentication parameter will be sent and the provided customer name and
         optional password will be converted from bytes to characters using
         ISO-8859-1. The default value is <code>null</code></p>
       </td></tr><tr><td><strong><code class="attributeName">className</code></strong></td><td>
@@ -1167,10 +1167,10 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">alwaysUseSession</code></td><td>
-        <p>Should a session always be used once a user is authenticated? This
+        <p>Should a session always be used once a customer is authenticated? This
         may offer some performance benefits since the session can then be used
         to cache the authenticated Principal, hence removing the need to
-        authenticate the user via the Realm on every request. This may be of
+        authenticate the customer via the Realm on every request. This may be of
         help for combinations such as BASIC authentication used with the
         JNDIRealm or DataSourceRealms. However there will also be the
         performance cost of creating and GC'ing the session. If not set, the
@@ -1181,7 +1181,7 @@
         will be used.</p>
       </td></tr><tr><td><code class="attributeName">changeSessionIdOnAuthentication</code></td><td>
         <p>Controls if the session ID is changed if a session exists at the
-        point where user are authenticated. This is to prevent session fixation
+        point where customer are authenticated. This is to prevent session fixation
         attacks. If not set, the default value of <code>true</code> will be
         used.</p>
       </td></tr><tr><td><strong><code class="attributeName">className</code></strong></td><td>
@@ -1292,7 +1292,7 @@
           Description
         </th></tr><tr><td><code class="attributeName">changeSessionIdOnAuthentication</code></td><td>
         <p>Controls if the session ID is changed if a session exists at the
-        point where user are authenticated. This is to prevent session fixation
+        point where customer are authenticated. This is to prevent session fixation
         attacks. If not set, the default value of <code>true</code> will be
         used.</p>
       </td></tr><tr><td><code class="attributeName">characterEncoding</code></td><td>
@@ -1315,11 +1315,11 @@
         process is misused, for example by directly requesting the login page
         or delaying logging in for so long that the session expires. If this
         attribute is set, rather than returning an error response code, Tomcat
-        will redirect the user to the specified landing page if the login form
+        will redirect the customer to the specified landing page if the login form
         is submitted with valid credentials. For the login to be processed, the
         landing page must be a protected resource (i.e. one that requires
         authentication). If the landing page does not require authentication
-        then the user will not be logged in and will be prompted for their
+        then the customer will not be logged in and will be prompted for their
         credentials again when they access a protected page.</p>
       </td></tr><tr><td><code class="attributeName">securePagesWithPragma</code></td><td>
         <p>Controls the caching of pages that are protected by security
@@ -1394,7 +1394,7 @@
         <strong>org.apache.catalina.authenticator.SSLAuthenticator</strong>.</p>
       </td></tr><tr><td><code class="attributeName">changeSessionIdOnAuthentication</code></td><td>
         <p>Controls if the session ID is changed if a session exists at the
-        point where user are authenticated. This is to prevent session fixation
+        point where customer are authenticated. This is to prevent session fixation
         attacks. If not set, the default value of <code>true</code> will be
         used.</p>
       </td></tr><tr><td><code class="attributeName">disableProxyCaching</code></td><td>
@@ -1479,11 +1479,11 @@
         the workaround can be disabled by setting this attribute to
         <code>false</code>.</p>
       </td></tr><tr><td><code class="attributeName">alwaysUseSession</code></td><td>
-        <p>Should a session always be used once a user is authenticated? This
+        <p>Should a session always be used once a customer is authenticated? This
         may offer some performance benefits since the session can then be used
         to cache the authenticated Principal, hence removing the need to
-        authenticate the user on every request. This will also help with clients
-        that assume that the server will cache the authenticated user. However
+        authenticate the customer on every request. This will also help with clients
+        that assume that the server will cache the authenticated customer. However
         there will also be the performance cost of creating and GC'ing the
         session. For an alternative solution see
         <code>noKeepAliveUserAgents</code>. If not set, the default value of
@@ -1498,7 +1498,7 @@
         </p>
       </td></tr><tr><td><code class="attributeName">changeSessionIdOnAuthentication</code></td><td>
         <p>Controls if the session ID is changed if a session exists at the
-        point where user are authenticated. This is to prevent session fixation
+        point where customer are authenticated. This is to prevent session fixation
         attacks. If not set, the default value of <code>true</code> will be
         used.</p>
       </td></tr><tr><td><code class="attributeName">disableProxyCaching</code></td><td>
@@ -1515,20 +1515,20 @@
         <code>com.sun.security.jgss.krb5.accept</code> is used.</p>
       </td></tr><tr><td><code class="attributeName">noKeepAliveUserAgents</code></td><td>
         <p>Some clients (not most browsers) expect the server to cache the
-        authenticated user information for a connection and do not resend the
+        authenticated customer information for a connection and do not resend the
         credentials with every request. Tomcat will not do this unless an HTTP
         session is available. A session will be available if either the
         application creates one or if <code>alwaysUseSession</code> is enabled
         for this Authenticator.</p>
         <p>As an alternative to creating a session, this attribute may be used
-        to define the user agents for which HTTP keep-alive is disabled. This
+        to define the customer agents for which HTTP keep-alive is disabled. This
         means that a connection will only used for a single request and hence
-        there is no ability to cache authenticated user information per
+        there is no ability to cache authenticated customer information per
         connection. There will be a performance cost in disabling HTTP
         keep-alive.</p>
         <p>The attribute should be a regular expression that matches the entire
-        user-agent string, e.g. <code>.*Chrome.*</code>. If not specified, no
-        regular expression will be defined and no user agents will have HTTP
+        customer-agent string, e.g. <code>.*Chrome.*</code>. If not specified, no
+        regular expression will be defined and no customer agents will have HTTP
         keep-alive disabled.</p>
       </td></tr><tr><td><code class="attributeName">securePagesWithPragma</code></td><td>
         <p>Controls the caching of pages that are protected by security
@@ -1559,8 +1559,8 @@
         platform default provider and the default algorithm will be used. If not
         specified, the platform default provider will be used.</p>
       </td></tr><tr><td><code class="attributeName">storeDelegatedCredential</code></td><td>
-        <p>Controls if the user' delegated credential will be stored in
-        the user Principal. If available, the delegated credential will be
+        <p>Controls if the customer' delegated credential will be stored in
+        the customer Principal. If available, the delegated credential will be
         available to applications (e.g. for onward authentication to external
         services) via the <code>org.apache.catalina.realm.GSS_CREDENTIAL</code>
         request attribute. If not set, the default value of <code>true</code>
@@ -1627,7 +1627,7 @@
     <p>Web crawlers can trigger the creation of many thousands of sessions as
     they crawl a site which may result in significant memory consumption. This
     Valve ensures that crawlers are associated with a single session - just like
-    normal user - regardless of whether or not they provide a session token
+    normal customer - regardless of whether or not they provide a session token
     with their requests.</p>
 
     <p>This Valve may be used at the <code>Engine</code>, <code>Host</code> or
@@ -1663,7 +1663,7 @@
         IP is matched against to determine if a request is from a web crawler.
         By default such regular expression is not set.</p>
       </td></tr><tr><td><code class="attributeName">crawlerUserAgents</code></td><td>
-        <p>Regular expression (using <code>java.util.regex</code>) that the user
+        <p>Regular expression (using <code>java.util.regex</code>) that the customer
         agent HTTP request header is matched against to determine if a request
         is from a web crawler. If not set, the default of
         <code>.*[bB]ot.*|.*Yahoo! Slurp.*|.*Feedfetcher-Google.*</code> is used.</p>
@@ -1784,7 +1784,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

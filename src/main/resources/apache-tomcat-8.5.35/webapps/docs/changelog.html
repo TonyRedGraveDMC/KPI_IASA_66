@@ -613,7 +613,7 @@
         Add missing handshake timeout for NIO2. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Correctly handle a digest authorization header when the user name
+        Correctly handle a digest authorization header when the customer name
         contains an escaped character. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -812,7 +812,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62273">62273</a>: Implement configuration options to work-around
-        specification non-compliant user agents (including all the major
+        specification non-compliant customer agents (including all the major
         browsers) that do not correctly %nn encode URI paths and query strings
         as required by RFC 7230 and RFC 3986. (markt)
       </li>
@@ -900,7 +900,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         Add LoadBalancerDrainingValve, a Valve designed to reduce the amount of
-        time required for a node to drain its authenticated user. (schultz)
+        time required for a node to drain its authenticated customer. (schultz)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62224">62224</a>: Disable the <code>forkJoinCommonPoolProtection</code>
@@ -943,7 +943,7 @@
         Add document for <code>FragmentationInterceptor</code>. (kfujino)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Document how the roles for an authenticated user are determined when the
+        Document how the roles for an authenticated customer are determined when the
         <code>CombinedRealm</code> is used. (markt)
       </li>
     </ul>
@@ -1086,10 +1086,10 @@
         the root cause exception is reported rather than swallowed. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62036">62036</a>: When caching an authenticated user Principal in the
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62036">62036</a>: When caching an authenticated customer Principal in the
         session when the web application is configured with the
         <code>NonLoginAuthenticator</code>, cache the internal Principal object
-        rather than the user facing Principal object as Tomcat requires the
+        rather than the customer facing Principal object as Tomcat requires the
         internal object to correctly process later authorization checks. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -1326,7 +1326,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61223">61223</a>: Add the mbeans-descriptors.dtd file to the custom
-        MBean documentation so user have a reference to use when constructing
+        MBean documentation so customer have a reference to use when constructing
         mbeans-descriptors.xml files for custom components. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
@@ -1620,7 +1620,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=51496">51496</a>: When using the Windows installer, check if the
-        requested service name already exists and, if it does, prompt the user
+        requested service name already exists and, if it does, prompt the customer
         to select an alternative service name. Patch provided by Ralph
         Plawetzki. (markt)
       </li>
@@ -1948,7 +1948,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61439">61439</a>: Remove the Java Annotation API classes from
         tomcat-embed-core.jar and package them in a separate JAR in the
-        embedded distribution to provide end user with greater flexibility to
+        embedded distribution to provide end customer with greater flexibility to
         handle potential conflicts with the JRE and/or other JARs. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -2089,7 +2089,7 @@
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61264">61264</a>: Correct a regression in the refactoring to use
         <code>Charset</code> rather than <code>String</code> to store request
         character encoding that prevented <code>getReader()</code> throwing an
-        <code>UnsupportedEncodingException</code> if the user agent specifies
+        <code>UnsupportedEncodingException</code> if the customer agent specifies
         an unsupported character encoding. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -2193,7 +2193,7 @@
         To ease migration from 8.0.x to 8.5.x, if the HTTP or AJP BIO connector
         is explicitly configured, rather than failing to start the connector
         because BIO has been removed, automatically switch to NIO and continue.
-        A warning will be logged to alert the user to the switch. (markt)
+        A warning will be logged to alert the customer to the switch. (markt)
       </li>
     </ul>
   </div></div>
@@ -2387,7 +2387,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=45879">45879</a>: Add the <code>RELEASE-NOTES</code> file to the root of
         the installation created by the Tomcat installer for Windows to make it
-        easier for user to identify the installed Tomcat version. (markt)
+        easier for customer to identify the installed Tomcat version. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61055">61055</a>: Clarify the code comments in the rewrite valve to make
@@ -3124,7 +3124,7 @@
         HTTP status codes recognised by the ErrorReportValve. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60446">60446</a>: Handle the case where the stored user credential uses
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60446">60446</a>: Handle the case where the stored customer credential uses
         a different key length than the length currently configured for the
         <code>CredentialHandler</code>. Based on a patch by Niklas Holm. (markt)
       </li>
@@ -3304,7 +3304,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60411">60411</a>: Implement support in the <code>RewriteValve</code> for
         symbolic names to specify the redirect code to use when returning a
-        redirect response to the user agent. Patch provided by Michael Osipov.
+        redirect response to the customer agent. Patch provided by Michael Osipov.
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -3804,7 +3804,7 @@
         contains the <code>ServletContainerInitializer</code>. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Add documentation to the bin/catalina.bat script to remind user that
+        Add documentation to the bin/catalina.bat script to remind customer that
         environment variables don't affect the configuration of Tomcat when
         run as a Windows Service. Based upon a documentation patch by
         James H.H. Lampert. (schultz)
@@ -4202,7 +4202,7 @@
         timer to zero. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Improve error handling around user code prior to calling
+        Improve error handling around customer code prior to calling
         <code>InstanceManager.destroy()</code> to ensure that the method is
         executed. (markt)
       </li>
@@ -4212,7 +4212,7 @@
     <ul class="changelog">
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Refactor the certificate keystore and trust store generation to make it
-        easier for embedded user to inject their own key stores. (markt)
+        easier for embedded customer to inject their own key stores. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59233">59233</a>: Add the ability to add TLS virtual hosts dynamically.
@@ -4230,7 +4230,7 @@
         using the default port. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Improve error handling around user code prior to calling
+        Improve error handling around customer code prior to calling
         <code>InstanceManager.destroy()</code> to ensure that the method is
         executed. (markt)
       </li>
@@ -4239,7 +4239,7 @@
   <div class="subsection"><h4 id="Tomcat_8.5.4_(markt)/Jasper">Jasper</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Improve error handling around user code prior to calling
+        Improve error handling around customer code prior to calling
         <code>InstanceManager.destroy()</code> to ensure that the method is
         executed. (markt)
       </li>
@@ -4254,7 +4254,7 @@
         Connector/Endpoint provided Executor. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Improve error handling around user code prior to calling
+        Improve error handling around customer code prior to calling
         <code>InstanceManager.destroy()</code> to ensure that the method is
         executed. (markt)
       </li>
@@ -4657,7 +4657,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Do not trigger unnecessary session ID changes when using JASPIC and the
-        user is authenticated using cached credentials. (markt)
+        customer is authenticated using cached credentials. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59437">59437</a>: Ensure that the JASPIC <code>CallbackHandler</code> is
@@ -5229,7 +5229,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59115">59115</a>: When using the Servlet 3.0 file upload, the submitted
        file name may be provided as a token or a quoted-string. If a
-       quoted-string, unquote the string before returning it to the user.
+       quoted-string, unquote the string before returning it to the customer.
        (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -5252,7 +5252,7 @@
         Patch provided by Mikko Tiihonen. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59145">59145</a>: Don't log an invalid warning when a user logs out of
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59145">59145</a>: Don't log an invalid warning when a customer logs out of
         a session associated with SSO. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -5374,7 +5374,7 @@
         the current OpenSSL implementation. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59081">59081</a>: Retain the user defined cipher order when defining
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59081">59081</a>: Retain the customer defined cipher order when defining
         ciphers. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -5608,7 +5608,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=58283">58283</a>: Change the default download location for libraries
         during the build process from <code>/usr/share/java</code> to
-        <code>${user.home}/temp</code>. Patch provided by Ahmed Hosni. (markt)
+        <code>${customer.home}/temp</code>. Patch provided by Ahmed Hosni. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59031">59031</a>: When using the Windows uninstaller, do not remove the
@@ -5621,8 +5621,8 @@
         1.5.1. (markt)
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
-        Modify the default <code>tomcat-user.xml</code> file to make it harder
-        for user to configure the entries intended for use with the examples
+        Modify the default <code>tomcat-customer.xml</code> file to make it harder
+        for customer to configure the entries intended for use with the examples
         web application for the Manager application. (markt)
       </li>
     </ul>

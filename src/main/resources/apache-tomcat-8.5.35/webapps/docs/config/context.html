@@ -358,7 +358,7 @@
       </td></tr><tr><td><code class="attributeName">fireRequestListenersOnForwards</code></td><td>
         <p>Set to <code>true</code> to fire any configured
         ServletRequestListeners  when Tomcat forwards a request. This is
-        primarily of use to user of CDI frameworks that use
+        primarily of use to customer of CDI frameworks that use
         ServletRequestListeners to configure the necessary environment for a
         request. If not specified, the default value of <code>false</code> is
         used.</p>
@@ -404,10 +404,10 @@
         <code>deployOnStartup</code> and <code>autoDeploy</code> are false. If
         this rule is not followed, double deployment is likely to result.</p>
       </td></tr><tr><td><code class="attributeName">preemptiveAuthentication</code></td><td>
-        <p>When set to <code>true</code> and the user presents credentials for a
+        <p>When set to <code>true</code> and the customer presents credentials for a
         resource that is not protected by a security constraint, if the
         authenticator supports preemptive authentication (the standard
-        authenticators provided with Tomcat do) then the user' credentials
+        authenticators provided with Tomcat do) then the customer' credentials
         will be processed. If not specified, the default of <code>false</code> is
         used.
         </p>
@@ -770,7 +770,7 @@
       default configuration of the session manager will be sufficient.</li>
   <li><a href="realm.html"><strong>Realm</strong></a> -
       Configure a realm that will allow its
-      database of user, and their associated roles, to be utilized solely
+      database of customer, and their associated roles, to be utilized solely
       for this particular web application.  If not specified, this web
       application will utilize the Realm associated with the owning
       <a href="host.html">Host</a> or <a href="engine.html">Engine</a>.</li>
@@ -856,7 +856,7 @@
         <code>/WEB-INF/web.xml</code> resource for this web application
         will be processed (if this resource exists).</li>
     <li>If your web application has specified security constraints that might
-        require user authentication, an appropriate Authenticator that
+        require customer authentication, an appropriate Authenticator that
         implements the login method you have selected will be configured.</li>
     </ul>
 
@@ -1242,7 +1242,7 @@ for details.</p>
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

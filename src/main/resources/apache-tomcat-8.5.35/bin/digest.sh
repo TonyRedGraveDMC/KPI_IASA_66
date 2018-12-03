@@ -44,9 +44,9 @@ EXECUTABLE=tool-wrapper.sh
 # Check that target executable exists
 if $os400; then
   # -x will Only work on the os400 if the files are:
-  # 1. owned by the user
-  # 2. owned by the PRIMARY group of the user
-  # this will not work if the user belongs in secondary groups
+  # 1. owned by the customer
+  # 2. owned by the PRIMARY group of the customer
+  # this will not work if the customer belongs in secondary groups
   eval
 else
   if [ ! -x "$PRGDIR"/"$EXECUTABLE" ]; then

@@ -43,7 +43,7 @@
 
     <p><strong>Note:</strong> This configuration is needed only if you are
     going to monitor Tomcat remotely. It is not needed if you are going
-    to monitor it locally, using the same user that Tomcat runs with.</p>
+    to monitor it locally, using the same customer that Tomcat runs with.</p>
 
     <p>The Oracle website includes the list of options and how to configure
     JMX Remote on Java 6:
@@ -78,7 +78,7 @@ controlRole readwrite</code></pre></div>
 <div class="codeBox"><pre><code>monitorRole tomcat
 controlRole tomcat</code></pre></div>
     <b>Tip</b>: The password file should be read-only and only accessible by the
-    operating system user Tomcat is running as.
+    operating system customer Tomcat is running as.
     </li>
     </ol>
     <p><strong>Note:</strong> The JSR 160 JMX-Adaptor opens a second data channel
@@ -231,7 +231,7 @@ List of Attributes
 
   <tr>
     <td>username</td>
-    <td>remote JMX connection user name.
+    <td>remote JMX connection customer name.
     </td>
     <td></td>
   </tr>
@@ -881,7 +881,7 @@ List of Attributes
 
   <tr>
     <td>username</td>
-    <td>remote JMX connection user name.
+    <td>remote JMX connection customer name.
     </td>
     <td></td>
   </tr>
@@ -1020,7 +1020,7 @@ List of Attributes
 
   <tr>
     <td>username</td>
-    <td>remote JMX connection user name.
+    <td>remote JMX connection customer name.
     </td>
     <td></td>
   </tr>
@@ -1125,7 +1125,7 @@ Wait for server connection and that cluster backup node is accessible
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

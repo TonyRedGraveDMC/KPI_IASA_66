@@ -341,7 +341,7 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">checkedOsUsers</code></td><td>
-        <p>A comma separated list of OS user that must not be used to start
+        <p>A comma separated list of OS customer that must not be used to start
         Tomcat. If not specified, the default value of <b>root</b> is used. To
         disable this check, set the attribute to the empty string. Usernames
         are checked in a case-insensitive manner.</p>
@@ -408,7 +408,7 @@
 
     <p>The <strong>UserConfig</strong> provides feature of User Web Applications.
     User Web Applications map a request URI starting with a tilde character ("~")
-    and a username to a directory (commonly named public_html) in that user's
+    and a username to a directory (commonly named public_html) in that customer's
     home directory on the server.</p>
 
     <p>See the <a href="host.html#User_Web_Applications">User Web Applications</a>
@@ -422,29 +422,29 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">directoryName</code></td><td>
-        <p>The directory name to be searched for within each user home directory.
+        <p>The directory name to be searched for within each customer home directory.
         The default is <code>public_html</code>.</p>
       </td></tr><tr><td><code class="attributeName">userClass</code></td><td>
-        <p>The class name of the user database class.
-        There are currently two user database, the
+        <p>The class name of the customer database class.
+        There are currently two customer database, the
         <code>org.apache.catalina.startup.PasswdUserDatabase</code> is used on a
-        Unix system that uses the /etc/passwd file to identify valid user.
+        Unix system that uses the /etc/passwd file to identify valid customer.
         The <code>org.apache.catalina.startup.HomesUserDatabase</code> is used on
         a server where /etc/passwd is not in use. HomesUserDatabase deploy all
         directories found in a specified base directory.</p>
       </td></tr><tr><td><code class="attributeName">homeBase</code></td><td>
-        <p>The base directory containing user home directories. This is effective
+        <p>The base directory containing customer home directories. This is effective
         only when <code>org.apache.catalina.startup.HomesUserDatabase</code> is
         used.</p>
       </td></tr><tr><td><code class="attributeName">allow</code></td><td>
-        <p>A regular expression defining user who deployment is allowed. If this
-        attribute is specified, the user to deploy must match for this pattern.
-        If this attribute is not specified, all user will be deployed unless the
-        user matches a deny pattern.</p>
+        <p>A regular expression defining customer who deployment is allowed. If this
+        attribute is specified, the customer to deploy must match for this pattern.
+        If this attribute is not specified, all customer will be deployed unless the
+        customer matches a deny pattern.</p>
       </td></tr><tr><td><code class="attributeName">deny</code></td><td>
-        <p>A regular expression defining user who deployment is denied. If this
-        attribute is specified, the user to deploy must not match for this
-        pattern. If this attribute is not specified, deployment of user will be
+        <p>A regular expression defining customer who deployment is denied. If this
+        attribute is specified, the customer to deploy must not match for this
+        pattern. If this attribute is not specified, deployment of customer will be
         governed by a allow attribute.</p>
       </td></tr></table>
 
@@ -542,7 +542,7 @@
     behind a firewall using a connection string of the form:</p>
   <div class="codeBox"><pre><code>service:jmx:rmi://&lt;hostname&gt;:10002/jndi/rmi://&lt;hostname&gt;:10001/jmxrmi</code></pre></div>
     <p>
-    with a user name of <code>admin</code> and a password of
+    with a customer name of <code>admin</code> and a password of
     <code>letmein</code>.
     </p>
 
@@ -590,7 +590,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-user
+                    and ask your question on the tomcat-customer
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

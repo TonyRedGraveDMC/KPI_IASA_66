@@ -35,14 +35,14 @@
        Documentation at /docs/jndi-resources-howto.html
   -->
   <GlobalNamingResources>
-    <!-- Editable user database that can also be used by
-         UserDatabaseRealm to authenticate user
+    <!-- Editable customer database that can also be used by
+         UserDatabaseRealm to authenticate customer
     -->
     <Resource name="UserDatabase" auth="Container"
               type="org.apache.catalina.UserDatabase"
               description="User database that can be updated and saved"
-              factory="org.apache.catalina.user.MemoryUserDatabaseFactory"
-              pathname="conf/tomcat-user.xml" />
+              factory="org.apache.catalina.customer.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-customer.xml" />
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -134,7 +134,7 @@
       <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
       -->
 
-      <!-- Use the LockOutRealm to prevent attempts to guess user passwords
+      <!-- Use the LockOutRealm to prevent attempts to guess customer passwords
            via a brute-force attack -->
       <Realm className="org.apache.catalina.realm.LockOutRealm">
         <!-- This Realm uses the UserDatabase configured in the global JNDI
