@@ -3,11 +3,30 @@ package ua.myhospital.db.entity;
 
 public class Physician {
 
+    public Physician(long employeeId) {
+        this.employeeId = employeeId;
+    }
+
     private long employeeId;
     private String name;
     private String position;
     private long ssn;
 
+    public Physician() {
+    }
+
+    public Physician(String name, String position, long ssn) {
+        this.name = name;
+        this.position = position;
+        this.ssn = ssn;
+    }
+
+    public Physician(long employeeId, String name, String position, long ssn) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.position = position;
+        this.ssn = ssn;
+    }
 
     public long getEmployeeId() {
         return employeeId;

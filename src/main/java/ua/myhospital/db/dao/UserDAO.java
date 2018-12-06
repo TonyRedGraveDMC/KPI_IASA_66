@@ -11,7 +11,6 @@ public interface UserDAO {
     //create
     void add(User user) throws SQLException;
 
-    //read (вернёт список всех адрессов из таблицы Customer)
     List<Customer> getAll() throws SQLException;
 
   //  Customer getId(Long idSUser) throws SQLException;

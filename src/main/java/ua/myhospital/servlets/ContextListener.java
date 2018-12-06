@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicReference;
 
 
-// тут має бути Сustomer ? да. КРугом юзаєм кастомера. Юзер - то тіки для бази
 
 
 /**

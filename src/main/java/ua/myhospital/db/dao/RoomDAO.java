@@ -9,7 +9,6 @@ public interface RoomDAO {
     //create
     void add(Room room);
 
-    //read (вернёт список всех адрессов из таблицы Patient)
     List<Room> getAll();
 
     Room getById(Long id);

@@ -27,6 +27,8 @@ public class PatientService extends DatabaseManager implements PatientDAO {
 
             preparedStatement.executeUpdate();
         } finally {
+
+
             if (preparedStatement != null) {
                 preparedStatement.close();
             }
@@ -38,16 +40,15 @@ public class PatientService extends DatabaseManager implements PatientDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        Patient patient = new Patient(100000003, "name1", "address1", "phone1", 1001, 33);
 
+        Patient patient = new Patient(9, "NAME111; drop table patient;", "ADDRESS", "PHONE", 11, 12);
         PatientService patientService = new PatientService();
-        patientService.remove(patient);
-//        Patient bySsn = patient.getBySsn(100000001L);
-//        List<Patient> all = new PatientService().getAll();
+        patientService.update(patient);
     }
 
     @Override
     public List<Patient> getAll() throws SQLException {
+
 
         List<Patient> patientList = new ArrayList<>();
 
@@ -80,7 +81,8 @@ public class PatientService extends DatabaseManager implements PatientDAO {
         String sql = "SELECT SSN, Name, Address, Phone, InsuranceID, PCP FROM PATIENT WHERE SSN = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setLong(1, ssn);
+        preparedStatement.setLong(1, ssn
+        );
 
         ResultSet resultSet = preparedStatement.executeQuery();
         resultSet.next();

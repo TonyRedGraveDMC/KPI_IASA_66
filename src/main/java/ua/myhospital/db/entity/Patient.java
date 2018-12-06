@@ -11,6 +11,10 @@ public class Patient {
     private long insuranceId;
     private long pcp;
 
+    public Patient(long ssn) {
+        this.ssn = ssn;
+    }
+
     public Patient() {
     }
 
