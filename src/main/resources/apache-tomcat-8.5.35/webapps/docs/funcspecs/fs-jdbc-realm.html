@@ -40,7 +40,7 @@
 
     <p>The purpose of the <strong>JDBCRealm</strong> implementation is to
     provide a mechanism by which Tomcat can acquire information needed
-    to authenticate web application customer, and define their security roles,
+    to authenticate web application user, and define their security roles,
     from a relational database accessed via JDBC APIs.  For integration
     with Catalina, the resulting class(es) must implement the
     <code>org.apache.catalina.Realm</code> interface.</p>
@@ -138,20 +138,20 @@
   <div class="subsection"><h4 id="Overview_of_Operation">Overview of Operation</h4><div class="text">
 
     <p>The main purpose of <code>JDBCRealm</code> is to allow Catalina to
-    authenticate customer, and look up the corresponding security roles, from
+    authenticate user, and look up the corresponding security roles, from
     the information found in a relational database accessed via JDBC APIs.
     For maximum flexibility, the details of how this is done (for example,
     the names of the required tables and columns) should be configurable.</p>
 
-    <p>Each time that Catalina needs to authenticate a customer, it will call
+    <p>Each time that Catalina needs to authenticate a user, it will call
     the <code>authenticate()</code> method of this Realm implementation,
-    passing the username and password that were specified by the customer.  If
-    we find the customer in the database (and match on the password), we accumulate
-    all of the security roles that are defined for this customer, and create a
-    new <code>GenericPrincipal</code> object to be returned.  If the customer
+    passing the username and password that were specified by the user.  If
+    we find the user in the database (and match on the password), we accumulate
+    all of the security roles that are defined for this user, and create a
+    new <code>GenericPrincipal</code> object to be returned.  If the user
     is not authenticated, we return <code>null</code> instead.  The
     <code>GenericUser</code> object caches the set of security roles that
-    were owned by this customer at the time of authentication, so that calls to
+    were owned by this user at the time of authentication, so that calls to
     <code>isUserInRole()</code> can be answered without going back to the
     database every time.</p>
 
@@ -171,7 +171,7 @@
         to use for logging in. [Current]</li>
     <li>Configuration parameters describing the connection pool to be
         created to support simultaneous authentications. [Requested]</li>
-    <li>Name of the tables to be searched for customer and roles. [Current]</li>
+    <li>Name of the tables to be searched for user and roles. [Current]</li>
     <li>Name of the columns to be used for usernames, passwords, and
         role names.  [Current]</li>
     </ul>
@@ -201,23 +201,23 @@
     <ul>
     <li>Acquire the one and only connection [Current] or acquire a connection
         from the connection pool [Requested].</li>
-    <li>Select the one and only row from the customer's table for this customer,
+    <li>Select the one and only row from the user's table for this user,
         and retrieve the corresponding password column.  If zero rows (or
         more than one row) are found, return <code>null</code>.</li>
-    <li>Authenticate the customer by comparing the (possibly encrypted) password
-        value that was received against the password presented by the customer.
+    <li>Authenticate the user by comparing the (possibly encrypted) password
+        value that was received against the password presented by the user.
         If there is no match, return <code>null</code>.</li>
     <li>Acquire a <code>List</code> of the security roles assigned to the
-        authenticated customer by selecting from the roles table.</li>
+        authenticated user by selecting from the roles table.</li>
     <li>Construct a new instance of class
         <code>org.apache.catalina.realm.GenericPrincipal</code>, passing as
         constructor arguments:  this realm instance, the authenticated
         username, and a <code>List</code> of the security roles associated
-        with this customer.</li>
+        with this user.</li>
     <li><strong>WARNING</strong> - Do not attempt to cache and reuse previous
-        <code>GenericPrincipal</code> objects for a particular customer, because
+        <code>GenericPrincipal</code> objects for a particular user, because
         the information in the directory server might have changed since the
-        last time this customer was authenticated.</li>
+        last time this user was authenticated.</li>
     <li>Return the newly constructed <code>GenericPrincipal</code>.</li>
     </ul>
 
@@ -255,7 +255,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

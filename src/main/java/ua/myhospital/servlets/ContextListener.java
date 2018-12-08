@@ -1,16 +1,12 @@
 package ua.myhospital.servlets;
 
 
-import ua.myhospital.db.UserDAO;
-import ua.myhospital.model.Customer;
+import ua.myhospital.db.service.UserService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -24,28 +20,21 @@ public class ContextListener implements ServletContextListener {
     /**
      * Fake database connector.
      */
-    private AtomicReference<UserDAO> dao;
+    private AtomicReference<UserService> users;
 
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
 
-        dao = new AtomicReference<>(new UserDAO());
+        users = new AtomicReference<>(new UserService());
 
-        dao.get().add(new Customer( "Alex", "1", Customer.Role.ADMIN,
-                LocalDateTime.now(),
-                LocalDateTime.now()));
-
-        dao.get().add(new Customer( "Lex", "1", Customer.Role.PATIENT,
-                LocalDateTime.now(),
-                LocalDateTime.now()));
         final ServletContext servletContext =
                 servletContextEvent.getServletContext();
 
-        servletContext.setAttribute("db", dao);
+        servletContext.setAttribute("users", users);
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        dao = null;
+        users = null;
     }
 }

@@ -51,7 +51,7 @@
         where you wish to script administrative commands with tools that
         can generate HTTP transactions.</li>
     <li><em>As An HTML-Based Web Application</em> - Use an HTML presentation
-        to provide a GUI-like customer interface for humans to interact with the
+        to provide a GUI-like user interface for humans to interact with the
         administrative capabilities.</li>
     <li><em>As SOAP-Based Web Services</em> - The operational commands to
         administer Tomcat are made available as web services that utilize
@@ -109,7 +109,7 @@
         shall be disabled.  It shall be necessary for a system
         administrator to specifically enable the desired access methods
         (such as by adding a username/password with a specific role to
-        the Tomcat customer's database.</li>
+        the Tomcat user's database.</li>
     <li>Administrative functions shall be realized as direct calls to
         corresponding Catalina APIs, or through a business logic layer
         that is independent of the access method used to initiate it.</li>
@@ -256,8 +256,8 @@
   <ul>
   <li>All request URIs shall be protected by security constraints that
       require a security role to be assigned for processing.</li>
-  <li>The default customer database shall <strong>not</strong> contain any
-      customer that has been assigned a security role.</li>
+  <li>The default user database shall <strong>not</strong> contain any
+      user that has been assigned a security role.</li>
   </ul>
 
   <h5>HTML-Based Web Application</h5>
@@ -288,7 +288,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

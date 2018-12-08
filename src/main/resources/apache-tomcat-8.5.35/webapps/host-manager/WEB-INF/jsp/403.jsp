@@ -52,17 +52,17 @@
    </p>
    <p> If you have not changed
     any configuration files, please examine the file
-    <tt>conf/tomcat-customer.xml</tt> in your installation. That
+    <tt>conf/tomcat-user.xml</tt> in your installation. That
     file must contain the credentials to let you use this webapp.
    </p>
    <p>
-    For example, to add the <tt>admin-gui</tt> role to a customer named
+    For example, to add the <tt>admin-gui</tt> role to a user named
     <tt>tomcat</tt> with a password of <tt>s3cret</tt>, add the following to the
     config file listed above.
    </p>
 <pre>
 &lt;role rolename="admin-gui"/&gt;
-&lt;customer username="tomcat" password="s3cret" roles="admin-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="admin-gui"/&gt;
 </pre>
    <p>
     Note that for Tomcat 7 onwards, the roles required to use the host manager

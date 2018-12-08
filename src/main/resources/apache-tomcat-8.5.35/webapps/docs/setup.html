@@ -55,7 +55,7 @@
             Using the checkbox on the component page sets the service as "auto"
             startup, so that Tomcat is automatically started when Windows
             starts. For optimal security, the service should be run as a
-            separate customer, with reduced permissions (see the Windows Services
+            separate user, with reduced permissions (see the Windows Services
             administration tool and its documentation).</li>
         <li><strong>Java location</strong>: The installer will provide a default
             JRE to use to run the service. The installer uses the registry to
@@ -162,10 +162,10 @@ cd $CATALINA_HOME
        to using a server VM rather than a client VM. This has been observed on
        OSX.</p>
 
-    <p>jsvc has other useful parameters, such as <code>-customer</code> which
-       causes it to switch to another customer after the daemon initialization is
+    <p>jsvc has other useful parameters, such as <code>-user</code> which
+       causes it to switch to another user after the daemon initialization is
        complete. This allows, for example, running Tomcat as a non privileged
-       customer while still being able to use privileged ports. Note that if you
+       user while still being able to use privileged ports. Note that if you
        use this option and start Tomcat as root, you'll need to disable the
        <code>org.apache.catalina.security.SecurityListener</code> check that
        prevents Tomcat starting when running as root.</p>
@@ -191,7 +191,7 @@ cd $CATALINA_HOME
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

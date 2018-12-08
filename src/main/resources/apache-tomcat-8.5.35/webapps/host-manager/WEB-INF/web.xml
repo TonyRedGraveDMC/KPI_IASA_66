@@ -90,7 +90,7 @@
       <url-pattern>/text/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-       <!-- NOTE:  This role is not present in the default customer file -->
+       <!-- NOTE:  This role is not present in the default user file -->
        <role-name>admin-script</role-name>
     </auth-constraint>
   </security-constraint>
@@ -100,7 +100,7 @@
       <url-pattern>/html/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-       <!-- NOTE:  This role is not present in the default customer file -->
+       <!-- NOTE:  This role is not present in the default user file -->
        <role-name>admin-gui</role-name>
     </auth-constraint>
   </security-constraint>

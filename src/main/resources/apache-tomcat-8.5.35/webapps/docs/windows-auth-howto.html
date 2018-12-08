@@ -36,8 +36,8 @@
 </div><h3 id="Overview">Overview</h3><div class="text">
 <p>Integrated Windows authentication is most frequently used within intranet
 environments since it requires that the server performing the authentication and
-the customer being authenticated are part of the same domain. For the customer to be
-authenticated automatically, the client machine used by the customer must also be
+the user being authenticated are part of the same domain. For the user to be
+authenticated automatically, the client machine used by the user must also be
 part of the domain.</p>
 <p>There are several options for implementing integrated Windows authentication
 with Apache Tomcat. They are:</p>
@@ -64,10 +64,10 @@ intranet.</li>
 <li>The SPN must be HTTP/&lt;hostname&gt; and it must be exactly the same in all
 the places it is used.</li>
 <li>The port number must not be included in the SPN.</li>
-<li>No more than one SPN may be mapped to a domain customer.</li>
+<li>No more than one SPN may be mapped to a domain user.</li>
 <li>Tomcat must run as the domain account with which the SPN has been associated
 or as domain admin. It is <strong>NOT</strong> recommended to run Tomcat under a
-domain admin customer.</li>
+domain admin user.</li>
 <li>The domain name (<code>DEV.LOCAL</code>) is not case sensitive when used in
 the ktpass command, nor when used in jaas.conf</li>
 <li>The domain must be specified when using the ktpass command</li>
@@ -92,14 +92,14 @@ policy had to be relaxed. This is not recommended for production environments.
   to enable Tomcat to support Windows authentication are as follows:
   </p>
   <ul>
-  <li>Create a domain customer that will be mapped to the service name used by the
-  Tomcat server. In this how-to, this customer is called <code>tc01</code> and has a
+  <li>Create a domain user that will be mapped to the service name used by the
+  Tomcat server. In this how-to, this user is called <code>tc01</code> and has a
   password of <code>tc01pass</code>.</li>
-  <li>Map the service principal name (SPN) to the customer account. SPNs take the
+  <li>Map the service principal name (SPN) to the user account. SPNs take the
   form <code>
   &lt;service class&gt;/&lt;host&gt;:&lt;port&gt;/&lt;service name&gt;</code>.
   The SPN used in this how-to is <code>HTTP/win-tc01.dev.local</code>. To
-  map the customer to the SPN, run the following:
+  map the user to the SPN, run the following:
   <div class="codeBox"><pre><code>setspn -A HTTP/win-tc01.dev.local tc01</code></pre></div>
   </li>
   <li>Generate the keytab file that the Tomcat server will use to authenticate
@@ -109,8 +109,8 @@ policy had to be relaxed. This is not recommended for production environments.
   <div class="codeBox"><pre><code>ktpass /out c:\tomcat.keytab /mapuser tc01@DEV.LOCAL
           /princ HTTP/win-tc01.dev.local@DEV.LOCAL
           /pass tc01pass /kvno 0</code></pre></div></li>
-  <li>Create a domain customer to be used on the client. In this how-to the domain
-  customer is <code>test</code> with a password of <code>testpass</code>.</li>
+  <li>Create a domain user to be used on the client. In this how-to the domain
+  user is <code>test</code> with a password of <code>testpass</code>.</li>
   </ul>
   <p>The above steps have been tested on a domain controller running Windows
   Server 2008 R2 64-bit Standard using the Windows Server 2003 functional level
@@ -121,7 +121,7 @@ policy had to be relaxed. This is not recommended for production environments.
   <div class="subsection"><h4 id="Tomcat_instance_(Windows_server)">Tomcat instance (Windows server)</h4><div class="text">
   <p>These steps assume that Tomcat and a Java 6 JDK/JRE have already been
   installed and configured and that Tomcat is running as the tc01@DEV.LOCAL
-  customer. The steps to configure the Tomcat instance for Windows authentication
+  user. The steps to configure the Tomcat instance for Windows authentication
   are as follows:
   </p>
   <ul>
@@ -174,7 +174,7 @@ com.sun.security.jgss.krb5.accept {
   </ul>
   <p>The SPNEGO authenticator will work with any <a href="config/realm.html">
   Realm</a> but if used with the JNDI Realm, by default the JNDI Realm will use
-  the customer's delegated credentials to connect to the Active Directory.
+  the user's delegated credentials to connect to the Active Directory.
   </p>
   <p>The above steps have been tested on a Tomcat server running Windows Server
   2008 R2 64-bit Standard with an Oracle 1.6.0_24 64-bit JDK.</p>
@@ -220,7 +220,7 @@ com.sun.security.jgss.krb5.accept {
   <div class="subsection"><h4 id="References">References</h4><div class="text">
   <p>Correctly configuring Kerberos authentication can be tricky. The following
   references may prove helpful. Advice is also always available from the
-  <a href="https://tomcat.apache.org/lists.html#tomcat-customer">Tomcat customer
+  <a href="https://tomcat.apache.org/lists.html#tomcat-user">Tomcat user
   mailing list</a>.</p>
   <ol>
   <li><a href="http://www.adopenstatic.com/cs/blogs/ken/archive/2006/10/19/512.aspx">
@@ -293,7 +293,7 @@ com.sun.security.jgss.krb5.accept {
   <a href="https://tomcat.apache.org/connectors-doc/webserver_howto/iis.html">
   IIS Web Server How-To)</a>.</li>
   <li>Configure IIS to use Windows authentication</li>
-  <li>Configure Tomcat to use the authentication customer information from IIS by
+  <li>Configure Tomcat to use the authentication user information from IIS by
   setting the tomcatAuthentication attribute on the <a href="config/ajp.html">
   AJP connector</a> to <code>false</code>. Alternatively, set the
   tomcatAuthorization attribute to <code>true</code> to allow IIS to
@@ -307,7 +307,7 @@ com.sun.security.jgss.krb5.accept {
   <ol>
   <li><a href="http://sourceforge.net/projects/mod-auth-sspi/" rel="nofollow">mod_auth_sspi</a> for use on Windows platforms.</li>
   <li><a href="http://adldap.sourceforge.net/wiki/doku.php?id=mod_auth_ntlm_winbind" rel="nofollow">mod_auth_ntlm_winbind</a> for non-Windows platforms. Known to
-  work with httpd 2.0.x on 32-bit platforms. Some customer have reported stability
+  work with httpd 2.0.x on 32-bit platforms. Some user have reported stability
   issues with both httpd 2.2.x builds and 64-bit Linux builds.</li>
   </ol>
   <p>There are three steps to configuring httpd to provide Windows
@@ -317,7 +317,7 @@ com.sun.security.jgss.krb5.accept {
   <a href="https://tomcat.apache.org/connectors-doc/webserver_howto/apache.html">
   Apache httpd Web Server How-To)</a>.</li>
   <li>Configure httpd to use Windows authentication</li>
-  <li>Configure Tomcat to use the authentication customer information from httpd by
+  <li>Configure Tomcat to use the authentication user information from httpd by
   setting the tomcatAuthentication attribute on the <a href="config/ajp.html">
   AJP connector</a> to <code>false</code>.</li>
   </ol>
@@ -329,7 +329,7 @@ com.sun.security.jgss.krb5.accept {
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

@@ -27,20 +27,20 @@
 </head>
 <body bgcolor="white">
 
-You are logged in as remote customer
+You are logged in as remote user
 <b><%= util.HTMLFilter.filter(request.getRemoteUser()) %></b>
 in session <b><%= session.getId() %></b><br><br>
 
 <%
   if (request.getUserPrincipal() != null) {
 %>
-    Your customer principal name is
+    Your user principal name is
     <b><%= util.HTMLFilter.filter(request.getUserPrincipal().getName()) %></b>
     <br><br>
 <%
   } else {
 %>
-    No customer principal could be identified.<br><br>
+    No user principal could be identified.<br><br>
 <%
   }
 %>
@@ -64,7 +64,7 @@ in session <b><%= session.getId() %></b><br><br>
   }
 %>
 
-To check whether your customer name has been granted a particular role,
+To check whether your user name has been granted a particular role,
 enter it here:
 <form method="GET" action='<%= response.encodeURL("login.jsp") %>'>
 <input type="text" name="role" value="<%= util.HTMLFilter.filter(role) %>">

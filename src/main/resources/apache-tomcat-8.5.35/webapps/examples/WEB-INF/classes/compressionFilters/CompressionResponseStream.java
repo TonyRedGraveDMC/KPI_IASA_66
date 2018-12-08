@@ -57,7 +57,7 @@ public class CompressionResponseStream extends ServletOutputStream {
 
     /**
      * The threshold number which decides to compress or not.
-     * Customer can configure in web.xml to set it to fit their needs.
+     * User can configure in web.xml to set it to fit their needs.
      */
     protected int compressionThreshold = 0;
 

@@ -329,7 +329,7 @@
     </td></tr><tr><td><code class="attributeName">connectionProperties</code></td><td>
       <p>(String) The connection properties that will be sent to our JDBC driver when establishing new connections.
          Format of the string must be [propertyName=property;]*
-         NOTE - The "customer" and "password" properties will be passed explicitly, so they do not need to be included here.
+         NOTE - The "user" and "password" properties will be passed explicitly, so they do not need to be included here.
          The default value is <code>null</code>.</p>
     </td></tr><tr><td><code class="attributeName">poolPreparedStatements</code></td><td>
       <p>(boolean) Property not used.</p>
@@ -727,7 +727,7 @@
           try {
             con = datasource.getConnection();
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery("select * from customer");
+            ResultSet rs = st.executeQuery("select * from user");
             int cnt = 1;
             while (rs.next()) {
                 System.out.println((cnt++)+". Host:" +rs.getString("Host")+
@@ -794,7 +794,7 @@
     }
     con = future.get(); //should return instantly
     Statement st = con.createStatement();
-    ResultSet rs = st.executeQuery("select * from customer");</code></pre></div>
+    ResultSet rs = st.executeQuery("select * from user");</code></pre></div>
 
   </div></div>
   <div class="subsection"><h4 id="Interceptors">Interceptors</h4><div class="text">
@@ -918,7 +918,7 @@
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

@@ -64,7 +64,7 @@ Operations</a> that can be performed when the administrative application is
 
   <p>An <em>Access Logger</em> is an optional <code>Valve</code> that can
   create request access logs in the same formats as those provided by
-  web servers.  Such access logs are useful input to hit count and customer
+  web servers.  Such access logs are useful input to hit count and user
   access tracking analysis programs.  An Access Logger can be attached to
   an <em>Engine</em>, a <em>Host</em>, a <em>Context</em>, or a <em>Default
   Context</em>.</p>
@@ -367,12 +367,12 @@ Operations</a> that can be performed when the administrative application is
 </div><h3 id="Realm">Realm</h3><div class="text">
 
   <p>A <em>Realm</em> represents a "database" of information about authorized
-  customer, their passwords, and the security roles assigned to them.  This will
+  user, their passwords, and the security roles assigned to them.  This will
   be used by the container in the implementation of container-managed security
   in accordance with the Servlet Specification.  Several alternative
   implementations are supported.</p>
 
-  <p><code>org.apache.catalina.realm.MemoryRealm</code> initializes its customer
+  <p><code>org.apache.catalina.realm.MemoryRealm</code> initializes its user
   information from a simple XML file at startup time.  If changes are made
   to the information in this file, the corresponding web applications using
   it must be restarted for the changes to take effect.  It supports the
@@ -380,14 +380,14 @@ Operations</a> that can be performed when the administrative application is
   <ul>
   <li><code>debug</code> - Debugging detail level.  [0]</li>
   <li><code>pathname</code> - Absolute or relative (to $CATALINA_BASE) path to
-      the XML file containing our customer information.  [conf/tomcat-customer.xml]
+      the XML file containing our user information.  [conf/tomcat-user.xml]
       </li>
   </ul>
 
   <p><code>org.apache.catalina.realm.JDBCRealm</code> uses a relational
-  database (accessed via JDBC APIs) to contain the customer information.  Changes
+  database (accessed via JDBC APIs) to contain the user information.  Changes
   in the contents of this database take effect immediately; however, the roles
-  assigned to a particular customer are calculated only when the customer initially
+  assigned to a particular user are calculated only when the user initially
   logs on (and not per request).  The following configurable properties
   are supported:</p>
   <ul>
@@ -406,17 +406,17 @@ Operations</a> that can be performed when the administrative application is
   <li><code>userNameCol</code> - Name of the column, in both the Users and
       User Roles tables, that contains the username.</li>
   <li><code>userRoleTable</code> - Name of the User Roles table, which contains
-      one row per security role assigned to a particular customer.  This table must
+      one row per security role assigned to a particular user.  This table must
       contain the columns specified by the <code>userNameCol</code> and
       <code>roleNameCol</code> properties.</li>
   <li><code>userTable</code> - Name of the Users table, which contains one row
-      per authorized customer.  This table must contain the columns specified by
+      per authorized user.  This table must contain the columns specified by
       the <code>userNameCol</code> and <code>userCredCol</code> properties.
       </li>
   </ul>
 
   <p><strong>FIXME</strong> - Should we provide mechanisms to edit the contents
-  of a "tomcat-customer.xml" file through the admin applications?</p>
+  of a "tomcat-user.xml" file through the admin applications?</p>
 
   <p>Each <em>Realm</em> is owned by a parent <em>Engine</em>, <em>Host</em>,
   or <em>Context</em>.</p>
@@ -439,7 +439,7 @@ Operations</a> that can be performed when the administrative application is
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

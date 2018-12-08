@@ -391,7 +391,7 @@ RewriteRule  ^/$                 /homepage.std.html  [L]</code></pre></div>
 
     <p>Syntax: <code>RewriteMap name rewriteMapClassName optionalParameters</code></p>
 
-    <p>The maps are implemented using an interface that customer must implement. Its class
+    <p>The maps are implemented using an interface that user must implement. Its class
     name is <code>org.apache.catalina.valves.rewrite.RewriteMap</code>, and its code is:</p>
 
 <div class="codeBox"><pre><code>package org.apache.catalina.valves.rewrite;
@@ -664,7 +664,7 @@ cannot use <code>$N</code> in the substitution string!
           canonicalize the URL and return it to the client - to
           translate ``<code>/~</code>'' into
           ``<code>/u/</code>'', or to always append a slash to
-          <code>/u/</code><em>customer</em>, etc.<br>
+          <code>/u/</code><em>user</em>, etc.<br>
           <strong>Note:</strong> When you use this flag, make
           sure that the substitution field is a valid URL! Otherwise,
           you will be redirecting to an invalid location. Remember
@@ -706,7 +706,7 @@ cannot use <code>$N</code> in the substitution string!
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="./comments.html">here</a>.

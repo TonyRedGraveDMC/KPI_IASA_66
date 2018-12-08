@@ -6,22 +6,26 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
 
+    private static DatabaseManager instance;
 
     private static final String USER = "root";
     private static final String PASSWORD = "root";
     private static final String SCHEMA = "hospitaldb";
     private static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/";
 
+    private DatabaseManager(){
+
+    }
+
+    public  static  synchronized  DatabaseManager getInstance(){
+        if(instance == null ){
+            instance = new DatabaseManager();
+        }
+        return instance;
+    }
     public static Connection getConnection() {
 
         Connection connection = null;
-
-//        try {
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -31,11 +35,6 @@ public class DatabaseManager {
             e.printStackTrace();
         }
 
-//        if (connection != null) {
-//            System.out.println("You made it, take control your database now!");
-//        } else {
-//            System.out.println("Failed to make connection!");
-//        }
         return connection;
     }
 }

@@ -55,7 +55,7 @@ do
         shift; shift;
         continue
     ;;
-    --tomcat-customer )
+    --tomcat-user )
         TOMCAT_USER="$2"
         shift; shift;
         continue
@@ -123,7 +123,7 @@ fi
 # Set the default service-start wait time if necessary
 test ".$SERVICE_START_WAIT_TIME" = . && SERVICE_START_WAIT_TIME=10
 
-# Ensure that any customer defined CLASSPATH variables are not used on startup,
+# Ensure that any user defined CLASSPATH variables are not used on startup,
 # but allow them to be specified in setenv.sh, in rare case when it is needed.
 CLASSPATH=
 JAVA_OPTS=
@@ -217,7 +217,7 @@ case "$1" in
     start   )
       "$JSVC" $JSVC_OPTS \
       -java-home "$JAVA_HOME" \
-      -customer $TOMCAT_USER \
+      -user $TOMCAT_USER \
       -pidfile "$CATALINA_PID" \
       -wait "$SERVICE_START_WAIT_TIME" \
       -outfile "$CATALINA_OUT" \

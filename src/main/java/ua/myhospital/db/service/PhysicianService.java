@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhysicianService extends DatabaseManager implements PhysicianDAO {
+public class PhysicianService implements PhysicianDAO {
     private Connection connection = getConnection();
 
     @Override
@@ -42,7 +42,7 @@ public class PhysicianService extends DatabaseManager implements PhysicianDAO {
 //        Physician physician = new Physician("STR1\" ,\"P\", 123); drop table PHYSICIAN; INSERT INTO PHYSICIAN(NAME, POSITION, SSN) VALUES(\"STR2\", \"P\", 124);"," Physician", 1312312);
 //        physicianService.add(physician);
 //        System.out.println(physician);
-        Physician physician = new Physician(20000010);
+        Physician physician = new Physician(20000009);
         PhysicianService physicianService = new PhysicianService();
         physicianService.remove(physician);
 
@@ -126,8 +126,6 @@ public class PhysicianService extends DatabaseManager implements PhysicianDAO {
                 connection.close();
             }
         }
-
-
 
     }
 

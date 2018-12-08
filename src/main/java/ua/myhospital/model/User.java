@@ -1,9 +1,10 @@
 package ua.myhospital.model;
 
-import java.time.LocalDateTime;
-import java.util.Objects;
+import ua.myhospital.core.Constant.Role;
 
-public class Customer {
+import java.time.LocalDateTime;
+
+public class User {
     private long id;
     private String email;
     private String password;
@@ -11,10 +12,10 @@ public class Customer {
     private LocalDateTime lastSeen;
     private LocalDateTime createDate;
 
-    public Customer() {
+    public User() {
     }
 
-    public Customer(String email, String password, Role role, LocalDateTime lastSeen, LocalDateTime createDate) {
+    public User(String email, String password, Role role, LocalDateTime lastSeen, LocalDateTime createDate) {
         this.email = email;
         this.password = password;
         this.role = role;
@@ -22,7 +23,7 @@ public class Customer {
         this.createDate = createDate;
     }
 
-    public Customer(long id, String email, String password, Role role, LocalDateTime lastSeen, LocalDateTime createDate) {
+    public User(long id, String email, String password, Role role, LocalDateTime lastSeen, LocalDateTime createDate) {
         this.id = id;
         this.email = email;
         this.password = password;
@@ -79,39 +80,4 @@ public class Customer {
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
-
-    public enum Role {
-        ADMIN("A"),
-        PATIENT("P"),
-        DOCTOR("D"),
-        UNKNOWN("U");
-
-        private String code;
-
-        public String getCode() {
-            return code;
-        }
-
-        Role(String code) {
-            this.code = code;
-        }
-
-        /**
-         * Пробігає в циклі по всім енумчикам і шукає той, в кого code збігається з параметром code
-         *
-         * @param code
-         * @return
-         */
-        public static Role getByCode(String code) {
-            for (Role value : values()) {
-                if (value.getCode().equals(code)) {
-                    return value;
-                }
-            }
-
-            return null;
-        }
-    }
-
-
 }

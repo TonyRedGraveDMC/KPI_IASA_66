@@ -109,9 +109,9 @@ request.setAttribute("tomcatExamplesUrl", "/examples/");
                         <h3>Managing Tomcat</h3>
                         <p>For security, access to the <a href="/manager/html">manager webapp</a> is restricted.
                         Users are defined in:</p>
-                        <pre>$CATALINA_HOME/conf/tomcat-customer.xml</pre>
+                        <pre>$CATALINA_HOME/conf/tomcat-user.xml</pre>
                         <p>In Tomcat 8.5 access to the manager application is split between
-                           different customer. &nbsp; <a href="${tomcatDocUrl}manager-howto.html">Read more...</a></p>
+                           different user. &nbsp; <a href="${tomcatDocUrl}manager-howto.html">Read more...</a></p>
                         <br />
                         <h4><a href="${tomcatDocUrl}RELEASE-NOTES.txt">Release Notes</a></h4>
                         <h4><a href="${tomcatDocUrl}changelog.html">Changelog</a></h4>
@@ -144,10 +144,10 @@ request.setAttribute("tomcatExamplesUrl", "/examples/");
                             <li id="list-announce"><strong><a href="${tomcatUrl}lists.html#tomcat-announce">tomcat-announce</a><br />
                                 Important announcements, releases, security vulnerability notifications. (Low volume).</strong>
                             </li>
-                            <li><a href="${tomcatUrl}lists.html#tomcat-customer">tomcat-customer</a><br />
+                            <li><a href="${tomcatUrl}lists.html#tomcat-user">tomcat-user</a><br />
                                 User support and discussion
                             </li>
-                            <li><a href="${tomcatUrl}lists.html#taglibs-customer">taglibs-customer</a><br />
+                            <li><a href="${tomcatUrl}lists.html#taglibs-user">taglibs-user</a><br />
                                 User support and discussion for <a href="${tomcatUrl}taglibs/">Apache Taglibs</a>
                             </li>
                             <li><a href="${tomcatUrl}lists.html#tomcat-dev">tomcat-dev</a><br />

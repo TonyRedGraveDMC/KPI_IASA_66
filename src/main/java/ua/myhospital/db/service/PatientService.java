@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientService extends DatabaseManager implements PatientDAO {
+public class PatientService  implements PatientDAO {
     private Connection connection = getConnection();
 
     @Override

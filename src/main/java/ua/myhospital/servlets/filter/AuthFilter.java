@@ -1,13 +1,14 @@
 package ua.myhospital.servlets.filter;
 
-import ua.myhospital.db.UserDAO;
-import ua.myhospital.model.Customer;
+import ua.myhospital.core.Constant;
+import ua.myhospital.db.service.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.concurrent.atomic.AtomicReference;
 
 import static java.util.Objects.nonNull;
@@ -22,10 +23,8 @@ public class AuthFilter implements Filter {
     }
 
     @Override
-    public void doFilter(final ServletRequest request,
-                         final ServletResponse response,
+    public void doFilter(final ServletRequest request, final ServletResponse response,
                          final FilterChain filterChain)
-
             throws IOException, ServletException {
 
         final HttpServletRequest req = (HttpServletRequest) request;
@@ -34,7 +33,8 @@ public class AuthFilter implements Filter {
         final String login = req.getParameter("login");
         final String password = req.getParameter("password");
 
-        @SuppressWarnings("unchecked") final AtomicReference<UserDAO> dao = (AtomicReference<UserDAO>) req.getServletContext().getAttribute("db");
+        @SuppressWarnings("unchecked")
+        final AtomicReference<UserService> userService = (AtomicReference<UserService>) req.getServletContext().getAttribute("users");
 
         final HttpSession session = req.getSession();
 
@@ -43,24 +43,30 @@ public class AuthFilter implements Filter {
                 nonNull(session.getAttribute("login")) &&
                 nonNull(session.getAttribute("password"))) {
 
-            final Customer.Role role = (Customer.Role) session.getAttribute("role");
+            final Constant.Role role = (Constant.Role) session.getAttribute("role");
 
             moveToMenu(req, res, role);
 
-
-        } else if (dao.get().userIsExist(login, password)) {
-
-            final Customer.Role role = dao.get().getRoleByLoginPassword(login, password);
-
-            req.getSession().setAttribute("password", password);
-            req.getSession().setAttribute("login", login);
-            req.getSession().setAttribute("role", role);
-
-            moveToMenu(req, res, role);
 
         } else {
+            try {
+                if (userService.get().doesUserExist(login, password)) {
 
-            moveToMenu(req, res, Customer.Role.UNKNOWN);
+                    final Constant.Role role = userService.get().getRoleByLoginPassword(login, password);
+
+                    req.getSession().setAttribute("password", password);
+                    req.getSession().setAttribute("login", login);
+                    req.getSession().setAttribute("role", role);
+
+                    moveToMenu(req, res, role);
+
+                } else {
+
+                    moveToMenu(req, res, Constant.Role.UNKNOWN);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -71,19 +77,19 @@ public class AuthFilter implements Filter {
      */
     private void moveToMenu(final HttpServletRequest req,
                             final HttpServletResponse res,
-                            final Customer.Role role)
+                            final Constant.Role role)
             throws ServletException, IOException {
 
 
-        if (role.equals(Customer.Role.ADMIN)) {
+        if (role.equals(Constant.Role.ADMIN)) {
 
             req.getRequestDispatcher("/WEB-INF/view/admin_menu.jsp").forward(req, res);
 
-        } else if (role.equals(Customer.Role.DOCTOR)) {
+        } else if (role.equals(Constant.Role.DOCTOR)) {
 
             req.getRequestDispatcher("/WEB-INF/view/user_menu.jsp").forward(req, res);
 
-        } else if (role.equals(Customer.Role.PATIENT)) {
+        } else if (role.equals(Constant.Role.PATIENT)) {
 
         req.getRequestDispatcher("/WEB-INF/view/user_menu.jsp").forward(req, res);
 

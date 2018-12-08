@@ -1,7 +1,6 @@
 package ua.myhospital.db.dao;
 
-import ua.myhospital.db.entity.User;
-import ua.myhospital.model.Customer;
+import ua.myhospital.model.User;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -11,15 +10,15 @@ public interface UserDAO {
     //create
     void add(User user) throws SQLException;
 
-    List<Customer> getAll() throws SQLException;
+    List<User> getAll() throws SQLException;
 
-  //  Customer getId(Long idSUser) throws SQLException;
+  //  User getId(Long idSUser) throws SQLException;
 
     //update
-   // void update(Customer user) throws SQLException;
+   // void update(User user) throws SQLException;
 
     //delete
- //   void remove(Customer user) throws SQLException;
+ //   void remove(User user) throws SQLException;
 
 
 }

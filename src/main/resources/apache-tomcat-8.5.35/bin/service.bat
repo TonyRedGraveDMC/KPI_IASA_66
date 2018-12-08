@@ -111,7 +111,7 @@ shift
 if "x%1x" == "xx" goto displayUsage
 set SERVICE_USER=%1
 shift
-runas /env /savecred /customer:%SERVICE_USER% "%COMSPEC% /K \"%SELF%\" %SERVICE_CMD% %SERVICE_NAME%"
+runas /env /savecred /user:%SERVICE_USER% "%COMSPEC% /K \"%SELF%\" %SERVICE_CMD% %SERVICE_NAME%"
 goto end
 :checkServiceCmd
 if /i %SERVICE_CMD% == install goto doInstall
@@ -120,7 +120,7 @@ if /i %SERVICE_CMD% == uninstall goto doRemove
 echo Unknown parameter "%SERVICE_CMD%"
 :displayUsage
 echo.
-echo Usage: service.bat install/remove [service_name] [/customer username]
+echo Usage: service.bat install/remove [service_name] [/user username]
 goto end
 
 :doRemove

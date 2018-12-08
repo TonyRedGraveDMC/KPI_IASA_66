@@ -70,7 +70,7 @@ PRGDIR=`dirname "$PRG"`
 # Only set CATALINA_HOME if not already set
 [ -z "$CATALINA_HOME" ] && CATALINA_HOME=`cd "$PRGDIR/.." >/dev/null; pwd`
 
-# Ensure that any customer defined CLASSPATH variables are not used on startup,
+# Ensure that any user defined CLASSPATH variables are not used on startup,
 # but allow them to be specified in setenv.sh, in rare case when it is needed.
 CLASSPATH=
 
@@ -101,9 +101,9 @@ fi
 # Get standard Java environment variables
 if $os400; then
   # -r will Only work on the os400 if the files are:
-  # 1. owned by the customer
-  # 2. owned by the PRIMARY group of the customer
-  # this will not work if the customer belongs in secondary groups
+  # 1. owned by the user
+  # 2. owned by the PRIMARY group of the user
+  # this will not work if the user belongs in secondary groups
   . "$CATALINA_HOME"/bin/setclasspath.sh
 else
   if [ -r "$CATALINA_HOME"/bin/setclasspath.sh ]; then

@@ -77,7 +77,7 @@ if [ "$1" = "debug" ] ; then
   fi
 fi
 
-# Don't override the endorsed dir if the customer has set it previously
+# Don't override the endorsed dir if the user has set it previously
 if [ -z "$JAVA_ENDORSED_DIRS" ]; then
   # Java 9 no longer supports the java.endorsed.dirs
   # system property. Only try to use it if

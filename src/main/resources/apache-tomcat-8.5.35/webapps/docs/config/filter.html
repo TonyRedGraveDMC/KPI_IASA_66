@@ -59,7 +59,7 @@
     enable this behavior.</p>
 
     <p>This filter prevents the attack by explicitly setting a character set.
-    Unless the provided character set is explicitly overridden by the customer the
+    Unless the provided character set is explicitly overridden by the user the
     browser will adhere to the explicitly set character set, thus preventing the
     XSS attack.</p>
 
@@ -169,7 +169,7 @@
         header to pre-flight response. <strong>Defaults:</strong>
         <code>1800</code></p>
       </td></tr><tr><td><code class="attributeName">cors.support.credentials</code></td><td>
-        <p>A flag that indicates whether the resource supports customer credentials.
+        <p>A flag that indicates whether the resource supports user credentials.
         This flag is exposed as part of
         <code>Access-Control-Allow-Credentials</code> header in a pre-flight
         response. It helps browser determine whether or not an actual request
@@ -314,10 +314,10 @@
       <ul>
         <li>Client asks for a valid nonce. This is performed with a
             non-modifying "Fetch" request to protected resource.</li>
-        <li>Server responds with a valid nonce mapped to the current customer
+        <li>Server responds with a valid nonce mapped to the current user
             session.</li>
         <li>Client provides this nonce in the subsequent modifying requests in
-            the frame of the same customer session.</li>
+            the frame of the same user session.</li>
         <li>Server rejects all modifying requests to protected resources that
             do not contain a valid nonce.</li>
       </ul>
@@ -1688,10 +1688,10 @@ org.apache.catalina.filters.RequestDumperFilter.handlers = \
         </th></tr><tr><td><strong><code class="attributeName">encoding</code></strong></td><td>
         <p>Name of the character encoding which should be set.</p>
       </td></tr><tr><td><code class="attributeName">ignore</code></td><td>
-        <p>Determines if any character encoding specified by the customer agent is
+        <p>Determines if any character encoding specified by the user agent is
         ignored. If this attribute is <code>true</code>, any value provided by
-        the customer agent is ignored. If <code>false</code>, the encoding is only
-        set if the customer agent did not specify an encoding. The default value
+        the user agent is ignored. If <code>false</code>, the encoding is only
+        set if the user agent did not specify an encoding. The default value
         is <code>false</code>.</p>
       </td></tr></table>
 
@@ -1730,7 +1730,7 @@ org.apache.catalina.filters.RequestDumperFilter.handlers = \
                     on improving documentation for Apache Tomcat.<br><br>
                     If you have trouble and need help, read
                     <a href="https://tomcat.apache.org/findhelp.html">Find Help</a> page
-                    and ask your question on the tomcat-customer
+                    and ask your question on the tomcat-user
                     <a href="https://tomcat.apache.org/lists.html">mailing list</a>.
                     Do not ask such questions here. This is not a Q&amp;A section.<br><br>
                     The Apache Comments System is explained <a href="../comments.html">here</a>.

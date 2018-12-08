@@ -1,11 +1,13 @@
 package ua.myhospital.db.service;
 
+import ua.myhospital.core.Constant;
+import ua.myhospital.core.Converter;
 import ua.myhospital.db.DatabaseManager;
 import ua.myhospital.db.dao.UserDAO;
-import ua.myhospital.db.entity.User;
-import ua.myhospital.model.Customer;
+import ua.myhospital.model.User;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,43 +18,40 @@ public class UserService extends DatabaseManager implements UserDAO {
 
     @Override
     public void add(User user) throws SQLException {
-        String sql = " INSERT INTO USER(IDUSER, EMAIL, PASSWORD, ROLE, LAST_SEEN, CREATE_DATE) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = " INSERT INTO USER(EMAIL, PASSWORD, ROLE, LAST_SEEN, CREATE_DATE) VALUES  (?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
 
         try {
             preparedStatement = connection.prepareStatement(sql);
             // check Timestamp
-            preparedStatement.setLong(1, user.getIdUser());
-            preparedStatement.setString(2, user.getEmail());
-            preparedStatement.setString(3, user.getPassword());
-            preparedStatement.setString(4, user.getRole());
-            preparedStatement.setTimestamp(5, user.getLastSeen());
-            preparedStatement.setTimestamp(6, user.getCreateDate());
+            preparedStatement.setString(1, user.getEmail());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setString(3, user.getRole().getCode());
+            preparedStatement.setTimestamp(4, Converter.convertToTimestamp(user.getLastSeen()));
+            preparedStatement.setTimestamp(5, Converter.convertToTimestamp(user.getCreateDate()));
 
             preparedStatement.executeUpdate();
         } finally {
             if (preparedStatement != null) {
                 preparedStatement.close();
             }
-            if (connection != null) {
-                connection.close();
-            }
+
         }
 
     }
 
     public static void main(String[] args) throws SQLException {
-//        UserService userService = new UserService();
-//
-//        Customer user = new Customer("email", "password", "U",
-//                new Timestamp(System.currentTimeMillis()),
-//                        new Timestamp(System.currentTimeMillis()));
-//        userService.add(user);
+        UserService userService = new UserService();
+
+        User user = new User("newemail", "password", Constant.Role.ADMIN,
+                LocalDateTime.now(),
+                LocalDateTime.now());
+        userService.add(user);
     }
 
     @Override
-    public List<Customer> getAll() throws SQLException {
-        List<Customer> customerList = new ArrayList<>();
+    public List<User> getAll() throws SQLException {
+        List<User> userList = new ArrayList<>();
         String sql = "SELECT IDUSER, EMAIL, PASSWORD, ROLE, LAST_SEEN, CREATE_DATE FROM USER";
 
         Statement statement = null;
@@ -61,40 +60,66 @@ public class UserService extends DatabaseManager implements UserDAO {
             ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
-                Customer customer = getUser(resultSet);
-                customerList.add(customer);
+                User user = getUser(resultSet);
+                userList.add(user);
             }
         } finally {
             if (statement != null) {
                 statement.close();
             }
-            if (connection != null) {
-                connection.close();
-            }
+
         }
 
-        return customerList;
+        return userList;
     }
 
-    private Customer getUser(ResultSet resultSet) throws SQLException {
-        Customer customer = new Customer();
-        customer.setId(resultSet.getLong("idUSer"));
-        customer.setEmail(resultSet.getString("EMAIL"));
-        customer.setPassword(resultSet.getString("PASSWORD"));
+    private User getUser(ResultSet resultSet) throws SQLException {
+        User user = new User();
+        user.setId(resultSet.getLong("idUSer"));
+        user.setEmail(resultSet.getString("EMAIL"));
+        user.setPassword(resultSet.getString("PASSWORD"));
 
         // зчитуєм поле ROLE з базєйки
         String roleStr = resultSet.getString("ROLE");
 
         // шукаєм серед усіх Role енумів той, у якого code = roleStr
-        Customer.Role role = Customer.Role.getByCode(roleStr);
-        customer.setRole(role);
+        Constant.Role role = Constant.Role.getByCode(roleStr);
+        user.setRole(role);
 
         Timestamp lastSeen = resultSet.getTimestamp("LAST_SEEN");
-        customer.setLastSeen(lastSeen.toLocalDateTime());
+        user.setLastSeen(lastSeen.toLocalDateTime());
 
         Timestamp createDate = resultSet.getTimestamp("CREATE_DATE");
-        customer.setCreateDate(createDate.toLocalDateTime());
+        user.setCreateDate(createDate.toLocalDateTime());
 
-        return customer;
+        return user;
     }
+
+    public Constant.Role getRoleByLoginPassword(final String login, final String password) throws SQLException {
+        Constant.Role result = Constant.Role.UNKNOWN;
+
+        for (User user : getAll()) {
+            if (user.getEmail().equals(login) && user.getPassword().equals(password)) {
+                result = user.getRole();
+            }
+        }
+
+        return result;
+    }
+
+    public boolean doesUserExist(final String login, final String password) throws SQLException {
+
+        boolean result = false;
+
+        for (User user : getAll()) {
+            if (user.getEmail().equals(login) && user.getPassword().equals(password)) {
+                result = true;
+                break;
+            }
+        }
+
+        return result;
+    }
+
+
 }
