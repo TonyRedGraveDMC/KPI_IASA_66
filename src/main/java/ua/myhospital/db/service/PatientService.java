@@ -1,8 +1,7 @@
 package ua.myhospital.db.service;
 
-import ua.myhospital.db.DatabaseConnector;
 import ua.myhospital.db.dao.PatientDAO;
-import ua.myhospital.db.entity.Patient;
+import ua.myhospital.model.Patient;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package ua.myhospital.servlets;
+package ua.myhospital.servlet;
 
 
 import ua.myhospital.db.DatabaseConnector;
@@ -23,10 +23,7 @@ public class ContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent servletContextEvent) {
 
         users = new AtomicReference<>(new UserService());
-
-        final ServletContext servletContext =
-                servletContextEvent.getServletContext();
-
+        final ServletContext servletContext = servletContextEvent.getServletContext();
         servletContext.setAttribute("users", users);
     }
 

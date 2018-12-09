@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1>Hello USER!</h1>
+<h1>Hello Patient!</h1>
 <a href="<c:url value="/logout"/>">Logout</a>
 </body>
 </html>

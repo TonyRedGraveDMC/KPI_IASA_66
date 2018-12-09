@@ -1,6 +1,6 @@
 package ua.myhospital.db.dao;
 
-import ua.myhospital.db.entity.Physician;
+import ua.myhospital.model.Physician;
 
 import java.sql.SQLException;
 import java.util.List;

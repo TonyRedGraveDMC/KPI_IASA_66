@@ -1,9 +1,10 @@
-package ua.myhospital.servlets.filter;
+package ua.myhospital.servlet;
 
 import ua.myhospital.core.Constant;
 import ua.myhospital.db.service.UserService;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,17 +17,15 @@ import static java.util.Objects.nonNull;
 /**
  * Acidification filter.
  */
-public class AuthFilter implements Filter {
+public class AuthServlet extends HttpServlet {
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+
+    public void init() {
     }
+    
 
-    @Override
-    public void doFilter(final ServletRequest request, final ServletResponse response,
-                         final FilterChain filterChain)
-            throws IOException, ServletException {
-
+    protected void doPost(final ServletRequest request, final ServletResponse response) throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
         final HttpServletRequest req = (HttpServletRequest) request;
         final HttpServletResponse res = (HttpServletResponse) response;
 
@@ -42,17 +41,19 @@ public class AuthFilter implements Filter {
         if (nonNull(session) &&
                 nonNull(session.getAttribute("login")) &&
                 nonNull(session.getAttribute("password"))) {
-
+            System.out.println("User is already  logged");
             final Constant.Role role = (Constant.Role) session.getAttribute("role");
-
+            System.out.println(role);
             moveToMenu(req, res, role);
 
 
         } else {
             try {
                 if (userService.get().doesUserExist(login, password)) {
+            System.out.println("user exist in db");
 
                     final Constant.Role role = userService.get().getRoleByLoginPassword(login, password);
+                    System.out.println(role);
 
                     req.getSession().setAttribute("password", password);
                     req.getSession().setAttribute("login", login);
@@ -61,6 +62,7 @@ public class AuthFilter implements Filter {
                     moveToMenu(req, res, role);
 
                 } else {
+                    System.out.println("Not exist in db");
 
                     moveToMenu(req, res, Constant.Role.UNKNOWN);
                 }
@@ -87,11 +89,11 @@ public class AuthFilter implements Filter {
 
         } else if (role.equals(Constant.Role.DOCTOR)) {
 
-            req.getRequestDispatcher("/WEB-INF/view/user_menu.jsp").forward(req, res);
+            req.getRequestDispatcher("/WEB-INF/view/physician_menu.jsp").forward(req, res);
 
         } else if (role.equals(Constant.Role.PATIENT)) {
 
-        req.getRequestDispatcher("/WEB-INF/view/user_menu.jsp").forward(req, res);
+        req.getRequestDispatcher("/WEB-INF/view/patient_menu.jsp").forward(req, res);
 
         } else {
 

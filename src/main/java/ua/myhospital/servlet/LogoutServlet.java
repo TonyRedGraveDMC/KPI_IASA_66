@@ -1,4 +1,4 @@
-package ua.myhospital.servlets.servlet;
+package ua.myhospital.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,13 +1,14 @@
 package ua.myhospital.db.dao;
 
-import ua.myhospital.db.entity.Room;
+import ua.myhospital.model.Room;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface RoomDAO {
 
     //create
-    void add(Room room);
+    void add(Room room) throws SQLException;
 
     List<Room> getAll();
 

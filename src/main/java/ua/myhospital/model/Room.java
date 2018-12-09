@@ -1,4 +1,4 @@
-package ua.myhospital.db.entity;
+package ua.myhospital.model;
 
 
 public class Room {

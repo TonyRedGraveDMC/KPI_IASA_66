@@ -40,7 +40,7 @@ public class UserService extends AbstractService implements UserDAO {
     public static void main(String[] args) throws SQLException {
         UserService userService = new UserService();
 
-        User user = new User("123", "password", Constant.Role.PATIENT,
+        User user = new User("234", "password", Constant.Role.DOCTOR,
                 LocalDateTime.now(),
                 LocalDateTime.now());
         userService.add(user);

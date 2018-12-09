@@ -120,7 +120,7 @@
         <listener-class>async.AsyncStockContextListener</listener-class>
     </listener>
 
-    <!-- Define servlets that are included in the example application -->
+    <!-- Define servlet that are included in the example application -->
 
     <servlet>
       <servlet-name>ServletToJsp</servlet-name>

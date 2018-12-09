@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Simple servlet to validate that the Hello, World example can
- * execute servlets.  In the web application deployment descriptor,
+ * execute servlet.  In the web application deployment descriptor,
  * this servlet must be mapped to correspond to the link in the
  * "index.html" file.
  *
