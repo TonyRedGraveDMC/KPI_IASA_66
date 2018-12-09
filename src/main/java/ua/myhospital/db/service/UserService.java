@@ -2,7 +2,7 @@ package ua.myhospital.db.service;
 
 import ua.myhospital.core.Constant;
 import ua.myhospital.core.Converter;
-import ua.myhospital.db.DatabaseManager;
+import ua.myhospital.db.DatabaseConnector;
 import ua.myhospital.db.dao.UserDAO;
 import ua.myhospital.model.User;
 
@@ -11,14 +11,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserService extends DatabaseManager implements UserDAO {
-
-    private Connection connection = getConnection();
-
+public class UserService extends AbstractService implements UserDAO {
 
     @Override
     public void add(User user) throws SQLException {
-        String sql = " INSERT INTO USER(EMAIL, PASSWORD, ROLE, LAST_SEEN, CREATE_DATE) VALUES  (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO USER(EMAIL, PASSWORD, ROLE, LAST_SEEN, CREATE_DATE) VALUES  (?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
 
         try {
@@ -43,7 +40,7 @@ public class UserService extends DatabaseManager implements UserDAO {
     public static void main(String[] args) throws SQLException {
         UserService userService = new UserService();
 
-        User user = new User("newemail", "password", Constant.Role.ADMIN,
+        User user = new User("123", "password", Constant.Role.PATIENT,
                 LocalDateTime.now(),
                 LocalDateTime.now());
         userService.add(user);
@@ -101,6 +98,7 @@ public class UserService extends DatabaseManager implements UserDAO {
         for (User user : getAll()) {
             if (user.getEmail().equals(login) && user.getPassword().equals(password)) {
                 result = user.getRole();
+                break;
             }
         }
 

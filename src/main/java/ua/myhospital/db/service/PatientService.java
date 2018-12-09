@@ -1,6 +1,6 @@
 package ua.myhospital.db.service;
 
-import ua.myhospital.db.DatabaseManager;
+import ua.myhospital.db.DatabaseConnector;
 import ua.myhospital.db.dao.PatientDAO;
 import ua.myhospital.db.entity.Patient;
 
@@ -8,9 +8,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PatientService  implements PatientDAO {
-    private Connection connection = getConnection();
-
+public class PatientService extends AbstractService implements PatientDAO {
+   // private Connection connection = getConnection();
+    //  DatabaseConnector.getInstance();
     @Override
 
     public void add(Patient patient) throws SQLException {
@@ -27,14 +27,8 @@ public class PatientService  implements PatientDAO {
 
             preparedStatement.executeUpdate();
         } finally {
-
-
             if (preparedStatement != null) {
                 preparedStatement.close();
-            }
-
-            if (connection != null) {
-                connection.close();
             }
         }
     }
@@ -69,9 +63,6 @@ public class PatientService  implements PatientDAO {
             if (statement != null) {
                 statement.close();
             }
-            if (connection != null) {
-                connection.close();
-            }
         }
         return patientList;
     }
@@ -93,9 +84,6 @@ public class PatientService  implements PatientDAO {
         } finally {
             if (preparedStatement != null) {
                 preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
             }
         }
 
@@ -121,10 +109,6 @@ public class PatientService  implements PatientDAO {
             if (preparedStatement != null) {
                 preparedStatement.close();
             }
-
-            if (connection != null) {
-                connection.close();
-            }
         }
 
     }
@@ -143,9 +127,6 @@ public class PatientService  implements PatientDAO {
         } finally {
             if (preparedStatement != null) {
                 preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
             }
         }
     }

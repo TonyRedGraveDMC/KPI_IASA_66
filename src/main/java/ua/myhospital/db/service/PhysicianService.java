@@ -1,20 +1,18 @@
 package ua.myhospital.db.service;
-
-import com.mysql.cj.protocol.Resultset;
-import ua.myhospital.db.DatabaseManager;
+import ua.myhospital.db.DatabaseConnector;
 import ua.myhospital.db.dao.PhysicianDAO;
 import ua.myhospital.db.entity.Physician;
 
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhysicianService implements PhysicianDAO {
-    private Connection connection = getConnection();
+public class PhysicianService extends AbstractService implements PhysicianDAO {
+
 
     @Override
     public void add(Physician physician) throws SQLException {
+
         String sql = " INSERT INTO PHYSICIAN ( NAME, POSITION, SSN) VALUES (?, ?, ?)";
         PreparedStatement preparedStatement = null;
 
@@ -29,9 +27,6 @@ public class PhysicianService implements PhysicianDAO {
         } finally {
             if(preparedStatement != null){
                 preparedStatement.close();
-            }
-            if(connection != null){
-                connection.close();
             }
         }
     }
@@ -69,9 +64,6 @@ public class PhysicianService implements PhysicianDAO {
             if(statement != null) {
                 statement.close();
             }
-            if(connection != null) {
-                connection.close();
-            }
         }
 
         return physicianList;
@@ -96,9 +88,6 @@ public class PhysicianService implements PhysicianDAO {
             if(preparedStatement != null){
                 preparedStatement.close();
             }
-            if(connection != null){
-                connection.close();
-            }
         }
 
         return physician;
@@ -121,10 +110,6 @@ public class PhysicianService implements PhysicianDAO {
             if (preparedStatement != null) {
                 preparedStatement.close();
             }
-
-            if (connection != null) {
-                connection.close();
-            }
         }
 
     }
@@ -144,9 +129,6 @@ public class PhysicianService implements PhysicianDAO {
         }finally {
             if(preparedStatement != null){
                 preparedStatement.close();
-            }
-            if(connection != null){
-                connection.close();
             }
         }
 
