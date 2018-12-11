@@ -24,10 +24,10 @@ public class AuthServlet extends HttpServlet {
     }
     
 
-    protected void doPost(final ServletRequest request, final ServletResponse response) throws IOException, ServletException {
-        request.setCharacterEncoding("UTF-8");
-        final HttpServletRequest req = (HttpServletRequest) request;
-        final HttpServletResponse res = (HttpServletResponse) response;
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+        req.setCharacterEncoding("UTF-8");
+//        final HttpServletRequest req = (HttpServletRequest) request;
+//        final HttpServletResponse res = (HttpServletResponse) response;
 
         final String login = req.getParameter("login");
         final String password = req.getParameter("password");

@@ -27,7 +27,7 @@
 <% Map<String,List<String>> cipherList = (Map<String,List<String>>) request.getAttribute("cipherList");
 %>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+    <meta http-equiv="content-roomNumber" content="text/html; charset=iso-8859-1"/>
     <meta http-equiv="pragma" content="no-cache"/><!-- HTTP 1.0 -->
     <meta http-equiv="cache-control" content="no-cache,must-revalidate"/><!-- HTTP 1.1 -->
     <meta http-equiv="expires" content="0"/><!-- 0 is an invalid value and should be treated as 'now' -->
@@ -70,7 +70,7 @@
 
 <form method="get" action="<%=request.getContextPath()%>/html">
   <p style="text-align: center;">
-    <input type="submit" value="Return to main page" />
+    <input roomNumber="submit" value="Return to main page" />
   </p>
 </form>
 

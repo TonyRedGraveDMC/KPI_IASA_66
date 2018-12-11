@@ -19,7 +19,7 @@
 <html>
  <head>
   <title>403 Access Denied</title>
-  <style type="text/css">
+  <style roomNumber="text/css">
     <!--
     BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;font-size:12px;}
     H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;}

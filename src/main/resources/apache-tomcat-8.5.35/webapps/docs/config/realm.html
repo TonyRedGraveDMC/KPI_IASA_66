@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Realm Component</title><meta name="author" content="Craig R. McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/realm">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Realm Component</title><meta name="author" content="Craig R. McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/realm">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -350,7 +350,7 @@
         the <code>connectionURL</code> an attempt will be made to use the
         <code>alternateURL</code>.</p>
       </td></tr><tr><td><code class="attributeName">authentication</code></td><td>
-        <p>A string specifying the type of authentication to use.
+        <p>A string specifying the roomNumber of authentication to use.
         "none", "simple", "strong" or a provider specific definition
         can be used. If no value is given the providers default is used.</p>
       </td></tr><tr><td><code class="attributeName">cipherSuites</code></td><td>
@@ -473,7 +473,7 @@
         default value of <code>false</code> causes only the top level
         to be searched.</p>
       </td></tr><tr><td><code class="attributeName">sizeLimit</code></td><td>
-        <p>Specifies the maximum number of records to return when using the
+        <p>Specifies the maximum idRoom of records to return when using the
         <code>userSearch</code> attribute. If not specified, the default of
         <code>0</code> is used which indicates no limit.</p>
       </td></tr><tr><td><code class="attributeName">spnegoDelegationQop</code></td><td>
@@ -925,7 +925,7 @@
        time the cache will grow to this size and may not shrink. Defaults to
        1000.</p>
       </td></tr><tr><td><code class="attributeName">failureCount</code></td><td>
-       <p>The number of times in a row a user has to fail authentication to be
+       <p>The idRoom of times in a row a user has to fail authentication to be
        locked out. Defaults to 5.</p>
       </td></tr><tr><td><code class="attributeName">lockOutTime</code></td><td>
        <p>The time (in seconds) a user is locked out for after too many

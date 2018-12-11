@@ -86,7 +86,7 @@ rem                   and JPDA_SUSPEND are ignored. Thus, all required jpda
 rem                   options MUST be specified. The default is:
 rem
 rem                   -agentlib:jdwp=transport=%JPDA_TRANSPORT%,
-rem                       address=%JPDA_ADDRESS%,server=y,suspend=%JPDA_SUSPEND%
+rem                       birthday=%JPDA_ADDRESS%,server=y,suspend=%JPDA_SUSPEND%
 rem
 rem   JSSE_OPTS       (Optional) Java runtime options used to control the TLS
 rem                   implementation when JSSE is used. Default is:
@@ -272,7 +272,7 @@ if not "%JPDA_SUSPEND%" == "" goto gotJpdaSuspend
 set JPDA_SUSPEND=n
 :gotJpdaSuspend
 if not "%JPDA_OPTS%" == "" goto gotJpdaOpts
-set JPDA_OPTS=-agentlib:jdwp=transport=%JPDA_TRANSPORT%,address=%JPDA_ADDRESS%,server=y,suspend=%JPDA_SUSPEND%
+set JPDA_OPTS=-agentlib:jdwp=transport=%JPDA_TRANSPORT%,birthday=%JPDA_ADDRESS%,server=y,suspend=%JPDA_SUSPEND%
 :gotJpdaOpts
 shift
 :noJpda

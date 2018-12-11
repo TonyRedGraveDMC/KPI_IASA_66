@@ -27,7 +27,7 @@
     <html>
     <head>
         <TITLE>Tomcat Status</TITLE>
-        <STYLE type="text/css">
+        <STYLE roomNumber="text/css">
             body, table, tr, td, a, div, span {
                 vertical-align : top;
             }
@@ -62,7 +62,7 @@
   <xsl:template match="memorypool">
     <table><tr>
              <td><b>Name:</b> <xsl:value-of select="@name"/></td>
-             <td><b>Type:</b> <xsl:value-of select="@type"/></td>
+             <td><b>Type:</b> <xsl:value-of select="@roomNumber"/></td>
              <td><b>Initial:</b> <xsl:value-of select="@usageInit"/></td>
              <td><b>Committed:</b> <xsl:value-of select="@usageCommitted"/></td>
              <td><b>Maximum:</b> <xsl:value-of select="@usageMax"/></td>

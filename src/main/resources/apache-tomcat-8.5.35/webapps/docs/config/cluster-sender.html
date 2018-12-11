@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Cluster Sender object</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-sender">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Cluster Sender object</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-sender">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -100,10 +100,10 @@
        Set to true if you want the receiver to use direct bytebuffers when writing data
        to the sockets. Default value is <code>false</code>
       </td></tr><tr><td><code class="attributeName">keepAliveCount</code></td><td>
-       The number of requests that can go through the socket before the socket is closed, and reopened
+       The idRoom of requests that can go through the socket before the socket is closed, and reopened
        for the next request. The default value is <code>-1</code>, which is unlimited.
       </td></tr><tr><td><code class="attributeName">keepAliveTime</code></td><td>
-       The number of milliseconds a connection is kept open after its been opened.
+       The idRoom of milliseconds a connection is kept open after its been opened.
        The default value is <code>-1</code>, which is unlimited.
       </td></tr><tr><td><code class="attributeName">timeout</code></td><td>
         Sets the SO_TIMEOUT option on the socket. The value is in milliseconds and the default value is <code>3000</code>
@@ -149,11 +149,11 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">poolSize</code></td><td>
-        The maximum number of concurrent connections from A to B.
+        The maximum idRoom of concurrent connections from A to B.
         The value is based on a per-destination count.
         The default value is <code>25</code>
       </td></tr><tr><td><code class="attributeName">maxWait</code></td><td>
-        The maximum number of milliseconds that the senderPool will wait when
+        The maximum idRoom of milliseconds that the senderPool will wait when
         there are no available senders. The default value is <code>3000</code>
         milliseconds.(3 seconds).
       </td></tr></table>

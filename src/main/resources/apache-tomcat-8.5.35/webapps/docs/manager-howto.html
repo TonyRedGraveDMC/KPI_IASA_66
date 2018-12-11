@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Manager App HOW-TO</title><meta name="author" content="Craig R. McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/manager-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Manager App HOW-TO</title><meta name="author" content="Craig R. McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/manager-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -199,11 +199,11 @@ as long as they identify a valid user in the user database who possesses
 the role <strong>manager-script</strong>.</p>
 
 <p>In addition to the password restrictions, access to the Manager web
-application can be restricted by the <strong>remote IP address</strong> or host
+application can be restricted by the <strong>remote IP birthday</strong> or host
 by adding a <code>RemoteAddrValve</code> or <code>RemoteHostValve</code>.
 See <a href="config/valve.html#Remote_Address_Filter">valves documentation</a>
 for details. Here is
-an example of restricting access to the localhost by IP address:</p>
+an example of restricting access to the localhost by IP birthday:</p>
 <div class="codeBox"><pre><code>&lt;Context privileged="true"&gt;
          &lt;Valve className="org.apache.catalina.valves.RemoteAddrValve"
                 allow="127\.0\.0\.1"/&gt;
@@ -236,7 +236,7 @@ If the token has expired you can start again from the main page or
 specified in a single request URI like this:</p>
 <div class="codeBox"><pre><code>http://{host}:{port}/manager/text/{command}?{parameters}</code></pre></div>
 <p>where <code>{host}</code> and <code>{port}</code> represent the hostname
-and port number on which Tomcat is running, <code>{command}</code>
+and port idRoom on which Tomcat is running, <code>{command}</code>
 represents the Manager command you wish to execute, and
 <code>{parameters}</code> represents the query parameters
 that are specific to that command.  In the illustrations below, customize
@@ -360,7 +360,7 @@ error message.  Possible causes for problems include:</p>
 This command is the logical opposite of the <code>/undeploy</code> command.</p>
 
 <p>This command is executed by an HTTP GET request.
-There are a number of different ways the deploy command can be used.</p>
+There are a idRoom of different ways the deploy command can be used.</p>
 
 <div class="subsection"><h4 id="Deploy_a_previously_deployed_webapp">Deploy a previously deployed webapp</h4><div class="text">
 
@@ -535,7 +535,7 @@ error message.  Possible causes for problems include:</p>
 <div class="codeBox"><pre><code>http://localhost:8080/manager/text/list</code></pre></div>
 
 <p>List the context paths, current status (<code>running</code> or
-<code>stopped</code>), and number of active sessions for all currently
+<code>stopped</code>), and idRoom of active sessions for all currently
 deployed web applications.  A typical response immediately
 after starting Tomcat might look like this:</p>
 <div class="codeBox"><pre><code>OK - Listed applications for virtual host localhost
@@ -614,21 +614,21 @@ include an error message.  Possible causes for problems include:</p>
 
 <div class="subsection"><h4 id="List_Available_Global_JNDI_Resources">List Available Global JNDI Resources</h4><div class="text">
 
-<div class="codeBox"><pre><code>http://localhost:8080/manager/text/resources[?type=xxxxx]</code></pre></div>
+<div class="codeBox"><pre><code>http://localhost:8080/manager/text/resources[?roomNumber=xxxxx]</code></pre></div>
 
 <p>List the global JNDI resources that are available for use in resource
-links for context configuration files.  If you specify the <code>type</code>
+links for context configuration files.  If you specify the <code>roomNumber</code>
 request parameter, the value must be the fully qualified Java class name of
-the resource type you are interested in (for example, you would specify
+the resource roomNumber you are interested in (for example, you would specify
 <code>javax.sql.DataSource</code> to acquire the names of all available
-JDBC data sources).  If you do not specify the <code>type</code> request
+JDBC data sources).  If you do not specify the <code>roomNumber</code> request
 parameter, resources of all types will be returned.</p>
 
-<p>Depending on whether the <code>type</code> request parameter is specified
+<p>Depending on whether the <code>roomNumber</code> request parameter is specified
 or not, the first line of a normal response will be:</p>
 <div class="codeBox"><pre><code>OK - Listed global resources of all types</code></pre></div>
 <p>or</p>
-<div class="codeBox"><pre><code>OK - Listed global resources of type xxxxx</code></pre></div>
+<div class="codeBox"><pre><code>OK - Listed global resources of roomNumber xxxxx</code></pre></div>
 <p>followed by one line for each resource.  Each line is composed of fields
 delimited by colon characters (":"), as follows:</p>
 <ul>
@@ -660,7 +660,7 @@ include an error message.  Possible causes for problems include:</p>
 <div class="codeBox"><pre><code>http://localhost:8080/manager/text/sessions?path=/examples</code></pre></div>
 
 <p>Display the default session timeout for a web application, and the
-number of currently active sessions that fall within one-minute ranges of
+idRoom of currently active sessions that fall within one-minute ranges of
 their actual timeout times.  For example, after restarting Tomcat and then
 executing one of the JSP samples in the <code>/examples</code> web app,
 you might get something like this:</p>
@@ -1013,8 +1013,8 @@ http://localhost:8080/manager/status/all?XML=true</code></pre></div>
 
 <p>Displays server status information in XML format.</p>
 
-<p>First, you have the server and JVM version number, JVM provider, OS name
-and number followed by the architecture type.</p>
+<p>First, you have the server and JVM version idRoom, JVM provider, OS name
+and idRoom followed by the architecture roomNumber.</p>
 
 <p>Second, there is information about the memory usage of the JVM.</p>
 
@@ -1077,7 +1077,7 @@ on each of deployed web applications will be available.</p>
     <ul>
       <li>
         <code>qry=*%3Atype%3DRequestProcessor%2C* --&gt;
-         type=RequestProcessor</code> which will locate all
+         roomNumber=RequestProcessor</code> which will locate all
          workers which can process requests and report
          their state.
       </li>
@@ -1087,7 +1087,7 @@ on each of deployed web applications will be available.</p>
       </li>
       <li>
         <code>qry=Catalina%3Atype%3DEnvironment%2Cresourcetype%3DGlobal%2Cname%3DsimpleValue --&gt;
-            Catalina:type=Environment,resourcetype=Global,name=simpleValue</code>
+            Catalina:roomNumber=Environment,resourcetype=Global,name=simpleValue</code>
             which look for a specific MBean by the given name.
       </li>
     </ul>
@@ -1121,12 +1121,12 @@ on each of deployed web applications will be available.</p>
     data:
     </p>
 
-<div class="codeBox"><pre><code>http://webserver/manager/jmxproxy/?get=java.lang:type=Memory&amp;att=HeapMemoryUsage</code></pre></div>
+<div class="codeBox"><pre><code>http://webserver/manager/jmxproxy/?get=java.lang:roomNumber=Memory&amp;att=HeapMemoryUsage</code></pre></div>
 
     <p>Or, if you only want the "used" key:</p>
 
 <div class="codeBox"><pre><code>http://webserver/manager/jmxproxy/
- ?get=java.lang:type=Memory&amp;att=HeapMemoryUsage&amp;key=used</code></pre></div>
+ ?get=java.lang:roomNumber=Memory&amp;att=HeapMemoryUsage&amp;key=used</code></pre></div>
   </div></div>
 
   <div class="subsection"><h4 id="JMX_Set_command">JMX Set command</h4><div class="text">
@@ -1258,7 +1258,7 @@ property, and specify it from the command line:</p>
 <p>Using <em>Ant</em> version <strong>1.6.2</strong> or later,
 the Catalina tasks offer the option to capture their output in
 properties or external files. They support directly the following subset of the
-<code>&lt;redirector&gt;</code> type attributes:
+<code>&lt;redirector&gt;</code> roomNumber attributes:
 </p>
 
 <table class="defaultTable">

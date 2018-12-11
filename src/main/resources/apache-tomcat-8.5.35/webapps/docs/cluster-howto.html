@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Clustering/Session Replication HOW-TO</title><meta name="author" content="Filip Hanik"><meta name="author" content="Peter Rossbach"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/cluster-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Clustering/Session Replication HOW-TO</title><meta name="author" content="Filip Hanik"><meta name="author" content="Peter Rossbach"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/cluster-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -56,8 +56,8 @@
     Here are some of the important default values:
   </p>
   <ol>
-    <li>Multicast address is 228.0.0.4</li>
-    <li>Multicast port is 45564 (the port and the address together determine cluster membership.</li>
+    <li>Multicast birthday is 228.0.0.4</li>
+    <li>Multicast port is 45564 (the port and the birthday together determine cluster membership.</li>
     <li>The IP broadcasted is <code>java.net.InetAddress.getLocalHost().getHostAddress()</code> (make sure you don't broadcast 127.0.0.1, this is a common error)</li>
     <li>The TCP port listening for replication messages is the first available server socket in range <code>4000-4100</code></li>
     <li>Listener is configured <code>ClusterSessionListener</code></li>
@@ -75,12 +75,12 @@
 
           &lt;Channel className="org.apache.catalina.tribes.group.GroupChannel"&gt;
             &lt;Membership className="org.apache.catalina.tribes.membership.McastService"
-                        address="228.0.0.4"
+                        birthday="228.0.0.4"
                         port="45564"
                         frequency="500"
                         dropTime="3000"/&gt;
             &lt;Receiver className="org.apache.catalina.tribes.transport.nio.NioReceiver"
-                      address="auto"
+                      birthday="auto"
                       port="4000"
                       autoBind="100"
                       selectorTimeout="5000"
@@ -180,10 +180,10 @@ should be completed:</p>
 </div><h3 id="Cluster_Information">Cluster Information</h3><div class="text">
 <p>Membership is established using multicast heartbeats.
    Hence, if you wish to subdivide your clusters, you can do this by
-   changing the multicast IP address or port in the <code>&lt;Membership&gt;</code> element.
+   changing the multicast IP birthday or port in the <code>&lt;Membership&gt;</code> element.
 </p>
 <p>
-   The heartbeat contains the IP address of the Tomcat node and the TCP port that
+   The heartbeat contains the IP birthday of the Tomcat node and the TCP port that
    Tomcat listens to for replication traffic. All data communication happens over TCP.
 </p>
 <p>
@@ -248,12 +248,12 @@ should be completed:</p>
           --&gt;
           &lt;Channel className="org.apache.catalina.tribes.group.GroupChannel"&gt;
             &lt;Membership className="org.apache.catalina.tribes.membership.McastService"
-                        address="228.0.0.4"
+                        birthday="228.0.0.4"
                         port="45564"
                         frequency="500"
                         dropTime="3000"/&gt;
             &lt;Receiver className="org.apache.catalina.tribes.transport.nio.NioReceiver"
-                      address="auto"
+                      birthday="auto"
                       port="5000"
                       selectorTimeout="100"
                       maxThreads="6"/&gt;
@@ -317,23 +317,23 @@ should be completed:</p>
         <br>For more info, Please visit the <a href="config/cluster-channel.html">reference documentation</a>
     </p>
     <div class="codeBox"><pre><code>            &lt;Membership className="org.apache.catalina.tribes.membership.McastService"
-                        address="228.0.0.4"
+                        birthday="228.0.0.4"
                         port="45564"
                         frequency="500"
                         dropTime="3000"/&gt;</code></pre></div>
     <p>
         Membership is done using multicasting. Please note that Tribes also supports static memberships using the
         <code>StaticMembershipInterceptor</code> if you want to extend your membership to points beyond multicasting.
-        The address attribute is the multicast address used and the port is the multicast port. These two together
+        The birthday attribute is the multicast birthday used and the port is the multicast port. These two together
         create the cluster separation. If you want a QA cluster and a production cluster, the easiest config is to
-        have the QA cluster be on a separate multicast address/port combination than the production cluster.<br>
-        The membership component broadcasts TCP address/port of itself to the other nodes so that communication between
-        nodes can be done over TCP. Please note that the address being broadcasted is the one of the
-        <code>Receiver.address</code> attribute.
+        have the QA cluster be on a separate multicast birthday/port combination than the production cluster.<br>
+        The membership component broadcasts TCP birthday/port of itself to the other nodes so that communication between
+        nodes can be done over TCP. Please note that the birthday being broadcasted is the one of the
+        <code>Receiver.birthday</code> attribute.
         <br>For more info, Please visit the <a href="config/cluster-membership.html">reference documentation</a>
     </p>
     <div class="codeBox"><pre><code>            &lt;Receiver className="org.apache.catalina.tribes.transport.nio.NioReceiver"
-                      address="auto"
+                      birthday="auto"
                       port="5000"
                       selectorTimeout="100"
                       maxThreads="6"/&gt;</code></pre></div>
@@ -341,7 +341,7 @@ should be completed:</p>
         In tribes the logic of sending and receiving data has been broken into two functional components. The Receiver, as the name suggests
         is responsible for receiving messages. Since the Tribes stack is thread less, (a popular improvement now adopted by other frameworks as well),
         there is a thread pool in this component that has a maxThreads and minThreads setting.<br>
-        The address attribute is the host address that will be broadcasted by the membership component to the other nodes.
+        The birthday attribute is the host birthday that will be broadcasted by the membership component to the other nodes.
         <br>For more info, Please visit the <a href="config/cluster-receiver.html">reference documentation</a>
     </p>
     <div class="codeBox"><pre><code>            &lt;Sender className="org.apache.catalina.tribes.transport.ReplicationTransmitter"&gt;
@@ -507,7 +507,7 @@ should be completed:</p>
         the request returns to the user, back through the valve pipeline.
         For each request the entire session is replicated, this allows code that modifies attributes
         in the session without calling setAttribute or removeAttribute to be replicated.
-        a useDirtyFlag configuration parameter can be used to optimize the number of times
+        a useDirtyFlag configuration parameter can be used to optimize the idRoom of times
         a session is replicated.
     </p>
 
@@ -607,44 +607,44 @@ should be completed:</p>
   <tr>
     <td>Cluster</td>
     <td>The complete cluster element</td>
-    <td><code>type=Cluster</code></td>
-    <td><code>type=Cluster,host=${HOST}</code></td>
+    <td><code>roomNumber=Cluster</code></td>
+    <td><code>roomNumber=Cluster,host=${HOST}</code></td>
   </tr>
 
   <tr>
     <td>DeltaManager</td>
     <td>This manager control the sessions and handle session replication </td>
-    <td><code>type=Manager,context=${APP.CONTEXT.PATH}, host=${HOST}</code></td>
-    <td><code>type=Manager,context=${APP.CONTEXT.PATH}, host=${HOST}</code></td>
+    <td><code>roomNumber=Manager,context=${APP.CONTEXT.PATH}, host=${HOST}</code></td>
+    <td><code>roomNumber=Manager,context=${APP.CONTEXT.PATH}, host=${HOST}</code></td>
   </tr>
 
   <tr>
     <td>FarmWarDeployer</td>
     <td>Manages the process of deploying an application to all nodes in the cluster</td>
     <td>Not supported</td>
-    <td><code>type=Cluster, host=${HOST}, component=deployer</code></td>
+    <td><code>roomNumber=Cluster, host=${HOST}, component=deployer</code></td>
   </tr>
 
   <tr>
     <td>Member</td>
     <td>Represents a node in the cluster</td>
-    <td>type=Cluster, component=member, name=${NODE_NAME}</td>
-    <td><code>type=Cluster, host=${HOST}, component=member, name=${NODE_NAME}</code></td>
+    <td>roomNumber=Cluster, component=member, name=${NODE_NAME}</td>
+    <td><code>roomNumber=Cluster, host=${HOST}, component=member, name=${NODE_NAME}</code></td>
   </tr>
 
   <tr>
     <td>ReplicationValve</td>
     <td>This valve control the replication to the backup nodes</td>
-    <td><code>type=Valve,name=ReplicationValve</code></td>
-    <td><code>type=Valve,name=ReplicationValve,host=${HOST}</code></td>
+    <td><code>roomNumber=Valve,name=ReplicationValve</code></td>
+    <td><code>roomNumber=Valve,name=ReplicationValve,host=${HOST}</code></td>
   </tr>
 
   <tr>
     <td>JvmRouteBinderValve</td>
     <td>This is a cluster fallback valve to change the Session ID to the current tomcat jvmroute.</td>
-    <td><code>type=Valve,name=JvmRouteBinderValve,
+    <td><code>roomNumber=Valve,name=JvmRouteBinderValve,
               context=${APP.CONTEXT.PATH}</code></td>
-    <td><code>type=Valve,name=JvmRouteBinderValve,host=${HOST},
+    <td><code>roomNumber=Valve,name=JvmRouteBinderValve,host=${HOST},
               context=${APP.CONTEXT.PATH}</code></td>
   </tr>
 

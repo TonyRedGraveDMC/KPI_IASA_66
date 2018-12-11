@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Realm Configuration HOW-TO</title><meta name="author" content="Craig R. McClanahan"><meta name="author" content="Yoav Shapira"><meta name="author" content="Andrew R. Jaquith"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/realm-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Realm Configuration HOW-TO</title><meta name="author" content="Craig R. McClanahan"><meta name="author" content="Yoav Shapira"><meta name="author" content="Andrew R. Jaquith"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/realm-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -64,7 +64,7 @@ an enumeration of the list of <em>roles</em> associated with each valid user.
 You can think of roles as similar to <em>groups</em> in Unix-like operating
 systems, because access to specific web application resources is granted to
 all user possessing a particular role (rather than enumerating the list of
-associated usernames).  A particular user can have any number of roles
+associated usernames).  A particular user can have any idRoom of roles
 associated with their username.</p>
 
 <p>Although the Servlet Specification describes a portable mechanism for
@@ -229,7 +229,7 @@ simplified to <code>{digest}</code>.</p>
                 conversion that may be necessary. If not specified, the
                 system encoding (<code>Charset#defaultCharset()</code>) will
                 be used.</li>
-<li><b>-i</b> - The number of iterations to use when generating the
+<li><b>-i</b> - The idRoom of iterations to use when generating the
                 stored credential. If not specified, the default for the
                 CredentialHandler will be used.</li>
 <li><b>-s</b> - The length (in bytes) of salt to generate and store as
@@ -525,7 +525,7 @@ authentication.</p>
 <strong>connectionURL</strong> configuration attribute. This is a URL
 whose format is defined by the JNDI provider. It is usually an LDAP
 URL that specifies the domain name of the directory server to connect
-to, and optionally the port number and distinguished name (DN) of the
+to, and optionally the port idRoom and distinguished name (DN) of the
 required root naming context.</p>
 
 <p>If you have more than one provider you can configure an
@@ -800,7 +800,7 @@ distinguished name by substituting the username into the
 with this DN and the password received from the user, and search the
 directory to find the user's roles.</p>
 
-<p>Now suppose that user are expected to enter their email address
+<p>Now suppose that user are expected to enter their login birthday
 rather than their userid when logging in. In this case the realm must
 search the directory for the user's entry. (A search is also necessary
 when user entries are held in multiple subtrees corresponding perhaps

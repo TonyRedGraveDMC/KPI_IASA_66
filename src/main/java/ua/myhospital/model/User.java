@@ -6,29 +6,26 @@ import java.time.LocalDateTime;
 
 public class User {
     private long id;
-    private String email;
+
+
+
+    private String login;
     private String password;
     private Role role;
-    private LocalDateTime lastSeen;
     private LocalDateTime createDate;
+
+    public User(long id) {
+        this.id = id;
+    }
+
 
     public User() {
     }
 
-    public User(String email, String password, Role role, LocalDateTime lastSeen, LocalDateTime createDate) {
-        this.email = email;
+    public User(String login, String password, Role role, LocalDateTime createDate) {
+        this.login = login;
         this.password = password;
         this.role = role;
-        this.lastSeen = lastSeen;
-        this.createDate = createDate;
-    }
-
-    public User(long id, String email, String password, Role role, LocalDateTime lastSeen, LocalDateTime createDate) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-        this.lastSeen = lastSeen;
         this.createDate = createDate;
     }
 
@@ -36,8 +33,8 @@ public class User {
         return id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLogin() {
+        return login;
     }
 
     public String getPassword() {
@@ -49,10 +46,6 @@ public class User {
         return role;
     }
 
-    public LocalDateTime getLastSeen() {
-        return lastSeen;
-    }
-
     public LocalDateTime getCreateDate() {
         return createDate;
     }
@@ -61,8 +54,8 @@ public class User {
         this.id = id;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public void setPassword(String password) {
@@ -71,10 +64,6 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
-    }
-
-    public void setLastSeen(LocalDateTime lastSeen) {
-        this.lastSeen = lastSeen;
     }
 
     public void setCreateDate(LocalDateTime createDate) {

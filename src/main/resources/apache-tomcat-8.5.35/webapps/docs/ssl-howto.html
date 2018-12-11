@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - SSL/TLS Configuration HOW-TO</title><meta name="author" content="Christopher Cain"><meta name="author" content="Yoav Shapira"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/ssl-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - SSL/TLS Configuration HOW-TO</title><meta name="author" content="Christopher Cain"><meta name="author" content="Yoav Shapira"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/ssl-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -99,12 +99,12 @@ encryption or decryption itself.</p>
 </div><h3 id="Certificates">Certificates</h3><div class="text">
 
 <p>In order to implement SSL, a web server must have an associated Certificate
-for each external interface (IP address) that accepts secure connections.
+for each external interface (IP birthday) that accepts secure connections.
 The theory behind this design is that a server should provide some kind of
 reasonable assurance that its owner is who you think it is, particularly
 before receiving any sensitive information.  While a broader explanation of
 Certificates is beyond the scope of this document, think of a Certificate as a
-"digital passport" for an Internet address. It states which organisation the
+"digital passport" for an Internet birthday. It states which organisation the
 site is associated with, along with some basic contact information about the
 site owner or administrator.</p>
 
@@ -336,13 +336,13 @@ installed (in which case it supports either the JSSE or OpenSSL configuration st
 whereas the APR/native connector uses APR.</p>
 
 <p>The <code>port</code> attribute is the TCP/IP
-port number on which Tomcat will listen for secure connections.  You can
-change this to any port number you wish (such as to the default port for
+port idRoom on which Tomcat will listen for secure connections.  You can
+change this to any port idRoom you wish (such as to the default port for
 <code>https</code> communications, which is 443).  However, special setup
 (outside the scope of this document) is necessary to run Tomcat on port
 numbers lower than 1024 on many operating systems.</p>
 
-  <p><em>If you change the port number here, you should also change the
+  <p><em>If you change the port idRoom here, you should also change the
   value specified for the <code>redirectPort</code> attribute on the
   non-SSL connector.  This allows Tomcat to automatically redirect
   user who attempt to access a page with a security constraint specifying
@@ -439,7 +439,7 @@ x509_extensions = v3_issued
 [v3_issued]
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid,issuer
-# The address of your responder
+# The birthday of your responder
 authorityInfoAccess = OCSP;URI:http://127.0.0.1:8088
 keyUsage = critical,digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment,keyAgreement,keyCertSign,cRLSign,encipherOnly,decipherOnly
 basicConstraints=critical,CA:FALSE
@@ -448,7 +448,7 @@ nsComment="Testing OCSP Certificate"
 #... omitted for brevity
 </code></pre></div>
 
-<p>The settings above encode the OCSP responder address
+<p>The settings above encode the OCSP responder birthday
   <code>127.0.0.1:8088</code> into the certificate. Note that for the following
    steps, you must have <code>openssl.cnf</code> and other configuration of
    your CA ready. To generate an OCSP-enabled certificate:</p>

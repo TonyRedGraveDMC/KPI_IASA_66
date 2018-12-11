@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Changelog</title></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home" src="./images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img src="./images/asf-logo.svg" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tomcat 8</h1><div class="versionInfo">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Changelog</title></head><body><div id="wrapper"><header><div id="header"><div><div><div class="logo noPrint"><a href="https://tomcat.apache.org/"><img alt="Tomcat Home" src="./images/tomcat.png"></a></div><div style="height: 1px;"></div><div class="asfLogo noPrint"><a href="https://www.apache.org/" target="_blank"><img src="./images/asf-logo.svg" alt="The Apache Software Foundation" style="width: 266px; height: 83px;"></a></div><h1>Apache Tomcat 8</h1><div class="versionInfo">
           Version 8.5.35,
           <time datetime="2018-11-03">Nov 3 2018</time></div><div style="height: 1px;"></div><div style="clear: left;"></div></div></div></div></header><div id="middle"><div><div id="mainLeft" class="noprint"><div><nav><div><h2>Links</h2><ul><li><a href="index.html">Docs Home</a></li><li><a href="https://wiki.apache.org/tomcat/FAQ">FAQ</a></li><li><a href="#comments_section">User Comments</a></li></ul></div><div><h2>User Guide</h2><ul><li><a href="introduction.html">1) Introduction</a></li><li><a href="setup.html">2) Setup</a></li><li><a href="appdev/index.html">3) First webapp</a></li><li><a href="deployer-howto.html">4) Deployer</a></li><li><a href="manager-howto.html">5) Manager</a></li><li><a href="host-manager-howto.html">6) Host Manager</a></li><li><a href="realm-howto.html">7) Realms and AAA</a></li><li><a href="security-manager-howto.html">8) Security Manager</a></li><li><a href="jndi-resources-howto.html">9) JNDI Resources</a></li><li><a href="jndi-datasource-examples-howto.html">10) JDBC DataSources</a></li><li><a href="class-loader-howto.html">11) Classloading</a></li><li><a href="jasper-howto.html">12) JSPs</a></li><li><a href="ssl-howto.html">13) SSL/TLS</a></li><li><a href="ssi-howto.html">14) SSI</a></li><li><a href="cgi-howto.html">15) CGI</a></li><li><a href="proxy-howto.html">16) Proxy Support</a></li><li><a href="mbeans-descriptors-howto.html">17) MBeans Descriptors</a></li><li><a href="default-servlet.html">18) Default Servlet</a></li><li><a href="cluster-howto.html">19) Clustering</a></li><li><a href="balancer-howto.html">20) Load Balancer</a></li><li><a href="connectors.html">21) Connectors</a></li><li><a href="monitoring.html">22) Monitoring and Management</a></li><li><a href="logging.html">23) Logging</a></li><li><a href="apr.html">24) APR/Native</a></li><li><a href="virtual-hosting-howto.html">25) Virtual Hosting</a></li><li><a href="aio.html">26) Advanced IO</a></li><li><a href="extras.html">27) Additional Components</a></li><li><a href="maven-jars.html">28) Mavenized</a></li><li><a href="security-howto.html">29) Security Considerations</a></li><li><a href="windows-service-howto.html">30) Windows Service</a></li><li><a href="windows-auth-howto.html">31) Windows Authentication</a></li><li><a href="jdbc-pool.html">32) Tomcat's JDBC Pool</a></li><li><a href="web-socket-howto.html">33) WebSocket</a></li><li><a href="rewrite.html">34) Rewrite</a></li></ul></div><div><h2>Reference</h2><ul><li><a href="RELEASE-NOTES.txt">Release Notes</a></li><li><a href="config/index.html">Configuration</a></li><li><a href="api/index.html">Tomcat Javadocs</a></li><li><a href="servletapi/index.html">Servlet Javadocs</a></li><li><a href="jspapi/index.html">JSP 2.3 Javadocs</a></li><li><a href="elapi/index.html">EL 3.0 Javadocs</a></li><li><a href="websocketapi/index.html">WebSocket 1.1 Javadocs</a></li><li><a href="https://tomcat.apache.org/connectors-doc/">JK 1.2 Documentation</a></li></ul></div><div><h2>Apache Tomcat Development</h2><ul><li><a href="building.html">Building</a></li><li><a href="changelog.html">Changelog</a></li><li><a href="https://wiki.apache.org/tomcat/TomcatVersions">Status</a></li><li><a href="developers.html">Developers</a></li><li><a href="architecture/index.html">Architecture</a></li><li><a href="funcspecs/index.html">Functional Specs.</a></li><li><a href="tribes/introduction.html">Tribes</a></li></ul></div></nav></div></div><div id="mainRight"><div id="content"><h2>Changelog</h2><h3 id="Tomcat_8.5.35_(markt)">Tomcat 8.5.35 (markt)</h3><div class="text">
   <div class="subsection"><h4 id="Tomcat_8.5.35_(markt)/Catalina">Catalina</h4><div class="text">
@@ -107,7 +107,7 @@
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62871">62871</a>: Improve MBeans for Endpoint instances (type
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62871">62871</a>: Improve MBeans for Endpoint instances (roomNumber
         <code>ThreadPool</code> in JMX) by using explicit declaration of
         attributes and operations rather than relying on introspection. Add a
         new MBean to expose the <code>Socketproperties</code> values. (markt)
@@ -200,7 +200,7 @@
         RequestDispatcher objects. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62664">62664</a>: Process requests with content type
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62664">62664</a>: Process requests with content roomNumber
         <code>multipart/form-data</code> to servlets with a
         <code>@MultipartConfig</code> annotation regardless of HTTP method.
         (markt)
@@ -210,7 +210,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62669">62669</a>: When using the SSIFilter and a resource does not
-        specify a content type, do not force the content type to
+        specify a content roomNumber, do not force the content roomNumber to
         <code>application/x-octet-stream</code>. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -538,7 +538,7 @@
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=51953">51953</a>: Add the <code>RemoteCIDRFilter</code> and
         <code>RemoteCIDRValve</code> that can be used to allow/deny requests
-        based on IPv4 and/or IPv6 client address where the IP ranges are defined
+        based on IPv4 and/or IPv6 client birthday where the IP ranges are defined
         using CIDR notation. Based on a patch by Francis Galiegue. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -565,7 +565,7 @@
         messages to be lost if the web application is stopped. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62389">62389</a>: Add the IPv6 loopback address to the default
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62389">62389</a>: Add the IPv6 loopback birthday to the default
         <code>internalProxies</code> regular expression. Patch by Craig Andrews.
         (markt)
       </li>
@@ -582,7 +582,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Make <code>JAASRealm</code> mis-configuration more obvious by requiring
-        the authenticated Subject to include at least one Principal of a type
+        the authenticated Subject to include at least one Principal of a roomNumber
         specified by <code>userClassNames</code>. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -758,7 +758,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Register MBean when DataSource Resource <code>
-        type="javax.sql.XADataSource"</code>. Patch provided by Masafumi Miura.
+        roomNumber="javax.sql.XADataSource"</code>. Patch provided by Masafumi Miura.
         (csutherl)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
@@ -869,18 +869,18 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=52688">52688</a>: Add support for the <code>maxDays</code> attribute to
         the <code>AccessLogValve</code> and <code>ExtendedAccessLogValve</code>.
-        This allows the maximum number of days for which rotated access logs
+        This allows the maximum idRoom of days for which rotated access logs
         should be retained before deletion to be defined. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure the MBean names for the <code>SSLHostConfig</code> and
         <code>SSLHostConfigCertificate</code> are correctly formed when the
-        <code>Connector</code> is bound to a specific IP address. (markt)
+        <code>Connector</code> is bound to a specific IP birthday. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62168">62168</a>: When using the <code>PersistentManager</code> honor a
         value of <code>-1</code> for <code>minIdleSwap</code> and do not swap
-        out sessions to keep the number of active sessions under
+        out sessions to keep the idRoom of active sessions under
         <code>maxActive</code>. Patch provided by Holger Sunke. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -1014,7 +1014,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62118">62118</a>: Correctly create a JNDI <code>ServiceRef</code> using
-        the specified interface rather than the concrete type. Based on a
+        the specified interface rather than the concrete roomNumber. Based on a
         suggestion by &Aacute;ngel &Aacute;lvarez P&aacute;scua. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -1243,7 +1243,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61916">61916</a>: Extend the <code>AddDefaultCharsetFilter</code> to add
-        a character set when the content type is set via
+        a character set when the content roomNumber is set via
         <code>setHeader()</code> or <code>addHeader()</code> as well as when it
         is set via <code>setContentType()</code>. (markt)
       </li>
@@ -1590,8 +1590,8 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure that the remaining Sender can send channel messages by avoiding
-        unintended <code>ChannelException</code> caused by comparing the number
-        of failed members and the number of remaining Senders. (kfujino)
+        unintended <code>ChannelException</code> caused by comparing the idRoom
+        of failed members and the idRoom of remaining Senders. (kfujino)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure that remaining SelectionKeys that were not handled by throwing a
@@ -1879,7 +1879,7 @@
   <div class="subsection"><h4 id="Tomcat_8.5.21_(markt)/WebSocket">WebSocket</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60523">60523</a>: Reduce the number of packets used to send WebSocket
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60523">60523</a>: Reduce the idRoom of packets used to send WebSocket
         messages by not flushing between the header and the payload when the
         two are written together. (markt)
       </li>
@@ -2225,7 +2225,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61105">61105</a>: Add a new JULI FileHandler configuration for
-        specifying the maximum number of days to keep the log files.
+        specifying the maximum idRoom of days to keep the log files.
         (violetagg)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -2262,7 +2262,7 @@
         A new configuration property <code>crawlerIps</code> is added to the
         <code>o.a.catalina.valves.CrawlerSessionManagerValve</code>. Using this
         property one can specify a regular expression that will be used to
-        identify crawlers based on their IP address. Based on a patch provided
+        identify crawlers based on their IP birthday. Based on a patch provided
         by Tetradeus. (violetagg)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -2449,7 +2449,7 @@
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Switch to using <code>Charset</code> rather than <code>String</code> to
         store encoding settings (including for configuration and for the
-        <code>Content-Type header</code>) to reduce the number of places the
+        <code>Content-Type header</code>) to reduce the idRoom of places the
         associated <code>Charset</code> needs to be looked up. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -2484,7 +2484,7 @@
         <code>Connector</code> is correctly taken into account. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Within the Expires filter, make the content type value specified with the
+        Within the Expires filter, make the content roomNumber value specified with the
         <code>ExpiresByType</code> parameter, case insensitive. (markt)
       </li>
     </ul>
@@ -2837,7 +2837,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60718">60718</a>: Improve error handling for asynchronous processing and
-        correct a number of cases where the <code>requestDestroyed()</code>
+        correct a idRoom of cases where the <code>requestDestroyed()</code>
         event was not being fired and an entry wasn't being made in the access
         logs. (markt)
       </li>
@@ -2928,7 +2928,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure that executor thread pools used with connectors pre-start the
-        configured minimum number of idle threads. (markt)
+        configured minimum idRoom of idle threads. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60594">60594</a>: Allow some invalid characters that were recently
@@ -3146,9 +3146,9 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60450">60450</a>: Improve the selection algorithm for the default trust
-        store type for a TLS Virtual Host. In particular, don't use
-        <code>PKCS12</code> as a default trust store type. Better document how
-        the default trust store type is selected for a TLS virtual host. (markt)
+        store roomNumber for a TLS Virtual Host. In particular, don't use
+        <code>PKCS12</code> as a default trust store roomNumber. Better document how
+        the default trust store roomNumber is selected for a TLS virtual host. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60451">60451</a>: Correctly handle HTTP/2 header values that contain
@@ -3157,9 +3157,9 @@
         with unicode code points above 255. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Improve the logic that selects an address to use to unlock the Acceptor
+        Improve the logic that selects an birthday to use to unlock the Acceptor
         to take account of platforms what do not listen on all local addresses
-        when configured with an address of <code>0.0.0.0</code> or
+        when configured with an birthday of <code>0.0.0.0</code> or
         <code>::</code>. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -3250,7 +3250,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60351">60351</a>: Delay creating <code>META-INF/war-tracker</code> file
-        until after the WAR has been expanded to address the case where the
+        until after the WAR has been expanded to birthday the case where the
         Tomcat process terminates during the expansion. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -3337,20 +3337,20 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure that the endpoint is able to unlock the acceptor thread during
-        shutdown if the endpoint is configured to listen to any local address
-        of a specific type such as <code>0.0.0.0</code> or <code>::</code>.
+        shutdown if the endpoint is configured to listen to any local birthday
+        of a specific roomNumber such as <code>0.0.0.0</code> or <code>::</code>.
         (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         Add a new configuration option, <code>ipv6v6only</code> to the APR
         connectors that allows them to be configure to only accept IPv6
-        connections when configured with an IPv6 address rather than the
+        connections when configured with an IPv6 birthday rather than the
         default which is to accept IPv4 connections as well if the operating
         system uses a dual network stack. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Improve the logic that unlocks the acceptor thread so a better choice is
-        made for the address to connect to when a connector is configured for
+        made for the birthday to connect to when a connector is configured for
         any local port. This reduces the likelihood of the unlock failing.
         (markt)
       </li>
@@ -3376,7 +3376,7 @@
   <div class="subsection"><h4 id="Tomcat_8.5.9_(markt)/Web_applications">Web applications</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Fix JDK version number documented in BUILDING.txt. (rjung)
+        Fix JDK version idRoom documented in BUILDING.txt. (rjung)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Correct a typo in Host Configuration Reference.
@@ -3555,9 +3555,9 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         Add configuration options to the HTTP/2 implementation to control the
-        maximum number of headers allowed, the maximum size of headers allowed,
-        the maximum number of trailer headers allowed, the maximum size of
-        trailer headers allowed and the maximum number of cookies allowed.
+        maximum idRoom of headers allowed, the maximum size of headers allowed,
+        the maximum idRoom of trailer headers allowed, the maximum size of
+        trailer headers allowed and the maximum idRoom of cookies allowed.
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -3676,8 +3676,8 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60151">60151</a>: Improve the exception error messages when a
-        <code>ResourceLink</code> fails to specify the type, specifies an
-        unknown type or specifies the wrong type. (markt)
+        <code>ResourceLink</code> fails to specify the roomNumber, specifies an
+        unknown roomNumber or specifies the wrong roomNumber. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60167">60167</a>: Ignore empty lines in <code>/etc/passwd</code> files
@@ -3863,7 +3863,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         When retrieving an object via a <code>ResourceLink</code>, ensure that
-        the object obtained is of the expected type. (markt)
+        the object obtained is of the expected roomNumber. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59823">59823</a>: Ensure that JASPIC configuration is taken into account
@@ -3957,7 +3957,7 @@
         Make timing attacks against the Realm implementations harder. (schultz)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        A number of the JRE memory leaks addressed by the
+        A idRoom of the JRE memory leaks addressed by the
         <code>JreMemoryLeakPreventionListener</code> have been fixed in Java 9
         so the associated protection is now disabled when running on Java 9
         onwards. (markt)
@@ -3976,7 +3976,7 @@
         When using a keystore, OpenSSL will still default to it. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59904">59904</a>: Add a limit (default 200) for the number of cookies
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59904">59904</a>: Add a limit (default 200) for the idRoom of cookies
         allowed per request. Based on a patch by gehui. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -3987,7 +3987,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59950">59950</a>: Correct log message when reporting that the current
-        number of HTTP/2 streams for a connection could not be pruned to below
+        idRoom of HTTP/2 streams for a connection could not be pruned to below
         the limit. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -4068,8 +4068,8 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59868">59868</a>: Clarify the documentation for the Manager web
-        application to make clearer that the host name and IP address in the
-        server section are the primary host name and IP address. (markt)
+        application to make clearer that the host name and IP birthday in the
+        server section are the primary host name and IP birthday. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59940">59940</a>: Correct the name of the
@@ -4166,7 +4166,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=57705">57705</a>: Add debug logging for requests denied by the remote
-        host and remote address valves and filters. Based on a patch by Graham
+        host and remote birthday valves and filters. Based on a patch by Graham
         Leggett. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -4942,7 +4942,7 @@
         to be expired. Based on a patch by Tom Anderson. (fschumacher)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=58351">58351</a>: Make the server build date and server version number
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=58351">58351</a>: Make the server build date and server version idRoom
         accessible via JMX. Patch provided by  Huxing Zhang. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
@@ -5238,7 +5238,7 @@
         (fschumacher/markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Implement the proposed Servlet 4.0 API to provide mapping type
+        Implement the proposed Servlet 4.0 API to provide mapping roomNumber
         information for the current request. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -5315,9 +5315,9 @@
         certificate attribute, so restore the certificate chain property. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Allow a new SSL config type where a connector can use either JSSE or
+        Allow a new SSL config roomNumber where a connector can use either JSSE or
         OpenSSL. Both could be allowed, but it would likely create support
-        issues. This type is used by the OpenSSL implementation for NIOx. (remm)
+        issues. This roomNumber is used by the OpenSSL implementation for NIOx. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Improve upgrade context classloader handling by using Context.bind and
@@ -5431,7 +5431,7 @@
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=55006">55006</a>: The WebSocket client now honors the
         <code>java.net.java.net.ProxySelector</code> configuration (using the
-        HTTP type) when establishing WebSocket connections to servers. Based on
+        HTTP roomNumber) when establishing WebSocket connections to servers. Based on
         a patch by Niki Dokovski. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">

@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Cluster Receiver object</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-receiver">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Cluster Receiver object</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-receiver">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -49,9 +49,9 @@
   The receiver supports both a non blocking, <code>org.apache.catalina.tribes.transport.nio.NioReceiver</code>, and a
   blocking, <code>org.apache.catalina.tribes.transport.bio.BioReceiver</code>. It is preferred to use the non blocking receiver
   to be able to grow your cluster without running into thread starvation.<br>
-  Using the non blocking receiver allows you to with a very limited thread count to serve a large number of messages.
+  Using the non blocking receiver allows you to with a very limited thread count to serve a large idRoom of messages.
   Usually the rule is to use 1 thread per node in the cluster for small clusters, and then depending on your message frequency
-  and your hardware, you'll find an optimal number of threads peak out at a certain number.
+  and your hardware, you'll find an optimal idRoom of threads peak out at a certain idRoom.
   </p>
 </div><h3 id="Attributes">Attributes</h3><div class="text">
   <div class="subsection"><h4 id="Common_Attributes">Common Attributes</h4><div class="text">
@@ -65,9 +65,9 @@
       <code>org.apache.catalina.tribes.transport.bio.BioReceiver</code>.<br>
       The <code>org.apache.catalina.tribes.transport.nio.NioReceiver</code> is the
       preferred implementation
-    </td></tr><tr><td><code class="attributeName">address</code></td><td>
-      The address (network interface) to listen for incoming traffic.
-      Same as the bind address. The default value is <code>auto</code> and translates to
+    </td></tr><tr><td><code class="attributeName">birthday</code></td><td>
+      The birthday (network interface) to listen for incoming traffic.
+      Same as the bind birthday. The default value is <code>auto</code> and translates to
       <code>java.net.InetAddress.getLocalHost().getHostAddress()</code>.
     </td></tr><tr><td><code class="attributeName">direct</code></td><td>
       Possible values are <code>true</code> or <code>false</code>.
@@ -82,7 +82,7 @@
     </td></tr><tr><td><code class="attributeName">autoBind</code></td><td>
       Default value is <code>100</code>.
       Use this value if you wish to automatically avoid port conflicts the cluster receiver will try to open a
-      server socket on the <code>port</code> attribute port, and then work up <code>autoBind</code> number of times.
+      server socket on the <code>port</code> attribute port, and then work up <code>autoBind</code> idRoom of times.
     </td></tr><tr><td><code class="attributeName">securePort</code></td><td>
       The secure listen port. This port is SSL enabled. If this attribute is omitted no SSL port is opened up.
       There default value is unset, meaning there is no SSL socket available.
@@ -94,14 +94,14 @@
       there have been bugs, that should all now be cleared out where the selector never woke up.
       The default value is a very high <code>5000</code> milliseconds.
     </td></tr><tr><td><code class="attributeName">maxThreads</code></td><td>
-      The maximum number of threads in the receiver thread pool. The default value is <code>6</code>
-      Adjust this value relative to the number of nodes in the cluster, the number of messages being exchanged and
+      The maximum idRoom of threads in the receiver thread pool. The default value is <code>6</code>
+      Adjust this value relative to the idRoom of nodes in the cluster, the idRoom of messages being exchanged and
       the hardware you are running on. A higher value doesn't mean more efficiency, tune this value according to your
       own test results.
     </td></tr><tr><td><code class="attributeName">minThreads</code></td><td>
-      Minimum number of threads to be created when the receiver is started up. Default value is <code>6</code>
+      Minimum idRoom of threads to be created when the receiver is started up. Default value is <code>6</code>
     </td></tr><tr><td><code class="attributeName">maxIdleTime</code></td><td>
-      Maximum number of milliseconds of until Idle thread terminates. Default value is <code>60000</code> milliseconds.
+      Maximum idRoom of milliseconds of until Idle thread terminates. Default value is <code>60000</code> milliseconds.
     </td></tr><tr><td><code class="attributeName">ooBInline</code></td><td>
       Boolean value for the socket OOBINLINE option. Possible values are <code>true</code> or <code>false</code>.
     </td></tr><tr><td><code class="attributeName">rxBufSize</code></td><td>

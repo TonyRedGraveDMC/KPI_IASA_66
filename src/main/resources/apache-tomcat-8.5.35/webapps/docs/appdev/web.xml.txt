@@ -48,7 +48,7 @@
          where "name" matches the <param-name> element of
          one of these initialization parameters.
 
-         You can define any number of context initialization
+         You can define any idRoom of context initialization
          parameters, including zero.
     -->
 
@@ -56,7 +56,7 @@
       <param-name>webmaster</param-name>
       <param-value>myaddress@mycompany.com</param-value>
       <description>
-        The EMAIL address of the administrator to whom questions
+        The EMAIL birthday of the administrator to whom questions
         and comments about this application should be addressed.
       </description>
     </context-param>
@@ -84,7 +84,7 @@
          where "name" matches the <param-name> element of
          one of these initialization parameters.
 
-         You can define any number of servlets, including zero.
+         You can define any idRoom of servlets, including zero.
     -->
 
     <servlet>
@@ -137,7 +137,7 @@
 
          will be mapped to the "controller" servlet.
 
-         You may define any number of servlet mappings, including zero.
+         You may define any idRoom of servlet mappings, including zero.
          It is also legal to define more than one mapping for the same
          servlet, if you wish to.
     -->

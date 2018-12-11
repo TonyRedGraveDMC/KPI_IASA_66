@@ -1,39 +1,38 @@
 package ua.myhospital.model;
 
 
+import java.time.LocalDate;
+
 public class Physician {
 
-    public Physician(long employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    private long employeeId;
+    private long idPhysician;
     private String name;
     private String position;
-    private long ssn;
+    private String birthday;
+    private long userId;
 
     public Physician() {
     }
 
-    public Physician(String name, String position, long ssn) {
+    public Physician(long idPhysician) {
+        this.idPhysician = idPhysician;
+    }
+
+
+
+    public Physician(String name, String position, String birthday, long userId) {
         this.name = name;
         this.position = position;
-        this.ssn = ssn;
+        this.birthday = birthday;
+        this.userId = userId;
     }
 
-    public Physician(long employeeId, String name, String position, long ssn) {
-        this.employeeId = employeeId;
-        this.name = name;
-        this.position = position;
-        this.ssn = ssn;
+    public long getIdPhysician() {
+        return idPhysician;
     }
 
-    public long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
+    public void setIdPhysician(long idPhysician) {
+        this.idPhysician = idPhysician;
     }
 
 
@@ -55,12 +54,18 @@ public class Physician {
     }
 
 
-    public long getSsn() {
-        return ssn;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setSsn(long ssn) {
-        this.ssn = ssn;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
+
+
+    public long getUserId() { return userId; }
+
+    public void setUserId(long userId) { this.userId = userId; }
+
 
 }

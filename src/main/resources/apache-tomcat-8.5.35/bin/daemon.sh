@@ -93,7 +93,7 @@ test ".$TOMCAT_USER" = . && TOMCAT_USER=tomcat
 # from java binary if on the PATH
 #
 if [ -z "$JAVA_HOME" ]; then
-    JAVA_BIN="`which java 2>/dev/null || type java 2>&1`"
+    JAVA_BIN="`which java 2>/dev/null || roomNumber java 2>&1`"
     while [ -h "$JAVA_BIN" ]; do
         ls=`ls -ld "$JAVA_BIN"`
         link=`expr "$ls" : '.*-> \(.*\)$'`

@@ -10,19 +10,27 @@ import java.util.List;
 public class PatientService extends AbstractService implements PatientDAO {
    // private Connection connection = getConnection();
     //  DatabaseConnector.getInstance();
+
+    public static void main(String[] args) throws SQLException {
+        PatientService patientService = new PatientService();
+        Patient patient = new Patient("name,'bd',22,1,9); drop table patient; insert into patient('name',", "bd", "3122", 1, 3, 10 );
+        Patient patient1 = new Patient(15);
+        patientService.add(patient);
+    }
     @Override
 
     public void add(Patient patient) throws SQLException {
-        String sql = "INSERT INTO PATIENT (Name, Address, Phone, InsuranceID, PCP) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO PATIENT (Name, Birthday, Phone, User_id, Physician_id, Room_id) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1, patient.getName());
-            preparedStatement.setString(2, patient.getAddress());
+            preparedStatement.setString(2, patient.getBirthday());
             preparedStatement.setString(3, patient.getPhone());
-            preparedStatement.setLong(4, patient.getInsuranceId());
-            preparedStatement.setLong(5, patient.getPcp());
+            preparedStatement.setLong(4, patient.getUser_id());
+            preparedStatement.setLong(5, patient.getPhysician_id());
+            preparedStatement.setLong(6, patient.getRoom_id());
 
             preparedStatement.executeUpdate();
         } finally {
@@ -32,12 +40,7 @@ public class PatientService extends AbstractService implements PatientDAO {
         }
     }
 
-    public static void main(String[] args) throws SQLException {
 
-        Patient patient = new Patient(9, "NAME111; drop table patient;", "ADDRESS", "PHONE", 11, 12);
-        PatientService patientService = new PatientService();
-        patientService.update(patient);
-    }
 
     @Override
     public List<Patient> getAll() throws SQLException {
@@ -45,7 +48,7 @@ public class PatientService extends AbstractService implements PatientDAO {
 
         List<Patient> patientList = new ArrayList<>();
 
-        String sql = "SELECT SSN, Name, Address, Phone, InsuranceID, PCP FROM PATIENT";
+        String sql = "SELECT idPatient, Name, Birthday, Phone, User_id, Physician_id, Room_id FROM PATIENT";
 
         Statement statement = null;
 
@@ -67,11 +70,11 @@ public class PatientService extends AbstractService implements PatientDAO {
     }
 
     @Override
-    public Patient getBySsn(Long ssn) throws SQLException {
-        String sql = "SELECT SSN, Name, Address, Phone, InsuranceID, PCP FROM PATIENT WHERE SSN = ?";
+    public Patient getBIdPatient(Long idPatient) throws SQLException {
+        String sql = "SELECT Name, Birthday, Phone, User_id, Physician_id, Room_id FROM PATIENT WHERE idPatient = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setLong(1, ssn
+        preparedStatement.setLong(1, idPatient
         );
 
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -91,17 +94,18 @@ public class PatientService extends AbstractService implements PatientDAO {
 
     @Override
     public void update(Patient patient) throws SQLException {
-        String sql = "UPDATE PATIENT SET NAME=?, ADDRESS=?, PHONE=?, INSURANCEID=?, PCP=? WHERE SSN =? ";
+        String sql = "UPDATE PATIENT SET NAME=?, Birthday=?, PHONE=?, User_id=?, Physician_id=?, Room_id=? WHERE idPatient =? ";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1, patient.getName());
-            preparedStatement.setString(2, patient.getAddress());
+            preparedStatement.setString(2, patient.getBirthday());
             preparedStatement.setString(3, patient.getPhone());
-            preparedStatement.setLong(4, patient.getInsuranceId());
-            preparedStatement.setLong(5, patient.getPcp());
-            preparedStatement.setLong(6, patient.getSsn());
+            preparedStatement.setLong(4, patient.getUser_id());
+            preparedStatement.setLong(5, patient.getPhysician_id());
+            preparedStatement.setLong(6, patient.getRoom_id());
+            preparedStatement.setLong(7, patient.getIdPatient());
 
             preparedStatement.executeUpdate();
         } finally {
@@ -116,11 +120,11 @@ public class PatientService extends AbstractService implements PatientDAO {
     public void remove(Patient patient) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = " DELETE FROM PATIENT WHERE SSN=?";
+        String sql = " DELETE FROM PATIENT WHERE idPatient=?";
         try {
             preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setLong(1, patient.getSsn());
+            preparedStatement.setLong(1, patient.getIdPatient());
 
             preparedStatement.executeUpdate();
         } finally {
@@ -132,12 +136,13 @@ public class PatientService extends AbstractService implements PatientDAO {
 
     private Patient getPatient(ResultSet resultSet) throws SQLException {
         Patient patient = new Patient();
-        patient.setSsn(resultSet.getLong("SSN"));
+        patient.setIdPatient(resultSet.getLong("idPatient"));
         patient.setName(resultSet.getString("Name"));
-        patient.setAddress(resultSet.getString("Address"));
+        patient.setBirthday(resultSet.getString("Birthday"));
         patient.setPhone(resultSet.getString("Phone"));
-        patient.setInsuranceId(resultSet.getLong("InsuranceID"));
-        patient.setPcp(resultSet.getLong("PCP"));
+        patient.setUser_id(resultSet.getLong("UserId"));
+        patient.setPhysician_id(resultSet.getLong("PhysicianId"));
+        patient.setRoom_id(resultSet.getLong("RoomId"));
 
         return patient;
     }
@@ -148,7 +153,7 @@ public class PatientService extends AbstractService implements PatientDAO {
 //            preparedStatement= connection.prepareStatement(sql);
 //
 //            preparedStatement.setString( 1, patient.getName());
-//            preparedStatement.setString( 2, patient.getAddress());
+//            preparedStatement.setString( 2, patient.getBirthday());
 //            preparedStatement.setString( 3, patient.getPhone());
 //            preparedStatement.setLong( 4, patient.getInsuranceId());
 //            preparedStatement.setLong( 5, patient.getPcp());

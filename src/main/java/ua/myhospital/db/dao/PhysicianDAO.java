@@ -13,7 +13,7 @@ public interface PhysicianDAO {
     //read (вернёт список всех адрессов из таблицы Patient)
     List<Physician> getAll() throws SQLException;
 
-    Physician getById(Long id) throws SQLException;
+    Physician getByIdPhysician(Long idPhysician) throws SQLException;
 
     //update
     void update(Physician physician) throws SQLException;

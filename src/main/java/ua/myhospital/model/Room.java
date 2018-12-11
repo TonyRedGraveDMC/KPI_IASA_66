@@ -3,19 +3,40 @@ package ua.myhospital.model;
 
 public class Room {
 
-    private long number;
+    private long idRoom;
+    private long roomNumber;
     private String type;
-    private long blockFloor;
-    private long blockCode;
-    private long unavailable;
+    private long numberOfSeats;
 
-
-    public long getNumber() {
-        return number;
+    public Room() {
     }
 
-    public void setNumber(long number) {
-        this.number = number;
+    public Room(long roomNumber, String type, long numberOfSeats) {
+        this.roomNumber = roomNumber;
+        this.type = type;
+        this.numberOfSeats = numberOfSeats;
+    }
+
+
+    public Room(long idRoom) {
+        this.idRoom = idRoom;
+    }
+
+    public long getIdRoom() {
+        return idRoom;
+    }
+
+    public void setIdRoom(long idRoom) {
+        this.idRoom = idRoom;
+    }
+
+
+    public long getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(long roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
 
@@ -28,30 +49,13 @@ public class Room {
     }
 
 
-    public long getBlockFloor() {
-        return blockFloor;
+    public long getNumberOfSeats() {
+        return numberOfSeats;
     }
 
-    public void setBlockFloor(long blockFloor) {
-        this.blockFloor = blockFloor;
+    public void setNumberOfSeats(long numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
     }
 
-
-    public long getBlockCode() {
-        return blockCode;
-    }
-
-    public void setBlockCode(long blockCode) {
-        this.blockCode = blockCode;
-    }
-
-
-    public long getUnavailable() {
-        return unavailable;
-    }
-
-    public void setUnavailable(long unavailable) {
-        this.unavailable = unavailable;
-    }
 
 }

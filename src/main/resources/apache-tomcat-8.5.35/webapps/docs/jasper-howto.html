@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Jasper 2 JSP Engine How To</title><meta name="author" content="Glenn L. Nielsen"><meta name="author" content="Peter Rossbach"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/jasper-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Jasper 2 JSP Engine How To</title><meta name="author" content="Glenn L. Nielsen"><meta name="author" content="Peter Rossbach"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/jasper-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -159,9 +159,9 @@ code for each page instead of deleting it? <code>true</code> or
 print statement per input line, to ease debugging?
 <code>true</code> or <code>false</code>, default <code>true</code>.</li>
 
-<li><strong>maxLoadedJsps</strong> - The maximum number of JSPs that will be
-loaded for a web application. If more than this number of JSPs are loaded, the
-least recently used JSPs will be unloaded so that the number of JSPs loaded at
+<li><strong>maxLoadedJsps</strong> - The maximum idRoom of JSPs that will be
+loaded for a web application. If more than this idRoom of JSPs are loaded, the
+least recently used JSPs will be unloaded so that the idRoom of JSPs loaded at
 any one time does not exceed this limit. A value of zero or less indicates no
 limit. Default <code>-1</code></li>
 
@@ -374,7 +374,7 @@ depending on the application.</li>
 </ul>
 </div><h3 id="Optimisation">Optimisation</h3><div class="text">
 <p>
-There are a number of extension points provided within Jasper that enable the
+There are a idRoom of extension points provided within Jasper that enable the
 user to optimise the behaviour for their environment.
 </p>
 

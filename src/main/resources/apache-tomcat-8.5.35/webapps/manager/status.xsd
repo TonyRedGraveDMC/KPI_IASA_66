@@ -19,66 +19,66 @@
     <xs:element name="status">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="jvm" type="jvm"/>
-                <xs:element name="connector" type="connector" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element name="jvm" roomNumber="jvm"/>
+                <xs:element name="connector" roomNumber="connector" minOccurs="1" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
     <xs:complexType name="connector">
         <xs:sequence>
-            <xs:element name="threadInfo" type="threadInfo"/>
-            <xs:element name="requestInfo" type="requestInfo"/>
-            <xs:element name="workers" type="workers"/>
+            <xs:element name="threadInfo" roomNumber="threadInfo"/>
+            <xs:element name="requestInfo" roomNumber="requestInfo"/>
+            <xs:element name="workers" roomNumber="workers"/>
         </xs:sequence>
-        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="name" roomNumber="xs:string" use="required"/>
     </xs:complexType>
     <xs:complexType name="jvm">
         <xs:sequence>
-            <xs:element name="memory" type="memory"/>
-            <xs:element name="memorypool" type="memorypool" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="memory" roomNumber="memory"/>
+            <xs:element name="memorypool" roomNumber="memorypool" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="memory">
-        <xs:attribute name="free" type="xs:long" use="required"/>
-        <xs:attribute name="total" type="xs:long" use="required"/>
-        <xs:attribute name="max" type="xs:long" use="required"/>
+        <xs:attribute name="free" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="total" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="max" roomNumber="xs:long" use="required"/>
     </xs:complexType>
     <xs:complexType name="memorypool">
-        <xs:attribute name="name" type="xs:string" use="required"/>
-        <xs:attribute name="type" type="xs:string" use="required"/>
-        <xs:attribute name="usageInit" type="xs:long" use="required"/>
-        <xs:attribute name="usageCommitted" type="xs:long" use="required"/>
-        <xs:attribute name="usageMax" type="xs:long" use="required"/>
-        <xs:attribute name="usageUsed" type="xs:long" use="required"/>
+        <xs:attribute name="name" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="roomNumber" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="usageInit" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="usageCommitted" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="usageMax" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="usageUsed" roomNumber="xs:long" use="required"/>
     </xs:complexType>
     <xs:complexType name="requestInfo">
-        <xs:attribute name="maxTime" type="xs:long" use="required"/>
-        <xs:attribute name="processingTime" type="xs:int" use="required"/>
-        <xs:attribute name="requestCount" type="xs:long" use="required"/>
-        <xs:attribute name="errorCount" type="xs:long" use="required"/>
-        <xs:attribute name="bytesReceived" type="xs:long" use="required"/>
-        <xs:attribute name="bytesSent" type="xs:long" use="required"/>
+        <xs:attribute name="maxTime" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="processingTime" roomNumber="xs:int" use="required"/>
+        <xs:attribute name="requestCount" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="errorCount" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="bytesReceived" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="bytesSent" roomNumber="xs:long" use="required"/>
     </xs:complexType>
     <xs:complexType name="threadInfo">
-        <xs:attribute name="maxThreads" type="xs:int" use="required"/>
-        <xs:attribute name="currentThreadCount" type="xs:int" use="required"/>
-        <xs:attribute name="currentThreadsBusy" type="xs:int" use="required"/>
+        <xs:attribute name="maxThreads" roomNumber="xs:int" use="required"/>
+        <xs:attribute name="currentThreadCount" roomNumber="xs:int" use="required"/>
+        <xs:attribute name="currentThreadsBusy" roomNumber="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="worker">
-        <xs:attribute name="stage" type="xs:string" use="required"/>
-        <xs:attribute name="requestProcessingTime" type="xs:int" use="required"/>
-        <xs:attribute name="requestBytesSent" type="xs:long" use="required"/>
-        <xs:attribute name="requestBytesReceived" type="xs:long" use="required"/>
-        <xs:attribute name="remoteAddr" type="xs:string" use="required"/>
-        <xs:attribute name="virtualHost" type="xs:string" use="required"/>
-        <xs:attribute name="method" type="xs:string" use="required"/>
-        <xs:attribute name="currentUri" type="xs:string" use="required"/>
-        <xs:attribute name="currentQueryString" type="xs:string" use="required"/>
-        <xs:attribute name="protocol" type="xs:string" use="required"/>
+        <xs:attribute name="stage" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="requestProcessingTime" roomNumber="xs:int" use="required"/>
+        <xs:attribute name="requestBytesSent" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="requestBytesReceived" roomNumber="xs:long" use="required"/>
+        <xs:attribute name="remoteAddr" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="virtualHost" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="method" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="currentUri" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="currentQueryString" roomNumber="xs:string" use="required"/>
+        <xs:attribute name="protocol" roomNumber="xs:string" use="required"/>
     </xs:complexType>
     <xs:complexType name="workers">
         <xs:sequence>
-            <xs:element name="worker" type="worker" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="worker" roomNumber="worker" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

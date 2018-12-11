@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Context Container</title><meta name="author" content="Craig R. McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/context">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Context Container</title><meta name="author" content="Craig R. McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/context">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -742,7 +742,7 @@
         <p>Pathname to a scratch directory to be provided by this Context
         for temporary read-write use by servlets within the associated web
         application.  This directory will be made visible to servlets in the
-        web application by a servlet context attribute (of type
+        web application by a servlet context attribute (of roomNumber
         <code>java.io.File</code>) named
         <code>javax.servlet.context.tempdir</code> as described in the
         Servlet Specification.  If not specified, a suitable directory
@@ -810,7 +810,7 @@
     each request processed by the server, in a standard format.  Catalina
     includes an optional <a href="valve.html">Valve</a> implementation that
     can create access logs in the same standard format created by web servers,
-    or in any number of custom formats.</p>
+    or in any idRoom of custom formats.</p>
 
     <p>You can ask Catalina to create an access log for all requests
     processed by an <a href="engine.html">Engine</a>,
@@ -921,7 +921,7 @@
 <div class="codeBox"><pre><code>&lt;Context&gt;
   ...
   &lt;Environment name="maxExemptions" value="10"
-         type="java.lang.Integer" override="false"/&gt;
+         roomNumber="java.lang.Integer" override="false"/&gt;
   ...
 &lt;/Context&gt;</code></pre></div>
 
@@ -931,7 +931,7 @@
 <div class="codeBox"><pre><code>&lt;env-entry&gt;
   &lt;env-entry-name&gt;maxExemptions&lt;/env-entry-name&gt;
   &lt;env-entry-value&gt;10&lt;/env-entry-value&gt;
-  &lt;env-entry-type&gt;java.lang.Integer&lt;/env-entry-type&gt;
+  &lt;env-entry-roomNumber&gt;java.lang.Integer&lt;/env-entry-roomNumber&gt;
 &lt;/env-entry&gt;</code></pre></div>
     <p>but does <em>not</em> require modification of the deployment descriptor
     to customize this value.</p>
@@ -953,15 +953,15 @@
         an <code>&lt;env-entry&gt;</code> for the same environment entry name,
         found in the web application deployment descriptor, to override the
         value specified here.  By default, overrides are allowed.</p>
-      </td></tr><tr><td><strong><code class="attributeName">type</code></strong></td><td>
+      </td></tr><tr><td><strong><code class="attributeName">roomNumber</code></strong></td><td>
         <p>The fully qualified Java class name expected by the web application
         for this environment entry.  Must be a legal value for
-        <code>&lt;env-entry-type&gt;</code> in the web application deployment
+        <code>&lt;env-entry-roomNumber&gt;</code> in the web application deployment
         descriptor.</p>
       </td></tr><tr><td><strong><code class="attributeName">value</code></strong></td><td>
         <p>The parameter value that will be presented to the application
         when requested from the JNDI context.  This value must be convertable
-        to the Java type defined by the <code>type</code> attribute.</p>
+        to the Java roomNumber defined by the <code>roomNumber</code> attribute.</p>
       </td></tr></table>
 
   </div></div>
@@ -985,7 +985,7 @@
   ...
 &lt;/Context&gt;</code></pre></div>
 
-    <p>Note that a Listener can have any number of additional properties
+    <p>Note that a Listener can have any idRoom of additional properties
     that may be configured from this element.  Attribute names are matched
     to corresponding JavaBean property names using the standard property
     method naming patterns.</p>
@@ -995,10 +995,10 @@
 
   <div class="subsection"><h4 id="Request_Filters">Request Filters</h4><div class="text">
 
-    <p>You can ask Catalina to check the IP address, or host name, on every
+    <p>You can ask Catalina to check the IP birthday, or host name, on every
     incoming request directed to the surrounding
     <a href="engine.html">Engine</a>, <a href="host.html">Host</a>, or
-    <a href="context.html">Context</a> element.  The remote address or name
+    <a href="context.html">Context</a> element.  The remote birthday or name
     will be checked against configured "accept" and/or "deny"
     filters, which are defined using <code>java.util.regex</code> Regular
     Expression syntax.  Requests that come from locations that are
@@ -1035,7 +1035,7 @@
 <div class="codeBox"><pre><code>&lt;Context&gt;
   ...
   &lt;Resource name="jdbc/EmployeeDB" auth="Container"
-            type="javax.sql.DataSource"
+            roomNumber="javax.sql.DataSource"
      description="Employees Database for HR Applications"/&gt;
   ...
 &lt;/Context&gt;</code></pre></div>
@@ -1045,7 +1045,7 @@
 <div class="codeBox"><pre><code>&lt;resource-ref&gt;
   &lt;description&gt;Employees Database for HR Applications&lt;/description&gt;
   &lt;res-ref-name&gt;jdbc/EmployeeDB&lt;/res-ref-name&gt;
-  &lt;res-ref-type&gt;javax.sql.DataSource&lt;/res-ref-type&gt;
+  &lt;res-ref-roomNumber&gt;javax.sql.DataSource&lt;/res-ref-roomNumber&gt;
   &lt;res-auth&gt;Container&lt;/res-auth&gt;
 &lt;/resource-ref&gt;</code></pre></div>
 
@@ -1099,7 +1099,7 @@
         of the DataSource. The value of this attribute must be <code>true</code>
         or <code>false</code>. By default, this attribute is <code>true</code>.
         </p>
-      </td></tr><tr><td><strong><code class="attributeName">type</code></strong></td><td>
+      </td></tr><tr><td><strong><code class="attributeName">roomNumber</code></strong></td><td>
         <p>The fully qualified Java class name expected by the web
         application when it performs a lookup for this resource.</p>
       </td></tr></table>
@@ -1119,7 +1119,7 @@
   ...
   &lt;ResourceLink name="linkToGlobalResource"
             global="simpleValue"
-            type="java.lang.Integer"
+            roomNumber="java.lang.Integer"
   ...
 &lt;/Context&gt;</code></pre></div>
 
@@ -1136,7 +1136,7 @@
       </td></tr><tr><td><strong><code class="attributeName">name</code></strong></td><td>
         <p>The name of the resource link to be created, relative to the
         <code>java:comp/env</code> context.</p>
-      </td></tr><tr><td><strong><code class="attributeName">type</code></strong></td><td>
+      </td></tr><tr><td><strong><code class="attributeName">roomNumber</code></strong></td><td>
         <p>The fully qualified Java class name expected by the web
         application when it performs a lookup for this resource link.</p>
       </td></tr><tr><td><code class="attributeName">factory</code></td><td>
@@ -1147,7 +1147,7 @@
     <p>When the attribute <code>factory="org.apache.naming.factory.DataSourceLinkFactory"</code> the resource link can be used with
        two additional attributes to allow a shared data source to be used with different credentials.
        When these two additional attributes are used in combination with the <code>javax.sql.DataSource</code>
-       type, different contexts can share a global data source with different credentials.
+       roomNumber, different contexts can share a global data source with different credentials.
        Under the hood, what happens is that a call to <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html#getConnection()"><code>getConnection()</code></a>
        is simply translated to a call <a href="http://docs.oracle.com/javase/7/docs/api/javax/sql/DataSource.html#getConnection(java.lang.String,%20java.lang.String)">
        <code>getConnection(username, password)</code></a> on the global data source. This is an easy way to get code to be transparent to what schemas are being used,
@@ -1180,7 +1180,7 @@ for details.</p>
   ...
   &lt;Resource name="sharedDataSource"
             global="sharedDataSource"
-            type="javax.sql.DataSource"
+            roomNumber="javax.sql.DataSource"
             factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
             alternateUsernameAllowed="true"
             username="bar"
@@ -1194,7 +1194,7 @@ for details.</p>
   &lt;ResourceLink
             name="appDataSource"
             global="sharedDataSource"
-            type="javax.sql.DataSource"
+            roomNumber="javax.sql.DataSource"
             factory="org.apache.naming.factory.DataSourceLinkFactory"
             username="foo"
             password="foopass"
@@ -1205,7 +1205,7 @@ for details.</p>
   &lt;ResourceLink
             name="appDataSource"
             global="sharedDataSource"
-            type="javax.sql.DataSource"
+            roomNumber="javax.sql.DataSource"
   ...
 &lt;/Context&gt;</code></pre></div>
     <p>When a request for <code>getConnection()</code> is made in the

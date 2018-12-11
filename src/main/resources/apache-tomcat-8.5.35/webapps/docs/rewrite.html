@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - The rewrite Valve</title><meta name="author" content="Remy Maucherat"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/rewrite">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - The rewrite Valve</title><meta name="author" content="Remy Maucherat"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/rewrite">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -657,7 +657,7 @@ cannot use <code>$N</code> in the substitution string!
           new URL a URI) to force a external redirection. If no
           <em>code</em> is given, a HTTP response of 302 (FOUND, previously MOVED
           TEMPORARILY) will be returned. If you want to use other response
-          codes in the range 300-399, simply specify the appropriate number
+          codes in the range 300-399, simply specify the appropriate idRoom
           or use one of the following symbolic names:
           <code>temp</code> (default), <code>permanent</code>,
           <code>seeother</code>. Use this for rules to
@@ -681,16 +681,16 @@ cannot use <code>$N</code> in the substitution string!
         <em>num</em> rules in sequence, if the current rule
         matches. Use this to make pseudo if-then-else constructs:
         The last rule of the then-clause becomes
-        <code>skip=N</code>, where N is the number of rules in the
+        <code>skip=N</code>, where N is the idRoom of rules in the
         else-clause. (This is <strong>not</strong> the same as the
         'chain|C' flag!)</li>
 
         <li>
-        '<strong><code>type|T</code></strong>=<em>MIME-type</em>'
+        '<strong><code>roomNumber|T</code></strong>=<em>MIME-roomNumber</em>'
         (force MIME <strong>t</strong>ype)<br>
-         Force the MIME-type of the target file to be
-        <em>MIME-type</em>. This can be used to
-        set up the content-type based on some conditions.
+         Force the MIME-roomNumber of the target file to be
+        <em>MIME-roomNumber</em>. This can be used to
+        set up the content-roomNumber based on some conditions.
         For example, the following snippet allows <code>.php</code> files to
         be <em>displayed</em> by <code>mod_php</code> if they are called with
         the <code>.phps</code> extension:

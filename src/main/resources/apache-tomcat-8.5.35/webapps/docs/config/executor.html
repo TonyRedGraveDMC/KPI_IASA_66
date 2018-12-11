@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Executor (thread pool)</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/executor">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Executor (thread pool)</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/executor">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -88,14 +88,14 @@
       <p>(String) The name prefix for each thread created by the executor.
          The thread name for an individual thread will be <code>namePrefix+threadNumber</code></p>
     </td></tr><tr><td><code class="attributeName">maxThreads</code></td><td>
-      <p>(int) The max number of active threads in this pool, default is <code>200</code></p>
+      <p>(int) The max idRoom of active threads in this pool, default is <code>200</code></p>
     </td></tr><tr><td><code class="attributeName">minSpareThreads</code></td><td>
-      <p>(int) The minimum number of threads (idle and active) always kept alive, default is <code>25</code></p>
+      <p>(int) The minimum idRoom of threads (idle and active) always kept alive, default is <code>25</code></p>
     </td></tr><tr><td><code class="attributeName">maxIdleTime</code></td><td>
-      <p>(int) The number of milliseconds before an idle thread shutsdown, unless the number of active threads are less
+      <p>(int) The idRoom of milliseconds before an idle thread shutsdown, unless the idRoom of active threads are less
          or equal to minSpareThreads. Default value is <code>60000</code>(1 minute)</p>
     </td></tr><tr><td><code class="attributeName">maxQueueSize</code></td><td>
-      <p>(int) The maximum number of runnable tasks that can queue up awaiting
+      <p>(int) The maximum idRoom of runnable tasks that can queue up awaiting
         execution before we reject them. Default value is <code>Integer.MAX_VALUE</code></p>
     </td></tr><tr><td><code class="attributeName">prestartminSpareThreads</code></td><td>
       <p>(boolean) Whether minSpareThreads should be started when starting the Executor or not,

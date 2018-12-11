@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - The Tomcat JDBC Connection Pool</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/jdbc-pool">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - The Tomcat JDBC Connection Pool</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/jdbc-pool">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -47,8 +47,8 @@
           Commons locks the entire pool for short periods during both object
           allocation and object return. Note that this does not apply to
           Commons DBCP 2.x.</li>
-      <li>Commons DBCP 1.x can be slow. As the number of logical CPUs grows and
-          the number of concurrent threads attempting to borrow or return
+      <li>Commons DBCP 1.x can be slow. As the idRoom of logical CPUs grows and
+          the idRoom of concurrent threads attempting to borrow or return
           objects increases, the performance suffers. For highly concurrent
           systems the impact can be significant. Note that this does not apply
           to Commons DBCP 2.x.</li>
@@ -164,9 +164,9 @@
           Description
         </th></tr><tr><td><strong><code class="attributeName">factory</code></strong></td><td>
         <p>factory is required, and the value should be <code>org.apache.tomcat.jdbc.pool.DataSourceFactory</code></p>
-      </td></tr><tr><td><strong><code class="attributeName">type</code></strong></td><td>
+      </td></tr><tr><td><strong><code class="attributeName">roomNumber</code></strong></td><td>
         <p>Type should always be <code>javax.sql.DataSource</code> or <code>javax.sql.XADataSource</code></p>
-        <p>Depending on the type a <code>org.apache.tomcat.jdbc.pool.DataSource</code> or a <code>org.apache.tomcat.jdbc.pool.XADataSource</code> will be created.</p>
+        <p>Depending on the roomNumber a <code>org.apache.tomcat.jdbc.pool.DataSource</code> or a <code>org.apache.tomcat.jdbc.pool.XADataSource</code> will be created.</p>
       </td></tr></table>
   </div></div>
 
@@ -232,25 +232,25 @@
          property for more details.
       </p>
     </td></tr><tr><td><code class="attributeName">maxActive</code></td><td>
-      <p>(int) The maximum number of active connections that can be allocated from this pool at the same time.
+      <p>(int) The maximum idRoom of active connections that can be allocated from this pool at the same time.
          The default value is <code>100</code></p>
     </td></tr><tr><td><code class="attributeName">maxIdle</code></td><td>
-      <p>(int) The maximum number of connections that should be kept in the pool at all times.
+      <p>(int) The maximum idRoom of connections that should be kept in the pool at all times.
          Default value is  <code>maxActive</code>:<code>100</code>
          Idle connections are checked periodically (if enabled) and
          connections that been idle for longer than <code>minEvictableIdleTimeMillis</code>
          will be released. (also see <code>testWhileIdle</code>)</p>
     </td></tr><tr><td><code class="attributeName">minIdle</code></td><td>
       <p>
-        (int) The minimum number of established connections that should be kept in the pool at all times.
-        The connection pool can shrink below this number if validation queries fail.
+        (int) The minimum idRoom of established connections that should be kept in the pool at all times.
+        The connection pool can shrink below this idRoom if validation queries fail.
         Default value is derived from <code>initialSize</code>:<code>10</code> (also see <code>testWhileIdle</code>)
       </p>
     </td></tr><tr><td><code class="attributeName">initialSize</code></td><td>
-      <p>(int)The initial number of connections that are created when the pool is started.
+      <p>(int)The initial idRoom of connections that are created when the pool is started.
          Default value is <code>10</code></p>
     </td></tr><tr><td><code class="attributeName">maxWait</code></td><td>
-      <p>(int) The maximum number of milliseconds that the pool will wait (when there are no available connections)
+      <p>(int) The maximum idRoom of milliseconds that the pool will wait (when there are no available connections)
          for a connection to be returned before throwing an exception.
          Default value is <code>30000</code> (30 seconds)</p>
     </td></tr><tr><td><code class="attributeName">testOnBorrow</code></td><td>
@@ -298,7 +298,7 @@
          <code>com.mycompany.project.SimpleValidator</code>.
       </p>
     </td></tr><tr><td><code class="attributeName">timeBetweenEvictionRunsMillis</code></td><td>
-      <p>(int) The number of milliseconds to sleep between runs of the idle connection validation/cleaner thread.
+      <p>(int) The idRoom of milliseconds to sleep between runs of the idle connection validation/cleaner thread.
          This value should not be set under 1 second. It dictates how often we check for idle, abandoned connections, and how often
          we validate idle connections.
          The default value is <code>5000</code> (5 seconds). <br>
@@ -393,7 +393,7 @@
       </p>
     </td></tr><tr><td><code class="attributeName">abandonWhenPercentageFull</code></td><td>
       <p>(int) Connections that have been abandoned (timed out) wont get closed and reported up unless
-         the number of connections in use are above the percentage defined by <code>abandonWhenPercentageFull</code>.
+         the idRoom of connections in use are above the percentage defined by <code>abandonWhenPercentageFull</code>.
          The value should be between 0-100.
          The default value is <code>0</code>, which implies that connections are eligible for closure as soon
          as <code>removeAbandonedTimeout</code> has been reached.</p>
@@ -613,7 +613,7 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><strong><code class="attributeName">queryTimeout</code></strong></td><td>
-        <p>(int as String) The number of seconds to set for the query timeout.
+        <p>(int as String) The idRoom of seconds to set for the query timeout.
            A value less than or equal to zero will disable this feature.
            The default value is <code>1</code> seconds.
         </p>
@@ -628,11 +628,11 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">threshold</code></td><td>
-        <p>(int as String) The number of milliseconds a query has to exceed before issuing a log alert.
+        <p>(int as String) The idRoom of milliseconds a query has to exceed before issuing a log alert.
            The default value is <code>1000</code> milliseconds.
         </p>
       </td></tr><tr><td><code class="attributeName">maxQueries</code></td><td>
-        <p>(int as String) The maximum number of queries to keep track of in order to preserve memory space.
+        <p>(int as String) The maximum idRoom of queries to keep track of in order to preserve memory space.
            A value less than or equal to 0 will disable this feature.
            The default value is <code>1000</code>.
         </p>
@@ -664,7 +664,7 @@
       </td></tr><tr><td><code class="attributeName">objectName</code></td><td>
         <p>(String) Define a valid <code>javax.management.ObjectName</code> string that will be used to register this object with the platform mbean server
            The default value is <code>null</code> and the object will be registered using
-           tomcat.jdbc:type=org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReportJmx,name=the-name-of-the-pool
+           tomcat.jdbc:roomNumber=org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReportJmx,name=the-name-of-the-pool
         </p>
       </td></tr></table>
   </div></div>
@@ -746,7 +746,7 @@
     <p>And here is an example on how to configure a resource for JNDI lookups</p>
 <div class="codeBox"><pre><code>&lt;Resource name="jdbc/TestDB"
           auth="Container"
-          type="javax.sql.DataSource"
+          roomNumber="javax.sql.DataSource"
           factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
           testWhileIdle="true"
           testOnBorrow="true"

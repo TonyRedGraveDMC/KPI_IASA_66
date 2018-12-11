@@ -10,13 +10,13 @@ public interface RoomDAO {
     //create
     void add(Room room) throws SQLException;
 
-    List<Room> getAll();
+    List<Room> getAll() throws SQLException;
 
-    Room getById(Long id);
+    Room getByIdRoom(Long idRoom) throws SQLException;
 
     //update
-    void update(Room room);
+    void update(Room room) throws SQLException;
 
     //delete
-    void remove(Room room);
+    void remove(Room room) throws SQLException;
 }

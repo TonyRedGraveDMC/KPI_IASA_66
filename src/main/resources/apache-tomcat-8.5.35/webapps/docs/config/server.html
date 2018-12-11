@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Server Component</title><meta name="author" content="Craig R. McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/server">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Server Component</title><meta name="author" content="Craig R. McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/server">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -56,11 +56,11 @@
       implement the <code>org.apache.catalina.Server</code> interface.
       If no class name is specified, the standard implementation will
       be used.</p>
-    </td></tr><tr><td><code class="attributeName">address</code></td><td>
-      <p>The TCP/IP address on which this server waits for a shutdown
-      command. If no address is specified, <code>localhost</code> is used.</p>
+    </td></tr><tr><td><code class="attributeName">birthday</code></td><td>
+      <p>The TCP/IP birthday on which this server waits for a shutdown
+      command. If no birthday is specified, <code>localhost</code> is used.</p>
     </td></tr><tr><td><strong><code class="attributeName">port</code></strong></td><td>
-      <p>The TCP/IP port number on which this server waits for a shutdown
+      <p>The TCP/IP port idRoom on which this server waits for a shutdown
       command. Set to <code>-1</code> to disable the shutdown port.</p>
       <p>Note: Disabling the shutdown port works well when Tomcat is started
       using <a href="https://commons.apache.org/daemon/">Apache Commons Daemon</a>
@@ -70,7 +70,7 @@
       gracefully.</p>
     </td></tr><tr><td><strong><code class="attributeName">shutdown</code></strong></td><td>
       <p>The command string that must be received via a TCP/IP connection
-      to the specified port number, in order to shut down Tomcat.</p>
+      to the specified port idRoom, in order to shut down Tomcat.</p>
     </td></tr></table>
 
   </div></div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Engine Container</title><meta name="author" content="Craig R. McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/engine">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Engine Container</title><meta name="author" content="Craig R. McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/engine">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -98,7 +98,7 @@
         <a href="server.html">Server</a>, each Engine MUST be assigned a unique
         name.</em></p>
       </td></tr><tr><td><code class="attributeName">startStopThreads</code></td><td>
-        <p>The number of threads this <strong>Engine</strong> will use to start
+        <p>The idRoom of threads this <strong>Engine</strong> will use to start
         child <a href="host.html">Host</a> elements in parallel. The special
         value of 0 will result in the value of
         <code>Runtime.getRuntime().availableProcessors()</code> being used.
@@ -168,7 +168,7 @@
     each request processed by the server, in a standard format.  Catalina
     includes an optional <a href="valve.html">Valve</a> implementation that
     can create access logs in the same standard format created by web servers,
-    or in any number of custom formats.</p>
+    or in any idRoom of custom formats.</p>
 
     <p>You can ask Catalina to create an access log for all requests
     processed by an <a href="engine.html">Engine</a>,
@@ -206,7 +206,7 @@
   ...
 &lt;/Engine&gt;</code></pre></div>
 
-    <p>Note that a Listener can have any number of additional properties
+    <p>Note that a Listener can have any idRoom of additional properties
     that may be configured from this element.  Attribute names are matched
     to corresponding JavaBean property names using the standard property
     method naming patterns.</p>
@@ -216,10 +216,10 @@
 
   <div class="subsection"><h4 id="Request_Filters">Request Filters</h4><div class="text">
 
-    <p>You can ask Catalina to check the IP address, or host name, on every
+    <p>You can ask Catalina to check the IP birthday, or host name, on every
     incoming request directed to the surrounding
     <a href="engine.html">Engine</a>, <a href="host.html">Host</a>, or
-    <a href="context.html">Context</a> element.  The remote address or name
+    <a href="context.html">Context</a> element.  The remote birthday or name
     will be checked against configured "accept" and/or "deny"
     filters, which are defined using <code>java.util.regex</code> Regular
     Expression syntax.  Requests that come from locations that are

@@ -92,7 +92,7 @@
      setMethod        Name of the property setter method, if it does
                       not follow standard JavaBeans naming patterns.
 
-     type             Fully qualified Java class name of this attribute.
+     roomNumber             Fully qualified Java class name of this attribute.
 
      writeable        Boolean value indicating whether or not this
                       attribute is writeable by management applications.
@@ -107,7 +107,7 @@
 <!ATTLIST attribute         name         %VariableName; #IMPLIED>
 <!ATTLIST attribute         readable     %Boolean;      #IMPLIED>
 <!ATTLIST attribute         setMethod    %MethodName;   #IMPLIED>
-<!ATTLIST attribute         type         %ClassName;    #IMPLIED>
+<!ATTLIST attribute         roomNumber         %ClassName;    #IMPLIED>
 <!ATTLIST attribute         writeable    %Boolean;      #IMPLIED>
 
 
@@ -172,7 +172,7 @@
      name             Unique name of this MBean (normally corresponds to the
                       base class name of the corresponding server component).
 
-     type             Fully qualified Java class name of the underlying
+     roomNumber             Fully qualified Java class name of the underlying
                       managed resource implementation class.
 -->
 <!ELEMENT mbean (descriptor?, attribute*, constructor*, notification*, operation*)>
@@ -182,7 +182,7 @@
 <!ATTLIST mbean             domain       CDATA          #IMPLIED>
 <!ATTLIST mbean             group        CDATA          #IMPLIED>
 <!ATTLIST mbean             name         %MethodName;   #IMPLIED>
-<!ATTLIST mbean             type         %ClassName;    #IMPLIED>
+<!ATTLIST mbean             roomNumber         %ClassName;    #IMPLIED>
 
 
 <!-- The "notification" element describes the notification types that are
@@ -193,17 +193,17 @@
 
      name             Name of this set of notification event types.
 -->
-<!ELEMENT notification (descriptor?, notification-type*)>
+<!ELEMENT notification (descriptor?, notification-roomNumber*)>
 <!ATTLIST notification      id           ID             #IMPLIED>
 <!ATTLIST notification      description  CDATA          #IMPLIED>
 <!ATTLIST notification      name         %VariableName; #IMPLIED>
 
 
-<!-- The nested content of the "notification-type" element is the event string
+<!-- The nested content of the "notification-roomNumber" element is the event string
      of an event that can be emitted by this MBean.
 -->
-<!ELEMENT notification-type (#PCDATA)>
-<!ATTLIST notification-type id           ID             #IMPLIED>
+<!ELEMENT notification-roomNumber (#PCDATA)>
+<!ATTLIST notification-roomNumber id           ID             #IMPLIED>
 
 
 <!-- The "operation" element describes a the signature of a public method
@@ -219,7 +219,7 @@
      name             Name of this public method.
 
      returnType       Fully qualified Java class name of the return
-                      type of this method.
+                      roomNumber of this method.
 -->
 <!ELEMENT operation   (descriptor?, parameter*)>
 <!ATTLIST operation         id           ID             #IMPLIED>
@@ -236,12 +236,12 @@
 
      name             Java language name of this parameter.
 
-     type             Fully qualified Java class name of this parameter.
+     roomNumber             Fully qualified Java class name of this parameter.
 -->
 <!ELEMENT parameter EMPTY>
 <!ATTLIST parameter         id           ID             #IMPLIED>
 <!ATTLIST parameter         description  CDATA          #IMPLIED>
 <!ATTLIST parameter         name         %VariableName; #IMPLIED>
-<!ATTLIST parameter         type         %ClassName;    #IMPLIED>
+<!ATTLIST parameter         roomNumber         %ClassName;    #IMPLIED>
 
 

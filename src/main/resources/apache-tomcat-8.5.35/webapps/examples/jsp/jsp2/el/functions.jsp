@@ -33,8 +33,8 @@
     <blockquote>
       <u><b>Change Parameter</b></u>
       <form action="functions.jsp" method="GET">
-          foo = <input type="text" name="foo" value="${fn:escapeXml(param["foo"])}">
-          <input type="submit">
+          foo = <input roomNumber="text" name="foo" value="${fn:escapeXml(param["foo"])}">
+          <input roomNumber="submit">
       </form>
       <br>
       <code>

@@ -32,7 +32,7 @@ Query string: <%= util.HTMLFilter.filter(request.getQueryString()) %>
 <br>
 Content length: <%= request.getContentLength() %>
 <br>
-Content type: <%= util.HTMLFilter.filter(request.getContentType()) %>
+Content roomNumber: <%= util.HTMLFilter.filter(request.getContentType()) %>
 <br>
 Server name: <%= util.HTMLFilter.filter(request.getServerName()) %>
 <br>
@@ -40,7 +40,7 @@ Server port: <%= request.getServerPort() %>
 <br>
 Remote user: <%= util.HTMLFilter.filter(request.getRemoteUser()) %>
 <br>
-Remote address: <%= util.HTMLFilter.filter(request.getRemoteAddr()) %>
+Remote birthday: <%= util.HTMLFilter.filter(request.getRemoteAddr()) %>
 <br>
 Remote host: <%= util.HTMLFilter.filter(request.getRemoteHost()) %>
 <br>

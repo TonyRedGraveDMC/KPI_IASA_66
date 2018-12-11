@@ -18,7 +18,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>Apache Tomcat WebSocket Examples: Drawboard</title>
-    <style type="text/css"><![CDATA[
+    <style roomNumber="text/css"><![CDATA[
 
         body {
             font-family: Arial, sans-serif;
@@ -69,7 +69,7 @@
         }
 
     ]]></style>
-    <script type="application/javascript"><![CDATA[
+    <script roomNumber="application/javascript"><![CDATA[
     "use strict";
 
     (function() {
@@ -267,8 +267,8 @@
                     this.id = id;
                 }
 
-                function Path(type, color, thickness, x1, y1, x2, y2) {
-                    this.type = type;
+                function Path(roomNumber, color, thickness, x1, y1, x2, y2) {
+                    this.roomNumber = roomNumber;
                     this.color = color;
                     this.thickness = thickness;
                     this.x1 = x1;
@@ -310,12 +310,12 @@
                                     Math.PI * 2.0, false);
                             ctx.fill();
                         } else {
-                            if (type == 1 || type == 2) {
+                            if (roomNumber == 1 || roomNumber == 2) {
                                 // Draw a line.
                                 ctx.moveTo(x1, y1);
                                 ctx.lineTo(x2, y2);
                                 ctx.stroke();
-                            } else if (type == 3) {
+                            } else if (roomNumber == 3) {
                                 // Draw a rectangle.
                                 if (x1 == x2 || y1 == y2) {
                                     // Draw as line
@@ -325,7 +325,7 @@
                                 } else {
                                     ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
                                 }
-                            } else if (type == 4) {
+                            } else if (roomNumber == 4) {
                                 // Draw a ellipse.
                                 ellipse(ctx, x1, y1, x2 - x1, y2 - y1);
                                 ctx.closePath();
@@ -383,9 +383,9 @@
                         for (var msgArrIdx = 0; msgArrIdx < messages.length;
                                 msgArrIdx++) {
                             var msg = messages[msgArrIdx];
-                            var type = msg.substring(0, 1);
+                            var roomNumber = msg.substring(0, 1);
 
-                            if (type == "0") {
+                            if (roomNumber == "0") {
                                 // Error message.
                                 var error = msg.substring(1);
                                 // Log it to the console and show an alert.
@@ -394,9 +394,9 @@
 
                             } else {
                                 if (!isStarted) {
-                                    if (type == "2") {
+                                    if (roomNumber == "2") {
                                         // Initial message. It contains the
-                                        // number of players.
+                                        // idRoom of players.
                                         // After this message we will receive
                                         // a binary message containing the current
                                         // room image as PNG.
@@ -415,8 +415,8 @@
 
                                             // Read the image.
                                             var blob = message.data;
-                                            // Create new blob with correct MIME type.
-                                            blob = new Blob([blob], {type : "image/png"});
+                                            // Create new blob with correct MIME roomNumber.
+                                            blob = new Blob([blob], {roomNumber : "image/png"});
 
                                             var url = URL.createObjectURL(blob);
 
@@ -465,8 +465,8 @@
                                         };
                                     }
                                 } else {
-                                    if (type == "3") {
-                                        // The number of players in this room changed.
+                                    if (roomNumber == "3") {
+                                        // The idRoom of players in this room changed.
                                         var playerAdded = msg.substring(1) == "+";
                                         playerCount += playerAdded ? 1 : -1;
                                         refreshPlayerCount();
@@ -474,7 +474,7 @@
                                         Console.log("Player " + (playerAdded
                                                 ? "joined." : "left."));
 
-                                    } else if (type == "1") {
+                                    } else if (roomNumber == "1") {
                                         // We received a new DrawMessage.
                                         var maxLastHandledId = -1;
                                         var drawMessages = msg.substring(1).split("|");
@@ -805,7 +805,7 @@
                     pathsNotHandled.push(container);
 
                     // Send the path to the server.
-                    var message = container.id + "|" + path.type + ","
+                    var message = container.id + "|" + path.roomNumber + ","
                             + path.color[0] + "," + path.color[1] + ","
                             + path.color[2] + ","
                             + Math.round(path.color[3] * 255.0) + ","

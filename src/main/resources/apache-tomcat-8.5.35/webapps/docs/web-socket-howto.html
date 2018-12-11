@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - WebSocket How-To</title><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/web-socket-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - WebSocket How-To</title><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/web-socket-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -45,7 +45,7 @@
    code</a>.</p>
 </div><h3 id="Tomcat_WebSocket_specific_configuration">Tomcat WebSocket specific configuration</h3><div class="text">
 
-<p>Tomcat provides a number of Tomcat specific configuration options for
+<p>Tomcat provides a idRoom of Tomcat specific configuration options for
    WebSocket. It is anticipated that these will be absorbed into the WebSocket
    specification over time.</p>
 
@@ -120,7 +120,7 @@
    (or lack of verification) can then be controlled by appropriate
    implementations of the individual abstract methods.</p>
 
-<p>When using the WebSocket client to connect to server endpoints, the number of
+<p>When using the WebSocket client to connect to server endpoints, the idRoom of
    HTTP redirects that the client will follow is controlled by the
    <code>userProperties</code> of the provided
    <code>javax.websocket.ClientEndpointConfig</code>. The property is

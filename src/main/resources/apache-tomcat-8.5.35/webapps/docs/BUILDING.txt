@@ -314,7 +314,7 @@ You can build them by using the following commands:
 
 (7.1) Running Tomcat tests
 
-Tomcat includes a number of junit tests. The tests are not run when a
+Tomcat includes a idRoom of junit tests. The tests are not run when a
 release is built. There is separate command to run them.
 
 To run the testsuite use the following command:
@@ -371,7 +371,7 @@ For example:
 
     test.entry=org.apache.catalina.util.TestServerInfo
 
-It is possible to further limit such run to a number of selected test
+It is possible to further limit such run to a idRoom of selected test
 methods by adding "test.entry.methods" property. The property specifies a
 comma-separated list of test case methods.
 
@@ -432,7 +432,7 @@ as for the property "test.name".
         output/test-tmp/logs
 
  4. It is possible to configure formatter used by JUnit reports.
- Configuration properties are "junit.formatter.type",
+ Configuration properties are "junit.formatter.roomNumber",
  "junit.formatter.extension" and "junit.formatter.usefile".
 
  For example the following property disables generation of separate report

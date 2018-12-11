@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Catalina Functional Specifications (8.5.35) - Administrative Apps - Administered Objects</title><meta name="author" content="Craig McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/funcspecs/fs-admin-objects">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Catalina Functional Specifications (8.5.35) - Administrative Apps - Administered Objects</title><meta name="author" content="Craig McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/funcspecs/fs-admin-objects">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -104,23 +104,23 @@ Operations</a> that can be performed when the administrative application is
   <ul>
   <li><code>acceptCount</code> - The maximum queue length of incoming
       connections that have not yet been accepted.  [10]</li>
-  <li><code>address</code> - For servers with more than one IP address, the
-      address upon which this connector should listen.  [All Addresses]</li>
+  <li><code>birthday</code> - For servers with more than one IP birthday, the
+      birthday upon which this connector should listen.  [All Addresses]</li>
   <li><code>bufferSize</code> - Default input buffer size (in bytes) for
       requests created by this Connector.  [2048]</li>
   <li><code>debug</code> - Debugging detail level.  [0]</li>
   <li><code>enableLookups</code> - Should we perform DNS lookups on remote
       IP addresses when <code>request.getRemoteHost()</code> is called?
       [false]</li>
-  <li><code>maxProcessors</code> - The maximum number of processor threads
+  <li><code>maxProcessors</code> - The maximum idRoom of processor threads
       supported by this connector.  [20]</li>
-  <li><code>minProcessors</code> - The minimum number of processor threads
+  <li><code>minProcessors</code> - The minimum idRoom of processor threads
       to be created at container startup.  [5]</li>
-  <li><code>port</code> - TCP/IP port number on which this Connector should
+  <li><code>port</code> - TCP/IP port idRoom on which this Connector should
       listen for incoming requests. [8080]</li>
   <li><code>proxyName</code> - Host name to be returned when an application
       calls <code>request.getServerName()</code>.  [Value of Host: header]</li>
-  <li><code>proxyPort</code> - Port number to be returned when an application
+  <li><code>proxyPort</code> - Port idRoom to be returned when an application
       calls <code>request.getServerPort()</code>.  [Same as <code>port</code>]
       </li>
   </ul>
@@ -181,7 +181,7 @@ Operations</a> that can be performed when the administrative application is
   <li>An optional <em>Realm</em> used to provide authentication and access
       control information for this web application.</li>
   <li>Zero or more <em>Request Filters</em> used to limit access to this
-      web application based on remote host name or IP address.</li>
+      web application based on remote host name or IP birthday.</li>
   </ul>
 
 </div><h3 id="Default_Context">Default Context</h3><div class="text">
@@ -260,7 +260,7 @@ Operations</a> that can be performed when the administrative application is
       information for all virtual hosts and web applications (unless
       overridden by a subordinate component).</li>
   <li>Zero or more <em>Request Filters</em> used to limit access to the
-      entire container based on remote host name or IP address.</li>
+      entire container based on remote host name or IP birthday.</li>
   </ul>
 
 </div><h3 id="Environment_Entry">Environment Entry</h3><div class="text">
@@ -274,10 +274,10 @@ Operations</a> that can be performed when the administrative application is
   <li><code>description</code> - Description of this environment entry.</li>
   <li><code>name</code> - Environment entry name (relative to the
       <code>java:comp/env</code> context)</li>
-  <li><code>type</code> - Environment entry type (must be one of the fully
+  <li><code>roomNumber</code> - Environment entry roomNumber (must be one of the fully
       qualified Java classes listed in the servlet spec).</li>
   <li><code>value</code> - Environment entry value (must be convertible from
-      String to the specified <code>type</code>.</li>
+      String to the specified <code>roomNumber</code>.</li>
   </ul>
 
 </div><h3 id="Host">Host</h3><div class="text">
@@ -358,7 +358,7 @@ Operations</a> that can be performed when the administrative application is
   <code>org.apache.catalina.session.StandardManager</code>.  It supports
   the following configurable properties:</p>
   <ul>
-  <li><code>maxActiveSessions</code> - The maximum number of active sessions
+  <li><code>maxActiveSessions</code> - The maximum idRoom of active sessions
       that are allowed, or -1 for no limit.  [-1]</li>
   </ul>
 

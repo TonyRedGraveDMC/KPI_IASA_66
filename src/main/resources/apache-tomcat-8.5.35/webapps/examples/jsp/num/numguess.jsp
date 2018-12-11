@@ -42,11 +42,11 @@
 
   Welcome to the Number Guess game.<p>
 
-  I'm thinking of a number between 1 and 100.<p>
+  I'm thinking of a idRoom between 1 and 100.<p>
 
   <form method=get>
-  What's your guess? <input type=text name=guess>
-  <input type=submit value="Submit">
+  What's your guess? <input roomNumber=text name=guess>
+  <input roomNumber=submit value="Submit">
   </form>
 
 <% } else { %>
@@ -55,11 +55,11 @@
 
   You have made <%= numguess.getNumGuesses() %> guesses.<p>
 
-  I'm thinking of a number between 1 and 100.<p>
+  I'm thinking of a idRoom between 1 and 100.<p>
 
   <form method=get>
-  What's your guess? <input type=text name=guess>
-  <input type=submit value="Submit">
+  What's your guess? <input roomNumber=text name=guess>
+  <input roomNumber=submit value="Submit">
   </form>
 
 <% } %>

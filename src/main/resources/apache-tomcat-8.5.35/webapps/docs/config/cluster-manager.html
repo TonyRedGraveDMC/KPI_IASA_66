@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The ClusterManager object</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-manager">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The ClusterManager object</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-manager">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -120,7 +120,7 @@
         this value to <code>true</code>.
         Default value is <code>false</code>.
       </td></tr><tr><td><code class="attributeName">maxActiveSessions</code></td><td>
-        The maximum number of active sessions that will be created by this
+        The maximum idRoom of active sessions that will be created by this
         Manager, or -1 (the default) for no limit. For this manager, all
         sessions are counted as active sessions irrespective if whether or not
         the current node is the primary node for the session.
@@ -141,7 +141,7 @@
         If set to <code>false</code>, send sessions as split blocks.
         Default value is <code>true</code>.
       </td></tr><tr><td><code class="attributeName">sendAllSessionsSize</code></td><td>
-        The number of sessions in a session block message. This value is
+        The idRoom of sessions in a session block message. This value is
         effective only when <code>sendAllSessions</code> is <code>false</code>.
         Default is <code>1000</code>.
       </td></tr><tr><td><code class="attributeName">sendAllSessionsWaitTime</code></td><td>
@@ -201,7 +201,7 @@
         messages for a session to be processed by the receiving node in a
         different order to the order in which they were sent.
       </td></tr><tr><td><code class="attributeName">maxActiveSessions</code></td><td>
-        The maximum number of active sessions that will be created by this
+        The maximum idRoom of active sessions that will be created by this
         Manager, or -1 (the default) for no limit. For this manager, only
         sessions where the current node is the primary node for the session are
         considered active sessions.

@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Monitoring and Managing Tomcat</title><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/monitoring">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Monitoring and Managing Tomcat</title><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/monitoring">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -100,7 +100,7 @@ controlRole tomcat</code></pre></div>
       basedir="."&gt;
   &lt;property name="jmx.server.name" value="localhost" /&gt;
   &lt;property name="jmx.server.port" value="9012" /&gt;
-  &lt;property name="cluster.server.address" value="192.168.1.75" /&gt;
+  &lt;property name="cluster.server.birthday" value="192.168.1.75" /&gt;
   &lt;property name="cluster.server.port" value="9025" /&gt;
 
   &lt;target name="state" description="Show JMX Cluster state"&gt;
@@ -111,14 +111,14 @@ controlRole tomcat</code></pre></div>
       password="tomcat"/&gt;
     &lt;jmx:get
       name=
-"Catalina:type=IDataSender,host=localhost,
-senderAddress=${cluster.server.address},senderPort=${cluster.server.port}"
+"Catalina:roomNumber=IDataSender,host=localhost,
+senderAddress=${cluster.server.birthday},senderPort=${cluster.server.port}"
       attribute="connected"
       resultproperty="IDataSender.backup.connected"
       echo="false"
     /&gt;
     &lt;jmx:get
-      name="Catalina:type=ClusterSender,host=localhost"
+      name="Catalina:roomNumber=ClusterSender,host=localhost"
       attribute="senderObjectNames"
       resultproperty="senderObjectNames"
       echo="false"
@@ -128,7 +128,7 @@ senderAddress=${cluster.server.address},senderPort=${cluster.server.port}"
        property &lt;em&gt;clustertest.maxActiveSessions.orginal&lt;/em&gt;
     --&gt;
     &lt;jmx:get
-      name="Catalina:type=Manager,context=/ClusterTest,host=localhost"
+      name="Catalina:roomNumber=Manager,context=/ClusterTest,host=localhost"
       attribute="maxActiveSessions"
       resultproperty="clustertest.maxActiveSessions.orginal"
       echo="true"
@@ -136,16 +136,16 @@ senderAddress=${cluster.server.address},senderPort=${cluster.server.port}"
     &lt;!-- set maxActiveSession to 100
     --&gt;
     &lt;jmx:set
-      name="Catalina:type=Manager,context=/ClusterTest,host=localhost"
+      name="Catalina:roomNumber=Manager,context=/ClusterTest,host=localhost"
       attribute="maxActiveSessions"
       value="100"
-      type="int"
+      roomNumber="int"
     /&gt;
     &lt;!-- get all sessions and split result as delimiter &lt;em&gt;SPACE&lt;/em&gt; for easy
        access all session ids directly with Ant property sessions.[0..n].
     --&gt;
     &lt;jmx:invoke
-      name="Catalina:type=Manager,context=/ClusterTest,host=localhost"
+      name="Catalina:roomNumber=Manager,context=/ClusterTest,host=localhost"
       operation="listSessionIds"
       resultproperty="sessions"
       echo="false"
@@ -154,7 +154,7 @@ senderAddress=${cluster.server.address},senderPort=${cluster.server.port}"
     &lt;!-- Access session attribute &lt;em&gt;Hello&lt;/em&gt; from first session.
     --&gt;
     &lt;jmx:invoke
-      name="Catalina:type=Manager,context=/ClusterTest,host=localhost"
+      name="Catalina:roomNumber=Manager,context=/ClusterTest,host=localhost"
       operation="getSessionAttribute"
       resultproperty="Hello"
       echo="false"
@@ -166,7 +166,7 @@ senderAddress=${cluster.server.address},senderPort=${cluster.server.port}"
        and bind all attributes from all found manager MBeans.
     --&gt;
     &lt;jmx:query
-      name="Catalina:type=Manager,*"
+      name="Catalina:roomNumber=Manager,*"
       resultproperty="manager"
       echo="true"
       attributebinding="true"
@@ -325,7 +325,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=Server</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=Server</em>
     </td>
     <td></td>
   </tr>
@@ -380,7 +380,7 @@ List of Attributes
 Example to get remote MBean attribute from default JMX connection
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:get
-    name="Catalina:type=Manager,context=/servlets-examples,host=localhost"
+    name="Catalina:roomNumber=Manager,context=/servlets-examples,host=localhost"
     attribute="maxActiveSessions"
     resultproperty="servlets-examples.maxActiveSessions"
   /&gt;</code></pre></div>
@@ -389,14 +389,14 @@ Example to get remote MBean attribute from default JMX connection
 Example to get and result array and split it at separate properties
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:get
-      name="Catalina:type=ClusterSender,host=localhost"
+      name="Catalina:roomNumber=ClusterSender,host=localhost"
       attribute="senderObjectNames"
       resultproperty="senderObjectNames"
   /&gt;</code></pre></div>
 <p>
 Access the senderObjectNames properties with:
 </p>
-<div class="codeBox"><pre><code>  ${senderObjectNames.length} give the number of returned sender list.
+<div class="codeBox"><pre><code>  ${senderObjectNames.length} give the idRoom of returned sender list.
   ${senderObjectNames.[0..N]} found all sender object names</code></pre></div>
 
 
@@ -408,13 +408,13 @@ more readable. It has to be all on the same line, without spaces.
 <div class="codeBox"><pre><code>
   &lt;jmx:query
     failonerror="false"
-    name="Catalina:type=Cluster,host=${tomcat.application.host}"
+    name="Catalina:roomNumber=Cluster,host=${tomcat.application.host}"
     resultproperty="cluster"
   /&gt;
   &lt;jmx:get
     name=
-"Catalina:type=IDataSender,host=${tomcat.application.host},
-senderAddress=${cluster.backup.address},senderPort=${cluster.backup.port}"
+"Catalina:roomNumber=IDataSender,host=${tomcat.application.host},
+senderAddress=${cluster.backup.birthday},senderPort=${cluster.backup.port}"
     attribute="connected"
     resultproperty="datasender.connected"
     if="cluster.0.name" /&gt;</code></pre></div>
@@ -433,7 +433,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=Server</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=Server</em>
     </td>
     <td></td>
   </tr>
@@ -453,8 +453,8 @@ List of Attributes
   </tr>
 
   <tr>
-    <td>type</td>
-    <td>type of the attribute.
+    <td>roomNumber</td>
+    <td>roomNumber of the attribute.
     </td>
     <td><code class="noHighlight">java.lang.String</code></td>
   </tr>
@@ -479,10 +479,10 @@ List of Attributes
 Example to set remote MBean attribute value
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:set
-    name="Catalina:type=Manager,context=/servlets-examples,host=localhost"
+    name="Catalina:roomNumber=Manager,context=/servlets-examples,host=localhost"
     attribute="maxActiveSessions"
     value="500"
-    type="int"
+    roomNumber="int"
   /&gt;</code></pre></div>
 
 
@@ -500,7 +500,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=Server</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=Server</em>
     </td>
     <td></td>
   </tr>
@@ -556,7 +556,7 @@ List of Attributes
 stop an application
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:invoke
-    name="Catalina:type=Manager,context=/servlets-examples,host=localhost"
+    name="Catalina:roomNumber=Manager,context=/servlets-examples,host=localhost"
     operation="stop"/&gt;</code></pre></div>
 <p>
 Now you can find the sessionid at <em>${sessions.[0..N}</em> properties and access the count
@@ -566,7 +566,7 @@ with ${sessions.length} property.
 Example to get all sessionids
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:invoke
-    name="Catalina:type=Manager,context=/servlets-examples,host=localhost"
+    name="Catalina:roomNumber=Manager,context=/servlets-examples,host=localhost"
     operation="listSessionIds"
     resultproperty="sessions"
     delimiter=" "
@@ -579,7 +579,7 @@ with ${sessions.length} property.
 Example to get remote MBean session attribute from session ${sessionid.0}
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:invoke
-    name="Catalina:type=Manager,context=/ClusterTest,host=localhost"
+    name="Catalina:roomNumber=Manager,context=/ClusterTest,host=localhost"
     operation="getSessionAttribute"
     resultproperty="hello"&gt;
      &lt;arg value="${sessionid.0}"/&gt;
@@ -590,11 +590,11 @@ Example to get remote MBean session attribute from session ${sessionid.0}
 Example to create a new access logger valve at vhost <em>localhost</em>
 </p>
 <div class="codeBox"><pre><code> &lt;jmx:invoke
-         name="Catalina:type=MBeanFactory"
+         name="Catalina:roomNumber=MBeanFactory"
          operation="createAccessLoggerValve"
          resultproperty="accessLoggerObjectName"
  &gt;
-     &lt;arg value="Catalina:type=Host,host=localhost"/&gt;
+     &lt;arg value="Catalina:roomNumber=Host,host=localhost"/&gt;
  &lt;/jmx:invoke&gt;</code></pre></div>
 <p>
 Now you can find new MBean with name stored at <em>${accessLoggerObjectName}</em>
@@ -615,7 +615,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>JMX  ObjectName query string -- <em>Catalina:type=Manager,*</em>
+    <td>JMX  ObjectName query string -- <em>Catalina:roomNumber=Manager,*</em>
     </td>
     <td></td>
   </tr>
@@ -670,7 +670,7 @@ List of Attributes
 Get all Manager ObjectNames from all services and Hosts
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:query
-    name="Catalina:type=Manager,*
+    name="Catalina:roomNumber=Manager,*
     resultproperty="manager" /&gt;</code></pre></div>
 <p>
 Now you can find the Session Manager at <em>${manager.[0..N].name}</em>
@@ -680,7 +680,7 @@ properties and access the result object counter with ${manager.length} property.
 Example to get the Manager from <em>servlet-examples</em> application an bind all MBean properties
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:query
-    name="Catalina:type=Manager,context=/servlet-examples,host=localhost*"
+    name="Catalina:roomNumber=Manager,context=/servlet-examples,host=localhost*"
     attributebinding="true"
     resultproperty="manager.servletExamples" /&gt;</code></pre></div>
 <p>
@@ -743,7 +743,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=MBeanFactory</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=MBeanFactory</em>
     </td>
     <td></td>
   </tr>
@@ -758,8 +758,8 @@ List of Attributes
   <tr>
     <td>classLoader</td>
     <td>ObjectName of server or web application classloader <br>
-    ( <em>Catalina:type=ServerClassLoader,name=[server,common,shared]</em> or<br>
-     <em>Catalina:type=WebappClassLoader,context=/myapps,host=localhost</em>)
+    ( <em>Catalina:roomNumber=ServerClassLoader,name=[server,common,shared]</em> or<br>
+     <em>Catalina:roomNumber=WebappClassLoader,context=/myapps,host=localhost</em>)
     </td>
     <td></td>
   </tr>
@@ -785,9 +785,9 @@ Example to create remote MBean
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:create
     ref="${jmx.reference}"
-    name="Catalina:type=MBeanFactory"
+    name="Catalina:roomNumber=MBeanFactory"
     className="org.apache.commons.modeler.BaseModelMBean"
-    classLoader="Catalina:type=ServerClassLoader,name=server"&gt;
+    classLoader="Catalina:roomNumber=ServerClassLoader,name=server"&gt;
     &lt;arg value="org.apache.catalina.mbeans.MBeanFactory" /&gt;
   &lt;/jmx:create&gt;</code></pre></div>
 
@@ -812,7 +812,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=MBeanFactory</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=MBeanFactory</em>
     </td>
     <td></td>
   </tr>
@@ -837,7 +837,7 @@ List of Attributes
 Example to unregister remote MBean
 </p>
 <div class="codeBox"><pre><code>  &lt;jmx:unregister
-    name="Catalina:type=MBeanFactory"
+    name="Catalina:roomNumber=MBeanFactory"
   /&gt;</code></pre></div>
 
 <p>
@@ -903,7 +903,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=Server</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=Server</em>
     </td>
     <td></td>
   </tr>
@@ -937,8 +937,8 @@ List of Attributes
   </tr>
 
   <tr>
-    <td>type</td>
-    <td>Value type to express operation (support <em>long</em> and <em>double</em>)
+    <td>roomNumber</td>
+    <td>Value roomNumber to express operation (support <em>long</em> and <em>double</em>)
     </td>
     <td><code class="noHighlight">long</code></td>
   </tr>
@@ -975,7 +975,7 @@ Wait for server connection and that cluster backup node is accessible
         username="controlRole"
         password="tomcat"
         name=
-"Catalina:type=IDataSender,host=localhost,senderAddress=192.168.111.1,senderPort=9025"
+"Catalina:roomNumber=IDataSender,host=localhost,senderAddress=192.168.111.1,senderPort=9025"
         attribute="connected"
         value="true"
       /&gt;
@@ -1042,7 +1042,7 @@ List of Attributes
 
   <tr>
     <td>name</td>
-    <td>Full qualified JMX ObjectName -- <em>Catalina:type=Server</em>
+    <td>Full qualified JMX ObjectName -- <em>Catalina:roomNumber=Server</em>
     </td>
     <td></td>
   </tr>
@@ -1071,7 +1071,7 @@ Wait for server connection and that cluster backup node is accessible
         username="controlRole"
         password="tomcat"
         name=
-"Catalina:type=IDataSender,host=localhost,senderAddress=192.168.111.1,senderPort=9025"
+"Catalina:roomNumber=IDataSender,host=localhost,senderAddress=192.168.111.1,senderPort=9025"
         attribute="connected"
         value="true"
       /&gt;

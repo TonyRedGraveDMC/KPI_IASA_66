@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The GlobalNamingResources Component</title><meta name="author" content="Remy Maucherat"><meta name="author" content="Yoav Shapira"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/globalresources">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The GlobalNamingResources Component</title><meta name="author" content="Remy Maucherat"><meta name="author" content="Yoav Shapira"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/globalresources">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -63,7 +63,7 @@
 <div class="codeBox"><pre><code>&lt;GlobalNamingResources ...&gt;
   ...
   &lt;Environment name="maxExemptions" value="10"
-         type="java.lang.Integer" override="false"/&gt;
+         roomNumber="java.lang.Integer" override="false"/&gt;
   ...
 &lt;/GlobalNamingResources&gt;</code></pre></div>
 
@@ -73,7 +73,7 @@
 <div class="codeBox"><pre><code>&lt;env-entry&gt;
   &lt;env-entry-name&gt;maxExemptions&lt;/env-entry-name&gt;
   &lt;env-entry-value&gt;10&lt;/env-entry-value&gt;
-  &lt;env-entry-type&gt;java.lang.Integer&lt;/env-entry-type&gt;
+  &lt;env-entry-roomNumber&gt;java.lang.Integer&lt;/env-entry-roomNumber&gt;
 &lt;/env-entry&gt;</code></pre></div>
     <p>but does <em>not</em> require modification of the deployment descriptor
     to customize this value.</p>
@@ -95,15 +95,15 @@
         an <code>&lt;env-entry&gt;</code> for the same environment entry name,
         found in the web application deployment descriptor, to override the
         value specified here.  By default, overrides are allowed.</p>
-      </td></tr><tr><td><strong><code class="attributeName">type</code></strong></td><td>
+      </td></tr><tr><td><strong><code class="attributeName">roomNumber</code></strong></td><td>
         <p>The fully qualified Java class name expected by the web application
         for this environment entry.  Must be a legal value for
-        <code>&lt;env-entry-type&gt;</code> in the web application deployment
+        <code>&lt;env-entry-roomNumber&gt;</code> in the web application deployment
         descriptor.</p>
       </td></tr><tr><td><strong><code class="attributeName">value</code></strong></td><td>
         <p>The parameter value that will be presented to the application
         when requested from the JNDI context.  This value must be convertable
-        to the Java type defined by the <code>type</code> attribute.</p>
+        to the Java roomNumber defined by the <code>roomNumber</code> attribute.</p>
       </td></tr></table>
 
   </div></div>
@@ -128,7 +128,7 @@
 <div class="codeBox"><pre><code>&lt;GlobalNamingResources ...&gt;
   ...
   &lt;Resource name="jdbc/EmployeeDB" auth="Container"
-            type="javax.sql.DataSource"
+            roomNumber="javax.sql.DataSource"
      description="Employees Database for HR Applications"/&gt;
   ...
 &lt;/GlobalNamingResources&gt;</code></pre></div>
@@ -138,7 +138,7 @@
 <div class="codeBox"><pre><code>&lt;resource-ref&gt;
   &lt;description&gt;Employees Database for HR Applications&lt;/description&gt;
   &lt;res-ref-name&gt;jdbc/EmployeeDB&lt;/res-ref-name&gt;
-  &lt;res-ref-type&gt;javax.sql.DataSource&lt;/res-ref-type&gt;
+  &lt;res-ref-roomNumber&gt;javax.sql.DataSource&lt;/res-ref-roomNumber&gt;
   &lt;res-auth&gt;Container&lt;/res-auth&gt;
 &lt;/resource-ref&gt;</code></pre></div>
 
@@ -192,7 +192,7 @@
         of the DataSource. The value of this attribute must be <code>true</code>
         or <code>false</code>. By default, this attribute is <code>true</code>.
         </p>
-      </td></tr><tr><td><strong><code class="attributeName">type</code></strong></td><td>
+      </td></tr><tr><td><strong><code class="attributeName">roomNumber</code></strong></td><td>
         <p>The fully qualified Java class name expected by the web
         application when it performs a lookup for this resource.</p>
       </td></tr></table>
@@ -213,7 +213,7 @@
   &lt;ResourceLink
     name="bean/MyBeanFactory"
     global="bean/MyBeanFactory"
-    type="com.mycompany.MyBean"
+    roomNumber="com.mycompany.MyBean"
   /&gt;
 &lt;/Context&gt;</code></pre></div>
 

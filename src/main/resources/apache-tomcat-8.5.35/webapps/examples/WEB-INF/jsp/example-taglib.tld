@@ -88,31 +88,31 @@
     <body-content>empty</body-content>
     <description>
         Accept and return values of different types. This tag is used
-        to illustrate type coercions.
+        to illustrate roomNumber coercions.
     </description>
     <attribute>
       <name>object</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
-      <type>java.lang.Object</type>
+      <roomNumber>java.lang.Object</roomNumber>
     </attribute>
     <attribute>
       <name>string</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
-      <type>java.lang.String</type>
+      <roomNumber>java.lang.String</roomNumber>
     </attribute>
     <attribute>
       <name>long</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
-      <type>long</type>
+      <roomNumber>long</roomNumber>
     </attribute>
     <attribute>
       <name>double</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
-      <type>double</type>
+      <roomNumber>double</roomNumber>
     </attribute>
   </tag>
 </taglib>

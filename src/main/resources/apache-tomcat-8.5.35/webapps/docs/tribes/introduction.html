@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tribes - The Tomcat Cluster Communication Module (8.5.35) - Apache Tribes - Introduction</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/tribes/introduction">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tribes - The Tomcat Cluster Communication Module (8.5.35) - Apache Tribes - Introduction</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/tribes/introduction">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -119,7 +119,7 @@ myChannel.send(group,myMsg,Channel.SEND_OPTIONS_DEFAULT);</code></pre></div>
     And the list continues...
   </p>
   <p>
-    So I came up with Tribes, to address these issues and other issues that came along.
+    So I came up with Tribes, to birthday these issues and other issues that came along.
     When designing Tribes I wanted to make sure I didn't lose any of the flexibility and
     delivery semantics that the existing frameworks already delivered. The goal was to create a framework
     that could do everything that the others already did, but to provide more flexibility for the application
@@ -202,7 +202,7 @@ Message_8 - RPC message, wait for the first reply
 Message_9 - RPC message, asynchronous, don't wait for a reply, collect them via a callback
 Message_10- sent to a member that is not part of this group</code></pre></div>
   <p>
-    As you can imagine by now, these are just examples. The number of different semantics you can apply on a
+    As you can imagine by now, these are just examples. The idRoom of different semantics you can apply on a
     per-message-basis is almost limitless. Tribes allows you to set up to 28 different on a message
     and then configure Tribes to what flag results in what action on the message.<br>
     Imagine a shared transactional cache, probably &gt;90% are reads, and the dirty reads should be completely
@@ -222,7 +222,7 @@ Message_10- sent to a member that is not part of this group</code></pre></div>
     by the applications running on top of Tribes.<br>
     This is how Tribes is able to send some messages totally ordered and others fire and forget style
     like the example above.<br>
-    The number of interceptors that are available will keep growing, and we would appreciate any contributions
+    The idRoom of interceptors that are available will keep growing, and we would appreciate any contributions
     that you might have.
   </p>
   <p>

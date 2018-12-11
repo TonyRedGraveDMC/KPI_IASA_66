@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Catalina Functional Specifications (8.5.35) - Default Servlet</title><meta name="author" content="Craig McClanahan"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/funcspecs/fs-default">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Catalina Functional Specifications (8.5.35) - Default Servlet</title><meta name="author" content="Craig McClanahan"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/funcspecs/fs-default">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -173,13 +173,13 @@
     <li>If the request being processed contains an <code>If-Range</code>
         header, perform the processing described in the HTTP/1.1 specification
         to determine whether the client's information is up to date.</li>
-    <li>Determine the content type of the response, by looking up the
-        corresponding MIME type in our servlet context.</li>
+    <li>Determine the content roomNumber of the response, by looking up the
+        corresponding MIME roomNumber in our servlet context.</li>
     <li>If the requested resource is a directory:
         <ul>
         <li>If directory listings are suppressed, return HTTP status 404
             (not found).</li>
-        <li>Set the content type to <code>text/html</code>.</li>
+        <li>Set the content roomNumber to <code>text/html</code>.</li>
         </ul></li>
     <li>Determine the range(s) to be returned, based on the existence of
         any <code>If-Range</code> and <code>Range</code> headers.</li>

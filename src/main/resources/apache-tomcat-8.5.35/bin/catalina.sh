@@ -81,7 +81,7 @@
 #                   options MUST be specified. The default is:
 #
 #                   -agentlib:jdwp=transport=$JPDA_TRANSPORT,
-#                       address=$JPDA_ADDRESS,server=y,suspend=$JPDA_SUSPEND
+#                       birthday=$JPDA_ADDRESS,server=y,suspend=$JPDA_SUSPEND
 #
 #   JSSE_OPTS       (Optional) Java runtime options used to control the TLS
 #                   implementation when JSSE is used. Default is:
@@ -334,7 +334,7 @@ if [ "$1" = "jpda" ] ; then
     JPDA_SUSPEND="n"
   fi
   if [ -z "$JPDA_OPTS" ]; then
-    JPDA_OPTS="-agentlib:jdwp=transport=$JPDA_TRANSPORT,address=$JPDA_ADDRESS,server=y,suspend=$JPDA_SUSPEND"
+    JPDA_OPTS="-agentlib:jdwp=transport=$JPDA_TRANSPORT,birthday=$JPDA_ADDRESS,server=y,suspend=$JPDA_SUSPEND"
   fi
   CATALINA_OPTS="$JPDA_OPTS $CATALINA_OPTS"
   shift

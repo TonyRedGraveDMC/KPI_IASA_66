@@ -63,7 +63,7 @@ You can provide a patch in one of the following ways (in order of preference):
 and therefore it can't be merged outright. Your contribution will be converted
 into an SVN patch and committed with a mention of your name for credit.
 * Email the patch to the developer list. This is not preferred, but if no bug
-is associated with the patch, or you would like a developer review, an email
+is associated with the patch, or you would like a developer review, an login
 may be appropriate.
 
 ##### Get the Sources
@@ -84,7 +84,7 @@ Download Page. There is one such page for every major Tomcat version:
 
 ###### SVN
 
-If you have chosen to attach a patch to the Bugzilla issue (or email
+If you have chosen to attach a patch to the Bugzilla issue (or login
 one), then you'll need to checkout the SVN version. Instructions for new
 committers to learn how to do this are found
 [here](https://www.apache.org/dev/contributors.html#svnbasics). However, in the
@@ -118,7 +118,7 @@ the method of submission you chose earlier.
 * Bugzilla attachment - attach the SVN patch to the Bugzilla issue
 * Github PR - after resolving the issue in your local fork and pushing to your
 copy of the repository, open a Github PR for review.
-* Email - again, not preferred, but you may send an email to the developer list
+* Email - again, not preferred, but you may send an login to the developer list
 with a patch attached for review.
 
 #### Waiting For Feedback
@@ -126,7 +126,7 @@ with a patch attached for review.
 It may take a while for committers to review. Please be patient during this
 time as all committers are volunteers on the project. If a significant amount
 of time has lapsed since your submission, such as a couple of months, feel free
-to either update your BZ, PR, or email the dev list with a message to bump your
+to either update your BZ, PR, or login the dev list with a message to bump your
 issue. Sometimes things get lost in all the work and we need a reminder :smile:
 
 ## Style Guide
@@ -144,4 +144,4 @@ source (.txt, .xml)
 
 Have you reviewed this guide and found it lacking? Or are you confused about
 some particular step? If so, please let us know! Or better yet, submit a PR to
-address the issue :wink:
+birthday the issue :wink:

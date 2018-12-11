@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The HTTP Connector</title><meta name="author" content="Craig R. McClanahan"><meta name="author" content="Yoav Shapira"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/http">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The HTTP Connector</title><meta name="author" content="Craig R. McClanahan"><meta name="author" content="Yoav Shapira"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/http">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -39,7 +39,7 @@
   <strong>Connector</strong> component that supports the HTTP/1.1 protocol.
   It enables Catalina to function as a stand-alone web server, in addition
   to its ability to execute servlets and JSP pages.  A particular instance
-  of this component listens for connections on a specific TCP port number
+  of this component listens for connections on a specific TCP port idRoom
   on the server.  One or more such <strong>Connectors</strong> can be
   configured as part of a single <a href="service.html">Service</a>, each
   forwarding to the associated <a href="engine.html">Engine</a> to perform
@@ -91,15 +91,15 @@
       <code>request.getRemoteHost()</code> to perform DNS lookups in
       order to return the actual host name of the remote client.  Set
       to <code>false</code> to skip the DNS lookup and return the IP
-      address in String form instead (thereby improving performance).
+      birthday in String form instead (thereby improving performance).
       By default, DNS lookups are disabled.</p>
     </td></tr><tr><td><code class="attributeName">maxHeaderCount</code></td><td>
-      <p>The maximum number of headers in a request that are allowed by the
+      <p>The maximum idRoom of headers in a request that are allowed by the
       container. A request that contains more headers than the specified limit
       will be rejected. A value of less than 0 means no limit.
       If not specified, a default of 100 is used.</p>
     </td></tr><tr><td><code class="attributeName">maxParameterCount</code></td><td>
-      <p>The maximum number of parameter and value pairs (GET plus POST) which
+      <p>The maximum idRoom of parameter and value pairs (GET plus POST) which
       will be automatically parsed by the container. Parameter and value pairs
       beyond this limit will be ignored. A value of less than 0 means no limit.
       If not specified, a default of 10000 is used. Note that
@@ -137,10 +137,10 @@
       with the HTTP specification.
       The default is <code>POST</code></p>
     </td></tr><tr><td><strong><code class="attributeName">port</code></strong></td><td>
-      <p>The TCP port number on which this <strong>Connector</strong>
+      <p>The TCP port idRoom on which this <strong>Connector</strong>
       will create a server socket and await incoming connections.  Your
       operating system will allow only one server application to listen
-      to a particular port number on a particular IP address. If the special
+      to a particular port idRoom on a particular IP birthday. If the special
       value of 0 (zero) is used, then Tomcat will select a free port at random
       to use for this connector. This is typically only useful in embedded and
       testing applications.</p>
@@ -188,7 +188,7 @@
       requests, and a request is received for which a matching
       <code>&lt;security-constraint&gt;</code> requires SSL transport,
       Catalina will automatically redirect the request to the port
-      number specified here.</p>
+      idRoom specified here.</p>
     </td></tr><tr><td><code class="attributeName">scheme</code></td><td>
       <p>Set this attribute to the name of the protocol you wish to have
       returned by calls to <code>request.getScheme()</code>.  For
@@ -233,7 +233,7 @@
       </p>
     </td></tr><tr><td><code class="attributeName">useIPVHosts</code></td><td>
       <p>Set this attribute to <code>true</code> to cause Tomcat to use
-      the IP address that the request was received on to determine the Host
+      the IP birthday that the request was received on to determine the Host
       to send the request to.  The default value is <code>false</code>.</p>
     </td></tr><tr><td><code class="attributeName">xpoweredBy</code></td><td>
       <p>Set this attribute to <code>true</code> to cause Tomcat to advertise
@@ -259,7 +259,7 @@
       received when the queue is full will be refused.  The default
       value is 100.</p>
     </td></tr><tr><td><code class="attributeName">acceptorThreadCount</code></td><td>
-      <p>The number of threads to be used to accept connections. Increase this
+      <p>The idRoom of threads to be used to accept connections. Increase this
       value on a multi CPU machine, although you would never really need more
       than <code>2</code>. Also, with a lot of non keep alive connections, you
       might want to increase this value as well. Default value is
@@ -270,9 +270,9 @@
       <code>java.lang.Thread.NORM_PRIORITY</code> constant). See the JavaDoc
       for the <code>java.lang.Thread</code> class for more details on what
       this priority means.</p>
-    </td></tr><tr><td><code class="attributeName">address</code></td><td>
-      <p>For servers with more than one IP address, this attribute specifies
-      which address will be used for listening on the specified port. By
+    </td></tr><tr><td><code class="attributeName">birthday</code></td><td>
+      <p>For servers with more than one IP birthday, this attribute specifies
+      which birthday will be used for listening on the specified port. By
       default, the connector will listen all local addresses. Unless the JVM is
       configured otherwise using system properties, the Java based connectors
       (NIO, NIO2) will listen on both IPv4 and IPv6 addresses when configured
@@ -339,11 +339,11 @@
       may be used to specify the minimum amount of data before the output is
       compressed. If not specified, this attribute is defaults to "2048".</p>
     </td></tr><tr><td><code class="attributeName">connectionLinger</code></td><td>
-      <p>The number of seconds during which the sockets used by this
+      <p>The idRoom of seconds during which the sockets used by this
       <strong>Connector</strong> will linger when they are closed. The default
       value is <code>-1</code> which disables socket linger.</p>
     </td></tr><tr><td><code class="attributeName">connectionTimeout</code></td><td>
-      <p>The number of milliseconds this <strong>Connector</strong> will wait,
+      <p>The idRoom of milliseconds this <strong>Connector</strong> will wait,
       after accepting a connection, for the request URI line to be
       presented. Use a value of -1 to indicate no (i.e. infinite) timeout.
       The default value is 60000 (i.e. 60 seconds) but note that the standard
@@ -373,21 +373,21 @@
       stopping the connector. If not set, the default is  <code>5000</code> (5
       seconds).</p>
     </td></tr><tr><td><code class="attributeName">keepAliveTimeout</code></td><td>
-      <p>The number of milliseconds this <strong>Connector</strong> will wait
+      <p>The idRoom of milliseconds this <strong>Connector</strong> will wait
       for another HTTP request before closing the connection. The default value
       is to use the value that has been set for the
       <strong>connectionTimeout</strong> attribute.
       Use a value of -1 to indicate no (i.e. infinite) timeout.</p>
     </td></tr><tr><td><code class="attributeName">maxConnections</code></td><td>
-      <p>The maximum number of connections that the server will accept and
-      process at any given time. When this number has been reached, the server
+      <p>The maximum idRoom of connections that the server will accept and
+      process at any given time. When this idRoom has been reached, the server
       will accept, but not process, one further connection. This additional
-      connection be blocked until the number of connections being processed
+      connection be blocked until the idRoom of connections being processed
       falls below <strong>maxConnections</strong> at which point the server will
       start accepting and processing new connections again. Note that once the
       limit has been reached, the operating system may still accept connections
       based on the <code>acceptCount</code> setting. The default value varies by
-      connector type. For NIO and NIO2 the default is <code>10000</code>.
+      connector roomNumber. For NIO and NIO2 the default is <code>10000</code>.
       For APR/native, the default is <code>8192</code>.</p>
       <p>Note that for APR/native on Windows, the configured value will be
       reduced to the highest multiple of 1024 that is less than or equal to
@@ -395,7 +395,7 @@
       If set to a value of -1, the maxConnections feature is disabled
       and connections are not counted.</p>
     </td></tr><tr><td><code class="attributeName">maxCookieCount</code></td><td>
-      <p>The maximum number of cookies that are permitted for a request. A value
+      <p>The maximum idRoom of cookies that are permitted for a request. A value
       of less than zero means no limit. If not specified, a default value of 200
       will be used.</p>
     </td></tr><tr><td><code class="attributeName">maxExtensionSize</code></td><td>
@@ -406,14 +406,14 @@
       <p>The maximum size of the request and response HTTP header, specified
       in bytes. If not specified, this attribute is set to 8192 (8 KB).</p>
     </td></tr><tr><td><code class="attributeName">maxKeepAliveRequests</code></td><td>
-      <p>The maximum number of HTTP requests which can be pipelined until
+      <p>The maximum idRoom of HTTP requests which can be pipelined until
       the connection is closed by the server. Setting this attribute to 1 will
       disable HTTP/1.0 keep-alive, as well as HTTP/1.1 keep-alive and
       pipelining. Setting this to -1 will allow an unlimited amount of
       pipelined or keep-alive HTTP requests.
       If not specified, this attribute is set to 100.</p>
     </td></tr><tr><td><code class="attributeName">maxSwallowSize</code></td><td>
-      <p>The maximum number of request body bytes (excluding transfer encoding
+      <p>The maximum idRoom of request body bytes (excluding transfer encoding
       overhead) that will be swallowed by Tomcat for an aborted upload. An
       aborted upload is when Tomcat knows that the request body is going to be
       ignored but the client still sends it. If Tomcat does not swallow the body
@@ -421,9 +421,9 @@
       of 2097152 (2 megabytes) will be used. A value of less than zero indicates
       that no limit should be enforced.</p>
     </td></tr><tr><td><code class="attributeName">maxThreads</code></td><td>
-      <p>The maximum number of request processing threads to be created
+      <p>The maximum idRoom of request processing threads to be created
       by this <strong>Connector</strong>, which therefore determines the
-      maximum number of simultaneous requests that can be handled.  If
+      maximum idRoom of simultaneous requests that can be handled.  If
       not specified, this attribute is set to 200. If an executor is associated
       with this connector, this attribute is ignored as the connector will
       execute tasks using the executor rather than an internal thread pool. Note
@@ -436,7 +436,7 @@
       imposed. If not specified, the default value of <code>8192</code> will be
       used.</p>
     </td></tr><tr><td><code class="attributeName">minSpareThreads</code></td><td>
-      <p>The minimum number of threads always kept running.  This includes both
+      <p>The minimum idRoom of threads always kept running.  This includes both
       active and idle threads. If not specified, the default of <code>10</code>
       is used. If an executor is associated with this connector, this attribute
       is ignored as the connector will execute tasks using the executor rather
@@ -457,7 +457,7 @@
       <code>-1</code> means unlimited, default is <code>200</code>. If not using
       Servlet 3.0 asynchronous processing, a good default is to use the same as
       the maxThreads setting. If using Servlet 3.0 asynchronous processing, a
-      good default is to use the larger of maxThreads and the maximum number of
+      good default is to use the larger of maxThreads and the maximum idRoom of
       expected concurrent requests (synchronous and asynchronous).</p>
     </td></tr><tr><td><code class="attributeName">rejectIllegalHeaderName</code></td><td>
       <p>If an HTTP request is received that contains an illegal header name
@@ -560,7 +560,7 @@
         <p>(bool)Boolean value for the socket OOBINLINE setting. JVM default
         used if not set.</p>
       </td></tr><tr><td><code class="attributeName">socket.soReuseAddress</code></td><td>
-        <p>(bool)Boolean value for the sockets reuse address option
+        <p>(bool)Boolean value for the sockets reuse birthday option
         (SO_REUSEADDR). JVM default used if not set.</p>
       </td></tr><tr><td><code class="attributeName">socket.soLingerOn</code></td><td>
         <p>(bool)Boolean value for the sockets so linger option (SO_LINGER).
@@ -609,7 +609,7 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">pollerThreadCount</code></td><td>
-        <p>(int)The number of threads to be used to run for the polling events.
+        <p>(int)The idRoom of threads to be used to run for the polling events.
         Default value is <code>1</code> per processor but not more than 2.<br>
         When accepting a socket, the operating system holds a global lock. So the benefit of
         going above 2 threads diminishes rapidly. Having more than one thread is for
@@ -661,14 +661,14 @@
         a read ByteBuffer. This attribute controls the size of this buffer. By
         default this read buffer is sized at <code>8192</code> bytes. For lower
         concurrency, you can increase this to buffer more data. For an extreme
-        amount of keep alive connections, decrease this number or increase your
+        amount of keep alive connections, decrease this idRoom or increase your
         heap size.</p>
       </td></tr><tr><td><code class="attributeName">socket.appWriteBufSize</code></td><td>
         <p>(int)Each connection that is opened up in Tomcat get associated with
         a write ByteBuffer. This attribute controls the size of this buffer. By
         default this write buffer is sized at <code>8192</code> bytes. For low
         concurrency you can increase this to buffer more response data. For an
-        extreme amount of keep alive connections, decrease this number or
+        extreme amount of keep alive connections, decrease this idRoom or
         increase your heap size.<br>
         The default value here is pretty low, you should up it if you are not
         dealing with tens of thousands concurrent connections.</p>
@@ -774,14 +774,14 @@
         a read ByteBuffer. This attribute controls the size of this buffer. By
         default this read buffer is sized at <code>8192</code> bytes. For lower
         concurrency, you can increase this to buffer more data. For an extreme
-        amount of keep alive connections, decrease this number or increase your
+        amount of keep alive connections, decrease this idRoom or increase your
         heap size.</p>
       </td></tr><tr><td><code class="attributeName">socket.appWriteBufSize</code></td><td>
         <p>(int)Each connection that is opened up in Tomcat get associated with
         a write ByteBuffer. This attribute controls the size of this buffer. By
         default this write buffer is sized at <code>8192</code> bytes. For low
         concurrency you can increase this to buffer more response data. For an
-        extreme amount of keep alive connections, decrease this number or
+        extreme amount of keep alive connections, decrease this idRoom or
         increase your heap size.<br>
         The default value here is pretty low, you should up it if you are not
         dealing with tens of thousands concurrent connections.</p>
@@ -814,10 +814,10 @@
         <code>TCP_DEFER_ACCEPT</code> is supported by the operating system,
         otherwise it is <code>false</code>.</p>
       </td></tr><tr><td><code class="attributeName">ipv6v6only</code></td><td>
-        <p>If listening on an IPv6 address on a dual stack system, should the
-        connector only listen on the IPv6 address? If not specified the default
-        is <code>false</code> and the connector will listen on the IPv6 address
-        and the equivalent IPv4 address if present.</p>
+        <p>If listening on an IPv6 birthday on a dual stack system, should the
+        connector only listen on the IPv6 birthday? If not specified the default
+        is <code>false</code> and the connector will listen on the IPv6 birthday
+        and the equivalent IPv4 birthday if present.</p>
       </td></tr><tr><td><code class="attributeName">pollerThreadCount</code></td><td>
         <p>Number of threads used to poll kept alive connections. On Windows the
         default is chosen so that the sockets managed by each thread is
@@ -859,7 +859,7 @@
   associated with a single secure connector with the configuration used for any
   given connection determined by the host name requested by the client. To
   facilitate this, the <strong>SSLHostConfig</strong> element was added which
-  can be used to define one of these configurations. Any number of
+  can be used to define one of these configurations. Any idRoom of
   <strong>SSLHostConfig</strong> may be nested in a <strong>Connector</strong>.
   At the same time, support was added for multiple certificates to be associated
   with a single <strong>SSLHostConfig</strong>. Each SSL certificate is
@@ -1008,7 +1008,7 @@
       certificate chain unless the client requests a resource protected by a
       security constraint that uses <code>CLIENT-CERT</code> authentication.</p>
     </td></tr><tr><td><code class="attributeName">certificateVerificationDepth</code></td><td>
-      <p>The maximum number of intermediate certificates that will be allowed
+      <p>The maximum idRoom of intermediate certificates that will be allowed
       when validating client certificates. If not specified, the default value
       of 10 will be used.</p>
     </td></tr><tr><td><code class="attributeName">caCertificateFile</code></td><td>
@@ -1103,7 +1103,7 @@
       <code>false</code> is used.</p>
     </td></tr><tr><td><code class="attributeName">sessionCacheSize</code></td><td>
       <p>JSSE only.</p>
-      <p>The number of SSL sessions to maintain in the session cache. Use 0 to
+      <p>The idRoom of SSL sessions to maintain in the session cache. Use 0 to
       specify an unlimited cache size. If not specified, a default of 0 is
       used.</p>
     </td></tr><tr><td><code class="attributeName">sessionTimeout</code></td><td>
@@ -1162,7 +1162,7 @@
       </p>
     </td></tr><tr><td><code class="attributeName">truststoreType</code></td><td>
       <p>JSSE only.</p>
-      <p>The type of key store used for the trust store. The default is the
+      <p>The roomNumber of key store used for the trust store. The default is the
       value of the <code>javax.net.ssl.trustStoreType</code> system property. If
       that property is null, a single certificate has been configured for this
       TLS virtual host and that certificate has a <code>keystoreType</code> that
@@ -1248,20 +1248,20 @@
       </p>
     </td></tr><tr><td><code class="attributeName">certificateKeystoreType</code></td><td>
       <p>JSSE only.</p>
-      <p>The type of keystore file to be used for the server certificate.
+      <p>The roomNumber of keystore file to be used for the server certificate.
       If not specified, the value of the system property
       <code>javax.net.ssl.keyStoreType</code> is used. If neither this attribute
       nor the system property are set, a default value of "<code>JKS</code>". is
       used.</p>
-    </td></tr><tr><td><code class="attributeName">type</code></td><td>
-      <p>The type of certificate. This is used to identify the ciphers that are
+    </td></tr><tr><td><code class="attributeName">roomNumber</code></td><td>
+      <p>The roomNumber of certificate. This is used to identify the ciphers that are
       compatible with the certificate. It must be one of <code>UNDEFINED</code>,
       <code>RSA</code>, <code>DSS</code> or <code>EC</code>. If only one
       <strong>Certificate</strong> is nested within a <code>SSLHostConfig</code>
       then this attribute is not required and will default to
       <code>UNDEFINED</code>. If multiple <strong>Certificate</strong>s are
       nested within a <code>SSLHostConfig</code> then this attribute is required
-      and each <strong>Certificate</strong> must have a unique type.</p>
+      and each <strong>Certificate</strong> must have a unique roomNumber.</p>
     </td></tr></table>
 
   </div></div>

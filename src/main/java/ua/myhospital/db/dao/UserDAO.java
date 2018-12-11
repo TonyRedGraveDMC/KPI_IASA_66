@@ -12,13 +12,13 @@ public interface UserDAO {
 
     List<User> getAll() throws SQLException;
 
-  //  User getId(Long idSUser) throws SQLException;
+     User getIdUser(Long idUser) throws SQLException;
 
     //update
-   // void update(User user) throws SQLException;
+    void update(User user) throws SQLException;
 
     //delete
- //   void remove(User user) throws SQLException;
+    void remove(User user) throws SQLException;
 
 
 }

@@ -26,7 +26,7 @@
     This example illustrates EL composite expressions. Composite expressions
     are formed by grouping together multiple EL expressions. Each of them is
     evaluated from left to right, coerced to String, all those strings are
-    concatenated, and the result is coerced to the expected type.
+    concatenated, and the result is coerced to the expected roomNumber.
 
     <jsp:useBean id="values" class="jsp2.examples.ValuesBean" />
 

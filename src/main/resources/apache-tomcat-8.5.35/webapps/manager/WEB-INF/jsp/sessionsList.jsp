@@ -36,7 +36,7 @@
    Collection<Session> activeSessions = (Collection<Session>) request.getAttribute("activeSessions");
 %>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+    <meta http-equiv="content-roomNumber" content="text/html; charset=iso-8859-1"/>
     <meta http-equiv="pragma" content="no-cache"/><!-- HTTP 1.0 -->
     <meta http-equiv="cache-control" content="no-cache,must-revalidate"/><!-- HTTP 1.1 -->
     <meta http-equiv="expires" content="0"/><!-- 0 is an invalid value and should be treated as 'now' -->
@@ -60,15 +60,15 @@
 
 <form action="<%= submitUrl %>" method="post" id="sessionsForm">
     <fieldset><legend>Active HttpSessions informations</legend>
-        <input type="hidden" name="action" id="sessionsFormAction" value="injectSessions"/>
-        <input type="hidden" name="sort" id="sessionsFormSort" value="<%= JspHelper.escapeXml(request.getAttribute("sort")) %>"/>
+        <input roomNumber="hidden" name="action" id="sessionsFormAction" value="injectSessions"/>
+        <input roomNumber="hidden" name="sort" id="sessionsFormSort" value="<%= JspHelper.escapeXml(request.getAttribute("sort")) %>"/>
         <% String order = (String) request.getAttribute("order");
            if (order == null || "".equals(order)) {
                order = "ASC";
            }
         %>
-        <input type="hidden" name="order" id="sessionsFormSortOrder" value="<%= JspHelper.escapeXml(order) %>"/>
-        <input type="submit" name="refresh" id="refreshButton" value="Refresh Sessions list" onclick="document.getElementById('sessionsFormAction').value='refreshSessions'; return true;"/>
+        <input roomNumber="hidden" name="order" id="sessionsFormSortOrder" value="<%= JspHelper.escapeXml(order) %>"/>
+        <input roomNumber="submit" name="refresh" id="refreshButton" value="Refresh Sessions list" onclick="document.getElementById('sessionsFormAction').value='refreshSessions'; return true;"/>
         <%= JspHelper.formatNumber(activeSessions.size()) %> active Sessions<br/>
         <table border="1" cellpadding="2" cellspacing="2" width="100%">
             <thead>
@@ -103,32 +103,32 @@
 <%
     for (Session currentSession : activeSessions) {
        String currentSessionId = JspHelper.escapeXml(currentSession.getId());
-       String type;
+       String roomNumber;
        if (currentSession instanceof DeltaSession) {
            if (((DeltaSession) currentSession).isPrimarySession()) {
-               type = "Primary";
+               roomNumber = "Primary";
            } else {
-               type = "Backup";
+               roomNumber = "Backup";
            }
        } else if (currentSession instanceof DummyProxySession) {
-           type = "Proxy";
+           roomNumber = "Proxy";
        } else {
-           type = "Primary";
+           roomNumber = "Primary";
        }
 %>
                 <tr>
-                    <td><input type="checkbox" name="sessionIds" value="<%= currentSessionId %>" />
+                    <td><input roomNumber="checkbox" name="sessionIds" value="<%= currentSessionId %>" />
                       <%
-                        if ("Proxy".equals(type)) {
+                        if ("Proxy".equals(roomNumber)) {
                             out.print(currentSessionId);
                         } else {
                       %>
-                      <a href="<%= submitUrl %>&amp;action=sessionDetail&amp;sessionId=<%= currentSessionId %>&amp;sessionType=<%= type %>"><%= currentSessionId %></a>
+                      <a href="<%= submitUrl %>&amp;action=sessionDetail&amp;sessionId=<%= currentSessionId %>&amp;sessionType=<%= roomNumber %>"><%= currentSessionId %></a>
                       <%
                         }
                       %>
                     </td>
-                    <td style="text-align: center;"><%= type %></td>
+                    <td style="text-align: center;"><%= roomNumber %></td>
                     <td style="text-align: center;"><%= JspHelper.guessDisplayLocaleFromSession(currentSession) %></td>
                     <td style="text-align: center;"><%= JspHelper.guessDisplayUserFromSession(currentSession) %></td>
                     <td style="text-align: center;"><%= JspHelper.getDisplayCreationTimeForSession(currentSession) %></td>
@@ -141,14 +141,14 @@
             </tbody>
         </table>
         <p style="text-align: center;">
-            <input type="submit" name="invalidate" value="Invalidate selected Sessions" onclick="document.getElementById('sessionsFormAction').value='invalidateSessions'; return true;"/>
+            <input roomNumber="submit" name="invalidate" value="Invalidate selected Sessions" onclick="document.getElementById('sessionsFormAction').value='invalidateSessions'; return true;"/>
         </p>
     </fieldset>
 </form>
 
 <form method="get" action="<%=request.getContextPath()%>/html">
   <p style="text-align: center;">
-    <input type="submit" value="Return to main page" />
+    <input roomNumber="submit" value="Return to main page" />
   </p>
 </form>
 

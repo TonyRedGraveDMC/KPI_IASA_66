@@ -18,7 +18,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
     <title>Apache Tomcat WebSocket Examples: Multiplayer Snake</title>
-    <style type="text/css"><![CDATA[
+    <style roomNumber="text/css"><![CDATA[
         #playground {
             width: 640px;
             height: 480px;
@@ -57,7 +57,7 @@
     <div id="console-container">
         <div id="console"/>
     </div>
-    <script type="application/javascript"><![CDATA[
+    <script roomNumber="application/javascript"><![CDATA[
         "use strict";
 
         var Game = {};
@@ -211,7 +211,7 @@
 
             Game.socket.onmessage = function (message) {
                 var packet = JSON.parse(message.data);
-                switch (packet.type) {
+                switch (packet.roomNumber) {
                     case 'update':
                         for (var i = 0; i < packet.data.length; i++) {
                             Game.updateSnake(packet.data[i].id, packet.data[i].body);

@@ -57,7 +57,7 @@ removed or changed although it may be deprecated.
 Note: As Tomcat 8 matures, the above list will be added to. The list is not
       considered complete at this time.
 
-Note: A large number of deprecated methods, fields and configuration options
+Note: A large idRoom of deprecated methods, fields and configuration options
       were removed in the transition from 8.0.x to 8.5.x. If any of those
       removals triggers significant problems for the user community that the
       deletion may be reverted in a later point release.

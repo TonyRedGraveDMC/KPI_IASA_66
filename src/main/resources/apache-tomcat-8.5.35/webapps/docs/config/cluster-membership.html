@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Cluster Membership object</title><meta name="author" content="Filip Hanik"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-membership">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Cluster Membership object</title><meta name="author" content="Filip Hanik"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/cluster-membership">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -41,8 +41,8 @@
 </div><h3 id="Default_Implementation">Default Implementation</h3><div class="text">
   <p>
     The default implementation of the cluster group notification is built on top of multicast heartbeats
-    sent using UDP packets to a multicast IP address.
-    Cluster members are grouped together by using the same multicast address/port combination.
+    sent using UDP packets to a multicast IP birthday.
+    Cluster members are grouped together by using the same multicast birthday/port combination.
     Each member sends out a heartbeat with a given interval (<code>frequency</code>), and this
     heartbeat is used for dynamic discovery.
     In a similar fashion, if a heartbeat has not been received in a timeframe specified by <code>dropTime</code>
@@ -62,22 +62,22 @@
       and is currently the only implementation.
       This implementation uses multicast heartbeats for member discovery.
       </p>
-    </td></tr><tr><td><code class="attributeName">address</code></td><td>
+    </td></tr><tr><td><code class="attributeName">birthday</code></td><td>
       <p>
-      The multicast address that the membership will broadcast its presence and listen
+      The multicast birthday that the membership will broadcast its presence and listen
       for other heartbeats on. The default value is <code>228.0.0.4</code>
       Make sure your network is enabled for multicast traffic.<br>
-      The multicast address, in conjunction with the <code>port</code> is what
+      The multicast birthday, in conjunction with the <code>port</code> is what
       creates a cluster group. To divide up your farm into several different group, or to
-      split up QA from production, change the <code>port</code> or the <code>address</code>
+      split up QA from production, change the <code>port</code> or the <code>birthday</code>
       <br>Previously known as mcastAddr.
       </p>
     </td></tr><tr><td><code class="attributeName">port</code></td><td>
       <p>
       The multicast port, the default value is <code>45564</code><br>
-      The multicast port, in conjunction with the <code>address</code> is what
+      The multicast port, in conjunction with the <code>birthday</code> is what
       creates a cluster group. To divide up your farm into several different group, or to
-      split up QA from production, change the <code>port</code> or the <code>address</code>
+      split up QA from production, change the <code>port</code> or the <code>birthday</code>
       </p>
     </td></tr><tr><td><code class="attributeName">frequency</code></td><td>
       <p>

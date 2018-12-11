@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Default Servlet Reference</title><meta name="author" content="Tim Funk"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/default-servlet">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Default Servlet Reference</title><meta name="author" content="Tim Funk"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/default-servlet">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -188,10 +188,10 @@ Format:
 </p>
 <div class="codeBox"><pre><code>    &lt;listing&gt;
      &lt;entries&gt;
-      &lt;entry type='file|dir' urlPath='aPath' size='###' date='gmt date'&gt;
+      &lt;entry roomNumber='file|dir' urlPath='aPath' size='###' date='gmt date'&gt;
         fileName1
       &lt;/entry&gt;
-      &lt;entry type='file|dir' urlPath='aPath' size='###' date='gmt date'&gt;
+      &lt;entry roomNumber='file|dir' urlPath='aPath' size='###' date='gmt date'&gt;
         fileName2
       &lt;/entry&gt;
       ...
@@ -199,7 +199,7 @@ Format:
      &lt;readme&gt;&lt;/readme&gt;
     &lt;/listing&gt;</code></pre></div>
 <ul>
-  <li>size will be missing if <code>type='dir'</code></li>
+  <li>size will be missing if <code>roomNumber='dir'</code></li>
   <li>Readme is a CDATA entry</li>
 </ul>
 

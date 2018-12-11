@@ -12,7 +12,7 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     @Override
     public void add(Physician physician) throws SQLException {
 
-        String sql = " INSERT INTO PHYSICIAN ( NAME, POSITION, SSN) VALUES (?, ?, ?)";
+        String sql = " INSERT INTO PHYSICIAN ( NAME, POSITION, Birthday, UserId) VALUES (?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
 
         try {
@@ -20,7 +20,8 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
 
             preparedStatement.setString(1, physician.getName());
             preparedStatement.setString(2, physician.getPosition());
-            preparedStatement.setLong(3, physician.getSsn());
+            preparedStatement.setString(3, physician.getBirthday());
+            preparedStatement.setLong(4,physician.getUserId());
 
             preparedStatement.executeUpdate();
         } finally {
@@ -31,22 +32,17 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-
-//        PhysicianService physicianService = new PhysicianService();
-//        Physician physician = new Physician("STR1\" ,\"P\", 123); drop table PHYSICIAN; INSERT INTO PHYSICIAN(NAME, POSITION, SSN) VALUES(\"STR2\", \"P\", 124);"," Physician", 1312312);
-//        physicianService.add(physician);
-//        System.out.println(physician);
-        Physician physician = new Physician(20000009);
-        PhysicianService physicianService = new PhysicianService();
-        physicianService.remove(physician);
-
+       PhysicianService physicianService = new PhysicianService();
+       Physician physician = new Physician("name", "position", "bd", 1);
+       Physician physician1 = new Physician(20);
+       physicianService.remove(physician1);
     }
 
     @Override
     public List<Physician> getAll() throws SQLException {
         List<Physician> physicianList = new ArrayList<>();
 
-        String sql = "SELECT EmployeeID, NAME, POSITION, SSN FROM PHYSICIAN";
+        String sql = "SELECT idPhysician, NAME, POSITION, Birthday, UserId FROM PHYSICIAN";
         Statement statement = null;
 
         try {
@@ -69,11 +65,12 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     }
 
     @Override
-    public Physician getById(Long employeeId) throws SQLException {
-        String sql = "SELECT EMPLOYEEID, NAME, POSITION, SSN FROM PHYSICIAN WHERE EMPLOYEEID=?";
+    public Physician getByIdPhysician(Long idPhysician) throws SQLException {
+
+        String sql = "SELECT NAME, POSITION, Birthday, UserId FROM PHYSICIAN WHERE idPhysician=?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setLong(1, employeeId);
+        preparedStatement.setLong(1, idPhysician);
 
         ResultSet resultset = preparedStatement.executeQuery();
         resultset.next();
@@ -94,15 +91,16 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
 
     @Override
     public void update(Physician physician) throws SQLException {
-        String sql = "UPDATE physician SET NAME=?, Position=?, SSN=? WHERE SSN =? ";
+        String sql = "UPDATE physician SET NAME=?, Position=?, Birthday=?, UserId=? WHERE idPhysician =? ";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
 
             preparedStatement.setString(1, physician.getName());
-            preparedStatement.setString(2, physician.getName());
-            preparedStatement.setString(3, physician.getPosition());
-            preparedStatement.setLong(4, physician.getSsn());
+            preparedStatement.setString(2, physician.getPosition());
+            preparedStatement.setString(3, physician.getBirthday());
+            preparedStatement.setLong(4, physician.getUserId());
+            preparedStatement.setLong(5, physician.getIdPhysician());
 
             preparedStatement.executeUpdate();
         } finally {
@@ -117,12 +115,12 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     public void remove(Physician physician) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM PHYSICIAN WHERE EMPLOYEEID = ?";
+        String sql = "DELETE FROM PHYSICIAN WHERE idPhysician = ?";
 
 
         try{
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setLong(1, physician.getEmployeeId());
+            preparedStatement.setLong(1, physician.getIdPhysician());
 
             preparedStatement.executeUpdate();
         }finally {
@@ -135,10 +133,11 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
 
     private Physician getPhysician(ResultSet resultSet) throws SQLException {
         Physician physician = new Physician();
-        physician.setEmployeeId(resultSet.getLong("EMPLOYEEID"));
+        physician.setIdPhysician(resultSet.getLong("idPhysician"));
         physician.setName(resultSet.getString("Name"));
         physician.setPosition(resultSet.getString("POSITION"));
-        physician.setSsn(resultSet.getLong("SSN"));
+        physician.setBirthday(resultSet.getString("Birthday"));
+        physician.setUserId(resultSet.getLong("UserId"));
 
         return physician;
     }

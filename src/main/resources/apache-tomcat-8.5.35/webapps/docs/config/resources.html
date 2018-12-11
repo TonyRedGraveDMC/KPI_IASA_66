@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Resources Component</title><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/resources">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="../images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 Configuration Reference (8.5.35) - The Resources Component</title><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/config/resources">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -114,7 +114,7 @@
         <p>Controls whether the track locked files feature is enabled. If
         enabled, all calls to methods that return objects that lock a file and
         need to be closed to release that lock (e.g.
-        <code>ServletContext.getResourceAsStream()</code>) will perform a number
+        <code>ServletContext.getResourceAsStream()</code>) will perform a idRoom
         of additional tasks.</p>
         <ul>
           <li>The stack trace at the point where the method was called will be

@@ -45,7 +45,7 @@
            "?path=" + path + "&version=" + version));
 %>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+    <meta http-equiv="content-roomNumber" content="text/html; charset=iso-8859-1"/>
     <meta http-equiv="pragma" content="no-cache"/><!-- HTTP 1.0 -->
     <meta http-equiv="cache-control" content="no-cache,must-revalidate"/><!-- HTTP 1.1 -->
     <meta http-equiv="expires" content="0"/><!-- 0 is an invalid value and should be treated as 'now' -->
@@ -102,15 +102,15 @@
 
    <form method="post" action="<%= submitUrl %>">
      <div>
-       <input type="hidden" name="sessionId" value="<%= currentSessionId %>" />
-       <input type="hidden" name="action" value="sessionDetail" />
+       <input roomNumber="hidden" name="sessionId" value="<%= currentSessionId %>" />
+       <input roomNumber="hidden" name="action" value="sessionDetail" />
        <%
        if ("Primary".equals(request.getParameter("sessionType"))) {
        %>
-         <input type="hidden" name="sessionType" value="Primary" />
+         <input roomNumber="hidden" name="sessionType" value="Primary" />
        <%
        }
-       %>    <input type="submit" value="Refresh" />
+       %>    <input roomNumber="submit" value="Refresh" />
      </div>
    </form>
 
@@ -149,14 +149,14 @@
                <td align="center">
                    <form method="post" action="<%= submitUrl %>">
                        <div>
-                           <input type="hidden" name="action" value="removeSessionAttribute" />
-                           <input type="hidden" name="sessionId" value="<%= currentSessionId %>" />
-                           <input type="hidden" name="attributeName" value="<%= JspHelper.escapeXml(attributeName) %>" />
+                           <input roomNumber="hidden" name="action" value="removeSessionAttribute" />
+                           <input roomNumber="hidden" name="sessionId" value="<%= currentSessionId %>" />
+                           <input roomNumber="hidden" name="attributeName" value="<%= JspHelper.escapeXml(attributeName) %>" />
                            <%
                              if ("Primary".equals(request.getParameter("sessionType"))) {
                            %>
-                             <input type="submit" value="Remove" />
-                             <input type="hidden" name="sessionType" value="Primary" />
+                             <input roomNumber="submit" value="Remove" />
+                             <input roomNumber="hidden" name="sessionType" value="Primary" />
                            <%
                              } else {
                                out.print("Primary sessions only");
@@ -175,7 +175,7 @@
 
 <form method="post" action="<%=submitUrl%>">
   <p style="text-align: center;">
-    <input type="submit" value="Return to session list" />
+    <input roomNumber="submit" value="Return to session list" />
   </p>
 </form>
 

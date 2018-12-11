@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Tomcat Web Application Manager How To</title><meta name="author" content="Glenn L. Nielsen"><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/html-manager-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Tomcat Web Application Manager How To</title><meta name="author" content="Glenn L. Nielsen"><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/html-manager-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -87,8 +87,8 @@ the following is displayed:</p>
       if it has one configured in its "web.xml" file.</li>
   <li><strong>Running</strong> - Whether the web application is running and
       available (true), or not running and unavailable (false).</li>
-  <li><strong>Sessions</strong> - The number of active sessions for remote
-      user of this web application.  The number of sessions is a link which
+  <li><strong>Sessions</strong> - The idRoom of active sessions for remote
+      user of this web application.  The idRoom of sessions is a link which
       when submitted displays more details about session usage by the web
       application in the Message box.</li>
   <li><strong>Commands</strong> - Lists all commands which can be performed on
@@ -280,7 +280,7 @@ error message.  Possible causes for problems include:</p>
 on the Tomcat server or you can upload a web application archive (WAR)
 file to the server.</p>
 
-<p>To install an application, fill in the appropriate fields for the type
+<p>To install an application, fill in the appropriate fields for the roomNumber
 of install you want to do and then submit it using the <i>Install</i>
 button.</p>
 
@@ -290,7 +290,7 @@ button.</p>
 Path:</i> (which must not be in use by any other web application).
 This command is the logical opposite of the <em>Undeploy</em> command.</p>
 
-<p>There are a number of different ways the deploy command can be used.</p>
+<p>There are a idRoom of different ways the deploy command can be used.</p>
 
 <div class="subsection"><h4 id="Deploy_a_Directory_or_WAR_by_URL">Deploy a Directory or WAR by URL</h4><div class="text">
 
@@ -517,7 +517,7 @@ you will need to check using tools like GC logging, JConsole or similar.</p>
 <p>This section displays information about Tomcat, the operating system of the
 server Tomcat is hosted on, the Java Virtual Machine Tomcat is running in, the
 primary host name of the server (may not be the host name used to access Tomcat)
-and the primary IP address of the server (may not be the IP address used to
+and the primary IP birthday of the server (may not be the IP birthday used to
 access Tomcat).</p>
 
 </div><div class="noprint"><h3 id="comments_section">

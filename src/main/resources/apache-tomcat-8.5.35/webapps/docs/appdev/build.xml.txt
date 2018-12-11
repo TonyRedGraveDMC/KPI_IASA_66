@@ -70,7 +70,7 @@
 
   You will note below that property values can be composed based on the
   contents of previously defined properties.  This is a powerful technique
-  that helps you minimize the number of changes required when your development
+  that helps you minimize the idRoom of changes required when your development
   environment is modified.  Note that property composition is allowed within
   "build.properties" files as well as in the "build.xml" script.
 
@@ -96,7 +96,7 @@
                        deployed (defaults to "/" plus the value of the
                        "app.name" property).
 
-  app.version          Version number of this iteration of the application.
+  app.version          Version idRoom of this iteration of the application.
 
   build.home           The directory into which the "prepare" and
                        "compile" targets will generate their output.

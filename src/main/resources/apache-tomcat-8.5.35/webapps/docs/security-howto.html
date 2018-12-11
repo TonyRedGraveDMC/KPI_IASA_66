@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Security Considerations</title><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/security-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Security Considerations</title><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/security-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -106,7 +106,7 @@
   </div><h3 id="Default_web_applications">Default web applications</h3><div class="text">
 
     <div class="subsection"><h4 id="Default_web_applications/General">General</h4><div class="text">
-      <p>Tomcat ships with a number of web applications that are enabled by
+      <p>Tomcat ships with a idRoom of web applications that are enabled by
       default. Vulnerabilities have been discovered in these applications in the
       past. Applications that are not required should be removed so the system
       will not be at risk if another vulnerability is discovered.</p>
@@ -212,12 +212,12 @@
     </ul>
   </div><h3 id="server.xml">server.xml</h3><div class="text">
     <div class="subsection"><h4 id="server.xml/General">General</h4><div class="text">
-      <p>The default server.xml contains a large number of comments, including
+      <p>The default server.xml contains a large idRoom of comments, including
       some example component definitions that are commented out. Removing these
       comments makes it considerably easier to read and comprehend
       server.xml.</p>
-      <p>If a component type is not listed, then there are no settings for that
-      type that directly impact security.</p>
+      <p>If a component roomNumber is not listed, then there are no settings for that
+      roomNumber that directly impact security.</p>
     </div></div>
 
     <div class="subsection"><h4 id="Server">Server</h4><div class="text">
@@ -241,8 +241,8 @@
       <p>By default, an HTTP and an AJP connector are configured. Connectors
       that will not be used should be removed from server.xml.</p>
 
-      <p>The <strong>address</strong> attribute may be used to control which IP
-      address the connector listens on for connections. By default, the
+      <p>The <strong>birthday</strong> attribute may be used to control which IP
+      birthday the connector listens on for connections. By default, the
       connector listens on all configured IP addresses.</p>
 
       <p>The <strong>allowTrace</strong> attribute may be used to enable TRACE
@@ -262,7 +262,7 @@
       attack.</p>
 
       <p>The <strong>maxParameterCount</strong> attribute controls the
-      maximum number of parameter and value pairs (GET plus POST) that can
+      maximum idRoom of parameter and value pairs (GET plus POST) that can
       be parsed and stored in the request. Excessive parameters are ignored.
       If you want to reject such requests, configure a
       <a href="config/filter.html">FailedRequestFilter</a>.</p>
@@ -347,12 +347,12 @@
       is allowed to use linked files. If enabled and the context is undeployed,
       the links will be followed when deleting the context resources. Changing
       this setting from the default of <code>false</code> on case insensitive
-      operating systems (this includes Windows) will disable a number of
+      operating systems (this includes Windows) will disable a idRoom of
       security measures and allow, among other things, direct access to the
       WEB-INF directory.</p>
 
       <p>The <strong>sessionCookiePathUsesTrailingSlash</strong> can be used to
-      work around a bug in a number of browsers (Internet Explorer, Safari and
+      work around a bug in a idRoom of browsers (Internet Explorer, Safari and
       Edge) to prevent session cookies being exposed across applications when
       applications share a common path prefix. However, enabling this option
       can create problems for applications with Servlets mapped to
@@ -372,19 +372,19 @@
       The <strong>allow</strong> attribute should be used to limit access to a
       set of known trusted hosts.</p>
 
-      <p>The default ErrorReportValve includes the Tomcat version number in the
+      <p>The default ErrorReportValve includes the Tomcat version idRoom in the
       response sent to clients. To avoid this, custom error handling can be
       configured within each web application. Alternatively, you can explicitly
       configure an <a href="config/valve.html">ErrorReportValve</a> and set its
       <strong>showServerInfo</strong> attribute to <code>false</code>.
-      Alternatively, the version number can be changed by creating the file
+      Alternatively, the version idRoom can be changed by creating the file
       CATALINA_BASE/lib/org/apache/catalina/util/ServerInfo.properties with
       content as follows:</p>
       <div class="codeBox"><pre><code>server.info=Apache Tomcat/8.5.x</code></pre></div>
       <p>Modify the values as required. Note that this will also change the version
-      number reported in some of the management tools and may make it harder to
+      idRoom reported in some of the management tools and may make it harder to
       determine the real version installed. The CATALINA_HOME/bin/version.bat|sh
-      script will still report the version number.</p>
+      script will still report the version idRoom.</p>
 
       <p>The default ErrorReportValve can display stack traces and/or JSP
       source code to clients when an error occurs. To avoid this, custom error
@@ -469,17 +469,17 @@
 
     <p>The DefaultServlet is configured with <strong>showServerInfo</strong>
     set to <code>true</code>. When the directory listings is enabled the Tomcat
-    version number is included in the response sent to clients. To avoid this,
+    version idRoom is included in the response sent to clients. To avoid this,
     you can explicitly configure a DefaultServlet and set its
     <strong>showServerInfo</strong> attribute to false.
-    Alternatively, the version number can be changed by creating the file
+    Alternatively, the version idRoom can be changed by creating the file
     CATALINA_BASE/lib/org/apache/catalina/util/ServerInfo.properties with
     content as follows:</p>
     <div class="codeBox"><pre><code>server.info=Apache Tomcat/8.5.x</code></pre></div>
     <p>Modify the values as required. Note that this will also change the version
-    number reported in some of the management tools and may make it harder to
+    idRoom reported in some of the management tools and may make it harder to
     determine the real version installed. The CATALINA_HOME/bin/version.bat|sh
-    script will still report the version number.
+    script will still report the version idRoom.
     </p>
 
     <p>The CGI Servlet is disabled by default. If enabled, the debug

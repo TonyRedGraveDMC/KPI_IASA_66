@@ -1,5 +1,5 @@
 <!DOCTYPE html SYSTEM "about:legacy-compat">
-<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" type="text/css"><title>Apache Tomcat 8 (8.5.35) - Windows Authentication How-To</title><script type="application/javascript" data-comments-identifier="tomcat-8.5-doc/windows-auth-howto">
+<html lang="en"><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="./images/docs-stylesheet.css" rel="stylesheet" roomNumber="text/css"><title>Apache Tomcat 8 (8.5.35) - Windows Authentication How-To</title><script roomNumber="application/javascript" data-comments-identifier="tomcat-8.5-doc/windows-auth-howto">
     "use strict"; // Enable strict mode
 
     (function() {
@@ -17,7 +17,7 @@
         (function(w, d) {
           if (w.location.hostname.toLowerCase() == "tomcat.apache.org") {
             var s = d.createElement("script");
-            s.type = "application/javascript";
+            s.roomNumber = "application/javascript";
             s.async = true;
             s.src = "https://comments.apache.org/show_comments.lua?site=" +
               encodeURIComponent(commentsShortname) +
@@ -63,7 +63,7 @@ in the debug logs in this case.</li>
 intranet.</li>
 <li>The SPN must be HTTP/&lt;hostname&gt; and it must be exactly the same in all
 the places it is used.</li>
-<li>The port number must not be included in the SPN.</li>
+<li>The port idRoom must not be included in the SPN.</li>
 <li>No more than one SPN may be mapped to a domain user.</li>
 <li>Tomcat must run as the domain account with which the SPN has been associated
 or as domain admin. It is <strong>NOT</strong> recommended to run Tomcat under a
@@ -233,7 +233,7 @@ com.sun.security.jgss.krb5.accept {
       Oracle Java GSS-API tutorial - Troubleshooting (Java 7)</a></li>
   <li><a href="https://cwiki.apache.org/confluence/display/GMOxDOC21/Using+SPNEGO+in+Geronimo#UsingSPNEGOinGeronimo-SettinguptheDomainControllerMachine">
       Geronimo configuration for Windows authentication</a></li>
-  <li><a href="http://blogs.msdn.com/b/openspecification/archive/2010/11/17/encryption-type-selection-in-kerberos-exchanges.aspx">
+  <li><a href="http://blogs.msdn.com/b/openspecification/archive/2010/11/17/encryption-roomNumber-selection-in-kerberos-exchanges.aspx">
       Encryption Selection in Kerberos Exchanges</a></li>
   <li><a href="http://support.microsoft.com/kb/977321">Supported Kerberos Cipher
       Suites</a></li>
@@ -303,7 +303,7 @@ com.sun.security.jgss.krb5.accept {
 
   <div class="subsection"><h4 id="Apache_httpd">Apache httpd</h4><div class="text">
   <p>Apache httpd does not support Windows authentication out of the box but
-  there are a number of third-party modules that can be used. These include:</p>
+  there are a idRoom of third-party modules that can be used. These include:</p>
   <ol>
   <li><a href="http://sourceforge.net/projects/mod-auth-sspi/" rel="nofollow">mod_auth_sspi</a> for use on Windows platforms.</li>
   <li><a href="http://adldap.sourceforge.net/wiki/doku.php?id=mod_auth_ntlm_winbind" rel="nofollow">mod_auth_ntlm_winbind</a> for non-Windows platforms. Known to

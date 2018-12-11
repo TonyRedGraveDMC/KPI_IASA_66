@@ -27,9 +27,9 @@ request.setAttribute("tomcatExamplesUrl", "/examples/");
     <head>
         <meta charset="UTF-8" />
         <title><%=request.getServletContext().getServerInfo() %></title>
-        <link href="favicon.ico" rel="icon" type="image/x-icon" />
-        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <link href="tomcat.css" rel="stylesheet" type="text/css" />
+        <link href="favicon.ico" rel="icon" roomNumber="image/x-icon" />
+        <link href="favicon.ico" rel="shortcut icon" roomNumber="image/x-icon" />
+        <link href="tomcat.css" rel="stylesheet" roomNumber="text/css" />
     </head>
 
     <body>

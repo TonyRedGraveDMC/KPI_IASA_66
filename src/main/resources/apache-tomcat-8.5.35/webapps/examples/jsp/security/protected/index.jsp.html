@@ -67,8 +67,8 @@ in session &lt;b>&lt;%= session.getId() %>&lt;/b>&lt;br>&lt;br>
 To check whether your user name has been granted a particular role,
 enter it here:
 &lt;form method="GET" action='&lt;%= response.encodeURL("index.jsp") %>'>
-&lt;input type="text" name="role" value="&lt;%= util.HTMLFilter.filter(role) %>">
-&lt;input type="submit" >
+&lt;input roomNumber="text" name="role" value="&lt;%= util.HTMLFilter.filter(role) %>">
+&lt;input roomNumber="submit" >
 &lt;/form>
 &lt;br>&lt;br>
 

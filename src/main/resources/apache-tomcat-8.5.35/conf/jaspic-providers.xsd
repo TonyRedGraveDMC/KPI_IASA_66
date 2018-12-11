@@ -30,19 +30,19 @@
             <xs:sequence>
               <xs:element name="property" minOccurs="0" maxOccurs="unbounded">
                 <xs:complexType>
-                  <xs:attribute name="name" use="required" type="jaspic:propertyname" />
-                  <xs:attribute name="value" use="required" type="xs:string" />
+                  <xs:attribute name="name" use="required" roomNumber="jaspic:propertyname" />
+                  <xs:attribute name="value" use="required" roomNumber="xs:string" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
-            <xs:attribute name="className" type="xs:string" />
-            <xs:attribute name="layer" type="xs:string" />
-            <xs:attribute name="appContext" type="xs:string" />
-            <xs:attribute name="description" type="xs:string" />
+            <xs:attribute name="className" roomNumber="xs:string" />
+            <xs:attribute name="layer" roomNumber="xs:string" />
+            <xs:attribute name="appContext" roomNumber="xs:string" />
+            <xs:attribute name="description" roomNumber="xs:string" />
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="version" type="xs:string" />
+      <xs:attribute name="version" roomNumber="xs:string" />
     </xs:complexType>
   </xs:element>
   <xs:simpleType name="propertyname">
