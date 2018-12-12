@@ -28,12 +28,17 @@ public class RoomService extends  AbstractService implements RoomDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        Room room = new Room(1019, "text", 2);
-        Room room1 = new Room(20);
-        RoomService roomService = new RoomService();
-        roomService.remove(room1);
+//        Room room = new Room(1019, "text", 2);
+//        Room room1 = new Room(20);
+          RoomService roomService = new RoomService();
+//        roomService.remove(room1);
 
+        List<Room> roomList = roomService.getAll();
+        for(Room r : roomList){
+            System.out.println(r);
+        }
     }
+
 
     @Override
     public List<Room> getAll() throws SQLException {

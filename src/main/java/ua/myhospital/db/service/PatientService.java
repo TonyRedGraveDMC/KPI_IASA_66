@@ -12,10 +12,15 @@ public class PatientService extends AbstractService implements PatientDAO {
     //  DatabaseConnector.getInstance();
 
     public static void main(String[] args) throws SQLException {
-        PatientService patientService = new PatientService();
+         PatientService patientService = new PatientService();
         Patient patient = new Patient("name,'bd',22,1,9); drop table patient; insert into patient('name',", "bd", "3122", 1, 3, 10 );
         Patient patient1 = new Patient(15);
         patientService.add(patient);
+
+//        List<Patient> patientList = patientService.getAll();
+//        for(Patient p : patientList){
+//            System.out.println(p);
+//        }
     }
     @Override
 
@@ -44,12 +49,9 @@ public class PatientService extends AbstractService implements PatientDAO {
 
     @Override
     public List<Patient> getAll() throws SQLException {
-
-
         List<Patient> patientList = new ArrayList<>();
 
         String sql = "SELECT idPatient, Name, Birthday, Phone, User_id, Physician_id, Room_id FROM PATIENT";
-
         Statement statement = null;
 
         try {
@@ -62,7 +64,7 @@ public class PatientService extends AbstractService implements PatientDAO {
                 patientList.add(patient);
             }
         } finally {
-            if (statement != null) {
+            if(statement != null) {
                 statement.close();
             }
         }
@@ -140,9 +142,9 @@ public class PatientService extends AbstractService implements PatientDAO {
         patient.setName(resultSet.getString("Name"));
         patient.setBirthday(resultSet.getString("Birthday"));
         patient.setPhone(resultSet.getString("Phone"));
-        patient.setUser_id(resultSet.getLong("UserId"));
-        patient.setPhysician_id(resultSet.getLong("PhysicianId"));
-        patient.setRoom_id(resultSet.getLong("RoomId"));
+        patient.setUser_id(resultSet.getLong("User_id"));
+        patient.setPhysician_id(resultSet.getLong("Physician_id"));
+        patient.setRoom_id(resultSet.getLong("Room_id"));
 
         return patient;
     }

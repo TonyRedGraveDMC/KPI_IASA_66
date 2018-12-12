@@ -33,9 +33,14 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
 
     public static void main(String[] args) throws SQLException {
        PhysicianService physicianService = new PhysicianService();
-       Physician physician = new Physician("name", "position", "bd", 1);
-       Physician physician1 = new Physician(20);
-       physicianService.remove(physician1);
+//       Physician physician = new Physician("name", "position", "bd", 1);
+//       Physician physician1 = new Physician(20);
+//       physicianService.remove(physician1);
+
+        List<Physician> physicianList = physicianService.getAll();
+        for(Physician a: physicianList){
+            System.out.println(a);
+        }
     }
 
     @Override
@@ -48,7 +53,6 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
-
 
             while (resultSet.next()) {
                 Physician physician = getPhysician(resultSet);
@@ -135,7 +139,7 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
         Physician physician = new Physician();
         physician.setIdPhysician(resultSet.getLong("idPhysician"));
         physician.setName(resultSet.getString("Name"));
-        physician.setPosition(resultSet.getString("POSITION"));
+        physician.setPosition(resultSet.getString("Position"));
         physician.setBirthday(resultSet.getString("Birthday"));
         physician.setUserId(resultSet.getLong("UserId"));
 

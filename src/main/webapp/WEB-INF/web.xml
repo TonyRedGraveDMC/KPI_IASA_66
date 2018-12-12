@@ -25,6 +25,9 @@
         <servlet-name>AuthServlet</servlet-name>
         <servlet-class>ua.myhospital.servlet.AuthServlet</servlet-class>
     </servlet>
+                           <!--add user-->
+
+
 
     <!--<servlet-mapping>-->
         <!--<servlet-name>AuthServlet</servlet-name>-->

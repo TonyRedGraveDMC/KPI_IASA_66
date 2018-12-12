@@ -11,11 +11,15 @@
 
     <h1>Вход в систему</h1><br>
     <form method="post" action="<c:url value='/auth'/>">
-        <input roomNumber="text" required placeholder="login" name="login"><br>
-        <input roomNumber="password" required placeholder="password" name="password"><br><br>
-        <input class="button" roomNumber="submit" value="Войти">
+
+        <input type="text" required placeholder="login" name="login"><br>
+        <input type="password" required placeholder="password" name="password"><br><br>
+        <input class="button" type="submit" value="Войти">
 
     </form>
+
+
+
 </div>
 </body>
 </html>
