@@ -37,7 +37,7 @@ public class UserService extends AbstractService implements UserDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        UserService userService = new UserService();
+ //       UserService userService = new UserService();
 //        User user = new User("234", "password", Constant.Role.DOCTOR, LocalDateTime.now());
 //        userService.add(user);
 
@@ -45,10 +45,10 @@ public class UserService extends AbstractService implements UserDAO {
 //        UserService userService = new UserService();
 //        userService.remove(user);
 
-        List<User> userList = userService.getAll();
-        for(User u : userList){
-            System.out.println(u);
-        }
+//        List<User> userList = userService.getAll();
+//        for(User u : userList){
+//            System.out.println(u);
+//        }
     }
 
     @Override

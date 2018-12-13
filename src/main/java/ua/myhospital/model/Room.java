@@ -11,6 +11,16 @@ public class Room {
     public Room() {
     }
 
+    @Override
+    public String toString() {
+        return "Room{" +
+                "idRoom=" + idRoom +
+                ", roomNumber=" + roomNumber +
+                ", type='" + type + '\'' +
+                ", numberOfSeats=" + numberOfSeats +
+                '}';
+    }
+
     public Room(long roomNumber, String type, long numberOfSeats) {
         this.roomNumber = roomNumber;
         this.type = type;

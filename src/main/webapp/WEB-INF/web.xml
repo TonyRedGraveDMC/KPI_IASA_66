@@ -26,6 +26,15 @@
         <servlet-class>ua.myhospital.servlet.AuthServlet</servlet-class>
     </servlet>
                            <!--add user-->
+    <servlet-mapping>
+        <servlet-name>Add</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Add</servlet-name>
+        <servlet-class>ua.myhospital.servlet.Add</servlet-class>
+    </servlet>
 
 
 

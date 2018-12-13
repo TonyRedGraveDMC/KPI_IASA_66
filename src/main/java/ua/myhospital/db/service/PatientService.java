@@ -12,15 +12,15 @@ public class PatientService extends AbstractService implements PatientDAO {
     //  DatabaseConnector.getInstance();
 
     public static void main(String[] args) throws SQLException {
-         PatientService patientService = new PatientService();
-        Patient patient = new Patient("name,'bd',22,1,9); drop table patient; insert into patient('name',", "bd", "3122", 1, 3, 10 );
-        Patient patient1 = new Patient(15);
-        patientService.add(patient);
+       PatientService patientService = new PatientService();
+//        Patient patient = new Patient("name,'bd',22,1,9); drop table patient; insert into patient('name',", "bd", "3122", 1, 3, 10 );
+//        Patient patient1 = new Patient(15);
+//        patientService.add(patient);
 
-//        List<Patient> patientList = patientService.getAll();
-//        for(Patient p : patientList){
-//            System.out.println(p);
-//        }
+        List<Patient> patientList = patientService.getAll();
+        for(Patient p : patientList){
+            System.out.println(p);
+        }
     }
     @Override
 
