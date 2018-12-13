@@ -47,7 +47,7 @@ public class Add extends HttpServlet {
                     user.setRole(role);
                     user.setCreateDate(LocalDateTime.now());
                     userService.get().add(user);
-                    req.getRequestDispatcher("/WEB-INF/view/patient_menu.jsp").forward(req, res);
+                    req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, res);
 
                 }
             } catch (SQLException e) {

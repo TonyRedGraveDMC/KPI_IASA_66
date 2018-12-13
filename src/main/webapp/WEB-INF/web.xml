@@ -14,43 +14,56 @@
         <servlet-class>ua.myhospital.servlet.StartServlet</servlet-class>
     </servlet>
 
-    <!--filter check exist session for sign in-->
 
-    <servlet-mapping>
-        <servlet-name>AuthServlet</servlet-name>
-        <url-pattern>/auth</url-pattern>
-    </servlet-mapping>
-
+    <!--FOR REG ONLY-->
     <servlet>
-        <servlet-name>AuthServlet</servlet-name>
-        <servlet-class>ua.myhospital.servlet.AuthServlet</servlet-class>
-    </servlet>
-                           <!--add user-->
-    <servlet-mapping>
-        <servlet-name>Add</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>Add</servlet-name>
-        <servlet-class>ua.myhospital.servlet.Add</servlet-class>
+        <servlet-name>ForReg</servlet-name>
+        <jsp-file>/Reg.jsp</jsp-file>
     </servlet>
 
+    <servlet-mapping>
+    <servlet-name>ForReg</servlet-name>
+    <url-pattern>/reg</url-pattern>
+</servlet-mapping>
 
 
-    <!--<servlet-mapping>-->
+
+        <!--filter check exist session for sign in-->
+
+<servlet-mapping>
+<servlet-name>AuthServlet</servlet-name>
+<url-pattern>/auth</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>AuthServlet</servlet-name>
+<servlet-class>ua.myhospital.servlet.AuthServlet</servlet-class>
+</servlet>
+        <!--add user-->
+<servlet-mapping>
+<servlet-name>Add</servlet-name>
+<url-pattern>/add</url-pattern> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>Add</servlet-name>
+<servlet-class>ua.myhospital.servlet.Add</servlet-class>
+</servlet>
+
+
+        <!--<servlet-mapping>-->
         <!--<servlet-name>AuthServlet</servlet-name>-->
         <!--<url-pattern>/</url-pattern>-->
-    <!--</servlet-mapping>-->
+        <!--</servlet-mapping>-->
 
-    <!--Logout servlet-->
-  <servlet>
-      <servlet-name>LogoutServlet</servlet-name>
-      <servlet-class>ua.myhospital.servlet.LogoutServlet</servlet-class>
-  </servlet>
+        <!--Logout servlet-->
+<servlet>
+<servlet-name>LogoutServlet</servlet-name>
+<servlet-class>ua.myhospital.servlet.LogoutServlet</servlet-class>
+</servlet>
 
-  <servlet-mapping>
-      <servlet-name>LogoutServlet</servlet-name>
-      <url-pattern>/logout</url-pattern>
-  </servlet-mapping>
-</web-app>
+<servlet-mapping>
+<servlet-name>LogoutServlet</servlet-name>
+<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+        </web-app>

@@ -1,0 +1,32 @@
+.register_form{
+  grid-area: divr;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+.register_input{
+box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 20%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  height: 45px;
+  -webkit-appearance: none;
+}
+
+.normalize{
+  height: 100vh;  
+}
+
+.header{
+background-color: rgb(39,37,31);
+
+}
