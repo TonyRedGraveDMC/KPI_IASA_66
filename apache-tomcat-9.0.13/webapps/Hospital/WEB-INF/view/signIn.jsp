@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reg</title>
+    <title>Sign in</title>
     <style>
         <%@include file="/WEB-INF/Css/main.css"%>
         <%@include file="/WEB-INF/Css/register.css"%>
@@ -24,18 +24,17 @@
     <main class="main">
 
 
+
+
         <div class="register_form">
-
-
-            <h2>Regestration</h2>
-            <form method="post" action="<c:url value='/add'/>">
+            <h1>Sign up</h1><br>
+            <form method="post" action="<c:url value='/auth'/>">
 
                 <input type="text" required placeholder="login" name="login"><br>
                 <input type="password" required placeholder="password" name="password"><br><br>
-                <input class="button" type="submit" value="Rgestrate">
+                <input class="button" type="submit" value="sign up">
 
             </form>
-            <%--<a href="" class=" button1"> Regestrate </a>--%>
         </div>
 
     </main>

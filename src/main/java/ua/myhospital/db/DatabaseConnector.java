@@ -8,10 +8,10 @@ public class DatabaseConnector {
     private static DatabaseConnector instance;
 
     private Connection connection;
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
-    private static final String SCHEMA = "hospitaldb";
-    private static final String CONNECTION_STRING = "jdbc:mysql://localhost:3306/";
+    private static final String USER = "ka66_06";
+    private static final String PASSWORD = "a757abe813";
+    private static final String SCHEMA = "ka66_06";
+    private static final String CONNECTION_STRING = "jdbc:mysql://zanner.org.ua:33321/";
 
     private DatabaseConnector(){
 

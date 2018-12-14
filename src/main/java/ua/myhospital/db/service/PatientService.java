@@ -25,7 +25,7 @@ public class PatientService extends AbstractService implements PatientDAO {
     @Override
 
     public void add(Patient patient) throws SQLException {
-        String sql = "INSERT INTO PATIENT (Name, Birthday, Phone, User_id, Physician_id, Room_id) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO patient (Name, Birthday, Phone, User_id, Physician_id, Room_id) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -51,7 +51,7 @@ public class PatientService extends AbstractService implements PatientDAO {
     public List<Patient> getAll() throws SQLException {
         List<Patient> patientList = new ArrayList<>();
 
-        String sql = "SELECT idPatient, Name, Birthday, Phone, User_id, Physician_id, Room_id FROM PATIENT";
+        String sql = "SELECT idPatient, Name, Birthday, Phone, User_id, Physician_id, Room_id FROM patient";
         Statement statement = null;
 
         try {
@@ -73,7 +73,7 @@ public class PatientService extends AbstractService implements PatientDAO {
 
     @Override
     public Patient getBIdPatient(Long idPatient) throws SQLException {
-        String sql = "SELECT Name, Birthday, Phone, User_id, Physician_id, Room_id FROM PATIENT WHERE idPatient = ?";
+        String sql = "SELECT Name, Birthday, Phone, User_id, Physician_id, Room_id FROM patient WHERE idPatient = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setLong(1, idPatient
@@ -96,7 +96,7 @@ public class PatientService extends AbstractService implements PatientDAO {
 
     @Override
     public void update(Patient patient) throws SQLException {
-        String sql = "UPDATE PATIENT SET NAME=?, Birthday=?, PHONE=?, User_id=?, Physician_id=?, Room_id=? WHERE idPatient =? ";
+        String sql = "UPDATE patient SET NAME=?, Birthday=?, PHONE=?, User_id=?, Physician_id=?, Room_id=? WHERE idPatient =? ";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -122,7 +122,7 @@ public class PatientService extends AbstractService implements PatientDAO {
     public void remove(Patient patient) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = " DELETE FROM PATIENT WHERE idPatient=?";
+        String sql = " DELETE FROM patient WHERE idPatient=?";
         try {
             preparedStatement = connection.prepareStatement(sql);
 

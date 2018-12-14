@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoomService extends  AbstractService implements RoomDAO {
+
     @Override
     public void add(Room room) throws SQLException {
         String sql = "INSERT INTO ROOM(RoomNumber, TYPE, NumberOfSeats) VALUES(?, ?, ?)";
@@ -44,7 +45,7 @@ public class RoomService extends  AbstractService implements RoomDAO {
     public List<Room> getAll() throws SQLException {
             List<Room> roomList = new ArrayList<>();
 
-            String sql = "SELECT idRoom, RoomNumber, TYPE, NumberOfSeats  FROM ROOM";
+            String sql = "SELECT idRoom, RoomNumber, TYPE, NumberOfSeats  FROM room";
             Statement statement = null;
 
             try {
@@ -67,7 +68,7 @@ public class RoomService extends  AbstractService implements RoomDAO {
 
     @Override
     public Room getByIdRoom(Long idRoom) throws SQLException{
-        String sql = "SELECT  RoomNumber, TYPE, NumberOfSeats FROM ROOM WHERE idRoom=?";
+        String sql = "SELECT  RoomNumber, TYPE, NumberOfSeats FROM room WHERE idRoom=?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setLong(1, idRoom);
@@ -92,7 +93,7 @@ public class RoomService extends  AbstractService implements RoomDAO {
 
     @Override
     public void update(Room room) throws SQLException {
-        String sql = "UPDATE ROOM SET RoomNumber =?, TYPE=?, NumberOfSeats=? WHERE idRoom =? ";
+        String sql = "UPDATE room SET RoomNumber =?, TYPE=?, NumberOfSeats=? WHERE idRoom =? ";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -115,7 +116,7 @@ public class RoomService extends  AbstractService implements RoomDAO {
     public void remove(Room room) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM ROOM WHERE idRoom = ?";
+        String sql = "DELETE FROM room WHERE idRoom = ?";
 
 
         try{

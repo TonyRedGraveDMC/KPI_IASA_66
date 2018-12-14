@@ -47,7 +47,9 @@ public class AuthServlet extends HttpServlet {
             moveToMenu(req, res, role);
 
 
-        } else {
+        }
+
+        else {
             try {
                 if (userService.get().doesUserExist(login, password)) {
             System.out.println("user exist in db");

@@ -105,7 +105,7 @@
                             <type>existing</type>
                             <home>apache-tomcat-9.0.13</home>
                             <properties>
-                                <cargo.servlet.port>8081</cargo.servlet.port>
+                                <cargo.servlet.port>9090</cargo.servlet.port>
                             </properties>
                         </configuration>
 

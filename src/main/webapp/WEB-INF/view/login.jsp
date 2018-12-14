@@ -27,14 +27,22 @@
 
     <main class="main">
 
-        <form action="<c:url value='/reg'/>">
-            <input type="submit">
+        <form method="post" action="<c:url value='/reg'/>">
+            <input type="submit" name="Reg">
+
+            <%--<a href="file:/view/Registration.jsp" class="button1 button2"> Registration</a>--%>
+        </form>
+
+        <form method="post" action="<c:url value='/signIn'/>">
+            <input type="submit" name="Auth">
 
             <%--<a href="file:/view/Registration.jsp" class="button1 button2"> Registration</a>--%>
         </form>
 
 
-        <a href="file:///C:/Users/eskan/Desktop/web/Webpage/SignIn.html" class="button1 button2 button3">Sign in</a>
+
+
+        <%--<a href="file:///C:/Users/eskan/Desktop/web/Webpage/SignIn.html" class="button1 button2 button3">Sign in</a>--%>
 
         <div class="bigGrid">
             <div class="myGrid"></div>
@@ -91,6 +99,8 @@
 
             </div>
         </div>
+
+
 
         <label class="link" for="hider" id="clickme">Show rooms</label>
         <input type="checkbox" id="hider">

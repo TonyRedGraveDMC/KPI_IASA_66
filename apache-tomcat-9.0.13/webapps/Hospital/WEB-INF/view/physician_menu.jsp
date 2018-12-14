@@ -9,6 +9,6 @@
 <body>
 
 <h1>Hello DOC!</h1>
-<a href="<c:url value="/logout"/>">Logout</a>
+<a methods="post" href="<c:url value="/logout"/>">Logout</a>
 </body>
 </html>

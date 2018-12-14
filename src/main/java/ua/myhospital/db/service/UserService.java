@@ -15,7 +15,7 @@ public class UserService extends AbstractService implements UserDAO {
 
     @Override
     public void add(User user) throws SQLException {
-        String sql = "INSERT INTO USER(LOGIN, PASSWORD, ROLE, CREATE_DATE) VALUES  (?, ?, ?, ?)";
+        String sql = "INSERT INTO user(LOGIN, PASSWORD, ROLE, CREATE_DATE) VALUES  (?, ?, ?, ?)";
         PreparedStatement preparedStatement = null;
 
         try {
@@ -54,7 +54,7 @@ public class UserService extends AbstractService implements UserDAO {
     @Override
     public List<User> getAll() throws SQLException {
         List<User> userList = new ArrayList<>();
-        String sql = "SELECT IDUSER, LOGIN, PASSWORD, ROLE,CREATE_DATE FROM USER";
+        String sql = "SELECT IDUSER, LOGIN, PASSWORD, ROLE,CREATE_DATE FROM user";
 
         Statement statement = null;
         try {
@@ -82,7 +82,7 @@ public class UserService extends AbstractService implements UserDAO {
 
     @Override
     public void update(User user) throws SQLException {
-        String sql = "UPDATE USER SET LOGIN=?, PASSWORD=?, ROLE=?,CREATE_DATE=? WHERE idUSER =? ";
+        String sql = "UPDATE user SET LOGIN=?, PASSWORD=?, ROLE=?,CREATE_DATE=? WHERE idUSER =? ";
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class UserService extends AbstractService implements UserDAO {
     public void remove(User user) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM USER WHERE idUser = ?";
+        String sql = "DELETE FROM user WHERE idUser = ?";
 
 
         try{

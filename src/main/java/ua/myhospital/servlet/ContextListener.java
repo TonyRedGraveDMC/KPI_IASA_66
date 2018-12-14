@@ -2,6 +2,7 @@ package ua.myhospital.servlet;
 
 
 import ua.myhospital.db.DatabaseConnector;
+import ua.myhospital.db.service.RoomService;
 import ua.myhospital.db.service.UserService;
 
 import javax.servlet.ServletContext;
@@ -14,17 +15,16 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 @WebListener
 public class ContextListener implements ServletContextListener {
-    /**
-     * Fake database connector.
-     */
-    private AtomicReference<UserService> users;
-
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-
-        users = new AtomicReference<>(new UserService());
         final ServletContext servletContext = servletContextEvent.getServletContext();
+
+        AtomicReference<UserService> users = new AtomicReference<>(new UserService());
         servletContext.setAttribute("users", users);
+
+        AtomicReference<RoomService> rooms = new AtomicReference<>(new RoomService());
+        servletContext.setAttribute("rooms", rooms);
+
     }
 
     @Override

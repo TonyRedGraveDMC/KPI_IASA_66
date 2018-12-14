@@ -1,11 +1,13 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Reg</title>
     <style>
-    <%@include file="/WEB-INF/Css/main.css"%>
-    <%@include file="/WEB-INF/Css/register.css"%>
+        <%@include file="/WEB-INF/Css/main.css"%>
+        <%@include file="/WEB-INF/Css/register.css"%>
     </style>
     <meta http-equiv="Content-Type">
 </head>
@@ -23,8 +25,9 @@
 
 
         <div class="register_form">
-            <h1>Regestration</h1>
 
+
+            <h2>Regestration</h2>
             <form method="post" action="<c:url value='/add'/>">
 
                 <input type="text" required placeholder="login" name="login"><br>

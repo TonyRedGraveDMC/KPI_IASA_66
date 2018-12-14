@@ -13,10 +13,9 @@ import java.io.IOException;
  */
 public class LogoutServlet extends HttpServlet {
 
-    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+        System.out.println("doGet LogoutServlet");
 
         final HttpSession session = req.getSession();
 
@@ -24,7 +23,21 @@ public class LogoutServlet extends HttpServlet {
         session.removeAttribute("login");
         session.removeAttribute("role");
 
-        resp.sendRedirect("/");
+        req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        System.out.println("doPost LogoutServlet");
+
+        final HttpSession session = req.getSession();
+
+        session.removeAttribute("password");
+        session.removeAttribute("login");
+        session.removeAttribute("role");
+
+        resp.sendRedirect("/WEB-INF/view/login.jsp");
     }
 
 }

@@ -19,12 +19,15 @@ public class Add extends HttpServlet {
 
 
     public void init() {
+
+        System.out.println("init add");
     }
 
 
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         req.setCharacterEncoding("UTF-8");
 
+        System.out.println("doPost add");
 
         final String login = req.getParameter("login");
         final String password = req.getParameter("password");
