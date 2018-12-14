@@ -1,0 +1,16 @@
+#hider {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+#hider:checked + .content {
+    display: block;
+}
+#clickme {
+
+    cursor: pointer;
+}
+.content {
+    margin-top: 10px;
+    display: none;
+}
