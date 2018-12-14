@@ -1,4 +1,8 @@
 <%@ page import="ua.myhospital.model.Room" %>
+<%@ page import="ua.myhospital.db.service.RoomService" %>
+<%@ page import="java.util.concurrent.atomic.AtomicReference" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -99,9 +103,17 @@
 
             </div>
         </div>
+        <%
+            final AtomicReference<RoomService> roomService = (AtomicReference<RoomService>) request.getServletContext().getAttribute("rooms");
 
-
-
+            List<Room> roomList = null;
+            try {
+                roomList = roomService.get().getAll();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            request.setAttribute("roomList", roomList);
+        %>
         <label class="link" for="hider" id="clickme">Show rooms</label>
         <input type="checkbox" id="hider">
         <div class="content">
