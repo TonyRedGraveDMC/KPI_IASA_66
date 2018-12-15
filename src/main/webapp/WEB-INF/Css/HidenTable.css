@@ -24,6 +24,12 @@
     border-bottom: 1px solid #ddd;
 
 }
+
+#hider3:checked + .content3 {
+    display: block;
+    border-bottom: 1px solid #ddd;
+
+}
 #clickme {
 
     cursor: progress;
@@ -36,6 +42,12 @@
  }
 
 .content2 {
+    margin-top: 10px;
+    display: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.content3 {
     margin-top: 10px;
     display: none;
     border-bottom: 1px solid #ddd;

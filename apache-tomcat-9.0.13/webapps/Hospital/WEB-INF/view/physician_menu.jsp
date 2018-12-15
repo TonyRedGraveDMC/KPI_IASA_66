@@ -31,11 +31,12 @@
     </header>
     <aside class="left"></aside>
     <aside class="right"></aside>
+    <a href="<c:url value="/logout"/>" class="register_form button1 button2">Logout</a>
 
     <main class="main">
 
         <h1 class="register_form">Hello DOC!</h1>
-        <a href="<c:url value="/logout"/>" class="register_form">Logout</a>
+
 
         <div class="context">
 

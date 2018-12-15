@@ -35,7 +35,7 @@
                 <input type="text" maxlength="23"  required placeholder="Name" name="name"><br>
                 <input type="text" maxlength="23" required placeholder="Birthday : YY-MM-DD" name="birthday"><br>
                 <input type="text"  maxlength="23" required placeholder="Phone" name="phone"><br>
-                <input type="hidden"  maxlength="23" name="role"  value="P"><br><br>
+                <input type="hidden"  maxlength="23" name="role"  value="D"><br><br>
                 <input class="button1" class="register_input" type="submit" value="Registration">
 
             </form>

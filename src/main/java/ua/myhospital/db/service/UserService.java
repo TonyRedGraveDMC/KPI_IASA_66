@@ -166,5 +166,18 @@ public class UserService extends AbstractService implements UserDAO {
         return result;
     }
 
+    public User getByLogin(final String login) throws SQLException {
+        User result = null;
+
+        for (User user : getAll()) {
+            if (user.getLogin().equals(login) ) {
+                result = user;
+                break;
+            }
+        }
+
+        return result;
+    }
 
 }
+

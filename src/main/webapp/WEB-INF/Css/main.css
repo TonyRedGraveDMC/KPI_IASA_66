@@ -114,7 +114,7 @@ body{
 }
 
 a.button1 {
-  background: #678;
+  background: rgba(0,0,0,.8);
   display: inline-block;
   color: white;
   font-weight: 300;
@@ -126,13 +126,14 @@ a.button1 {
   border-radius: 1px;
   transition: 0.2s;
 } 
-a.button1:hover { background: rgba(0,0,0,.8); }
+a.button1:hover { background: #678; }
 a.button1:active { background: blue; }
 
 a.button2{
 	position: absolute;
     right: 0px;
     top: 0px;
+	border:0px;
 }
 
 a.button3{
@@ -207,3 +208,37 @@ a.button3{
 
 }
 
+input[type=submit]{
+	border: 0px;
+}
+
+input[type=submit].button1 {
+	background: #678;
+	display: inline-block;
+	color: white;
+	font-weight: 300;
+	text-decoration: none;
+	user-select: none;
+	padding: .5em 1.6em;
+	outline: none;
+	border-radius: 1px;
+	transition: 0.2s;
+}
+
+input[type=submit].button1:hover { background: rgba(0,0,0,.8); }
+input[type=submit].button1:active { background: blue; }
+
+input[type=submit].button2{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+input[type=submit].button3{
+	right: 125px;
+	padding: .5em 2.75em;
+}
+
+input[type=submit].button4{
+	align-content: center;
+}

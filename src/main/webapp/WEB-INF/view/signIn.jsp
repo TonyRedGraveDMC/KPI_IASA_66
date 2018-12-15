@@ -31,8 +31,8 @@
             <form method="post" action="<c:url value='/auth'/>">
 
                 <input type="text" required placeholder="login" name="login"><br>
-                <input type="password" maxlength="10" required placeholder="password" name="password"><br><br>
-                <input class="button" maxlength="10" type="submit" value="sign up">
+                <input type="password" maxlength="23" required placeholder="password" name="password"><br><br>
+                <input class="button1" maxlength="23" type="submit"  value="sign up">
 
             </form>
         </div>

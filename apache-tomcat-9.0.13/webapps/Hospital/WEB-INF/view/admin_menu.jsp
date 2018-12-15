@@ -1,131 +1,167 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="ua.myhospital.model.Room" %>
 <%@ page import="ua.myhospital.db.service.RoomService" %>
 <%@ page import="java.util.concurrent.atomic.AtomicReference" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.sql.SQLException" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="ua.myhospital.db.service.PhysicianService" %>
+<%@ page import="ua.myhospital.model.Physician" %>
+<%@ page import="ua.myhospital.db.service.PatientService" %>
+<%@ page import="ua.myhospital.model.Patient" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>ADMIN</title>
+    <meta charset="UTF-8">
+    <title>Reg</title>
     <style>
-        <%@include file="/WEB-INF/Css/HidenTable.css"%>
         <%@include file="/WEB-INF/Css/main.css"%>
         <%@include file="/WEB-INF/Css/register.css"%>
-
-
+        <%@include file="/WEB-INF/Css/HidenTable.css"%>
     </style>
+    <meta http-equiv="Content-Type">
 </head>
 <body>
 
-<h1>Hello ADMIN!</h1>
 
-<a href="<c:url value="/logout"/>">Logout</a>
+<div class="container normalize">
+    <header class="header">
+        Header
+    </header>
+    <aside class="left"></aside>
+    <aside class="right"></aside>
+    <a href="<c:url value="/logout"/>" class="register_form button1 button2">Logout</a>
+    <a href="<c:url value="/adminreg"/>" class="register_form button1 button2 button3">Registrate</a>
+    <main class="main">
 
+        <h1 class="register_form">Hello ADMIN!</h1>
 
-<header class="header">
-    <img src="https://www.mayoclinic.org/styles/img/logo-mayoclinic.png" alt="">
-</header>
-<aside class="left"></aside>
-<aside class="right"></aside>
+        <div class="context">
 
-<main class="main">
-
-    <div class="bigGrid">
-        <div class="myGrid"></div>
-
-        <div class="smallGrid a"><p>APPOINTMENTS</p></div>
-        <div class="smallGrid b"><p>CONTACT US</p></div>
-        <div class="smallGrid c"><p>FIND A DOCTOR</p></div>
-        <div class="smallGrid d"><p>PATIENT & VISITOR GUIDE</p></div>
-
-    </div>
-
-    <h2 align="center">Find Diseases & Conditions</h2>
-    <div class="r"></div>
-
-    <div class="context">
-
-        <div class="block a1">
+            <div class="register_form">
 
 
-            <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/09/25/18/03/ken-burns-documentary-promo-tile-v3.jpg"
-                 alt="">
-            <div>
-                <p>Mayo Clinic featured in</p>
-                <p>Ken Burns documentary</p>
+                <%
+                    final AtomicReference<RoomService> roomService = (AtomicReference<RoomService>) request.getServletContext().getAttribute("rooms");
+
+                    List<Room> roomList = null;
+                    try {
+                        roomList = roomService.get().getAll();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    request.setAttribute("roomList", roomList);
+                %>
+                <label class="link" for="hider1" id="clickme">Show rooms</label>
+                <input type="checkbox" id="hider1">
+                <div class="content1">
+
+                    <table class="register_form" border="2">
+                        <tr>
+                            <th>Number</th>
+                            <th>Type</th>
+                            <th>Seats</th>
+                        </tr>
+                        <c:forEach var="roomList" items="${roomList}">
+                            <tr>
+
+                                <td><c:out value="${roomList.roomNumber}"/></td>
+                                <td><c:out value="${roomList.type}"/></td>
+                                <td><c:out value="${roomList.numberOfSeats}"/></td>
+                            </tr>
+
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+
+            <div class="register_form">
+
+                <%
+                    final AtomicReference<PatientService> patientService = (AtomicReference<PatientService>) request.getServletContext().getAttribute("patients");
+
+                    List<Patient> patientList = null;
+                    try {
+                        patientList = patientService.get().getAll();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    request.setAttribute("patientList", patientList);
+                %>
+
+                <label class="link" for="hider2" id="clickme">Show patient</label>
+                <input type="checkbox" id="hider2">
+                <div class="content2">
+
+                    <table border="2" class="register_form">
+                        <tr>
+                            <th>Name</th>
+                            <th>User_id</th>
+                            <th>Birthday</th>
+                            <th>Room_id</th>
+                        </tr>
+                        <c:forEach var="patientList" items="${patientList}">
+                            <tr>
+
+                                <td><c:out value="${patientList.name}"/></td>
+                                <td><c:out value="${patientList.user_id}"/></td>
+                                <td><c:out value="${patientList.birthday}"/></td>
+                                <td><c:out value="${patientList.room_id}"/></td>
+                            </tr>
+
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+
+            <div class="register_form">
+
+                <%
+                    final AtomicReference<PhysicianService> physicianService = (AtomicReference<PhysicianService>) request.getServletContext().getAttribute("physicians");
+
+                    List<Physician> physicianList = null;
+                    try {
+                        physicianList = physicianService.get().getAll();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    request.setAttribute("physicianList", physicianList);
+                %>
+
+                <label class="link" for="hider3" id="clickme">Show physician</label>
+                <input type="checkbox" id="hider3">
+                <div class="content3">
+
+                    <table border="2" class="register_form">
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Birthday</th>
+                        </tr>
+                        <c:forEach var="physicianList" items="${physicianList}">
+                            <tr>
+
+                                <td><c:out value="${physicianList.name}"/></td>
+                                <td><c:out value="${physicianList.position}"/></td>
+                                <td><c:out value="${physicianList.birthday}"/></td>
+                            </tr>
+
+                        </c:forEach>
+                    </table>
+                </div>
             </div>
 
         </div>
-
-        <div class="block a1 a2">
-
-            <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/12/03/16/13/triplemygift520x360_ad.jpg"
-                 alt="">
-            <div>
-                <p>Triple my gift for the Mayo Clinic Center for</p>
-                <p>Indvidualized Medicine today!</p>
-            </div>
-
-        </div>
-        <div class="block a1">
-
-            <img src=https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/08/22/17/03/mc-usnews-tile-520x360.jpg"alt="">
-            <div>
-                <p>Mayo Clinic featured in</p>
-                <p>Ken Burns documentary</p>
-            </div>
-
-        </div>
-
-        <div class="block a1">
-
-            <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/04/23/16/35/hopeandhealing2x.jpg"
-                 alt="">
-
-            <div>
-                <p>Mayo Clinic featured in</p>
-                <p>Ken Burns documentary</p>
-            </div>
-
-        </div>
-    </div>
-    <%
-        final AtomicReference<RoomService> roomService = (AtomicReference<RoomService>) request.getServletContext().getAttribute("rooms");
-
-        List<Room> roomList = null;
-        try {
-            roomList = roomService.get().getAll();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        request.setAttribute("roomList", roomList);
-    %>
-    <label class="link" for="hider" id="clickme">Show rooms</label>
-    <input type="checkbox" id="hider">
-    <div class="content">
-
-        <table border="2">
-            <tr>
-                <th>Number</th>
-                <th>Type</th>
-                <th>Seats</th>
-            </tr>
-            <c:forEach var="roomList" items="${roomList}">
-                <tr>
-
-                    <td><c:out value="${roomList.roomNumber}"/></td>
-                    <td><c:out value="${roomList.type}"/></td>
-                    <td><c:out value="${roomList.numberOfSeats}"/></td>
-                </tr>
-
-            </c:forEach>
-        </table>
-    </div>
 
 
 </main>
 
+
+<footer class="footer">Footer</footer>
+
+
+</div>
 
 
 </body>

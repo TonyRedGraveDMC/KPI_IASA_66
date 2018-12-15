@@ -31,6 +31,8 @@ public class AddServlet extends HttpServlet {
 
         System.out.println("doPost add");
 
+
+
         final String login = req.getParameter("login");
         final String password = req.getParameter("password");
         final String placeP = req.getParameter("role");
@@ -47,6 +49,7 @@ public class AddServlet extends HttpServlet {
                     System.out.println("user exist in db");
                 }else{
 
+
                   //  final Constant.Role role = Constant.Role.PATIENT;
                     System.out.println(role);
 
@@ -61,11 +64,21 @@ public class AddServlet extends HttpServlet {
                     patient.setName(name);
                     patient.setBirthday(birthday);
                     patient.setPhone(phone);
-                    patient.setPhysician_id(1);
-                    patient.setRoom_id(1);
 
-                    patientService.get().add(patient);
+                    if(req.getParameter("roomId") == null){
+                        patient.setRoom_id(1);
+                    }
+                    if(req.getParameter("physicianId") == null) {
+                        patient.setPhysician_id(1);
+                    }
+
+
                     userService.get().add(user);
+
+                   long userID = userService.get().getByLogin(login).getId();
+                    patient.setUser_id(userID);
+                    patientService.get().add(patient);
+
                     req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, res);
 
                 }
