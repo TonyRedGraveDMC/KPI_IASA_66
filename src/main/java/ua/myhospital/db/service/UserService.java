@@ -41,9 +41,9 @@ public class UserService extends AbstractService implements UserDAO {
 //        User user = new User("234", "password", Constant.Role.DOCTOR, LocalDateTime.now());
 //        userService.add(user);
 
-//        User user = new User(23);
-//        UserService userService = new UserService();
-//        userService.remove(user);
+        User user = new User(33);
+        UserService userService = new UserService();
+        userService.remove(user);
 
 //        List<User> userList = userService.getAll();
 //        for(User u : userList){

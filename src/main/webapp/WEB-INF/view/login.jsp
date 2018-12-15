@@ -31,19 +31,14 @@
 
     <main class="main">
 
-        <form method="post" action="<c:url value='/reg'/>">
-            <input type="submit" name="Reg">
 
-            <%--<a href="file:/view/Registration.jsp" class="button1 button2"> Registration</a>--%>
+        <form method="post" action="<c:url value='/reg'/>">
+            <input type="submit" name="Reg" value="Registration" class="button1 button2">
         </form>
 
         <form method="post" action="<c:url value='/signIn'/>">
-            <input type="submit" name="Auth">
-
-            <%--<a href="file:/view/Registration.jsp" class="button1 button2"> Registration</a>--%>
+            <input type="submit" value="Sign in" class="button1 button2 button3 " name="Auth">
         </form>
-
-
 
 
         <%--<a href="file:///C:/Users/eskan/Desktop/web/Webpage/SignIn.html" class="button1 button2 button3">Sign in</a>--%>
@@ -54,7 +49,7 @@
             <div class="smallGrid a"><p>APPOINTMENTS</p></div>
             <div class="smallGrid b"><p>CONTACT US</p></div>
             <div class="smallGrid c"><p>FIND A DOCTOR</p></div>
-            <div class="smallGrid d"><p>PATIENT  & VISITOR GUIDE</p></div>
+            <div class="smallGrid d"><p>PATIENT & VISITOR GUIDE</p></div>
 
         </div>
 
@@ -66,7 +61,8 @@
             <div class="block a1">
 
 
-                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/09/25/18/03/ken-burns-documentary-promo-tile-v3.jpg" alt="">
+                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/09/25/18/03/ken-burns-documentary-promo-tile-v3.jpg"
+                     alt="">
                 <div>
                     <p>Mayo Clinic featured in</p>
                     <p>Ken Burns documentary</p>
@@ -76,7 +72,8 @@
 
             <div class="block a1 a2">
 
-                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/12/03/16/13/triplemygift520x360_ad.jpg" alt="">
+                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/12/03/16/13/triplemygift520x360_ad.jpg"
+                     alt="">
                 <div>
                     <p>Triple my gift for the Mayo Clinic Center for</p>
                     <p>Indvidualized Medicine today!</p>
@@ -94,7 +91,8 @@
             </div>
             <div class="block a1">
 
-                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/04/23/16/35/hopeandhealing2x.jpg" alt="">
+                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/04/23/16/35/hopeandhealing2x.jpg"
+                     alt="">
 
                 <div>
                     <p>Mayo Clinic featured in</p>
@@ -114,9 +112,9 @@
             }
             request.setAttribute("roomList", roomList);
         %>
-        <label class="link" for="hider" id="clickme">Show rooms</label>
-        <input type="checkbox" id="hider">
-        <div class="content">
+        <label class="link" for="hider1" id="clickme">Show rooms</label>
+        <input type="checkbox" id="hider1">
+        <div class="content1">
 
             <table border="2">
                 <tr>
@@ -138,11 +136,6 @@
 
 
     </main>
-
-
-
-
-
 
 
     <footer class="footer">Footer</footer>

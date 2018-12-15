@@ -3190,3 +3190,51 @@ Caused by: java.net.BindException: Address already in use: bind
 14-Dec-2018 21:51:43.675 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
 14-Dec-2018 21:51:43.679 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
 14-Dec-2018 21:51:43.680 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+14-Dec-2018 22:17:19.994 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.13
+14-Dec-2018 22:17:20.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 2 2018 14:27:55 UTC
+14-Dec-2018 22:17:20.001 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.13.0
+14-Dec-2018 22:17:20.002 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+14-Dec-2018 22:17:20.003 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+14-Dec-2018 22:17:20.004 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+14-Dec-2018 22:17:20.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_191\jre
+14-Dec-2018 22:17:20.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-b12
+14-Dec-2018 22:17:20.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+14-Dec-2018 22:17:20.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+14-Dec-2018 22:17:20.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+14-Dec-2018 22:17:20.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms128m
+14-Dec-2018 22:17:20.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx512m
+14-Dec-2018 22:17:20.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+14-Dec-2018 22:17:20.014 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+14-Dec-2018 22:17:20.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\temp
+14-Dec-2018 22:17:20.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Dec-2018 22:17:20.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\conf/logging.properties
+14-Dec-2018 22:17:20.015 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.18] using APR version [1.6.5].
+14-Dec-2018 22:17:20.015 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+14-Dec-2018 22:17:20.016 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+14-Dec-2018 22:17:20.022 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1  11 Sep 2018]
+14-Dec-2018 22:17:20.449 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+14-Dec-2018 22:17:20.992 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+14-Dec-2018 22:17:21.039 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+14-Dec-2018 22:17:21.042 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+14-Dec-2018 22:17:21.043 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1621 ms
+14-Dec-2018 22:17:21.272 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+14-Dec-2018 22:17:21.272 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.13
+14-Dec-2018 22:17:21.461 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc.war]
+14-Dec-2018 22:17:21.674 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc] was found with a last modified time that did not match the associated WAR. It will be deleted.
+14-Dec-2018 22:17:22.975 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc.war] has finished in [1,514] ms
+14-Dec-2018 22:17:22.979 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\Hospital.war]
+14-Dec-2018 22:17:24.836 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14-Dec-2018 22:17:25.397 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\Hospital.war] has finished in [2,418] ms
+14-Dec-2018 22:17:25.399 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\docs]
+14-Dec-2018 22:17:25.452 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\docs] has finished in [53] ms
+14-Dec-2018 22:17:25.452 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\examples]
+14-Dec-2018 22:17:25.995 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\examples] has finished in [543] ms
+14-Dec-2018 22:17:25.996 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\host-manager]
+14-Dec-2018 22:17:26.068 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\host-manager] has finished in [71] ms
+14-Dec-2018 22:17:26.069 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\manager]
+14-Dec-2018 22:17:26.125 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\manager] has finished in [57] ms
+14-Dec-2018 22:17:26.125 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\ROOT]
+14-Dec-2018 22:17:26.180 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\ROOT] has finished in [55] ms
+14-Dec-2018 22:17:26.183 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+14-Dec-2018 22:17:26.206 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+14-Dec-2018 22:17:26.216 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 5171 ms

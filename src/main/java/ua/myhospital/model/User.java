@@ -14,19 +14,20 @@ public class User {
     private Role role;
     private LocalDateTime createDate;
 
-    public User(long id) {
-        this.id = id;
-    }
-
-
     public User() {
     }
+
 
     public User(String login, String password, Role role, LocalDateTime createDate) {
         this.login = login;
         this.password = password;
         this.role = role;
         this.createDate = createDate;
+    }
+
+
+    public User(long id) {
+        this.id = id;
     }
 
     public long getId() {
@@ -41,6 +42,8 @@ public class User {
         return password;
 
     }
+
+
 
     public Role getRole() {
         return role;
@@ -68,5 +71,16 @@ public class User {
 
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                ", createDate=" + createDate +
+                '}';
     }
 }

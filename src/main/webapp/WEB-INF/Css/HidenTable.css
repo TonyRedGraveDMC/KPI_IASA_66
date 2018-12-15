@@ -1,16 +1,42 @@
-#hider {
+#hider1 {
     position: absolute;
     top: -9999px;
     left: -9999px;
+    border-bottom: 1px solid #ddd;
 }
-#hider:checked + .content {
+
+/*#hider2 {*/
+    /*position: absolute;*/
+    /*top: -9999px;*/
+    /*left: -9999px;*/
+    /*border-bottom: 1px solid #ddd;*/
+/*}*/
+
+
+#hider1:checked + .content1 {
     display: block;
+    border-bottom: 1px solid #ddd;
+
+}
+
+#hider2:checked + .content2 {
+    display: block;
+    border-bottom: 1px solid #ddd;
+
 }
 #clickme {
 
-    cursor: pointer;
+    cursor: progress;
+    border-bottom: 1px solid #ddd;
 }
-.content {
+.content1 {
+     margin-top: 10px;
+     display: none;
+     border-bottom: 1px solid #ddd;
+ }
+
+.content2 {
     margin-top: 10px;
     display: none;
+    border-bottom: 1px solid #ddd;
 }

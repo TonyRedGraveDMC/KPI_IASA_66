@@ -26,18 +26,6 @@ public class LogoutServlet extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        System.out.println("doPost LogoutServlet");
 
-        final HttpSession session = req.getSession();
-
-        session.removeAttribute("password");
-        session.removeAttribute("login");
-        session.removeAttribute("role");
-
-        resp.sendRedirect("/WEB-INF/view/login.jsp");
-    }
 
 }

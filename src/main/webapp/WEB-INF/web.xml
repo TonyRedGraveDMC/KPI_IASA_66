@@ -59,7 +59,7 @@
 
     <servlet>
         <servlet-name>Add</servlet-name>
-        <servlet-class>ua.myhospital.servlet.Add</servlet-class>
+        <servlet-class>ua.myhospital.servlet.AddServlet</servlet-class>
     </servlet>
 
 

@@ -25,13 +25,13 @@ public class StartServlet extends HttpServlet {
             throws ServletException, IOException {
         final AtomicReference<RoomService> roomService = (AtomicReference<RoomService>) req.getServletContext().getAttribute("rooms");
 
-        List<Room> roomList = null;
-        try {
-            roomList = roomService.get().getAll();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        req.setAttribute("roomList", roomList);
+//        List<Room> roomList = null;
+//        try {
+//            roomList = roomService.get().getAll();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        req.setAttribute("roomList", roomList);
 
         req.getRequestDispatcher("/WEB-INF/view/login.jsp").forward(req, resp);
 

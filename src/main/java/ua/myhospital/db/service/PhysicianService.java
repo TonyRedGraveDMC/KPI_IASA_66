@@ -47,7 +47,7 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     public List<Physician> getAll() throws SQLException {
         List<Physician> physicianList = new ArrayList<>();
 
-        String sql = "SELECT idPhysician, NAME, POSITION, Birthday, UserId FROM PHYSICIAN";
+        String sql = "SELECT idPhysician, NAME, POSITION, Birthday, UserId FROM physician";
         Statement statement = null;
 
         try {
@@ -71,7 +71,7 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     @Override
     public Physician getByIdPhysician(Long idPhysician) throws SQLException {
 
-        String sql = "SELECT NAME, POSITION, Birthday, UserId FROM PHYSICIAN WHERE idPhysician=?";
+        String sql = "SELECT NAME, POSITION, Birthday, UserId FROM physician WHERE idPhysician=?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setLong(1, idPhysician);
@@ -119,7 +119,7 @@ public class PhysicianService extends AbstractService implements PhysicianDAO {
     public void remove(Physician physician) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM PHYSICIAN WHERE idPhysician = ?";
+        String sql = "DELETE FROM physician WHERE idPhysician = ?";
 
 
         try{

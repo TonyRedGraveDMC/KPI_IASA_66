@@ -2,6 +2,8 @@ package ua.myhospital.servlet;
 
 
 import ua.myhospital.db.DatabaseConnector;
+import ua.myhospital.db.service.PatientService;
+import ua.myhospital.db.service.PhysicianService;
 import ua.myhospital.db.service.RoomService;
 import ua.myhospital.db.service.UserService;
 
@@ -24,6 +26,12 @@ public class ContextListener implements ServletContextListener {
 
         AtomicReference<RoomService> rooms = new AtomicReference<>(new RoomService());
         servletContext.setAttribute("rooms", rooms);
+
+        AtomicReference<PhysicianService> physicians = new AtomicReference<>(new PhysicianService());
+        servletContext.setAttribute("physicians", physicians);
+
+        AtomicReference<PatientService> patients = new AtomicReference<>(new PatientService());
+        servletContext.setAttribute("patients", patients);
 
     }
 
