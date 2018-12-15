@@ -100,6 +100,7 @@
                             <containerId>tomcat9x</containerId>
                             <type>installed</type>
                             <home>apache-tomcat-9.0.13</home>
+                            <timeout>0</timeout>
                         </container>
                         <configuration>
                             <type>existing</type>

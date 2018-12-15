@@ -30,13 +30,13 @@
             <h2>Registration</h2>
             <form method="post" action="<c:url value='/add'/>">
 
-                <input type="text"  required placeholder="login" name="login"><br>
-                <input type="password"  required placeholder="password" name="password"><br>
-                <input type="text"  required placeholder="Name" name="name"><br>
-                <input type="text"  required placeholder="Birthday : YY-MM-DD" name="birthday"><br>
-                <input type="text"  required placeholder="Phone" name="phone"><br>
-                <input type="hidden"  name="role"  value="P"><br><br>
-                <input class="button1" class="register_input" type="submit" value="Rgestrate">
+                <input type="text" maxlength="10" required placeholder="login" name="login"><br>
+                <input type="password"  maxlength="10" required placeholder="password" name="password"><br>
+                <input type="text" maxlength="10"  required placeholder="Name" name="name"><br>
+                <input type="text" maxlength="10" required placeholder="Birthday : YY-MM-DD" name="birthday"><br>
+                <input type="text"  maxlength="10" required placeholder="Phone" name="phone"><br>
+                <input type="hidden"  maxlength="10" name="role"  value="P"><br><br>
+                <input class="button1" class="register_input" type="submit" value="Registration">
 
             </form>
             <%--<a href="" class=" button1"> Regestrate </a>--%>

@@ -36,7 +36,7 @@
                 <input type="text"  required placeholder="Birthday : YY-MM-DD" name="birthday"><br>
                 <input type="text"  required placeholder="Phone" name="phone"><br>
                 <input type="hidden"  name="role"  value="P"><br><br>
-                <input class="button1" class="register_input" type="submit" value="Rgestrate">
+                <input class="button1" class="register_input" type="submit" value="Registration">
 
             </form>
             <%--<a href="" class=" button1"> Regestrate </a>--%>

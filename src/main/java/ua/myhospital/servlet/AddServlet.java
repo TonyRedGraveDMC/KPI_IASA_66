@@ -62,6 +62,7 @@ public class AddServlet extends HttpServlet {
                     patient.setBirthday(birthday);
                     patient.setPhone(phone);
                     patient.setPhysician_id(1);
+                    patient.setRoom_id(1);
 
                     patientService.get().add(patient);
                     userService.get().add(user);
