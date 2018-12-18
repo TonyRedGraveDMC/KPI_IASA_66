@@ -32,9 +32,9 @@
 
 
     <a href="<c:url value="/logout"/>" class="register_form button1 button2">Logout</a>
-    <main class="main">
+    <main class="main" >
 
-        <h1 class="register_form">Hello Patient!</h1>
+        <h1 align="center">Hello Patient!</h1>
 
 
         <div class="context">

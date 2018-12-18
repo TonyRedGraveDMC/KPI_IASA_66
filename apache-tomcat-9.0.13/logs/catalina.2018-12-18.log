@@ -138,3 +138,283 @@ Caused by: java.net.BindException: Address already in use: bind
 18-Dec-2018 03:58:56.120 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
 18-Dec-2018 03:58:56.120 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
 18-Dec-2018 03:58:56.120 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:39:46.535 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.13
+18-Dec-2018 10:39:46.538 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 2 2018 14:27:55 UTC
+18-Dec-2018 10:39:46.539 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.13.0
+18-Dec-2018 10:39:46.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+18-Dec-2018 10:39:46.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+18-Dec-2018 10:39:46.540 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+18-Dec-2018 10:39:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_191\jre
+18-Dec-2018 10:39:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-b12
+18-Dec-2018 10:39:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Dec-2018 10:39:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:39:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:39:46.546 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms128m
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx512m
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\temp
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\conf/logging.properties
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.18] using APR version [1.6.5].
+18-Dec-2018 10:39:46.547 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+18-Dec-2018 10:39:46.548 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+18-Dec-2018 10:39:46.567 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1  11 Sep 2018]
+18-Dec-2018 10:39:46.796 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:39:47.088 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+18-Dec-2018 10:39:47.090 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[HTTP/1.1-8080]]
+ org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:883)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:646)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:306)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:491)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1080)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:550)
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:973)
+	... 13 more
+
+18-Dec-2018 10:39:47.093 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:39:47.100 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+18-Dec-2018 10:39:47.102 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[AJP/1.3-8009]]
+ org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:883)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:646)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:306)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:491)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1080)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:550)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:973)
+	... 13 more
+
+18-Dec-2018 10:39:47.123 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1090 ms
+18-Dec-2018 10:39:47.189 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Dec-2018 10:39:47.189 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.13
+18-Dec-2018 10:39:47.233 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc.war]
+18-Dec-2018 10:39:47.282 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc] was found with a last modified time that did not match the associated WAR. It will be deleted.
+18-Dec-2018 10:39:47.795 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc.war] has finished in [560] ms
+18-Dec-2018 10:39:47.801 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\Hospital.war]
+18-Dec-2018 10:39:49.914 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2018 10:40:03.016 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\Hospital.war] has finished in [15,215] ms
+18-Dec-2018 10:40:03.083 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\docs]
+18-Dec-2018 10:40:03.206 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\docs] has finished in [123] ms
+18-Dec-2018 10:40:03.211 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\examples]
+18-Dec-2018 10:40:03.811 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\examples] has finished in [600] ms
+18-Dec-2018 10:40:03.812 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\host-manager]
+18-Dec-2018 10:40:03.890 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\host-manager] has finished in [78] ms
+18-Dec-2018 10:40:03.891 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\manager]
+18-Dec-2018 10:40:03.945 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\manager] has finished in [52] ms
+18-Dec-2018 10:40:03.945 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\ROOT]
+18-Dec-2018 10:40:03.990 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\ROOT] has finished in [44] ms
+18-Dec-2018 10:40:03.994 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 16860 ms
+18-Dec-2018 10:40:03.997 SEVERE [main] org.apache.catalina.core.StandardServer.await Failed to create server shutdown socket on address [localhost] and port [8005] (base port [8005] and offset [0])
+ java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:453)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:783)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:729)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:350)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:492)
+
+18-Dec-2018 10:40:03.997 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:40:03.998 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:40:03.998 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Dec-2018 10:40:04.034 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [Hospital] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Dec-2018 10:40:04.038 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Hospital] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+18-Dec-2018 10:40:04.047 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:40:04.047 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:40:04.047 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:40:04.047 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:56:13.018 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/9.0.13
+18-Dec-2018 10:56:13.020 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 2 2018 14:27:55 UTC
+18-Dec-2018 10:56:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         9.0.13.0
+18-Dec-2018 10:56:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+18-Dec-2018 10:56:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+18-Dec-2018 10:56:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+18-Dec-2018 10:56:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_191\jre
+18-Dec-2018 10:56:13.021 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_191-b12
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms128m
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx512m
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:56:13.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13
+18-Dec-2018 10:56:13.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\temp
+18-Dec-2018 10:56:13.023 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Dec-2018 10:56:13.028 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\conf/logging.properties
+18-Dec-2018 10:56:13.028 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library [1.2.18] using APR version [1.6.5].
+18-Dec-2018 10:56:13.028 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+18-Dec-2018 10:56:13.028 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+18-Dec-2018 10:56:13.035 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1  11 Sep 2018]
+18-Dec-2018 10:56:13.208 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:56:13.440 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+18-Dec-2018 10:56:13.441 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[HTTP/1.1-8080]]
+ org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:883)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:646)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:306)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:491)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1080)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:550)
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:973)
+	... 13 more
+
+18-Dec-2018 10:56:13.442 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:56:13.445 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+18-Dec-2018 10:56:13.445 SEVERE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Failed to initialize component [Connector[AJP/1.3-8009]]
+ org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:976)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:883)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:646)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:669)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:306)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:491)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1080)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:550)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:973)
+	... 13 more
+
+18-Dec-2018 10:56:13.475 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 858 ms
+18-Dec-2018 10:56:13.553 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Dec-2018 10:56:13.553 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/9.0.13
+18-Dec-2018 10:56:13.585 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc.war]
+18-Dec-2018 10:56:13.633 INFO [main] org.apache.catalina.startup.ExpandWar.expand An expanded directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc] was found with a last modified time that did not match the associated WAR. It will be deleted.
+18-Dec-2018 10:56:14.134 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\cargocpc.war] has finished in [548] ms
+18-Dec-2018 10:56:14.136 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deploying web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\Hospital.war]
+18-Dec-2018 10:56:15.473 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2018 10:56:18.979 INFO [main] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\Hospital.war] has finished in [4,842] ms
+18-Dec-2018 10:56:18.981 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\docs]
+18-Dec-2018 10:56:19.031 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\docs] has finished in [50] ms
+18-Dec-2018 10:56:19.032 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\examples]
+18-Dec-2018 10:56:19.502 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\examples] has finished in [470] ms
+18-Dec-2018 10:56:19.503 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\host-manager]
+18-Dec-2018 10:56:19.568 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\host-manager] has finished in [65] ms
+18-Dec-2018 10:56:19.568 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\manager]
+18-Dec-2018 10:56:19.622 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\manager] has finished in [54] ms
+18-Dec-2018 10:56:19.623 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\ROOT]
+18-Dec-2018 10:56:19.671 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\eskan\IdeaProjects\Github\Hospital\apache-tomcat-9.0.13\webapps\ROOT] has finished in [48] ms
+18-Dec-2018 10:56:19.755 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 6259 ms
+18-Dec-2018 10:56:19.762 SEVERE [main] org.apache.catalina.core.StandardServer.await Failed to create server shutdown socket on address [localhost] and port [8005] (base port [8005] and offset [0])
+ java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:453)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:783)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:729)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:350)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:492)
+
+18-Dec-2018 10:56:19.763 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:56:19.763 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:56:19.763 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+18-Dec-2018 10:56:19.800 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [Hospital] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+18-Dec-2018 10:56:19.801 WARNING [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [Hospital] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+18-Dec-2018 10:56:19.810 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:56:19.810 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+18-Dec-2018 10:56:19.810 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+18-Dec-2018 10:56:19.810 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]

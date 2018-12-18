@@ -75,9 +75,8 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
+    <!--Reg for admins-->
     <servlet>
-
-        <!--Reg for admins-->
         <servlet-name>Adminreg</servlet-name>
         <servlet-class>ua.myhospital.servlet.AdminRef</servlet-class>
     </servlet>
@@ -86,5 +85,18 @@
         <servlet-name>Adminreg</servlet-name>
         <url-pattern>/adminreg</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>AddAdmin</servlet-name>
+        <servlet-class>ua.myhospital.servlet.AddAdminServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddAdmin</servlet-name>
+        <url-pattern>/addAdmin</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
