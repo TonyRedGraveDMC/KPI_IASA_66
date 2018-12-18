@@ -1,5 +1,6 @@
 package ua.myhospital.db.service;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import ua.myhospital.core.Constant;
 import ua.myhospital.core.Converter;
 import ua.myhospital.db.dao.UserDAO;
@@ -41,15 +42,22 @@ public class UserService extends AbstractService implements UserDAO {
 //        User user = new User("234", "password", Constant.Role.DOCTOR, LocalDateTime.now());
 //        userService.add(user);
 
-        User user = new User(33);
+        User user = new User(39);
         UserService userService = new UserService();
         userService.remove(user);
+
+
+        String password = "Hello world";
+
+        String result = DigestUtils.md5Hex(password);
+        System.out.println(result);
 
 //        List<User> userList = userService.getAll();
 //        for(User u : userList){
 //            System.out.println(u);
 //        }
     }
+
 
     @Override
     public List<User> getAll() throws SQLException {
@@ -143,7 +151,7 @@ public class UserService extends AbstractService implements UserDAO {
         Constant.Role result = Constant.Role.UNKNOWN;
 
         for (User user : getAll()) {
-            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+            if (user.getLogin().equals(login) && user.getPassword().equals(DigestUtils.md5Hex(password))) {
                 result = user.getRole();
                 break;
             }
@@ -157,7 +165,7 @@ public class UserService extends AbstractService implements UserDAO {
         boolean result = false;
 
         for (User user : getAll()) {
-            if (user.getLogin().equals(login) && user.getPassword().equals(password)) {
+            if (user.getLogin().equals(login) && user.getPassword().equals(DigestUtils.md5Hex(password))) {
                 result = true;
                 break;
             }

@@ -9,6 +9,8 @@
 <%@ page import="ua.myhospital.model.Physician" %>
 <%@ page import="ua.myhospital.db.service.PatientService" %>
 <%@ page import="ua.myhospital.model.Patient" %>
+<%@ page import="ua.myhospital.model.User" %>
+<%@ page import="ua.myhospital.db.service.UserService" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,7 @@
     <aside class="left"></aside>
     <aside class="right"></aside>
     <a href="<c:url value="/logout"/>" class="register_form button1 button2">Logout</a>
-    <a href="<c:url value="/adminreg"/>" class="register_form button1 button2 button3">Registrate</a>
+    <a href="<c:url value="/adminreg"/>" class="register_form button1 button2 button3">Registrate Admin</a>
     <main class="main">
 
         <h1 class="register_form">Hello ADMIN!</h1>
@@ -152,13 +154,50 @@
                 </div>
             </div>
 
+            <div class="register_form">
+
+                <%
+                    final AtomicReference<UserService> userService = (AtomicReference<UserService>) request.getServletContext().getAttribute("users");
+
+                    List<User> userList = null;
+                    try {
+                        userList = userService.get().getAll();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                    request.setAttribute("userList", userList);
+                %>
+
+                <label class="link" for="hider4" id="clickme">Show users</label>
+                <input type="checkbox" id="hider4">
+                <div class="content4">
+
+                    <table border="2" class="register_form">
+                        <tr>
+                            <th>Login</th>
+                            <th>Role</th>
+                            <th>Create_date</th>
+                        </tr>
+                        <c:forEach var="userList" items="${userList}">
+                            <tr>
+
+                                <td><c:out value="${userList.login}"/></td>
+                                <td><c:out value="${userList.role}"/></td>
+                                <td><c:out value="${userList.createDate}"/></td>
+                            </tr>
+
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+
         </div>
 
 
-</main>
+    </main>
 
 
-<footer class="footer">Footer</footer>
+    <footer class="footer">Footer</footer>
 
 
 </div>

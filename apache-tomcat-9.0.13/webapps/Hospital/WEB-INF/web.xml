@@ -59,7 +59,7 @@
 
     <servlet>
         <servlet-name>Add</servlet-name>
-        <servlet-class>ua.myhospital.servlet.AddServlet</servlet-class>
+        <servlet-class>ua.myhospital.servlet.AddPatientServlet</servlet-class>
     </servlet>
 
 
@@ -79,7 +79,7 @@
 
         <!--Reg for admins-->
         <servlet-name>Adminreg</servlet-name>
-        <servlet-class>ua.myhospital.servlet.Adminreg</servlet-class>
+        <servlet-class>ua.myhospital.servlet.AdminRef</servlet-class>
     </servlet>
 
     <servlet-mapping>

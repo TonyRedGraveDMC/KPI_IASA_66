@@ -33,6 +33,8 @@ public class ContextListener implements ServletContextListener {
         AtomicReference<PatientService> patients = new AtomicReference<>(new PatientService());
         servletContext.setAttribute("patients", patients);
 
+
+
     }
 
     @Override

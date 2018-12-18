@@ -29,6 +29,7 @@
 
                 <input type="text"     size="30" class="register_input" maxlength="23" required placeholder="Login" name="login"><br>
                 <input type="password" size="30" class="register_input" maxlength="23" required placeholder="Password" name="password"><br>
+
                 <input class="button1"  class="register_input" class="register_input" type="submit" value="Sign up">
 
             </form>

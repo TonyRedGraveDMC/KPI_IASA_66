@@ -23,19 +23,16 @@
 
     <main class="main">
 
+            <form method="post" action="<c:url value='/auth'/>" class="register_form">
 
+                 <h2>Sign up</h2>
 
+                <input type="text"     size="30" class="register_input" maxlength="23" required placeholder="Login" name="login"><br>
+                <input type="password" size="30" class="register_input" maxlength="23" required placeholder="Password" name="password"><br>
 
-        <div class="register_form">
-            <h1>Sign up</h1><br>
-            <form method="post" action="<c:url value='/auth'/>">
-
-                <input type="text" required placeholder="login" name="login"><br>
-                <input type="password" maxlength="23" required placeholder="password" name="password"><br><br>
-                <input class="button1" maxlength="23" type="submit"  value="sign up">
+                <input class="button1"  class="register_input" class="register_input" type="submit" value="Sign up">
 
             </form>
-        </div>
 
     </main>
 

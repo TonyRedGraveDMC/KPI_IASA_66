@@ -21,26 +21,23 @@
     <aside class="left"></aside>
     <aside class="right"></aside>
 
-    <main class="main">
+    <main class="main ">
 
 
-        <div class="register_form">
-
+        <form method="post" action="<c:url value='/addAdmin'/>" class="register_form">
 
             <h2>Registration</h2>
-            <form method="post" action="<c:url value='/add'/>">
 
-                <input type="text" maxlength="23" required placeholder="login" name="login"><br>
-                <input type="password"  maxlength="23" required placeholder="password" name="password"><br>
-                <input type="text" maxlength="23"  required placeholder="Name" name="name"><br>
-                <input type="text" maxlength="23" required placeholder="Birthday : YY-MM-DD" name="birthday"><br>
-                <input type="text"  maxlength="23" required placeholder="Phone" name="phone"><br>
-                <input type="hidden"  maxlength="23" name="role"  value="D"><br><br>
-                <input class="button1" class="register_input" type="submit" value="Registration">
+            <input type="text" size="30" class="register_input" maxlength="23" required placeholder="Login"
+                   name="login"><br>
+            <input type="password" size="30" class="register_input" maxlength="23" required placeholder="Password"
+                   name="password"><br>
+            <input type="password" size="30" class="register_input" maxlength="23" required
+                   placeholder="Repeat Password" name="repeatPassword"><br>
+            <input class="button1" class="register_input" class="register_input" type="submit" value="Registration">
 
-            </form>
-            <%--<a href="" class=" button1"> Regestrate </a>--%>
-        </div>
+        </form>
+
 
     </main>
 

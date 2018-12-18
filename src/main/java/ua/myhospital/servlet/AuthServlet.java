@@ -1,5 +1,6 @@
 package ua.myhospital.servlet;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import ua.myhospital.core.Constant;
 import ua.myhospital.db.service.UserService;
 
@@ -57,7 +58,7 @@ public class AuthServlet extends HttpServlet {
                     final Constant.Role role = userService.get().getRoleByLoginPassword(login, password);
                     System.out.println(role);
 
-                    req.getSession().setAttribute("password", password);
+                    req.getSession().setAttribute("password", DigestUtils.md5Hex(password));
                     req.getSession().setAttribute("login", login);
                     req.getSession().setAttribute("role", role);
 

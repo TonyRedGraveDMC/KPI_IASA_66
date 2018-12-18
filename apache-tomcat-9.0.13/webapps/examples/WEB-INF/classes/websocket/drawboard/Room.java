@@ -183,7 +183,7 @@ public final class Room {
         // Broadcast to the other players that one player joined.
         broadcastRoomMessage(MessageType.PLAYER_CHANGED, "+");
 
-        // AddServlet the new player to the list.
+        // AddPatientServlet the new player to the list.
         players.add(p);
 
         // If currently no Broadcast Timer Task is scheduled, then we need to create one.

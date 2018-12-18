@@ -58,7 +58,7 @@ body{
 	text-align: center;
 
 
-	
+
 }
 
 .myGrid{
@@ -72,7 +72,7 @@ body{
 	grid-template-rows: 2fr;
 	background-image: url("https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2018/09/24/18/44/home-young-boy-outside-6col-3663200-0024r.jpg");
 	background-size: 100% 100%;
-	                     
+
 }
 
 /*.table img{
@@ -125,7 +125,7 @@ a.button1 {
   border: 2px solid;
   border-radius: 1px;
   transition: 0.2s;
-} 
+}
 a.button1:hover { background: #678; }
 a.button1:active { background: blue; }
 
@@ -199,7 +199,7 @@ a.button3{
 .c1 {
 	background: #fff;
 	color: #000;
-	
+
 }
 
 .c1 img{

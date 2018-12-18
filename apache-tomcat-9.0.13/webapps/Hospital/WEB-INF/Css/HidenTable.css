@@ -5,12 +5,12 @@
     border-bottom: 1px solid #ddd;
 }
 
-/*#hider2 {*/
-    /*position: absolute;*/
-    /*top: -9999px;*/
-    /*left: -9999px;*/
-    /*border-bottom: 1px solid #ddd;*/
-/*}*/
+#hider2 {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    border-bottom: 1px solid #ddd;
+}
 
 
 #hider1:checked + .content1 {
